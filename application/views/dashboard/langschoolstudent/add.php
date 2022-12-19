@@ -2021,7 +2021,7 @@ $(function() {
       <span class="text-danger"><?php echo form_error('registered_enrollment'); ?></span>
     </div>
   </div>
-   <div class="col-md-6 float-right">
+  <div class="col-md-6 float-right">
       <div class="form-group">
         <?php echo form_label('Total period of education (from elementary school to the last school attended)', 'total_period_edu', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'total_period_edu')); ?>
         <?php
@@ -2036,435 +2036,434 @@ $(function() {
         ?>
         <span class="text-danger"><?php echo form_error('total_period_edu'); ?></span>
       </div>      
-  </div>   
+   </div> 
+
 </div>
 <!-- Table -->
 <!-- Table -->
 <div class="col-md-12 float-left">
-<h6 class="" style="padding: 33px 0px 12px;">Previous Japanese Language Study</h6>
-<select name="jplearn_experience" id="jplearn_experience" class="planning_select" style="margin-top: 0px;margin-bottom: 20px;">
-        <option value="1">Yes</option>
-        <option value="0">No</option>
-</select>
-<div class="tbl">
-<table class="table-bordered" name="applicant_id">
-  <thead class="tbl_head">
-    <tr>
-      <th>Name of institution</th>
-      <th>Level</th>
-      <th>Status(Completed/Still Studying)</th>
-      <th>Address</th>
-      <th>Starting <br>Year/Month  </th>
-      <th >Finishing <br>Year/Month </th>
-      <th>Total hour of Study</th>
-      <th>Term of Studyy</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>
-      <input type="text" class=" table-control"  name="jp_name[]" id="jp_name" value="">
-      </td>
-      <td>
-      <input type="text" class=" table-control"  name="jp_level[]" id="jp_level" value="">
-      </td>
-      <td>
-      <div class="">
-      <select name="jp_status[]" class="table-control col-md-12">
-            <option value=""></option>
-            <option value="1">Completed</option>
-            <option value="0">Still studying</option>
-        </select>
-     </div>
-      </td>
-      <td>
-      <input type="text" class=" table-control"  name="jp_address[]" id="jp_address" value="">
-      </td>
-      <td>
-      <input type="month" class=" table-control strEnd"  name="jp_start_date[]" id="jp_address" value="">
-      </td>
-      <td>
-      <input type="month" class=" table-control strEnd"  name="jp_end_date[]" value="">
-      </td>
-      <td>
-      <input type="text" class=" table-control term" name="jp_hour[]" value=""><span class="study_year">hour</span> 
-      </td>
-      <td>
-      <input type="text" class=" table-control term" name="jp_year[]" value=""><span class="study_year">year</span> 
-      </td>
-    </tr>
-    <tr>
-      <td>
-      <input type="text" class=" table-control"  name="jp_name[]" id="jp_name" value="">
-      </td>
-      <td>
-      <input type="text" class=" table-control"  name="jp_level[]" id="jp_level" value="">
-      </td>
-      <td>
-      <div class="">
-      <select name="jp_status[]" class="table-control col-md-12">
-            <option value=""></option>
-            <option value="1">Completed</option>
-            <option value="0">Still studying</option>
-        </select>
-     </div>
-      </td>
-      <td>
-      <input type="text" class=" table-control"  name="jp_address[]" id="jp_address" value="">
-      </td>
-      <td>
-      <input type="month" class=" table-control strEnd"  name="jp_start_date[]" id="jp_address" value="">
-      </td>
-      <td>
-      <input type="month" class=" table-control strEnd"  name="jp_end_date[]" value="">
-      </td>
-      <td>
-      <input type="text" class=" table-control term" name="jp_hour[]" value=""><span class="study_year">hour</span> 
-      </td>
-      <td>
-      <input type="text" class=" table-control term" name="jp_year[]" value=""><span class="study_year">year</span> 
-      </td>
-    </tr>
-    <tr>
-      <td>
-      <input type="text" class=" table-control"  name="jp_name[]" id="jp_name" value="">
-      </td>
-      <td>
-      <input type="text" class=" table-control"  name="jp_level[]" id="jp_level" value="">
-      </td>
-      <td>
-      <div class="">
-      <select name="jp_status[]" class="table-control col-md-12">
-            <option value=""></option>
-            <option value="1">Completed</option>
-            <option value="0">Still studying</option>
-        </select>
-     </div>
-      </td>
-      <td>
-      <input type="text" class=" table-control"  name="jp_address[]" id="jp_address" value="">
-      </td>
-      <td>
-      <input type="month" class=" table-control strEnd"  name="jp_start_date[]" id="jp_address" value="">
-      </td>
-      <td>
-      <input type="month" class=" table-control strEnd"  name="jp_end_date[]" value="">
-      </td>
-      <td>
-      <input type="text" class=" table-control term" name="jp_hour[]" value=""><span class="study_year">hour</span> 
-      </td>
-      <td>
-      <input type="text" class=" table-control term" name="jp_year[]" value=""><span class="study_year">year</span> 
-      </td>
-    </tr>
-    <tr>
-      <td>
-      <input type="text" class=" table-control"  name="jp_name[]" id="jp_name" value="">
-      </td>
-      <td>
-      <input type="text" class=" table-control"  name="jp_level[]" id="jp_level" value="">
-      </td>
-      <td>
-      <div class="">
-      <select name="jp_status[]" class="table-control col-md-12">
-            <option value=""></option>
-            <option value="1">Completed</option>
-            <option value="0">Still studying</option>
-        </select>
-     </div>
-      </td>
-      <td>
-      <input type="text" class=" table-control"  name="jp_address[]" id="jp_address" value="">
-      </td>
-      <td>
-      <input type="month" class=" table-control strEnd"  name="jp_start_date[]" id="jp_address" value="">
-      </td>
-      <td>
-      <input type="month" class=" table-control strEnd"  name="jp_end_date[]" value="">
-      </td>
-      <td>
-      <input type="text" class=" table-control term" name="jp_hour[]" value=""><span class="study_year">hour</span> 
-      </td>
-      <td>
-      <input type="text" class=" table-control term" name="jp_year[]" value=""><span class="study_year">year</span> 
-      </td>
-    </tr>
-    <tr>
-      <td>
-      <input type="text" class=" table-control"  name="jp_name[]" id="jp_name" value="">
-      </td>
-      <td>
-      <input type="text" class=" table-control"  name="jp_level[]" id="jp_level" value="">
-      </td>
-      <td>
-      <div class="">
-      <select name="jp_status[]" class="table-control col-md-12">
-            <option value=""></option>
-            <option value="1">Completed</option>
-            <option value="0">Still studying</option>
-        </select>
-     </div>
-      </td>
-      <td>
-      <input type="text" class=" table-control"  name="jp_address[]" id="jp_address" value="">
-      </td>
-      <td>
-      <input type="month" class=" table-control strEnd"  name="jp_start_date[]" id="jp_address" value="">
-      </td>
-      <td>
-      <input type="month" class=" table-control strEnd"  name="jp_end_date[]" value="">
-      </td>
-      <td>
-      <input type="text" class=" table-control term" name="jp_hour[]" value=""><span class="study_year">hour</span> 
-      </td>
-      <td>
-      <input type="text" class=" table-control term" name="jp_year[]" value=""><span class="study_year">year</span> 
-      </td>
-    </tr>
-  </tbody>
-</table>
-</div>
+  <h6 class="" style="padding: 33px 0px 12px;">Previous Japanese Language Study</h6>
+  <select name="jplearn_experience" id="jplearn_experience" class="planning_select" style="margin-top: 0px;margin-bottom: 20px;">
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+  </select>
+  <div class="tbl">
+    <table class="table-bordered" name="applicant_id">
+      <thead class="tbl_head">
+        <tr>
+          <th>Name of institution</th>
+          <th>Level</th>
+          <th>Status(Completed/Still Studying)</th>
+          <th>Address</th>
+          <th>Starting <br>Year/Month  </th>
+          <th >Finishing <br>Year/Month </th>
+          <th>Total hour of Study</th>
+          <th>Term of Studyy</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+          <input type="text" class=" table-control"  name="jp_name[]" id="jp_name" value="">
+          </td>
+          <td>
+          <input type="text" class=" table-control"  name="jp_level[]" id="jp_level" value="">
+          </td>
+          <td>
+          <div class="">
+          <select name="jp_status[]" class="table-control col-md-12">
+                <option value=""></option>
+                <option value="1">Completed</option>
+                <option value="0">Still studying</option>
+            </select>
+        </div>
+          </td>
+          <td>
+          <input type="text" class=" table-control"  name="jp_address[]" id="jp_address" value="">
+          </td>
+          <td>
+          <input type="month" class=" table-control strEnd"  name="jp_start_date[]" id="jp_address" value="">
+          </td>
+          <td>
+          <input type="month" class=" table-control strEnd"  name="jp_end_date[]" value="">
+          </td>
+          <td>
+          <input type="text" class=" table-control term" name="jp_hour[]" value=""><span class="study_year">hour</span> 
+          </td>
+          <td>
+          <input type="text" class=" table-control term" name="jp_year[]" value=""><span class="study_year">year</span> 
+          </td>
+        </tr>
+        <tr>
+          <td>
+          <input type="text" class=" table-control"  name="jp_name[]" id="jp_name" value="">
+          </td>
+          <td>
+          <input type="text" class=" table-control"  name="jp_level[]" id="jp_level" value="">
+          </td>
+          <td>
+          <div class="">
+          <select name="jp_status[]" class="table-control col-md-12">
+                <option value=""></option>
+                <option value="1">Completed</option>
+                <option value="0">Still studying</option>
+            </select>
+        </div>
+          </td>
+          <td>
+          <input type="text" class=" table-control"  name="jp_address[]" id="jp_address" value="">
+          </td>
+          <td>
+          <input type="month" class=" table-control strEnd"  name="jp_start_date[]" id="jp_address" value="">
+          </td>
+          <td>
+          <input type="month" class=" table-control strEnd"  name="jp_end_date[]" value="">
+          </td>
+          <td>
+          <input type="text" class=" table-control term" name="jp_hour[]" value=""><span class="study_year">hour</span> 
+          </td>
+          <td>
+          <input type="text" class=" table-control term" name="jp_year[]" value=""><span class="study_year">year</span> 
+          </td>
+        </tr>
+        <tr>
+          <td>
+          <input type="text" class=" table-control"  name="jp_name[]" id="jp_name" value="">
+          </td>
+          <td>
+          <input type="text" class=" table-control"  name="jp_level[]" id="jp_level" value="">
+          </td>
+          <td>
+          <div class="">
+          <select name="jp_status[]" class="table-control col-md-12">
+                <option value=""></option>
+                <option value="1">Completed</option>
+                <option value="0">Still studying</option>
+            </select>
+        </div>
+          </td>
+          <td>
+          <input type="text" class=" table-control"  name="jp_address[]" id="jp_address" value="">
+          </td>
+          <td>
+          <input type="month" class=" table-control strEnd"  name="jp_start_date[]" id="jp_address" value="">
+          </td>
+          <td>
+          <input type="month" class=" table-control strEnd"  name="jp_end_date[]" value="">
+          </td>
+          <td>
+          <input type="text" class=" table-control term" name="jp_hour[]" value=""><span class="study_year">hour</span> 
+          </td>
+          <td>
+          <input type="text" class=" table-control term" name="jp_year[]" value=""><span class="study_year">year</span> 
+          </td>
+        </tr>
+        <tr>
+          <td>
+          <input type="text" class=" table-control"  name="jp_name[]" id="jp_name" value="">
+          </td>
+          <td>
+          <input type="text" class=" table-control"  name="jp_level[]" id="jp_level" value="">
+          </td>
+          <td>
+          <div class="">
+          <select name="jp_status[]" class="table-control col-md-12">
+                <option value=""></option>
+                <option value="1">Completed</option>
+                <option value="0">Still studying</option>
+            </select>
+        </div>
+          </td>
+          <td>
+          <input type="text" class=" table-control"  name="jp_address[]" id="jp_address" value="">
+          </td>
+          <td>
+          <input type="month" class=" table-control strEnd"  name="jp_start_date[]" id="jp_address" value="">
+          </td>
+          <td>
+          <input type="month" class=" table-control strEnd"  name="jp_end_date[]" value="">
+          </td>
+          <td>
+          <input type="text" class=" table-control term" name="jp_hour[]" value=""><span class="study_year">hour</span> 
+          </td>
+          <td>
+          <input type="text" class=" table-control term" name="jp_year[]" value=""><span class="study_year">year</span> 
+          </td>
+        </tr>
+        <tr>
+          <td>
+          <input type="text" class=" table-control"  name="jp_name[]" id="jp_name" value="">
+          </td>
+          <td>
+          <input type="text" class=" table-control"  name="jp_level[]" id="jp_level" value="">
+          </td>
+          <td>
+          <div class="">
+          <select name="jp_status[]" class="table-control col-md-12">
+                <option value=""></option>
+                <option value="1">Completed</option>
+                <option value="0">Still studying</option>
+            </select>
+        </div>
+          </td>
+          <td>
+          <input type="text" class=" table-control"  name="jp_address[]" id="jp_address" value="">
+          </td>
+          <td>
+          <input type="month" class=" table-control strEnd"  name="jp_start_date[]" id="jp_address" value="">
+          </td>
+          <td>
+          <input type="month" class=" table-control strEnd"  name="jp_end_date[]" value="">
+          </td>
+          <td>
+          <input type="text" class=" table-control term" name="jp_hour[]" value=""><span class="study_year">hour</span> 
+          </td>
+          <td>
+          <input type="text" class=" table-control term" name="jp_year[]" value=""><span class="study_year">year</span> 
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 
 </div>
 <!-- Table -->
-
-
+<!-- Table -->
 <div class="col-md-8 float-left">
-<h6 class="" style="padding: 33px 0px 12px;">Achievement in JP language tests</h6>
-<div class="tbl">
-<table class="table-bordered" name="applicant_id">
-  <thead class="tbl_head">
-    <tr>
-      <th>Name of Japanese language test</th>
-      <th>Level</th>
-      <th>Exam Years</th>
-      <th >Score</th>
-      <th>Result</th>
-      <th>Date of Qualification</th>
-    </tr>
-  </thead>
-  <tbody>
-    
-    <tr>
-      <td>
-      <input type="text" class=" table-control"  name="achiv_name[]" value="">
-      </td>
-      <td>
-      <input type="text" class=" table-control"  name="achiv_level[]" value="">
-      </td>
-      <td>
-      <input type="text" class=" table-control"  name="achiv_exam_year[]" value="">
-      </td>
-      <td>
-      <input type="text" class=" table-control"  name="achiv_score[]" value="">
-      </td>
-      <td>
-      <input type="text" class=" table-control term" name="achiv_result[]" value="">
-      </td>
-      <td>
-      <input type="date" class=" table-control" name="date_qualification[]" value="">
-      </td>
-    </tr>
-    <tr>
-      <td>
-      <input type="text" class=" table-control"  name="achiv_name[]" value="">
-      </td>
-      <td>
-      <input type="text" class=" table-control"  name="achiv_level[]" value="">
-      </td>
-      <td>
-      <input type="text" class=" table-control"  name="achiv_exam_year[]" value="">
-      </td>
-      <td>
-      <input type="text" class=" table-control"  name="achiv_score[]" value="">
-      </td>
-      <td>
-      <input type="text" class=" table-control term" name="achiv_result[]" value=""> 
-      </td>
-      <td>
-      <input type="date" class=" table-control" name="date_qualification[]" value="">
-      </td>
-    </tr>
-    <tr>
-      <td>
-      <input type="text" class=" table-control"  name="achiv_name[]" value="">
-      </td>
-      <td>
-      <input type="text" class=" table-control"  name="achiv_level[]" value="">
-      </td>
-      <td>
-      <input type="text" class=" table-control"  name="achiv_exam_year[]" value="">
-      </td>
-      <td>
-      <input type="text" class=" table-control"  name="achiv_score[]" value="">
-      </td>
-      <td>
-      <input type="text" class=" table-control term" name="achiv_result[]" value=""> 
-      </td>
-      <td>
-      <input type="date" class=" table-control" name="date_qualification[]" value="">
-      </td>
-    </tr>
-  </tbody>
-</table>
-<br>
-<p style="width: 40%;margin: 0;float: left;">Japanese Language Proficiency </p>
-<select name="jplearn_achievement" id="jplearn_achievement" class="planning_select" style="margin-top: 0px;margin-bottom: 20px;">
-        <option value="1">Yes</option>
-        <option value="0">No</option>
-</select>
-<div class="form-group">
-        <?php echo form_label('Certificate Number','jp_certificate_number', array('class' => '')); ?>
-        <span class="badge badge-danger">Required</span>
-        <?php
-          echo form_input(array(
-            'name' => 'jp_certificate_number',
-            'type' => 'text',
-            'value' => html_escape(set_value('phone',isset($result)?$result->jp_certificate_number:''), ENT_QUOTES),
-            'placeholder' => 'Please Enter!',
-            'class' => 'form-control',
-            'id' => 'jp_certificate_number',
-            'autocomplete' => ''));
-        ?>
-        <span class="text-danger"><?php echo form_error('address'); ?></span>
-       </div>
+  <h6 class="" style="padding: 33px 0px 12px;">Achievement in JP language tests</h6>
+  <div class="tbl">
+    <table class="table-bordered" name="applicant_id">
+      <thead class="tbl_head">
+        <tr>
+          <th>Name of Japanese language test</th>
+          <th>Level</th>
+          <th>Exam Years</th>
+          <th >Score</th>
+          <th>Result</th>
+          <th>Date of Qualification</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+          <input type="text" class=" table-control"  name="achiv_name[]" value="">
+          </td>
+          <td>
+          <input type="text" class=" table-control"  name="achiv_level[]" value="">
+          </td>
+          <td>
+          <input type="text" class=" table-control"  name="achiv_exam_year[]" value="">
+          </td>
+          <td>
+          <input type="text" class=" table-control"  name="achiv_score[]" value="">
+          </td>
+          <td>
+          <input type="text" class=" table-control term" name="achiv_result[]" value="">
+          </td>
+          <td>
+          <input type="date" class=" table-control" name="date_qualification[]" value="">
+          </td>
+        </tr>
+        <tr>
+          <td>
+          <input type="text" class=" table-control"  name="achiv_name[]" value="">
+          </td>
+          <td>
+          <input type="text" class=" table-control"  name="achiv_level[]" value="">
+          </td>
+          <td>
+          <input type="text" class=" table-control"  name="achiv_exam_year[]" value="">
+          </td>
+          <td>
+          <input type="text" class=" table-control"  name="achiv_score[]" value="">
+          </td>
+          <td>
+          <input type="text" class=" table-control term" name="achiv_result[]" value=""> 
+          </td>
+          <td>
+          <input type="date" class=" table-control" name="date_qualification[]" value="">
+          </td>
+        </tr>
+        <tr>
+          <td>
+          <input type="text" class=" table-control"  name="achiv_name[]" value="">
+          </td>
+          <td>
+          <input type="text" class=" table-control"  name="achiv_level[]" value="">
+          </td>
+          <td>
+          <input type="text" class=" table-control"  name="achiv_exam_year[]" value="">
+          </td>
+          <td>
+          <input type="text" class=" table-control"  name="achiv_score[]" value="">
+          </td>
+          <td>
+          <input type="text" class=" table-control term" name="achiv_result[]" value=""> 
+          </td>
+          <td>
+          <input type="date" class=" table-control" name="date_qualification[]" value="">
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <p style="width: 40%;margin: 0;float: left;">Japanese Language Proficiency </p>
+    <select name="jplearn_achievement" id="jplearn_achievement" class="planning_select" style="margin-top: 0px;margin-bottom: 20px;">
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+    </select>
+    <div class="form-group">
+            <?php echo form_label('Certificate Number','jp_certificate_number', array('class' => '')); ?>
+            <span class="badge badge-danger">Required</span>
+            <?php
+              echo form_input(array(
+                'name' => 'jp_certificate_number',
+                'type' => 'text',
+                'value' => html_escape(set_value('phone',isset($result)?$result->jp_certificate_number:''), ENT_QUOTES),
+                'placeholder' => 'Please Enter!',
+                'class' => 'form-control',
+                'id' => 'jp_certificate_number',
+                'autocomplete' => ''));
+            ?>
+            <span class="text-danger"><?php echo form_error('address'); ?></span>
+     </div>
+  </div>
 </div>
-</div>
+<!-- table -->
+<!-- table -->
 <div class="col-md-4 float-left">
-<h6 class="" style="padding: 33px 0px 12px;">Name of JP language tests going to take</h6>
-<table class="table-bordered" name="applicant_id" id="going_to_take">
-  <thead class="tbl_head">
-    <tr>
-      <th>Name of Japanese language test</th>
-      <th>Level</th>
-      <th>Date</th>
-      
-    </tr>
-  </thead>
-  <tbody>
-    
-    <tr>
-      <td>
-      <input type="text" class=" table-control term" name="going_name[]" value="">
-      </td>
-      <td>
-      <input type="text" class=" table-control" name="going_level[]" value="">
-      </td>
-      <td>
-      <input type="date" class=" table-control" name="going_date[]" value="">
-      </td>
-    </tr>
-    <tr>
-      <td>
-      <input type="text" class=" table-control term" name="going_name[]" value="">
-      </td>
-      <td>
-      <input type="text" class=" table-control" name="going_level[]" value="">
-      </td>
-      <td>
-      <input type="date" class=" table-control" name="going_date[]" value="">
-      </td>
-    </tr>
-    <tr>
-      <td>
-      <input type="text" class=" table-control term" name="going_name[]" value="">
-      </td>
-      <td>
-      <input type="text" class=" table-control" name="going_level[]" value="">
-      </td>
-      <td>
-      <input type="date" class=" table-control" name="going_date[]" value="">
-      </td>
-    </tr>
-  </tbody>
-</table>
+  <h6 class="" style="padding: 33px 0px 12px;">Name of JP language tests going to take</h6>
+    <table class="table-bordered" name="applicant_id" id="going_to_take">
+      <thead class="tbl_head">
+        <tr>
+          <th>Name of Japanese language test</th>
+          <th>Level</th>
+          <th>Date</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+        
+        <tr>
+          <td>
+          <input type="text" class=" table-control term" name="going_name[]" value="">
+          </td>
+          <td>
+          <input type="text" class=" table-control" name="going_level[]" value="">
+          </td>
+          <td>
+          <input type="date" class=" table-control" name="going_date[]" value="">
+          </td>
+        </tr>
+        <tr>
+          <td>
+          <input type="text" class=" table-control term" name="going_name[]" value="">
+          </td>
+          <td>
+          <input type="text" class=" table-control" name="going_level[]" value="">
+          </td>
+          <td>
+          <input type="date" class=" table-control" name="going_date[]" value="">
+          </td>
+        </tr>
+        <tr>
+          <td>
+          <input type="text" class=" table-control term" name="going_name[]" value="">
+          </td>
+          <td>
+          <input type="text" class=" table-control" name="going_level[]" value="">
+          </td>
+          <td>
+          <input type="date" class=" table-control" name="going_date[]" value="">
+          </td>
+        </tr>
+      </tbody>
+    </table>
 </div>
-
 <!-- Table -->
 
 <!-- Table -->
 <div class="col-md-12 float-left">
-<h6 class="" style="padding: 33px 0px 12px;">History of Employment (Write in order, ending with the most recent employment.)</h6>
-<select name="employment_experience" id="employment_experience" class="planning_select" style="margin-top: 0px;margin-bottom: 20px;">
-        <option value="1">Yes</option>
-        <option value="0">No</option>
-</select>
+  <h6 class="" style="padding: 33px 0px 12px;">History of Employment (Write in order, ending with the most recent employment.)</h6>
+  <select name="employment_experience" id="employment_experience" class="planning_select" style="margin-top: 0px;margin-bottom: 20px;">
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+  </select>
 <div class="tbl">
-<table class="table-bordered" name="applicant_id">
-  <thead class="tbl_head">
-    <tr>
-      <th>Name of Employment</th>
-      <th>Address</th>
-      <th>Years</th>
-      <th>Starting <br>Year/Month  </th>
-      <th >Finishing <br>Year/Month </th>
-      <th>Job Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    
-    <tr>
-      <td>
-      <input type="text" class=" table-control"  name="emp_name[]" value="">
-      </td>
-      <td>
-      <input type="text" class=" table-control"  name="emp_address[]" value="">
-      </td>
-      <td>
-      <input type="text" class=" table-control term" name="emp_year[]" value="">
-      </td>
-      <td>
-      <input type="month" class=" table-control strEnd"  name="emp_start_date[]" value="">
-      </td>
-      <td>
-      <input type="month" class=" table-control strEnd"  name="emp_end_date[]" value="">
-      </td>
-      <td>
-      <input type="text" class=" table-control" name="emp_job_description[]" value="">
-      </td>
-    </tr>
-    <tr>
-      <td>
-      <input type="text" class=" table-control"  name="emp_name[]" value="">
-      </td>
-      <td>
-      <input type="text" class=" table-control"  name="emp_address[]" value="">
-      </td>
-      <td>
-      <input type="text" class=" table-control term" name="emp_year[]" value="">
-      </td>
-      <td>
-      <input type="month" class=" table-control strEnd"  name="emp_start_date[]" value="">
-      </td>
-      <td>
-      <input type="month" class=" table-control strEnd"  name="emp_end_date[]" value="">
-      </td>
-      <td>
-      <input type="text" class=" table-control" name="emp_job_description[]" value="">
-      </td>
-    </tr>
-    <tr>
-      <td>
-      <input type="text" class=" table-control"  name="emp_name[]" value="">
-      </td>
-      <td>
-      <input type="text" class=" table-control"  name="emp_address[]" value="">
-      </td>
-      <td>
-      <input type="text" class=" table-control term" name="emp_year[]" value="">
-      </td>
-      <td>
-      <input type="month" class=" table-control strEnd"  name="emp_start_date[]" value="">
-      </td>
-      <td>
-      <input type="month" class=" table-control strEnd"  name="emp_end_date[]" value="">
-      </td>
-      <td>
-      <input type="text" class=" table-control" name="emp_job_description[]" value="">
-      </td>
-    </tr>
-  </tbody>
-</table>
+    <table class="table-bordered" name="applicant_id">
+      <thead class="tbl_head">
+        <tr>
+          <th>Name of Employment</th>
+          <th>Address</th>
+          <th>Years</th>
+          <th>Starting <br>Year/Month  </th>
+          <th >Finishing <br>Year/Month </th>
+          <th>Job Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+          <input type="text" class=" table-control"  name="emp_name[]" value="">
+          </td>
+          <td>
+          <input type="text" class=" table-control"  name="emp_address[]" value="">
+          </td>
+          <td>
+          <input type="text" class=" table-control term" name="emp_year[]" value="">
+          </td>
+          <td>
+          <input type="month" class=" table-control strEnd"  name="emp_start_date[]" value="">
+          </td>
+          <td>
+          <input type="month" class=" table-control strEnd"  name="emp_end_date[]" value="">
+          </td>
+          <td>
+          <input type="text" class=" table-control" name="emp_job_description[]" value="">
+          </td>
+        </tr>
+        <tr>
+          <td>
+          <input type="text" class=" table-control"  name="emp_name[]" value="">
+          </td>
+          <td>
+          <input type="text" class=" table-control"  name="emp_address[]" value="">
+          </td>
+          <td>
+          <input type="text" class=" table-control term" name="emp_year[]" value="">
+          </td>
+          <td>
+          <input type="month" class=" table-control strEnd"  name="emp_start_date[]" value="">
+          </td>
+          <td>
+          <input type="month" class=" table-control strEnd"  name="emp_end_date[]" value="">
+          </td>
+          <td>
+          <input type="text" class=" table-control" name="emp_job_description[]" value="">
+          </td>
+        </tr>
+        <tr>
+          <td>
+          <input type="text" class=" table-control"  name="emp_name[]" value="">
+          </td>
+          <td>
+          <input type="text" class=" table-control"  name="emp_address[]" value="">
+          </td>
+          <td>
+          <input type="text" class=" table-control term" name="emp_year[]" value="">
+          </td>
+          <td>
+          <input type="month" class=" table-control strEnd"  name="emp_start_date[]" value="">
+          </td>
+          <td>
+          <input type="month" class=" table-control strEnd"  name="emp_end_date[]" value="">
+          </td>
+          <td>
+          <input type="text" class=" table-control" name="emp_job_description[]" value="">
+          </td>
+        </tr>
+      </tbody>
+    </table>
 </div>
 </div>
 <!-- Table -->

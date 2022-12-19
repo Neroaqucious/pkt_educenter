@@ -124,6 +124,34 @@
 </select>
 </div>
   <!-- Status Name -->
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+ <script>
+    let myArray =[];
+    for(var x = 0; x < myArray.length; x++) {
+
+(function(x){
+     tx.executeSql("SELECT * FROM table WHERE entry reference = '"+myArray[x].TimeStamp+"' ", [], function(tx,result){
+
+     var tempArray = [];
+     var len = result.rows.length;
+     for (var i = 0; i < len; i++){
+
+     var tempObject = {
+     "Value": result.rows.item(i).value
+     }
+     tempArray.push(tempObject);
+
+     }
+
+     myArray[x].embeddedArray = tempArray;
+
+
+     });
+  })(x);
+};
+  </script>
+ 
   <!-- Register date -->
   <div class="col-md-10" id="register_date"  style="display: none;">
     <div class="form-group school_list"  style="width:60% ;padding: 0px;">
