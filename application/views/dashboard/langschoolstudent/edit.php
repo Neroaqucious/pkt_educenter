@@ -84,84 +84,86 @@
               'id' => 'clickImg',
               'accept' => 'images/*'
               ));
-            ?>
-                                    <span class="text-danger"><?php echo form_error('signfile'); ?></span>
-                                    <?php if(!empty($result->image_file)) { ?>
-                                    <img src="<?php echo base_url('upload/assets/adm/usr/'.$result->sign_file); ?>"
-                                        width="100px;" class="pb-1">
-                                    <?php } ?>
-                                    <div class="form-group" id="showImg2"></div>
-                                </div>
-                                <span class="text-danger"><?php echo form_error('sign_file'); ?></span>
-                            </div>
-                            <!-- Student Photo -->
+            ?>            
+            <span class="text-danger"><?php echo form_error('signfile'); ?></span>
+            <?php if(!empty($result->image_file)) { ?>
+              <img src="<?php echo base_url('upload/assets/adm/usr/'.$result->sign_file); ?>" width="100px;" class="pb-1">
+            <?php } ?>
+            <div class="form-group" id="showImg2"></div>               
+    </div>
+  <span class="text-danger"><?php echo form_error('sign_file'); ?></span>
+  </div>
+  <!-- Student Photo -->  
 
-                            <!-- JLS Name -->
-                            <div class="school_list" name="">
-                                <p class="list_label">JLS Name </p>
-                                <select name="jls_name" class="school_select" id="jls_name">
-                                    <option value="" <?php if($result->jls_name== "") echo "selected"; ?>>Please Select!
-                                    </option>
-                                    <option value="ECC" <?php if($result->jls_name== "ECC") echo "selected"; ?>>ECC
-                                    </option>
-                                    <option value="JCLI" <?php if($result->jls_name== "JCLI") echo "selected"; ?>>JCLI
-                                    </option>
-                                    <option value="OJLS" <?php if($result->jls_name== "OJLS") echo "selected"; ?>>OJLS
-                                    </option>
-                                    <option value="fukuoka" <?php if($result->jls_name== "Fukuoka") echo "selected"; ?>>
-                                        fukuoka</option>
-                                    <option value="shizuoka"
-                                        <?php if($result->jls_name== "Shizuoka") echo "selected"; ?>>shizuoka</option>
-                                </select>
-                            </div>
-                            <!-- JLS Name -->
+<!-- JLS Name -->
+<div class="school_list" name="" >
+<p class="list_label">JLS Name  </p>
+<select name="jls_name" class="school_select" id="jls_name">
+    <option value="" <?php if($result->jls_name== "") echo "selected"; ?>>Please Select!</option>
+    <option value="ECC" <?php if($result->jls_name== "ECC") echo "selected"; ?>>ECC</option>
+    <option value="JCLI" <?php if($result->jls_name== "JCLI") echo "selected"; ?>>JCLI</option>
+    <option value="OJLS" <?php if($result->jls_name== "OJLS") echo "selected"; ?>>OJLS</option>
+    <option value="fukuoka" <?php if($result->jls_name== "Fukuoka") echo "selected"; ?>>fukuoka</option>
+    <option value="shizuoka" <?php if($result->jls_name== "Shizuoka") echo "selected"; ?>>shizuoka</option>
+</select>
+</div>
+<!-- JLS Name -->
 
-                            <!-- Status -->
-                            <div class="status_popup">
-                                <div class="school_list status_select" name="">
-                                    <p class="list_label">Status </p>
-                                    <select name="appli_status" id="appli_status" class="school_select"
-                                        onchange="increase()">
-                                        <option value="">Please Select!</option>
-                                        <option value="Register"
-                                            <?php if($result->appli_status== "Register") echo "selected"; ?>>Register
-                                        </option>
-                                        <option value="Interview"
-                                            <?php if($result->appli_status== "Interview") echo "selected"; ?>>Interview
-                                        </option>
-                                        <option value="Interview Failed"
-                                            <?php if($result->appli_status== "Interview Failed") echo "selected"; ?>>
-                                            Interview Failed</option>
-                                        <option value="Admission"
-                                            <?php if($result->appli_status== "Admission") echo "selected"; ?>>Admission
-                                        </option>
-                                        <option value="Admission Complete"
-                                            <?php if($result->appli_status== "Admission Complete") echo "selected"; ?>>
-                                            Admission Complete</option>
-                                        <option value="COE Waiting"
-                                            <?php if($result->appli_status== "COE Waiting") echo "selected"; ?>>COE
-                                            Waiting</option>
-                                        <option value="Cancel"
-                                            <?php if($result->appli_status== "Cancel") echo "selected"; ?>>Cancel
-                                        </option>
-                                        <option value="COE Passed"
-                                            <?php if($result->appli_status== "COE Passed") echo "selected"; ?>>COE
-                                            Passed</option>
-                                        <option value="COE Failed"
-                                            <?php if($result->appli_status== "COE Failed") echo "selected"; ?>>COE
-                                            Failed</option>
-                                    </select>
-                                </div>
-                                <!-- Status Name -->
-                                <!-- Register date -->
-                                <div class="col-md-10" id="register_date" style="display: none;">
-                                    <div class="form-group school_list" style="width:60% ;padding: 0px;">
-                                        <p class="list_label" style="width: 48.5%;">
-                                            <label style="margin-bottom: 0px;margin-top: 12px;">Register Date</label>
-                                            <span class="badge badge-danger">Required</span>
+<!-- Status -->
+<div class="status_popup" >
+<div class="school_list status_select" name="" >
+<p class="list_label">Status </p>
+<select name="appli_status" id="sele_popup " class="school_select">
+<option value="">Please Select!</option>
+        <option value="Register" <?php if($result->appli_status== "Register") echo "selected"; ?>>Register</option>
+        <option value="Interview" <?php if($result->appli_status== "Interview") echo "selected"; ?>>Interview</option>
+        <option value="Interview Failed" <?php if($result->appli_status== "Interview Failed") echo "selected"; ?>>Interview Failed</option>
+        <option value="Admission" <?php if($result->appli_status== "Admission") echo "selected"; ?>>Admission</option>
+        <option value="Admission Complete" <?php if($result->appli_status== "Admission Complete") echo "selected"; ?>>Admission Complete</option>
+        <option value="COE Waiting" <?php if($result->appli_status== "COE Waiting") echo "selected"; ?>>COE Waiting</option>
+        <option value="Cancel" <?php if($result->appli_status== "Cancel") echo "selected"; ?>>Cancel</option>
+        <option value="COE Passed" <?php if($result->appli_status== "COE Passed") echo "selected"; ?>>COE Passed</option>
+        <option value="COE Failed" <?php if($result->appli_status== "COE Failed") echo "selected"; ?>>COE Failed</option>
+</select>
+</div>
+  <!-- Status Name -->
 
-                                        </p>
-                                        <?php
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+ <script>
+    let myArray =[];
+    for(var x = 0; x < myArray.length; x++) {
+
+(function(x){
+     tx.executeSql("SELECT * FROM table WHERE entry reference = '"+myArray[x].TimeStamp+"' ", [], function(tx,result){
+
+     var tempArray = [];
+     var len = result.rows.length;
+     for (var i = 0; i < len; i++){
+
+     var tempObject = {
+     "Value": result.rows.item(i).value
+     }
+     tempArray.push(tempObject);
+
+     }
+
+     myArray[x].embeddedArray = tempArray;
+
+
+     });
+  })(x);
+};
+  </script>
+ 
+  <!-- Register date -->
+  <div class="col-md-10" id="register_date"  style="display: none;">
+    <div class="form-group school_list"  style="width:60% ;padding: 0px;">
+    <p class="list_label" style="width: 48.5%;">
+       <label style="margin-bottom: 0px;margin-top: 12px;">Register Date</label>
+       <span class="badge badge-danger" >Required</span>
+
+    </p>
+        <?php
           echo form_input(array(
             'name' => 'register_date',
             'type' => 'date',
