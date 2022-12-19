@@ -1,0 +1,10 @@
+.cache
+dist
+node_modules
+.DS_Store
+./database/*
+./upload/assets/adm/cos/*
+./upload/assets/adm/inst/*
+./upload/assets/adm/mov/*
+./upload/assets/adm/new/*
+./upload/assets/adm/usr/*

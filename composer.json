@@ -1,0 +1,7 @@
+{
+    "require": {
+        "mpdf/mpdf": "^8.1",
+        "phpoffice/phpspreadsheet": "^1.25",
+        "chriskacerguis/codeigniter-restserver": "^3.1"
+    }
+}

@@ -1,0 +1,35 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2022-09-08 00:04:52 --> 404 Page Not Found: Wp-includes/wlwmanifest.xml
+ERROR - 2022-09-08 00:04:52 --> 404 Page Not Found: Xmlrpcphp/index
+ERROR - 2022-09-08 00:04:52 --> 404 Page Not Found: Blog/wp-includes
+ERROR - 2022-09-08 00:04:52 --> 404 Page Not Found: Web/wp-includes
+ERROR - 2022-09-08 00:04:53 --> 404 Page Not Found: Wordpress/wp-includes
+ERROR - 2022-09-08 00:04:53 --> 404 Page Not Found: Website/wp-includes
+ERROR - 2022-09-08 00:04:53 --> 404 Page Not Found: Wp/wp-includes
+ERROR - 2022-09-08 00:04:53 --> 404 Page Not Found: News/wp-includes
+ERROR - 2022-09-08 00:04:53 --> 404 Page Not Found: 2018/wp-includes
+ERROR - 2022-09-08 00:04:54 --> 404 Page Not Found: 2019/wp-includes
+ERROR - 2022-09-08 00:04:54 --> 404 Page Not Found: Shop/wp-includes
+ERROR - 2022-09-08 00:04:55 --> 404 Page Not Found: Wp1/wp-includes
+ERROR - 2022-09-08 00:04:55 --> 404 Page Not Found: Test/wp-includes
+ERROR - 2022-09-08 00:04:55 --> 404 Page Not Found: Media/wp-includes
+ERROR - 2022-09-08 00:04:55 --> 404 Page Not Found: Wp2/wp-includes
+ERROR - 2022-09-08 00:04:55 --> 404 Page Not Found: Site/wp-includes
+ERROR - 2022-09-08 00:04:55 --> 404 Page Not Found: Cms/wp-includes
+ERROR - 2022-09-08 00:04:56 --> 404 Page Not Found: Sito/wp-includes
+ERROR - 2022-09-08 11:22:01 --> 404 Page Not Found: Wp-includes/ID3
+ERROR - 2022-09-08 11:22:01 --> 404 Page Not Found: Feed/index
+ERROR - 2022-09-08 11:22:01 --> 404 Page Not Found: Xmlrpcphp/index
+ERROR - 2022-09-08 11:22:02 --> 404 Page Not Found: Blog/wp-includes
+ERROR - 2022-09-08 11:22:02 --> 404 Page Not Found: Web/wp-includes
+ERROR - 2022-09-08 11:22:03 --> 404 Page Not Found: Wordpress/wp-includes
+ERROR - 2022-09-08 11:22:03 --> 404 Page Not Found: Wp/wp-includes
+ERROR - 2022-09-08 11:22:03 --> 404 Page Not Found: 2020/wp-includes
+ERROR - 2022-09-08 11:22:03 --> 404 Page Not Found: 2019/wp-includes
+ERROR - 2022-09-08 11:22:03 --> 404 Page Not Found: 2021/wp-includes
+ERROR - 2022-09-08 11:22:03 --> 404 Page Not Found: Shop/wp-includes
+ERROR - 2022-09-08 11:22:03 --> 404 Page Not Found: Wp1/wp-includes
+ERROR - 2022-09-08 11:22:03 --> 404 Page Not Found: Test/wp-includes
+ERROR - 2022-09-08 11:22:03 --> 404 Page Not Found: Site/wp-includes
+ERROR - 2022-09-08 11:22:03 --> 404 Page Not Found: Cms/wp-includes

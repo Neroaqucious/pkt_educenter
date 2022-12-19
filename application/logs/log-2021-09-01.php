@@ -1,0 +1,31 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2021-09-01 00:50:14 --> 404 Page Not Found: Asset/admin
+ERROR - 2021-09-01 00:56:59 --> 404 Page Not Found: Asset/admin
+ERROR - 2021-09-01 00:57:04 --> 404 Page Not Found: Asset/admin
+ERROR - 2021-09-01 00:57:20 --> 404 Page Not Found: Asset/admin
+ERROR - 2021-09-01 00:59:26 --> 404 Page Not Found: Asset/admin
+ERROR - 2021-09-01 12:45:17 --> 404 Page Not Found: Undefined/index
+ERROR - 2021-09-01 12:45:25 --> 404 Page Not Found: Undefined/index
+ERROR - 2021-09-01 12:45:30 --> 404 Page Not Found: Undefined/index
+ERROR - 2021-09-01 12:45:35 --> 404 Page Not Found: Undefined/index
+ERROR - 2021-09-01 12:45:40 --> 404 Page Not Found: Undefined/index
+ERROR - 2021-09-01 12:45:45 --> 404 Page Not Found: Undefined/index
+ERROR - 2021-09-01 12:45:47 --> 404 Page Not Found: Asset/admin
+ERROR - 2021-09-01 12:45:50 --> 404 Page Not Found: Undefined/index
+ERROR - 2021-09-01 12:45:55 --> 404 Page Not Found: Undefined/index
+ERROR - 2021-09-01 12:46:01 --> 404 Page Not Found: Undefined/index
+ERROR - 2021-09-01 12:46:05 --> 404 Page Not Found: Undefined/index
+ERROR - 2021-09-01 12:46:10 --> 404 Page Not Found: Undefined/index
+ERROR - 2021-09-01 12:46:15 --> 404 Page Not Found: Undefined/index
+ERROR - 2021-09-01 12:46:20 --> 404 Page Not Found: Undefined/index
+ERROR - 2021-09-01 12:46:25 --> 404 Page Not Found: Undefined/index
+ERROR - 2021-09-01 12:46:30 --> 404 Page Not Found: Undefined/index
+ERROR - 2021-09-01 12:46:35 --> 404 Page Not Found: Undefined/index
+ERROR - 2021-09-01 12:46:40 --> 404 Page Not Found: Undefined/index
+ERROR - 2021-09-01 12:46:45 --> 404 Page Not Found: Undefined/index
+ERROR - 2021-09-01 12:46:50 --> 404 Page Not Found: Undefined/index
+ERROR - 2021-09-01 12:46:55 --> 404 Page Not Found: Undefined/index
+ERROR - 2021-09-01 12:47:00 --> 404 Page Not Found: Undefined/index
+ERROR - 2021-09-01 12:47:05 --> 404 Page Not Found: Undefined/index
+ERROR - 2021-09-01 12:59:03 --> 404 Page Not Found: Asset/admin
