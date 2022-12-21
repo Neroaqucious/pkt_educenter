@@ -11,9 +11,9 @@
     <div class="col controls-wrapper mt-3 mt-md-0 d-none d-md-block ">
       <div class="controls d-flex justify-content-center justify-content-md-end float-right">
       <a href="<?php echo base_url('adm/portal/jls_applicant'); ?>" class="btn btn-secondary py-1 px-2" ><span class="material-icons align-text-bottom">reorder</span></a>
-      </div>
     </div>
-  </div> 
+  </div>
+</div> 
 
 <?php if(!empty($_SESSION['msg_success'])){ ?>
   <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -32,162 +32,161 @@
     </button>
   </div>
 <?php } ?>
-<style>
 
-label {
-    font-weight: 400;
-    font-size: 16px !important;
-}      
-.std_img{
-    padding-top: 12px;
-}
-.list_label{
-    padding-top: 12px;
-}
-.comfirm_val{
-    /* padding-left: 12px; */
+<style>
+  label {
+      font-weight: 400;
+      font-size: 16px !important;
+  }      
+  .std_img{
+      padding-top: 12px;
+  }
+  .list_label{
+      padding-top: 12px;
+  }
+  .comfirm_val{
+      /* padding-left: 12px; */
+      font-size: 14px;
+  }
+  .tbl_comfirmVal{
     font-size: 14px;
-}
-.tbl_comfirmVal{
-  font-size: 14px;
-}
-p{
-  margin-bottom: 0px;
-}
+  }
+  p{
+    margin-bottom: 0px;
+  }
 </style>
+
 <div class="content">
 <div class="row">
 <div class="col-lg-12 col-md-12 mb-4 mb-lg-0">
 <div class="card">
-<div class="card-body">
-<?php 
-                $attr = array('class' => "");
-                echo form_open('adm/portal/jls_applicant/store', $attr); 
+  <div class="card-body">
+      <?php 
+            $attr = array('class' => "");
+            echo form_open('adm/portal/jls_applicant/store', $attr); 
+        
+            $data = array(
+              'name'  => 'jls_name',
+              'type' => 'hidden',
+              'value' => $lists['jls_name'],
+            );
+            $data = array(
+              'name'  => 'jls_name',
+              'type' => 'hidden',
+              'value' => $lists['jls_name'],
+            );
+            echo form_input($data);
+            $data = array(
+              'name'  => 'image_file',
+              'type' => 'hidden',
+              'value' => $lists['image_file'],
+            );
+            echo form_input($data);
+            $data = array(
+              'name'  => 'sign_file',
+              'type' => 'hidden',
+              'value' => $lists['sign_file'],
+            );
+            echo form_input($data);
+            $data = array(
+              'name'  => 'family_file',
+              'type' => 'hidden',
+              'value' => $lists['family_file'],
+            );
+            echo form_input($data);
+            $data = array(
+              'name'  => 'applicant_name',
+              'type' => 'hidden',
+              'value' => $lists['applicant_name'],
+            );
+            echo form_input($data);
+              
+            $data = array(
+              'name'  => 'applicant_name_kanji',
+              'type' => 'hidden',
+              'value' => $lists['applicant_name_kanji'],
+            );
+            echo form_input($data);
             
-                $data = array(
-                  'name'  => 'jls_name',
-                  'type' => 'hidden',
-                  'value' => $lists['jls_name'],
-                );
-                $data = array(
-                  'name'  => 'jls_name',
-                  'type' => 'hidden',
-                  'value' => $lists['jls_name'],
-                );
-                echo form_input($data);
-                $data = array(
-                  'name'  => 'image_file',
-                  'type' => 'hidden',
-                  'value' => $lists['image_file'],
-                );
-                echo form_input($data);
-                $data = array(
-                  'name'  => 'sign_file',
-                  'type' => 'hidden',
-                  'value' => $lists['sign_file'],
-                );
-                echo form_input($data);
-                $data = array(
-                  'name'  => 'family_file',
-                  'type' => 'hidden',
-                  'value' => $lists['family_file'],
-                );
-                echo form_input($data);
-                $data = array(
-                  'name'  => 'applicant_name',
-                  'type' => 'hidden',
-                  'value' => $lists['applicant_name'],
-                );
-                echo form_input($data);
-                  
-                $data = array(
-                  'name'  => 'applicant_name_kanji',
-                  'type' => 'hidden',
-                  'value' => $lists['applicant_name_kanji'],
-                );
-                echo form_input($data);
-                
-                $data = array(
-                  'name'  => 'date_of_birthday',
-                  'type' => 'hidden',
-                  'value' => $lists['date_of_birthday'],
-                );
-                echo form_input($data);
-                
-                $data = array(
-                  'name'  => 'place_birth',
-                  'type' => 'hidden',
-                  'value' => $lists['place_birth'],
-                );
-                echo form_input($data);   
-                $data = array(
-                  'name'  => 'have_you_visited_jp',
-                  'type' => 'hidden',
-                  'value' => $data_details['have_you_visited_jp'],
-                );
-                echo form_input($data);
-                $data = array(
-                  'name'  => 'visited_date',
-                  'type' => 'hidden',
-                  'value' => $data_details['visited_date'],
-                );
-                echo form_input($data);               
-              ?> 
-    <?php
-      $attributes = array('class' => 'form-horizontal form-label-left');
-      echo form_open_multipart('adm/portal/jls_applicant/confirm', $attributes);
-    ?>
-<div class="col-md-12">
+            $data = array(
+              'name'  => 'date_of_birthday',
+              'type' => 'hidden',
+              'value' => $lists['date_of_birthday'],
+            );
+            echo form_input($data);
+            
+            $data = array(
+              'name'  => 'place_birth',
+              'type' => 'hidden',
+              'value' => $lists['place_birth'],
+            );
+            echo form_input($data);   
+            $data = array(
+              'name'  => 'have_you_visited_jp',
+              'type' => 'hidden',
+              'value' => $data_details['have_you_visited_jp'],
+            );
+            echo form_input($data);
+            $data = array(
+              'name'  => 'visited_date',
+              'type' => 'hidden',
+              'value' => $data_details['visited_date'],
+            );
+            echo form_input($data);               
+      ?> 
+      <?php
+        $attributes = array('class' => 'form-horizontal form-label-left');
+        echo form_open_multipart('adm/portal/jls_applicant/confirm', $attributes);
+      ?>
+    <div class="col-md-12">
+      <!-- Student Photo -->
+        <div class="col-md-6" style="display: flex;padding-top: 32px;">
+          <?php
+              echo form_label('Applicant Photo','image_file', array('class' => 'col-form-label')) ;
+          ?>
+          <div class="std_img">
+            <?php echo $lists['image_file']; ?>
+          </div>
+        </div>
+      <!-- Student Photo -->  
+      <!-- Student Sign -->
+        <div class="col-md-6" style="display: flex;padding-top: 12px;">
+          <?php
+              echo form_label('Applicant Sign','signfile', array('class' => 'col-form-label')) ;
+          ?>
+          <div class="std_img">
+          <?php echo $lists['sign_file']; ?>
+          </div>  
+        </div>
+      <!-- Student Sign -->
 
-<!-- Student Photo -->
-<div class="col-md-6" style="display: flex;padding-top: 32px;">
-<?php
-    echo form_label('Applicant Photo','image_file', array('class' => 'col-form-label')) ;
-?>
-<div class="std_img">
-<?php echo $lists['image_file']; ?>
-</div>
-</div>
-<!-- Student Photo -->  
+      <!-- JLS Name  -->
+        <div class="col-md-6 school_list" name="" >
+            <label class="list_label">JLS Name </label>
+            <p name="jls_name" id="jls_name" class="list_label"><?php echo $lists['jls_name']; ?></p>
+        </div>
+      <!-- JLS Name -->
 
-<!-- Student Sign -->
-<div class="col-md-6" style="display: flex;padding-top: 12px;">
-<?php
-    echo form_label('Applicant Sign','signfile', array('class' => 'col-form-label')) ;
-?>
-<div class="std_img">
-<?php echo $lists['sign_file']; ?>
-</div>  
-</div>
-<!-- Student Sign -->
+      <!-- Status  -->
+        <div class="col-md-6 school_list" name="" >
+            <label class="list_label">Status </label>
+            <p name="appli_status" id="appli_status" class="list_label"><?php echo $lists['appli_status']; ?></p>
+        </div>
+      <!-- Status -->
 
-<!-- JLS Name  -->
-<div class="col-md-6 school_list" name="" >
-    <label class="list_label">JLS Name </label>
-    <p name="jls_name" id="jls_name" class="list_label"><?php echo $lists['jls_name']; ?></p>
-</div>
-<!-- JLS Name -->
-
-<!-- Status  -->
-<div class="col-md-6 school_list" name="" >
-    <label class="list_label">Status </label>
-    <p name="appli_status" id="appli_status" class="list_label"><?php echo $lists['appli_status']; ?></p>
-</div>
-<!-- Status -->
-
-</div>
-</div>
+    </div>
+  </div>
   
 <!-- dropdown APPLICANT INFORMATION -->
-<div class="content_detail">
+ <div class="content_detail">
   <input class="dropdown" type="checkbox" id="faq-2">
   <p class="drop_ttl"><label for="faq-2" class="drop_label">APPLICANT INFORMATION  </label></p>
   <div class="drop_txt">
   <h4 class="appl_ttl"><span>※</span>Contact Details</h4>
  
   <!-- leftside -->
-   <div class="col-md-6 float-left">
-      <div class="form-group">
+  <div class="col-md-6 float-left">
+    <div class="form-group">
         <?php echo form_label('Name (アルファベット)', 'applicant_name', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'std_name')); ?>
         <p class="comfirm_val" id="applicant_name" name="applicant_name"><?php echo $lists['applicant_name']; ?></p>
     </div>
@@ -224,10 +223,10 @@ p{
 
     <div class="form-group">
        <?php echo form_label('Gender', 'gender', array( 'class' => 'form-control-label', 'id'=> '')); ?>
-       <p class="comfirm_val" id="gender" name="gender"><?php echo $lists['gender']; ?></p>
+       <p class="comfirm_val" id="gender" name="gender"><?php if($lists['gender'] == "1"){echo "Male";}else{echo "Female";} ?></p>
     </div> 
 <script>
-$(function() {  
+    $(function() {  
        if(($('#martial_status').text()) =="Single"){
          $('#partaner').hide();
         }else if(($('#martial_status').text())=="Married"){
@@ -239,7 +238,7 @@ $(function() {
 </script>
     <div class="form-group">
       <?php echo form_label('Martial Status', 'martial_status', array( 'class' => 'form-control-label', 'id'=> '')); ?>
-      <p class="comfirm_val" id="martial_status" name="martial_status"><?php echo $lists['martial_status']; ?></p>
+      <p class="comfirm_val" id="martial_status" name="martial_status"><?php if($lists['martial_status'] == "1"){echo "Single";}else{echo "Married";} ?></p>
     </div> 
      
     <div class="form-group " id="partaner">
@@ -275,20 +274,24 @@ $(function() {
 
    <div class="form-group">
         <?php echo form_label('Have you visited Japan?', 'have_you_visited_jp', array( 'class' => 'form-control-label', 'id'=> '')); ?>
-        <p class="comfirm_val" id="have_you_visited_jp" name="have_you_visited_jp"><?php echo $data_details['have_you_visited_jp']; ?></p>
+        <p class="comfirm_val" id="have_you_visited_jp" name="have_you_visited_jp"><?php if($data_details['have_you_visited_jp'] == "1"){echo "Yes";}else{echo "No";} ?></p>
   </div>
+
   <div class="form-group">
         <?php echo form_label('Have you visited Japan?', 'visited_jp_status', array( 'class' => 'form-control-label', 'id'=> '')); ?>
         <p class="comfirm_val" id="visited_jp_status" name="visited_jp_status"><?php echo $data_details['visited_jp_status']; ?></p>
   </div>
+
   <div class="form-group">
         <?php echo form_label('Date of Entry', 'visited_date', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'phone')); ?>
         <p class="comfirm_val" id="visited_date" name="visited_date"><?php echo $data_details['visited_date']; ?></p>
   </div>
+
   <div class="form-group">
         <?php echo form_label('Times of Entry', 'entry_time', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'phone')); ?>
         <p class="comfirm_val" id="entry_time" name="entry_time"><?php echo $data_details['entry_time']; ?></p>
   </div>
+
   <div class="form-group">
         <?php echo form_label('Date of Departure', 'date_of_departure', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'phone')); ?>
         <p class="comfirm_val" id="date_of_departure" name="date_of_departure"><?php echo $data_details['date_of_departure']; ?></p>
@@ -301,7 +304,7 @@ $(function() {
 
   <div class="form-group">
         <?php echo form_label('Departure by deportation / departure order or not', 'departure_deportation', array( 'class' => 'form-control-label', 'id'=> '')); ?>
-        <p class="comfirm_val" id="departure_deportation" name="departure_deportation"><?php echo $data_details['departure_deportation']; ?></p>
+        <p class="comfirm_val" id="departure_deportation" name="departure_deportation"><?php if($data_details['departure_deportation'] == "1"){echo "Yes";}else{echo "No";} ?></p>
   </div>
 
   <div class="form-group">
@@ -333,32 +336,31 @@ $(function() {
         <?php echo form_label('Grade', 'current_status_school_grade', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'phone')); ?>
         <p class="comfirm_val" id="current_status_school_grade" name="current_status_school_grade"><?php echo $data_details['current_status_school_grade']; ?></p>
   </div>
+
   <div class="form-group">
         <?php echo form_label('What do you want to do in Japan? ‌', 'what_todo_japan', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'what_todo_japan')); ?>
         <p class="comfirm_val" id="what_todo_japan" name="what_todo_japan"><?php echo $other_info['what_todo_japan']; ?></p>
   </div>
+
   <div class="form-group">
         <?php echo form_label('Others (If your are a student of Japanese language course, or neither a student nor a worker, explain your current situation in detail. ‌', 'student_work_details', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'student_work_details')); ?>
         <p class="comfirm_val" id="student_work_details" name="student_work_details"><?php echo $other_info['student_work_details']; ?></p>
   </div>
 
-  
-
   <div class="form-group">
-  <?php echo form_label('What language can you use?', 'language_can_you_use', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'COE_reject')); ?>
-  <p class="comfirm_val" id="language_can_you_use" name="language_can_you_use"><?php echo $other_info['language_can_you_use']; ?></p>   
+    <?php echo form_label('What language can you use?', 'language_can_you_use', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'COE_reject')); ?>
+    <p class="comfirm_val" id="language_can_you_use" name="language_can_you_use"><?php echo $other_info['language_can_you_use']; ?></p>   
+  </div>
+ 
+  <div class="form-group" id="specific_plans">
+      <h6 class="spec_plan">Specific Plans after Graduating</h6>
+      <?php echo form_label('Specific Plans after Graduating', 'specific_plans_after_graduating', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'phone')); ?>
+      <p class="comfirm_val" id="specific_plans_after_graduating" name="specific_plans_after_graduating"><?php echo $data_details['specific_plans_after_graduating']; ?></p>
   </div>
 
-  
-  <div class="form-group" id="specific_plans">
-  <h6 class="spec_plan">Specific Plans after Graduating</h6>
-        <?php echo form_label('Specific Plans after Graduating', 'specific_plans_after_graduating', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'phone')); ?>
-        <p class="comfirm_val" id="specific_plans_after_graduating" name="specific_plans_after_graduating"><?php echo $data_details['specific_plans_after_graduating']; ?></p>
-  </div>
   <br>
   <h6 class="spec_plan">Higher Education in Japan</h6>
   <div class="form-group">
-
         <?php echo form_label('Type of Schools', 'specific_plan_type_schools', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'phone')); ?>
         <p class="comfirm_val" id="specific_plan_type_schools" name="specific_plan_type_schools"><?php echo $data_details['specific_plan_type_schools']; ?></p>
   </div>
@@ -366,12 +368,10 @@ $(function() {
         <?php echo form_label('Name of School', 'specific_plan_school_name', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'phone')); ?>
         <p class="comfirm_val" id="specific_plan_school_name" name="specific_plan_school_name"><?php echo $data_details['specific_plan_school_name']; ?></p>
   </div>
-
   <div class="form-group">
         <?php echo form_label('Major', 'specific_plan_major ', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'phone')); ?>
         <p class="comfirm_val" id="specific_plan_major" name="specific_plan_major"><?php echo $data_details['specific_plan_major']; ?></p>
   </div>
-
   <div class="form-group">
         <?php echo form_label('What is your special ability?', 'special_ability ', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'special_ability')); ?>
         <p class="comfirm_val" id="special_ability" name="special_ability"><?php echo $other_info['special_ability']; ?></p>
@@ -435,7 +435,7 @@ $(function() {
 
   <div class="form-group">
   <?php echo form_label('Passport', 'passport', array( 'class' => 'passport_text', 'id'=> '')); ?>
-  <p class="comfirm_val" id="passport" name="passport"><?php echo $lists['passport']; ?></p>
+  <p class="comfirm_val" id="passport" name="passport"><?php if($lists['passport'] == "1"){echo "Yes";}else{echo "No";} ?></p>
   </div>
 
   <div class="form-group">
@@ -466,7 +466,7 @@ $(function() {
 
   <div class="form-group">
       <?php echo form_label('Blank period／Military service', 'military_service', array( 'class' => 'military_txt', 'id'=> '')); ?>
-      <p class="comfirm_val" id="military_service" name="military_service"><?php echo $lists['military_service']; ?></p>
+      <p class="comfirm_val" id="military_service" name="military_service"><?php if($lists['military_service'] == "1"){echo "Yes";}else{echo "No";} ?></p>
   </div>
 
   <div class="form-group">
@@ -481,7 +481,7 @@ $(function() {
   
   <div class="form-group">
       <?php echo form_label('Accompanying Persons,if Any', 'accompanying_person', array( 'class' => 'form-control-label', 'id'=> '')); ?>
-      <p class="comfirm_val" id="accompanying_person" name="accompanying_person"><?php echo $data_details['accompanying_person']; ?></p>
+      <p class="comfirm_val" id="accompanying_person" name="accompanying_person"><?php if($data_details['accompanying_person'] == "1"){echo "Yes";}else{echo "No";} ?></p>
   </div>
 
   <div class="form-group">
@@ -491,7 +491,7 @@ $(function() {
 
   <div class="form-group">
       <?php echo form_label('Did you apply before in Japan?', 'school_apply_before_japan', array( 'class' => 'form-control-label', 'id'=> '')); ?>
-      <p class="comfirm_val" id="school_apply_before_japan" name="school_apply_before_japan"><?php echo $data_details['school_apply_before_japan']; ?></p>
+      <p class="comfirm_val" id="school_apply_before_japan" name="school_apply_before_japan"><?php if($data_details['school_apply_before_japan'] == "1"){echo "Yes";}else{echo "No";} ?></p>
   </div>
 
   <div class="form-group">
@@ -531,7 +531,7 @@ $(function() {
 
   <div class="form-group">
   <?php echo form_label('Have you ever experienced COE rejection?', 'COE_reject', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'COE_reject')); ?>
-  <p class="comfirm_val" id="COE_reject" name="COE_reject"><?php echo $data_details['COE_reject']; ?></p>   
+  <p class="comfirm_val" id="COE_reject" name="COE_reject"><?php if($data_details['COE_reject'] == "1"){echo "Yes";}else{echo "No";} ?></p>   
   </div>
 
   <div class="form-group">
@@ -555,12 +555,12 @@ $(function() {
   </div>
   <div class="form-group">
   <?php echo form_label('Is it possible to provide in English? ', 'provide_english', array( 'class' => 'form-control-label', 'id'=> '')); ?>
-  <p class="comfirm_val" id="provide_english" name="provide_english"><?php echo $data_details['provide_english']; ?></p>   
+  <p class="comfirm_val" id="provide_english" name="provide_english"><?php if($data_details['provide_english'] == "1"){echo "Yes";}else{echo "No";} ?></p>   
   </div>
 
   <div class="form-group">
   <?php echo form_label('Are you allergic to any medicine or foods?', 'allergic_medicine', array( 'class' => 'form-control-label', 'id'=> '')); ?>
-  <p class="comfirm_val" id="allergic_medicine" name="allergic_medicine"><?php echo $other_info['allergic_medicine']; ?></p>   
+  <p class="comfirm_val" id="allergic_medicine" name="allergic_medicine"><?php if($other_info['allergic_medicine'] == "1"){echo "Yes";}else{echo "No";} ?></p>   
   </div>
 
   <div class="form-group">
@@ -584,16 +584,16 @@ $(function() {
 
   <div class="form-group">
         <?php echo form_label('Criminal Record in Japan or Overseas', 'criminal_record', array( 'class' => 'form-control-label', 'id'=> '')); ?>
-        <p class="comfirm_val" id="criminal_record" name="criminal_record"><?php echo $data_details['criminal_record']; ?></p>   
+        <p class="comfirm_val" id="criminal_record" name="criminal_record"><?php if($data_details['criminal_record'] == "1"){echo "Yes";}else{echo "No";} ?></p>   
   </div>
    
   <div class="criminal float-left">
   <div class="">
-        <?php echo form_label('Have you applied for Certificate of Eligibility?', 'criminal_record', array( 'class' => 'form-control-label', 'id'=> '')); ?>
+        <?php echo form_label('Have you applied for Certificate of Eligibility?', 'eligibility_have', array( 'class' => 'form-control-label', 'id'=> '')); ?>
   </div>
   <div class="radio_record">
   <div class="criminal_record01">
-      <p class="comfirm_val" id="criminal_record" name="criminal_record"><?php echo $data_details['criminal_record']; ?></p>   
+      <p class="comfirm_val" id="eligibility_have" name="eligibility_have"><?php if($data_details['eligibility_have'] == "1"){echo "Yes";}else{echo "No";} ?></p>   
   </div>        
   <div class="">
       <label class="col-rd cri_text"><span>Times</span>
@@ -605,7 +605,7 @@ $(function() {
 <br>
 <div class="form-group">
         <?php echo form_label('Intended to enroll', 'intended_roll', array( 'class' => 'form-control-label', 'id'=> '')); ?>
-        <p class="comfirm_val" id="intended_roll" name="intended_roll"><?php echo $other_info['intended_roll']; ?></p>   
+        <p class="comfirm_val" id="intended_roll" name="intended_roll"><?php if($other_info['intended_roll'] == "1"){echo "issued";}else{echo "denied";} ?></p>   
 </div>
 <br><br><br>
 <div class="form-group">
@@ -1037,7 +1037,7 @@ $(function() {
 <h6 class="" style="padding: 33px 0px 12px;">Previous Japanese Language Study</h6>
 <div class="form-group">
   <?php echo form_label('Previous Japanese Language Study', 'jplearn_experience', array( 'class' => 'passport_text', 'id'=> '')); ?>
-  <p class="comfirm_val" id="jplearn_experience" name="jplearn_experience"><?php echo $data_details['jplearn_experience']; ?></p>
+  <p class="comfirm_val" id="jplearn_experience" name="jplearn_experience"><?php if($data_details['jplearn_experience'] == "1"){echo "Yes";}else{echo "No";} ?></p>
 </div>
 <div class="tbl">
 <table class="table-bordered" name="applicant_id">
@@ -1147,7 +1147,7 @@ $(function() {
 <br>
 <div class="form-group">
   <?php echo form_label('Japanese Language Proficiency', 'jplearn_achievement', array( 'class' => 'passport_text', 'id'=> '')); ?>
-  <p class="comfirm_val" id="jplearn_achievement" name="jplearn_achievement"><?php echo $data_details['jplearn_achievement']; ?></p>
+  <p class="comfirm_val" id="jplearn_achievement" name="jplearn_achievement"><?php if($data_details['jplearn_achievement'] == "1"){echo "Yes";}else{echo "No";} ?></p>
   </div>
 <div class="form-group">
   <?php echo form_label('Certificate Number', 'jp_certificate_number', array( 'class' => 'passport_text', 'id'=> '')); ?>
@@ -1195,7 +1195,7 @@ $(function() {
 <!-- Table -->
 <div class="col-md-12 float-left">
 <h6 class="" style="padding: 33px 0px 12px;">History of Employment (Write in order, ending with the most recent employment.)</h6>
-<p class="comfirm_val" id="employment_experience" name="employment_experience"><?php echo $data_details['employment_experience']; ?></p>
+<p class="comfirm_val" id="employment_experience" name="employment_experience"><?php if($data_details['employment_experience'] == "1"){echo "Yes";}else{echo "No";} ?></p>
 <div class="tbl">
 <table class="table-bordered" name="applicant_id">
   <thead class="tbl_head">
@@ -1324,7 +1324,7 @@ $(function() {
 <!-- Table -->
 <div class="col-md-12 float-left">
 <h6 class="" style="padding: 33px 0px 12px;">Family in Japan (Father, Mother, Spouse, Child, Brother and Sisters, or Others) :</h6>
-<p class="comfirm_val" id="ja_plan_to_stay_with_them" name="family_in_japan"><?php echo $data_details['family_in_japan']; ?></p>
+<p class="comfirm_val" id="ja_plan_to_stay_with_them" name="family_in_japan"><?php if($data_details['family_in_japan'] == "1"){echo "Yes";}else{echo "No";} ?></p>
 <p>If yes, fill in all the family members in Japan.</p>
 <br>
 <div class="tbl">
@@ -1369,7 +1369,7 @@ $(function() {
      <p class="tbl_comfirmVal" name="ja_fam_relationship[]" style="text-align: center;height: 18px;" ><?php echo $data_family_japan['ja_fam_relationship'][$key];?></p>
     </td>
     <td>
-      <p class="tbl_comfirmVal" name="ja_fam_residing_applicant[]" style="text-align: center;height: 18px;" ><?php echo $data_family_japan['ja_fam_residing_applicant'][$key];?></p>
+      <p class="tbl_comfirmVal" name="ja_fam_residing_applicant[]" style="text-align: center;height: 18px;" ><?php if($data_family_japan['ja_fam_residing_applicant'][$key] == "1"){echo "Yes";}else if($data_family_japan['ja_fam_residing_applicant'][$key] == "0"){echo "No";}else{echo "";} ?></p>
     </td>
     <td>
       <p class="tbl_comfirmVal" name="residence_card_no[]" style="text-align: center;height: 18px;" ><?php echo $data_family_japan['residence_card_no'][$key];?></p>
@@ -1395,7 +1395,7 @@ $(function() {
 <br>
 <div class="form-group">
     <?php echo form_label('Are you planning to stay with them in Japan? : ', 'ja_plan_to_stay_with_them', array( 'class' => 'form-control-label', 'id'=> '')); ?><br/>
-    <p class="comfirm_val" id="ja_plan_to_stay_with_them" name="ja_plan_to_stay_with_them"><?php echo $data_details['ja_plan_to_stay_with_them']; ?></p>
+    <p class="comfirm_val" id="ja_plan_to_stay_with_them" name="ja_plan_to_stay_with_them"><?php if($data_details['ja_plan_to_stay_with_them'] == "1"){echo "Yes";}else{echo "No";} ?></p>
   </div>
 <div class="form-group">
     <?php echo form_label('you/your family have Japanese friends or acquaintances, please write his/her name, address,phone number, relationship, etc. ', 'family_inJpfri', array( 'class' => 'form-control-label', 'id'=> 'family_inJpfri')); ?><br/>

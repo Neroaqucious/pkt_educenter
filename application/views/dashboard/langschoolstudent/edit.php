@@ -124,13 +124,39 @@
 </select>
 </div>
   <!-- Status Name -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script>
+ $(function() {  
+    let selePopup = $('#sele_popup').val();
+    let cancelTime = $('#cancel_times').val();
+  
+  $('.school_select').change(function(){
+    if($('option:selected', this).text() == "Cancel"){
+      if (cancelTime != ''){
+        console.log(cancelTime++);
+      var response = '';
+      $.ajax({
+            type: "GET",
+            url: "<?php echo base_url(); ?>adm/batch/fetch_course",
+            async: false,
+            success: function(text) {
+                response = text;
+            }
+        });
+    } else {
+      console.log(cancelTime++);
+    }
+  }
+  });
+});
+                                                    
+  </script>
   <!-- Register date -->
   <div class="col-md-10" id="register_date"  style="display: none;">
     <div class="form-group school_list"  style="width:60% ;padding: 0px;">
     <p class="list_label" style="width: 48.5%;">
        <label style="margin-bottom: 0px;margin-top: 12px;">Register Date</label>
        <span class="badge badge-danger" >Required</span>
-
     </p>
         <?php
           echo form_input(array(
