@@ -113,7 +113,7 @@
 <div class="status_popup" >
 <div class="school_list status_select" name="" >
 <p class="list_label">Status </p>
-<select name="appli_status" id="sele_popup " class="school_select">
+<select name="appli_status" id="appli_status" class="school_select" onchange="canceltimes(this.value)">
 <option value="">Please Select!</option>
         <option value="Register" <?php if($result->appli_status== "Register") echo "selected"; ?>>Register</option>
         <option value="Interview" <?php if($result->appli_status== "Interview") echo "selected"; ?>>Interview</option>
@@ -380,7 +380,7 @@
             'type' => 'text',
             'value' => html_escape(set_value('coe_fail_times',isset($result)?$result->coe_fail_times:''), ENT_QUOTES),
             'class' => 'form-control',
-            'id' => 'coe_fail_times',
+            'id' => 'coefail',
             'autocomplete' => ''));
           ?>
                                         <span class="text-danger"><?php echo form_error('coe_fail_times'); ?></span>
@@ -399,52 +399,87 @@
           echo form_input(array(
             'name' => 'cancel_date',
             'type' => 'date',
-            'value' => html_escape(set_value('coe_fail_times',isset($result)?$result->cancel_date:''), ENT_QUOTES),
+            'value' => html_escape(set_value('cancel_times',isset($result)?$result->cancel_date:''), ENT_QUOTES),
             'class' => 'form-control',
             'id' => 'cancel_date',
             'autocomplete' => ''));
           ?>
-                                        <span class="text-danger"><?php echo form_error('cancel_date'); ?></span>
-                                    </div>
-                                </div>
-                                <!-- cancel date -->
-                                <!-- cancel times -->
-                                <div class="col-md-10" id="cancel_times" style="display: none;">
-                                    <div class="form-group school_list" style="width:60% ;padding-left: 0px;">
-                                        <p class="list_label" style="width: 48.5%;">
-                                            <label style="margin-bottom: 0px;margin-top: 12px;">Cancel Times</label>
-                                            <span class="badge badge-danger">Required</span>
+                  <span class="text-danger"><?php echo form_error('cancel_date'); ?></span>
+              </div>
+          </div>
+          <!-- cancel date -->
+          <!-- cancel times -->
+          <div class="col-md-10" id="cancel_times" style="display: none;">
+              <div class="form-group school_list" style="width:60% ;padding-left: 0px;">
+                  <p class="list_label" style="width: 48.5%;">
+                      <label style="margin-bottom: 0px;margin-top: 12px;">Cancel Times</label>
+                      <span class="badge badge-danger">Required</span>
 
-                                        </p>
-                                        <?php
+    </p>
+    <?php                                      
           echo form_input(array(
             'name' => 'cancel_times',
             'type' => 'text',
-            'value' => html_escape(set_value('cancel_times',isset($result)?$result->cancel_times:''), ENT_QUOTES),
+            'value' => html_escape(set_value('cancel_times',isset($result)?$result->cancel_times:''), ENT_QUOTES ),
             'class' => 'form-control',
             'id' => 'cancel',
+            'readonly' => 'readonly',
             'autocomplete' => ''));
           ?>
-                                        <span class="text-danger"><?php echo form_error('cancel_times'); ?></span>
-                                    </div>
-                                </div>
+        <span class="text-danger"><?php echo form_error('cancel_times'); ?></span>
+    </div>
+  </div>
+  <!-- cancel times -->
+  <!-- cancel times,coe fail times,inter fail times record -->
+  <script>
+        function canceltimes(statusData) {
+          var canceltimes;
+          var interfailtimes;
+          // var appliStatus = document.getElementById('appli_status').value;
+          var canceltimes = document.getElementById('cancel').value;
+          var interfailtimes = document.getElementById('interfail').value;
+          var coefailtimes = document.getElementById('coefail').value;
+            if(statusData == "Cancel"){
+            counter = 1;
+            for(var i = 0; i < 1; i++){
+                canceltimes++;
+              }
+              document.getElementById("cancel").value = canceltimes;
+            }else if(statusData == "Interview Failed"){
+              console.log(true);
+              counter = 1;
+              for(var j = 0; j < 1; j++){
+                interfailtimes++;
+                }
+                document.getElementById("interfail").value = interfailtimes;
+            }else if(statusData == "COE Failed"){
+              console.log(true);
+              counter = 1;
+              for(var k = 0; k < 1; k++){
+                coefailtimes++;
+                }
+                document.getElementById("coefail").value = coefailtimes;
+            }else{
 
-                                <!-- cancel times -->
-                                <!-- interview failed times -->
-                                <div class="col-md-10" id="inter_fail_times" style="display: none;">
-                                    <div class="form-group school_list" style="width:60% ;padding-left: 0px;">
-                                        <p class="list_label" style="width: 48.5%;">
-                                            <label style="margin-bottom: 0px;margin-top: 12px;">Inter Fail Times</label>
-                                            <span class="badge badge-danger">Required</span>
+            }
+        }              
+  </script>
+   <!-- cancel times,coe fail times,inter fail times record -->
+        <!-- interview failed times -->
+        <div class="col-md-10" id="inter_fail_times" style="display: none;">
+            <div class="form-group school_list" style="width:60% ;padding-left: 0px;">
+                <p class="list_label" style="width: 48.5%;">
+                    <label style="margin-bottom: 0px;margin-top: 12px;">Inter Fail Times</label>
+                    <span class="badge badge-danger">Required</span>
 
-                                        </p>
-                                        <?php
+                </p>
+                <?php
           echo form_input(array(
             'name' => 'inter_fail_times',
             'type' => 'text',
-            'value' => html_escape(set_value('cancel_times',isset($result)?$result->inter_fail_times:''), ENT_QUOTES),
+            'value' => html_escape(set_value('inter_fail_times',isset($result)?$result->inter_fail_times:''), ENT_QUOTES),
             'class' => 'form-control',
-            'id' => 'inter_fail_times',
+            'id' => 'interfail',
             'autocomplete' => ''));
           ?>
                                         <span class="text-danger"><?php echo form_error('inter_fail_times'); ?></span>
@@ -675,51 +710,59 @@
                             margin-top: 9px;
                         }
 
-                        .status_select {
-                            display: inline;
-                        }
-
-                        .school_list.status_select {
-                            padding-left: 14px;
-                        }
-
-                        select.form-group.col-md-9.school_select {
-                            padding: 8px;
-                            margin: 7px 7px 7px 35px;
-                            border: 1px solid #ced4db;
-                            border-radius: 3px;
-                        }
-
-                        input#register_date,
-                        input#interview_date,
-                        input#inter_fail_date,
-                        input#inter_fail_times,
-                        input#admission_date,
-                        input#data_expired_date,
-                        input#adm_complete_date,
-                        input#tracking_code,
-                        input#coe_date,
-                        input#cancel_date,
-                        input#cancel_times,
-                        input#coe_pass_date,
-                        input#coe_fail_date,
-                        input#coe_fail_times {
-                            width: 49%;
-                        }
-                        </style>
-                        <!-- Start dropdown APPLICANT INFORMATION -->
-                        <div class="content_detail">
-                            <input class="dropdown" type="checkbox" id="faq-2">
-                            <p class="drop_ttl"><label for="faq-2" class="drop_label">APPLICANT INFORMATION </label></p>
-                            <div class="drop_txt">
-                                <h4 class="appl_ttl"><span>※</span>Contact Details</h4>
-
-                                <!-- leftside -->
-                                <div class="col-md-6 float-left">
-                                    <div class="form-group">
-                                        <?php echo form_label('Name (アルファベット)', 'applicant_name', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'applicant_name')); ?>
-                                        <span class="badge badge-danger">Required</span>
-                                        <?php
+<<<<<<< HEAD
+<style>
+ #register_date,
+ #interview_date,
+ #data_expired_date,
+ #admission_date,
+ #tracking_code,
+ #adm_complete_date{
+  margin-top: 9px;
+} 
+.status_select{
+    display: inline;
+}
+.school_list.status_select {
+    padding-left: 14px;
+}
+select.form-group.col-md-9.school_select{
+    padding: 8px;
+    margin: 7px 7px 7px 35px;
+    border: 1px solid #ced4db;
+    border-radius: 3px;
+}
+input#register_date,
+input#interview_date,
+input#inter_fail_date,
+input#interfail,
+input#admission_date,
+input#data_expired_date,
+input#adm_complete_date,
+input#tracking_code,
+input#coe_date,
+input#cancel_date,
+input#cancel,
+input#coe_pass_date,
+input#coe_fail_date,
+input#coefail
+ {
+    width: 49%;
+}
+</style>
+<!-- Start dropdown APPLICANT INFORMATION -->
+<div class="content_detail">
+  <input class="dropdown" type="checkbox" id="faq-2">
+  <p class="drop_ttl"><label for="faq-2" class="drop_label">APPLICANT INFORMATION  </label></p>
+  <div class="drop_txt">
+  <h4 class="appl_ttl"><span>※</span>Contact Details</h4>
+ 
+  <!-- leftside -->
+   <div class="col-md-6 float-left">
+      <div class="form-group">
+        <?php echo form_label('Name (アルファベット)', 'applicant_name', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'applicant_name')); ?>
+        <span class="badge badge-danger">Required</span>
+        <?php
           echo form_input(array(
             'name' => 'applicant_name',
             'type' => 'text',
