@@ -110,7 +110,7 @@
 <div class="status_popup" >
 <div class="school_list status_select" name="" >
 <p class="list_label">Status </p>
-<select name="appli_status" id="sele_popup " class="school_select">
+<select name="appli_status" id="appli_status" class="school_select" onchange="canceltimes(this.value)">
 <option value="">Please Select!</option>
         <option value="Register" <?php if($result->appli_status== "Register") echo "selected"; ?>>Register</option>
         <option value="Interview" <?php if($result->appli_status== "Interview") echo "selected"; ?>>Interview</option>
@@ -347,7 +347,7 @@
             'type' => 'text',
             'value' => html_escape(set_value('coe_fail_times',isset($result)?$result->coe_fail_times:''), ENT_QUOTES),
             'class' => 'form-control',
-            'id' => 'coe_fail_times',
+            'id' => 'coefail',
             'autocomplete' => ''));
           ?>
         <span class="text-danger"><?php echo form_error('coe_fail_times'); ?></span>
@@ -366,7 +366,7 @@
           echo form_input(array(
             'name' => 'cancel_date',
             'type' => 'date',
-            'value' => html_escape(set_value('coe_fail_times',isset($result)?$result->cancel_date:''), ENT_QUOTES),
+            'value' => html_escape(set_value('cancel_times',isset($result)?$result->cancel_date:''), ENT_QUOTES),
             'class' => 'form-control',
             'id' => 'cancel_date',
             'autocomplete' => ''));
@@ -383,18 +383,54 @@
        <span class="badge badge-danger" >Required</span>
 
     </p>
-        <?php
+    <?php
           echo form_input(array(
             'name' => 'cancel_times',
             'type' => 'text',
-            'value' => html_escape(set_value('cancel_times',isset($result)?$result->cancel_times:''), ENT_QUOTES),
+            'value' => html_escape(set_value('cancel_times',isset($result)?$result->cancel_times:''), ENT_QUOTES ),
             'class' => 'form-control',
-            'id' => 'cancel_times',
+            'id' => 'cancel',
+            'readonly' => 'readonly',
             'autocomplete' => ''));
           ?>
         <span class="text-danger"><?php echo form_error('cancel_times'); ?></span>
     </div>
   </div>
+  <!-- cancel times record -->
+  <script>
+        function canceltimes(statusData) {
+          var canceltimes;
+          var interfailtimes;
+          // var appliStatus = document.getElementById('appli_status').value;
+          var canceltimes = document.getElementById('cancel').value;
+          var interfailtimes = document.getElementById('interfail').value;
+          var coefailtimes = document.getElementById('coefail').value;
+            if(statusData == "Cancel"){
+            counter = 1;
+            for(var i = 0; i < 1; i++){
+                canceltimes++;
+              }
+              document.getElementById("cancel").value = canceltimes;
+            }else if(statusData == "Interview Failed"){
+              console.log(true);
+              counter = 1;
+              for(var j = 0; j < 1; j++){
+                interfailtimes++;
+                }
+                document.getElementById("interfail").value = interfailtimes;
+            }else if(statusData == "COE Failed"){
+              console.log(true);
+              counter = 1;
+              for(var k = 0; k < 1; k++){
+                coefailtimes++;
+                }
+                document.getElementById("coefail").value = coefailtimes;
+            }else{
+
+            }
+        }
+               
+</script>
 <!-- cancel times -->
 <!-- interview failed times -->
 <div class="col-md-10" id="inter_fail_times"  style="display: none;">
@@ -408,9 +444,9 @@
           echo form_input(array(
             'name' => 'inter_fail_times',
             'type' => 'text',
-            'value' => html_escape(set_value('cancel_times',isset($result)?$result->inter_fail_times:''), ENT_QUOTES),
+            'value' => html_escape(set_value('inter_fail_times',isset($result)?$result->inter_fail_times:''), ENT_QUOTES),
             'class' => 'form-control',
-            'id' => 'inter_fail_times',
+            'id' => 'interfail',
             'autocomplete' => ''));
           ?>
         <span class="text-danger"><?php echo form_error('inter_fail_times'); ?></span>
@@ -655,17 +691,17 @@ select.form-group.col-md-9.school_select{
 input#register_date,
 input#interview_date,
 input#inter_fail_date,
-input#inter_fail_times,
+input#interfail,
 input#admission_date,
 input#data_expired_date,
 input#adm_complete_date,
 input#tracking_code,
 input#coe_date,
 input#cancel_date,
-input#cancel_times,
+input#cancel,
 input#coe_pass_date,
 input#coe_fail_date,
-input#coe_fail_times
+input#coefail
  {
     width: 49%;
 }
