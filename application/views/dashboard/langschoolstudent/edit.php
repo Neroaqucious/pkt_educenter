@@ -2,54 +2,56 @@
 <?php include(dirname(__FILE__) ."/../templates/header.php"); ?>
 
 <div class="content-wrapper">
-  <div class="row page-tilte align-items-center">
-    <div class="col-md-auto">
-      <a href="#" class="mt-3 d-md-none float-right toggle-controls"><span class="material-icons">keyboard_arrow_down</span></a>
-      <h1 class="weight-300 h3 title">Edit JLS Applicant Registration</h1>
-    </div> 
-    <div class="col controls-wrapper mt-3 mt-md-0 d-none d-md-block ">
-      <div class="controls d-flex justify-content-center justify-content-md-end float-right">
-      <a href="<?php echo base_url('adm/portal/jls_applicant'); ?>" class="btn btn-secondary py-1 px-2" ><span class="material-icons align-text-bottom">reorder</span></a>
-      </div>
-    </div>
-    
-  </div> 
+    <div class="row page-tilte align-items-center">
+        <div class="col-md-auto">
+            <a href="#" class="mt-3 d-md-none float-right toggle-controls"><span
+                    class="material-icons">keyboard_arrow_down</span></a>
+            <h1 class="weight-300 h3 title">Edit JLS Applicant Registration</h1>
+        </div>
+        <div class="col controls-wrapper mt-3 mt-md-0 d-none d-md-block ">
+            <div class="controls d-flex justify-content-center justify-content-md-end float-right">
+                <a href="<?php echo base_url('adm/portal/jls_applicant'); ?>" class="btn btn-secondary py-1 px-2"><span
+                        class="material-icons align-text-bottom">reorder</span></a>
+            </div>
+        </div>
 
-  <?php if(!empty($_SESSION['msg_success'])){ ?>
+    </div>
+
+    <?php if(!empty($_SESSION['msg_success'])){ ?>
     <div class="alert alert-success alert-dismissible fade show" role="alert">
-      <strong>Success!</strong>  <?php echo $_SESSION['msg_success']; ?> 
-      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true" class="material-icons md-18">clear</span>
-      </button>
+        <strong>Success!</strong> <?php echo $_SESSION['msg_success']; ?>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true" class="material-icons md-18">clear</span>
+        </button>
     </div>
-  <?php } ?>    
+    <?php } ?>
 
-  <?php if(!empty($_SESSION['msg_error'])){ ?>
+    <?php if(!empty($_SESSION['msg_error'])){ ?>
     <div class="alert alert-danger alert-dismissible fade show" role="alert">
-      <strong>Warning!</strong>  <?php echo $_SESSION['msg_error']; ?> 
-      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true" class="material-icons md-18">clear</span>
-      </button>
+        <strong>Warning!</strong> <?php echo $_SESSION['msg_error']; ?>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true" class="material-icons md-18">clear</span>
+        </button>
     </div>
-  <?php } ?>
-<div class="content">
-<div class="row">
-<div class="col-lg-12 col-md-12 mb-4 mb-lg-0">
-<div class="card">
-<div class="card-body">
-  <?php
+    <?php } ?>
+    <div class="content">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 mb-4 mb-lg-0">
+                <div class="card">
+                    <div class="card-body">
+                        <?php
         $attributes = array('class' => 'form-horizontal form-label-left');
 				echo form_open_multipart('adm/portal/jls_applicant/edit/'.$result->id, $attributes);
     ?>
-    <!-- <?php var_dump($result); ?> -->
-<div class="col-md-12">
-<div class="col-md-6 " style="display: flex;padding-top: 32px;">
-  <!-- Student Photo -->
-    <?php
+                        <!-- <?php var_dump($result); ?> -->
+                        <div class="col-md-12">
+                            <div class="col-md-6 " style="display: flex;padding-top: 32px;">
+                                <!-- Student Photo -->
+                                <?php
       echo form_label('Applicant Photo','userfile', array('class' => 'col-form-label')) ;
     ?>
-   <div class="col-md-6" style="width: 100%;padding-left:0px;padding-right: 0px;">
-        <?php
+                                <div class="col-md-6" style="width: 100%;padding-left:0px;padding-right: 0px;">
+                                    <?php
               echo form_input(array(
               'name' => 'userfile',
               'type' => 'file',
@@ -57,23 +59,24 @@
               'id' => 'clickImg',
               'accept' => 'image/*'
               ));
-            ?>            
-            <span class="text-danger"><?php echo form_error('userfile'); ?></span>
-            <?php if(!empty($result->image_file)) { ?>
-              <img src="<?php echo base_url('upload/assets/adm/usr/'.$result->image_file); ?>" width="100px;" class="pb-1">
-            <?php } ?>
-            <div class="form-group" id="showImg1"></div>               
-    </div>
-  <span class="text-danger"><?php echo form_error('userfile'); ?></span>
-  </div>
-  <!-- Student Photo -->  
-  <div class="col-md-6 float-left" style="display: flex;padding-top: 12px;">
-  <!-- Student Photo -->
-  <?php
+            ?>
+                                    <span class="text-danger"><?php echo form_error('userfile'); ?></span>
+                                    <?php if(!empty($result->image_file)) { ?>
+                                    <img src="<?php echo base_url('upload/assets/adm/usr/'.$result->image_file); ?>"
+                                        width="100px;" class="pb-1">
+                                    <?php } ?>
+                                    <div class="form-group" id="showImg1"></div>
+                                </div>
+                                <span class="text-danger"><?php echo form_error('userfile'); ?></span>
+                            </div>
+                            <!-- Student Photo -->
+                            <div class="col-md-6 float-left" style="display: flex;padding-top: 12px;">
+                                <!-- Student Photo -->
+                                <?php
       echo form_label('Applicant Photo','signfile', array('class' => 'col-form-label')) ;    
   ?>
-   <div class="col-md-6" style="width: 100%;padding-left:0px;padding-right: 0px;">
-        <?php
+                                <div class="col-md-6" style="width: 100%;padding-left:0px;padding-right: 0px;">
+                                    <?php
               echo form_input(array(
               'name' => 'signfile',
               'type' => 'file',
@@ -124,6 +127,34 @@
 </select>
 </div>
   <!-- Status Name -->
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+ <script>
+    let myArray =[];
+    for(var x = 0; x < myArray.length; x++) {
+
+(function(x){
+     tx.executeSql("SELECT * FROM table WHERE entry reference = '"+myArray[x].TimeStamp+"' ", [], function(tx,result){
+
+     var tempArray = [];
+     var len = result.rows.length;
+     for (var i = 0; i < len; i++){
+
+     var tempObject = {
+     "Value": result.rows.item(i).value
+     }
+     tempArray.push(tempObject);
+
+     }
+
+     myArray[x].embeddedArray = tempArray;
+
+
+     });
+  })(x);
+};
+  </script>
+ 
   <!-- Register date -->
   <div class="col-md-10" id="register_date"  style="display: none;">
     <div class="form-group school_list"  style="width:60% ;padding: 0px;">
@@ -141,19 +172,19 @@
             'id' => 'register_date',
             'autocomplete' => ''));
           ?>
-        <span class="text-danger"><?php echo form_error('register_date'); ?></span>
-    </div>
-  </div>
-<!-- Register date -->
-<!-- interview date -->
-<div class="col-md-10" id="interview_date"  style="display: none;">
-    <div class="form-group school_list"  style="width:60% ;padding-left: 0px;">
-    <p class="list_label" style="width: 48.5%;">
-       <label style="margin-bottom: 0px;margin-top: 12px;">Interview Date</label>
-       <span class="badge badge-danger" >Required</span>
+                                        <span class="text-danger"><?php echo form_error('register_date'); ?></span>
+                                    </div>
+                                </div>
+                                <!-- Register date -->
+                                <!-- interview date -->
+                                <div class="col-md-10" id="interview_date" style="display: none;">
+                                    <div class="form-group school_list" style="width:60% ;padding-left: 0px;">
+                                        <p class="list_label" style="width: 48.5%;">
+                                            <label style="margin-bottom: 0px;margin-top: 12px;">Interview Date</label>
+                                            <span class="badge badge-danger">Required</span>
 
-    </p>
-        <?php
+                                        </p>
+                                        <?php
           echo form_input(array(
             'name' => 'interview_date',
             'type' => 'date',
@@ -162,19 +193,20 @@
             'id' => 'interview_date',
             'autocomplete' => ''));
           ?>
-        <span class="text-danger"><?php echo form_error('interview_date'); ?></span>
-    </div>
-  </div>
-<!-- interview date -->
-<!-- interview failed date -->
-<div class="col-md-10" id="inter_fail_date"  style="display: none;">
-    <div class="form-group school_list"  style="width:60% ;padding-left: 0px;">
-    <p class="list_label" style="width: 48.5%;">
-       <label style="margin-bottom: 0px;margin-top: 12px;">Interview Failed Date</label>
-       <span class="badge badge-danger" >Required</span>
+                                        <span class="text-danger"><?php echo form_error('interview_date'); ?></span>
+                                    </div>
+                                </div>
+                                <!-- interview date -->
+                                <!-- interview failed date -->
+                                <div class="col-md-10" id="inter_fail_date" style="display: none;">
+                                    <div class="form-group school_list" style="width:60% ;padding-left: 0px;">
+                                        <p class="list_label" style="width: 48.5%;">
+                                            <label style="margin-bottom: 0px;margin-top: 12px;">Interview Failed
+                                                Date</label>
+                                            <span class="badge badge-danger">Required</span>
 
-    </p>
-        <?php
+                                        </p>
+                                        <?php
           echo form_input(array(
             'name' => 'inter_fail_date',
             'type' => 'date',
@@ -183,18 +215,18 @@
             'id' => 'inter_fail_date',
             'autocomplete' => ''));
           ?>
-        <span class="text-danger"><?php echo form_error('inter_fail_date'); ?></span>
-    </div>
-  </div>
-<!-- interview failed date -->
-<!-- admission date -->
-<div class="col-md-10" id="admission_date" style="display: none;">
-    <div class="form-group school_list"  style="width:60% ;padding-left: 0px;">
-    <p class="list_label" style="width: 48.5%;">
-       <label  style="margin-bottom: 0px;margin-top: 12px;">Admission Date</label>
-       <span class="badge badge-danger">Required</span>
-    </p>
-        <?php
+                                        <span class="text-danger"><?php echo form_error('inter_fail_date'); ?></span>
+                                    </div>
+                                </div>
+                                <!-- interview failed date -->
+                                <!-- admission date -->
+                                <div class="col-md-10" id="admission_date" style="display: none;">
+                                    <div class="form-group school_list" style="width:60% ;padding-left: 0px;">
+                                        <p class="list_label" style="width: 48.5%;">
+                                            <label style="margin-bottom: 0px;margin-top: 12px;">Admission Date</label>
+                                            <span class="badge badge-danger">Required</span>
+                                        </p>
+                                        <?php
           echo form_input(array(
             'name' => 'admission_date',
             'type' => 'date',
@@ -203,19 +235,20 @@
             'id' => 'admission_date',
             'autocomplete' => ''));
           ?>
-        <span class="text-danger"><?php echo form_error('admission_date'); ?></span>
-    </div>
-</div>
-<!-- admission date -->
+                                        <span class="text-danger"><?php echo form_error('admission_date'); ?></span>
+                                    </div>
+                                </div>
+                                <!-- admission date -->
 
-<!-- collect data expired date -->
-<div class="col-md-10" id="data_expired_date" style="display: none;">
-    <div class="form-group school_list"  style="width:60% ;padding-left: 0px;">
-    <p class="list_label" style="width: 48.5%;">
-       <label  style="margin-bottom: 0px;margin-top: 12px;">Collect Data EXP Date</label>
-       <span class="badge badge-danger" >Required</span>
-    </p>
-        <?php
+                                <!-- collect data expired date -->
+                                <div class="col-md-10" id="data_expired_date" style="display: none;">
+                                    <div class="form-group school_list" style="width:60% ;padding-left: 0px;">
+                                        <p class="list_label" style="width: 48.5%;">
+                                            <label style="margin-bottom: 0px;margin-top: 12px;">Collect Data EXP
+                                                Date</label>
+                                            <span class="badge badge-danger">Required</span>
+                                        </p>
+                                        <?php
           echo form_input(array(
             'name' => 'data_expired_date',
             'type' => 'date',
@@ -224,19 +257,19 @@
             'id' => 'data_expired_date',
             'autocomplete' => ''));
           ?>
-        <span class="text-danger"><?php echo form_error('data_expired_date'); ?></span>
-    </div>
-</div>
-<!-- collect data expired date -->
+                                        <span class="text-danger"><?php echo form_error('data_expired_date'); ?></span>
+                                    </div>
+                                </div>
+                                <!-- collect data expired date -->
 
-<!-- admission date -->
-<div class="col-md-10" id="adm_complete_date" style="display: none;">
-    <div class="form-group school_list" style="width:60% ;padding-left: 0px;">
-    <p class="list_label" style="width: 48.5%;">
-       <label  style="margin-bottom: 0px;margin-top: 12px;">Complete Date</label>
-       <span class="badge badge-danger">Required</span>
-    </p>
-        <?php
+                                <!-- admission date -->
+                                <div class="col-md-10" id="adm_complete_date" style="display: none;">
+                                    <div class="form-group school_list" style="width:60% ;padding-left: 0px;">
+                                        <p class="list_label" style="width: 48.5%;">
+                                            <label style="margin-bottom: 0px;margin-top: 12px;">Complete Date</label>
+                                            <span class="badge badge-danger">Required</span>
+                                        </p>
+                                        <?php
           echo form_input(array(
             'name' => 'adm_complete_date',
             'type' => 'date',
@@ -245,19 +278,19 @@
             'id' => 'adm_complete_date',
             'autocomplete' => ''));
           ?>
-        <span class="text-danger"><?php echo form_error('adm_complete_date'); ?></span>
-    </div>
-</div>
-<!-- admission date -->
+                                        <span class="text-danger"><?php echo form_error('adm_complete_date'); ?></span>
+                                    </div>
+                                </div>
+                                <!-- admission date -->
 
-<!-- tracking code -->
-<div class="col-md-10" id="tracking_code" style="display: none;">
-    <div class="form-group school_list"  style="width:60% ;padding-left: 0px;">
-    <p class="list_label" style="width: 48.5%;">
-       <label  style="margin-bottom: 0px;margin-top: 12px;">Tracking Code</label>
-       <!-- <span class="badge badge-danger">Required</span> -->
-    </p>
-        <?php
+                                <!-- tracking code -->
+                                <div class="col-md-10" id="tracking_code" style="display: none;">
+                                    <div class="form-group school_list" style="width:60% ;padding-left: 0px;">
+                                        <p class="list_label" style="width: 48.5%;">
+                                            <label style="margin-bottom: 0px;margin-top: 12px;">Tracking Code</label>
+                                            <!-- <span class="badge badge-danger">Required</span> -->
+                                        </p>
+                                        <?php
           echo form_input(array(
             'name' => 'tracking_code',
             'type' => 'input',
@@ -266,19 +299,19 @@
             'id' => 'tracking_code',
             'autocomplete' => ''));
           ?>
-        <span class="text-danger"><?php echo form_error('tracking_code'); ?></span>
-    </div>
-</div>
-<!-- tracking code -->
-<!-- interview date -->
-<div class="col-md-10" id="coe_date"  style="display: none;">
-    <div class="form-group school_list"  style="width:60% ;padding-left: 0px;">
-    <p class="list_label" style="width: 48.5%;">
-       <label style="margin-bottom: 0px;margin-top: 12px;">COE Date</label>
-       <span class="badge badge-danger" >Required</span>
+                                        <span class="text-danger"><?php echo form_error('tracking_code'); ?></span>
+                                    </div>
+                                </div>
+                                <!-- tracking code -->
+                                <!-- interview date -->
+                                <div class="col-md-10" id="coe_date" style="display: none;">
+                                    <div class="form-group school_list" style="width:60% ;padding-left: 0px;">
+                                        <p class="list_label" style="width: 48.5%;">
+                                            <label style="margin-bottom: 0px;margin-top: 12px;">COE Date</label>
+                                            <span class="badge badge-danger">Required</span>
 
-    </p>
-        <?php
+                                        </p>
+                                        <?php
           echo form_input(array(
             'name' => 'coe_date',
             'type' => 'date',
@@ -287,19 +320,19 @@
             'id' => 'coe_date',
             'autocomplete' => ''));
           ?>
-        <span class="text-danger"><?php echo form_error('coe_date'); ?></span>
-    </div>
-  </div>
-<!-- interview date -->
-<!-- interview date -->
-<div class="col-md-10" id="coe_pass_date"  style="display: none;">
-    <div class="form-group school_list"  style="width:60% ;padding-left: 0px;">
-    <p class="list_label" style="width: 48.5%;">
-       <label style="margin-bottom: 0px;margin-top: 12px;">COE Passed</label>
-       <span class="badge badge-danger" >Required</span>
+                                        <span class="text-danger"><?php echo form_error('coe_date'); ?></span>
+                                    </div>
+                                </div>
+                                <!-- interview date -->
+                                <!-- interview date -->
+                                <div class="col-md-10" id="coe_pass_date" style="display: none;">
+                                    <div class="form-group school_list" style="width:60% ;padding-left: 0px;">
+                                        <p class="list_label" style="width: 48.5%;">
+                                            <label style="margin-bottom: 0px;margin-top: 12px;">COE Passed</label>
+                                            <span class="badge badge-danger">Required</span>
 
-    </p>
-        <?php
+                                        </p>
+                                        <?php
           echo form_input(array(
             'name' => 'coe_pass_date',
             'type' => 'date',
@@ -308,19 +341,19 @@
             'id' => 'coe_pass_date',
             'autocomplete' => ''));
           ?>
-        <span class="text-danger"><?php echo form_error('coe_pass_date'); ?></span>
-    </div>
-  </div>
-<!-- interview date -->
-<!-- interview date -->
-<div class="col-md-10" id="coe_fail_date"  style="display: none;">
-    <div class="form-group school_list"  style="width:60% ;padding-left: 0px;">
-    <p class="list_label" style="width: 48.5%;">
-       <label style="margin-bottom: 0px;margin-top: 12px;">COE Failed</label>
-       <span class="badge badge-danger" >Required</span>
+                                        <span class="text-danger"><?php echo form_error('coe_pass_date'); ?></span>
+                                    </div>
+                                </div>
+                                <!-- interview date -->
+                                <!-- interview date -->
+                                <div class="col-md-10" id="coe_fail_date" style="display: none;">
+                                    <div class="form-group school_list" style="width:60% ;padding-left: 0px;">
+                                        <p class="list_label" style="width: 48.5%;">
+                                            <label style="margin-bottom: 0px;margin-top: 12px;">COE Failed</label>
+                                            <span class="badge badge-danger">Required</span>
 
-    </p>
-        <?php
+                                        </p>
+                                        <?php
           echo form_input(array(
             'name' => 'coe_fail_date',
             'type' => 'date',
@@ -329,19 +362,19 @@
             'id' => 'coe_fail_date',
             'autocomplete' => ''));
           ?>
-        <span class="text-danger"><?php echo form_error('coe_fail_date'); ?></span>
-    </div>
-  </div>
-<!-- interview date -->
-<!-- coe failed times -->
-<div class="col-md-10" id="coe_fail_times"  style="display: none;">
-    <div class="form-group school_list"  style="width:60% ;padding-left: 0px;">
-    <p class="list_label" style="width: 48.5%;">
-       <label style="margin-bottom: 0px;margin-top: 12px;">COE Failed Times</label>
-       <span class="badge badge-danger" >Required</span>
+                                        <span class="text-danger"><?php echo form_error('coe_fail_date'); ?></span>
+                                    </div>
+                                </div>
+                                <!-- interview date -->
+                                <!-- coe failed times -->
+                                <div class="col-md-10" id="coe_fail_times" style="display: none;">
+                                    <div class="form-group school_list" style="width:60% ;padding-left: 0px;">
+                                        <p class="list_label" style="width: 48.5%;">
+                                            <label style="margin-bottom: 0px;margin-top: 12px;">COE Failed Times</label>
+                                            <span class="badge badge-danger">Required</span>
 
-    </p>
-        <?php
+                                        </p>
+                                        <?php
           echo form_input(array(
             'name' => 'coe_fail_times',
             'type' => 'text',
@@ -350,19 +383,19 @@
             'id' => 'coefail',
             'autocomplete' => ''));
           ?>
-        <span class="text-danger"><?php echo form_error('coe_fail_times'); ?></span>
-    </div>
-  </div>
-<!-- coe failed times -->
-<!-- cancel dates -->
-<div class="col-md-10" id="cancel_date"  style="display: none;">
-    <div class="form-group school_list"  style="width:60% ;padding-left: 0px;">
-    <p class="list_label" style="width: 48.5%;">
-       <label style="margin-bottom: 0px;margin-top: 12px;">Cancel Date</label>
-       <span class="badge badge-danger" >Required</span>
+                                        <span class="text-danger"><?php echo form_error('coe_fail_times'); ?></span>
+                                    </div>
+                                </div>
+                                <!-- coe failed times -->
+                                <!-- cancel dates -->
+                                <div class="col-md-10" id="cancel_date" style="display: none;">
+                                    <div class="form-group school_list" style="width:60% ;padding-left: 0px;">
+                                        <p class="list_label" style="width: 48.5%;">
+                                            <label style="margin-bottom: 0px;margin-top: 12px;">Cancel Date</label>
+                                            <span class="badge badge-danger">Required</span>
 
-    </p>
-        <?php
+                                        </p>
+                                        <?php
           echo form_input(array(
             'name' => 'cancel_date',
             'type' => 'date',
@@ -371,19 +404,19 @@
             'id' => 'cancel_date',
             'autocomplete' => ''));
           ?>
-        <span class="text-danger"><?php echo form_error('cancel_date'); ?></span>
-    </div>
-  </div>
-<!-- cancel date -->
-<!-- cancel times -->
-<div class="col-md-10" id="cancel_times"  style="display: none;">
-    <div class="form-group school_list"  style="width:60% ;padding-left: 0px;">
-    <p class="list_label" style="width: 48.5%;">
-       <label style="margin-bottom: 0px;margin-top: 12px;">Cancel Times</label>
-       <span class="badge badge-danger" >Required</span>
+                  <span class="text-danger"><?php echo form_error('cancel_date'); ?></span>
+              </div>
+          </div>
+          <!-- cancel date -->
+          <!-- cancel times -->
+          <div class="col-md-10" id="cancel_times" style="display: none;">
+              <div class="form-group school_list" style="width:60% ;padding-left: 0px;">
+                  <p class="list_label" style="width: 48.5%;">
+                      <label style="margin-bottom: 0px;margin-top: 12px;">Cancel Times</label>
+                      <span class="badge badge-danger">Required</span>
 
     </p>
-    <?php
+    <?php                                      
           echo form_input(array(
             'name' => 'cancel_times',
             'type' => 'text',
@@ -396,7 +429,8 @@
         <span class="text-danger"><?php echo form_error('cancel_times'); ?></span>
     </div>
   </div>
-  <!-- cancel times record -->
+  <!-- cancel times -->
+  <!-- cancel times,coe fail times,inter fail times record -->
   <script>
         function canceltimes(statusData) {
           var canceltimes;
@@ -428,19 +462,18 @@
             }else{
 
             }
-        }
-               
-</script>
-<!-- cancel times -->
-<!-- interview failed times -->
-<div class="col-md-10" id="inter_fail_times"  style="display: none;">
-    <div class="form-group school_list"  style="width:60% ;padding-left: 0px;">
-    <p class="list_label" style="width: 48.5%;">
-       <label style="margin-bottom: 0px;margin-top: 12px;">Inter Fail Times</label>
-       <span class="badge badge-danger" >Required</span>
+        }              
+  </script>
+   <!-- cancel times,coe fail times,inter fail times record -->
+        <!-- interview failed times -->
+        <div class="col-md-10" id="inter_fail_times" style="display: none;">
+            <div class="form-group school_list" style="width:60% ;padding-left: 0px;">
+                <p class="list_label" style="width: 48.5%;">
+                    <label style="margin-bottom: 0px;margin-top: 12px;">Inter Fail Times</label>
+                    <span class="badge badge-danger">Required</span>
 
-    </p>
-        <?php
+                </p>
+                <?php
           echo form_input(array(
             'name' => 'inter_fail_times',
             'type' => 'text',
@@ -449,224 +482,235 @@
             'id' => 'interfail',
             'autocomplete' => ''));
           ?>
-        <span class="text-danger"><?php echo form_error('inter_fail_times'); ?></span>
-    </div>
-  </div>
-<!-- interview failed times -->
-</div>
-<!-- Status -->
-</div>
-<!-- </div> -->
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script>
-$(function() { 
-  const jlsNameSelector = (jlschool_name) =>{
-       if(jlschool_name == "Register"){
-         $('#register_date').show();
-         $('#inter_fail_date').hide();
-         $('#interview_date').hide();
-         $('#data_expired_date').hide();
-         $('#admission_date').hide();
-         $('#tracking_code').hide();
-         $('#adm_complete_date').hide();
-         $('#coe_date').hide();
-         $('#coe_fail_date').hide();
-         $('#coe_pass_date').hide();
-         $('#coe_fail_times').hide();
-         $('#cancel_date').hide();
-         $('#cancel_times').hide();
-         $('#inter_fail_times').hide();
+                                        <span class="text-danger"><?php echo form_error('inter_fail_times'); ?></span>
+                                    </div>
+                                </div>
+                                <!-- interview failed times -->
+                            </div>
+                            <!-- Status -->
+                        </div>
+                        <!-- </div> -->
+                        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+                        <script>
+                        $(function() {
+                            const jlsNameSelector = (jlschool_name) => {
+                                if (jlschool_name == "Register") {
+                                    $('#register_date').show();
+                                    $('#inter_fail_date').hide();
+                                    $('#interview_date').hide();
+                                    $('#data_expired_date').hide();
+                                    $('#admission_date').hide();
+                                    $('#tracking_code').hide();
+                                    $('#adm_complete_date').hide();
+                                    $('#coe_date').hide();
+                                    $('#coe_fail_date').hide();
+                                    $('#coe_pass_date').hide();
+                                    $('#coe_fail_times').hide();
+                                    $('#cancel_date').hide();
+                                    $('#cancel_times').hide();
+                                    $('#inter_fail_times').hide();
 
-        }else if(jlschool_name == "Interview"){
-         $('#interview_date').show();
-         $('#inter_fail_date').hide();
-         $('#register_date').hide();
-         $('#data_expired_date').hide();
-         $('#admission_date').hide();
-         $('#tracking_code').hide();
-         $('#adm_complete_date').hide();
-         $('#coe_date').hide();
-         $('#coe_fail_date').hide();
-         $('#coe_pass_date').hide();
-         $('#coe_fail_times').hide();
-         $('#cancel_date').hide();
-         $('#cancel_times').hide();
-         $('#inter_fail_times').hide();
+                                } else if (jlschool_name == "Interview") {
+                                    $('#interview_date').show();
+                                    $('#inter_fail_date').hide();
+                                    $('#register_date').hide();
+                                    $('#data_expired_date').hide();
+                                    $('#admission_date').hide();
+                                    $('#tracking_code').hide();
+                                    $('#adm_complete_date').hide();
+                                    $('#coe_date').hide();
+                                    $('#coe_fail_date').hide();
+                                    $('#coe_pass_date').hide();
+                                    $('#coe_fail_times').hide();
+                                    $('#cancel_date').hide();
+                                    $('#cancel_times').hide();
+                                    $('#inter_fail_times').hide();
 
-        }else if(jlschool_name == "Interview Failed"){
-         $('#interview_date').hide();
-         $('#inter_fail_date').show();
-         $('#register_date').hide();
-         $('#data_expired_date').hide();
-         $('#admission_date').hide();
-         $('#tracking_code').hide();
-         $('#adm_complete_date').hide();
-         $('#coe_date').hide();
-         $('#coe_fail_date').hide();
-         $('#coe_pass_date').hide();
-         $('#coe_fail_times').hide();
-         $('#cancel_date').hide();
-         $('#cancel_times').hide();
-         $('#inter_fail_times').show();
+                                } else if (jlschool_name == "Interview Failed") {
+                                    $('#interview_date').hide();
+                                    $('#inter_fail_date').show();
+                                    $('#register_date').hide();
+                                    $('#data_expired_date').hide();
+                                    $('#admission_date').hide();
+                                    $('#tracking_code').hide();
+                                    $('#adm_complete_date').hide();
+                                    $('#coe_date').hide();
+                                    $('#coe_fail_date').hide();
+                                    $('#coe_pass_date').hide();
+                                    $('#coe_fail_times').hide();
+                                    $('#cancel_date').hide();
+                                    $('#cancel_times').hide();
+                                    $('#inter_fail_times').show();
 
-        }else if(jlschool_name == "Admission"){
-        $('#data_expired_date').show();
-        $('#admission_date').show();
-        $('#inter_fail_date').hide();
-        $('#interview_date').hide();
-        $('#register_date').hide();
-        $('#tracking_code').hide();
-        $('#adm_complete_date').hide();
-        $('#coe_date').hide();
-        $('#coe_fail_date').hide();
-        $('#coe_pass_date').hide();
-        $('#coe_fail_times').hide();
-        $('#cancel_date').hide();
-         $('#cancel_times').hide();
-         $('#inter_fail_times').hide();
+                                } else if (jlschool_name == "Admission") {
+                                    $('#data_expired_date').show();
+                                    $('#admission_date').show();
+                                    $('#inter_fail_date').hide();
+                                    $('#interview_date').hide();
+                                    $('#register_date').hide();
+                                    $('#tracking_code').hide();
+                                    $('#adm_complete_date').hide();
+                                    $('#coe_date').hide();
+                                    $('#coe_fail_date').hide();
+                                    $('#coe_pass_date').hide();
+                                    $('#coe_fail_times').hide();
+                                    $('#cancel_date').hide();
+                                    $('#cancel_times').hide();
+                                    $('#inter_fail_times').hide();
 
-      }else if(jlschool_name == "Admission Complete"){
-        $('#data_expired_date').hide();
-        $('#admission_date').hide();
-        $('#inter_fail_date').hide();
-        $('#interview_date').hide();
-        $('#register_date').hide();
-        $('#tracking_code').show();
-        $('#adm_complete_date').show();
-        $('#coe_date').hide();
-        $('#coe_fail_date').hide();
-        $('#coe_pass_date').hide();
-        $('#coe_fail_times').hide();
-        $('#cancel_date').hide();
-         $('#cancel_times').hide();
-         $('#inter_fail_times').hide();
+                                } else if (jlschool_name == "Admission Complete") {
+                                    $('#data_expired_date').hide();
+                                    $('#admission_date').hide();
+                                    $('#inter_fail_date').hide();
+                                    $('#interview_date').hide();
+                                    $('#register_date').hide();
+                                    $('#tracking_code').show();
+                                    $('#adm_complete_date').show();
+                                    $('#coe_date').hide();
+                                    $('#coe_fail_date').hide();
+                                    $('#coe_pass_date').hide();
+                                    $('#coe_fail_times').hide();
+                                    $('#cancel_date').hide();
+                                    $('#cancel_times').hide();
+                                    $('#inter_fail_times').hide();
 
-      }else if(jlschool_name == "COE Waiting"){
-        $('#data_expired_date').hide();
-        $('#admission_date').hide();
-        $('#inter_fail_date').hide();
-        $('#interview_date').hide();
-        $('#register_date').hide();
-        $('#tracking_code').hide();
-        $('#coe_date').show();
-        $('#coe_fail_date').hide();
-        $('#coe_pass_date').hide();
-        $('#adm_complete_date').hide();
-        $('#coe_fail_times').hide();
-        $('#cancel_date').hide();
-         $('#cancel_times').hide();
-         $('#inter_fail_times').hide();
+                                } else if (jlschool_name == "COE Waiting") {
+                                    $('#data_expired_date').hide();
+                                    $('#admission_date').hide();
+                                    $('#inter_fail_date').hide();
+                                    $('#interview_date').hide();
+                                    $('#register_date').hide();
+                                    $('#tracking_code').hide();
+                                    $('#coe_date').show();
+                                    $('#coe_fail_date').hide();
+                                    $('#coe_pass_date').hide();
+                                    $('#adm_complete_date').hide();
+                                    $('#coe_fail_times').hide();
+                                    $('#cancel_date').hide();
+                                    $('#cancel_times').hide();
+                                    $('#inter_fail_times').hide();
 
-      }else if(jlschool_name == "COE Failed"){
-        $('#data_expired_date').hide();
-        $('#admission_date').hide();
-        $('#inter_fail_date').hide();
-        $('#interview_date').hide();
-        $('#register_date').hide();
-        $('#tracking_code').hide();
-        $('#coe_date').hide();
-        $('#coe_pass_date').hide();
-        $('#coe_fail_date').show();
-        $('#coe_fail_times').show();
-        $('#adm_complete_date').hide();
-        $('#cancel_date').hide();
-         $('#cancel_times').hide();
-         $('#inter_fail_times').hide();
+                                } else if (jlschool_name == "COE Failed") {
+                                    $('#data_expired_date').hide();
+                                    $('#admission_date').hide();
+                                    $('#inter_fail_date').hide();
+                                    $('#interview_date').hide();
+                                    $('#register_date').hide();
+                                    $('#tracking_code').hide();
+                                    $('#coe_date').hide();
+                                    $('#coe_pass_date').hide();
+                                    $('#coe_fail_date').show();
+                                    $('#coe_fail_times').show();
+                                    $('#adm_complete_date').hide();
+                                    $('#cancel_date').hide();
+                                    $('#cancel_times').hide();
+                                    $('#inter_fail_times').hide();
 
-      }else if(jlschool_name == "COE Passed"){
-        $('#data_expired_date').hide();
-        $('#admission_date').hide();
-        $('#inter_fail_date').hide();
-        $('#interview_date').hide();
-        $('#register_date').hide();
-        $('#tracking_code').hide();
-        $('#coe_pass_date').show();
-        $('#coe_date').hide();
-        $('#coe_fail_date').hide();
-        $('#adm_complete_date').hide();
-        $('#coe_fail_times').hide();
-        $('#cancel_date').hide();
-         $('#cancel_times').hide();
-         $('#inter_fail_times').hide();
+                                } else if (jlschool_name == "COE Passed") {
+                                    $('#data_expired_date').hide();
+                                    $('#admission_date').hide();
+                                    $('#inter_fail_date').hide();
+                                    $('#interview_date').hide();
+                                    $('#register_date').hide();
+                                    $('#tracking_code').hide();
+                                    $('#coe_pass_date').show();
+                                    $('#coe_date').hide();
+                                    $('#coe_fail_date').hide();
+                                    $('#adm_complete_date').hide();
+                                    $('#coe_fail_times').hide();
+                                    $('#cancel_date').hide();
+                                    $('#cancel_times').hide();
+                                    $('#inter_fail_times').hide();
 
-      }else if(jlschool_name =="COE Failed"){
-        $('#data_expired_date').hide();
-        $('#admission_date').hide();
-        $('#inter_fail_date').hide();
-        $('#interview_date').hide();
-        $('#register_date').hide();
-        $('#tracking_code').hide();
-        $('#coe_pass_date').hide();
-        $('#coe_date').hide();
-        $('#coe_fail_date').show();
-        $('#adm_complete_date').hide();
-        $('#coe_fail_times').show();
-        $('#cancel_date').hide();
-         $('#cancel_times').hide();
-         $('#inter_fail_times').hide();
+                                } else if (jlschool_name == "COE Failed") {
+                                    $('#data_expired_date').hide();
+                                    $('#admission_date').hide();
+                                    $('#inter_fail_date').hide();
+                                    $('#interview_date').hide();
+                                    $('#register_date').hide();
+                                    $('#tracking_code').hide();
+                                    $('#coe_pass_date').hide();
+                                    $('#coe_date').hide();
+                                    $('#coe_fail_date').show();
+                                    $('#adm_complete_date').hide();
+                                    $('#coe_fail_times').show();
+                                    $('#cancel_date').hide();
+                                    $('#cancel_times').hide();
+                                    $('#inter_fail_times').hide();
 
-      }else if(jlschool_name =="Cancel"){
-        $('#data_expired_date').hide();
-        $('#admission_date').hide();
-        $('#inter_fail_date').hide();
-        $('#interview_date').hide();
-        $('#register_date').hide();
-        $('#tracking_code').hide();
-        $('#coe_pass_date').hide();
-        $('#coe_date').hide();
-        $('#coe_fail_date').hide();
-        $('#adm_complete_date').hide();
-        $('#coe_fail_times').hide();
-        $('#cancel_date').show();
-        $('#cancel_times').show();
-        $('#inter_fail_times').hide();
+                                } else if (jlschool_name == "Cancel") {
+                                    $('#data_expired_date').hide();
+                                    $('#admission_date').hide();
+                                    $('#inter_fail_date').hide();
+                                    $('#interview_date').hide();
+                                    $('#register_date').hide();
+                                    $('#tracking_code').hide();
+                                    $('#coe_pass_date').hide();
+                                    $('#coe_date').hide();
+                                    $('#coe_fail_date').hide();
+                                    $('#adm_complete_date').hide();
+                                    $('#coe_fail_times').hide();
+                                    $('#cancel_date').show();
+                                    $('#cancel_times').show();
+                                    //$('#cancel').val(i++);
+                                    $('#inter_fail_times').hide();
 
-      }else{
-        $('#data_expired_date').hide();
-        $('#admission_date').hide();
-        $('#inter_fail_date').hide();
-        $('#interview_date').hide();
-        $('#register_date').hide();
-        $('#tracking_code').hide();
-        $('#adm_complete_date').hide();
-        $('#coe_date').hide();
-        $('#coe_fail_date').hide();
-        $('#coe_pass_date').hide();
-        $('#coe_fail_times').hide();
-        $('#cancel_date').hide();
-        $('#cancel_times').hide();
-        $('#inter_fail_times').hide();
-      }
-    }
-    $(".school_select").change(function() {
-       const jlschoolame = $('option:selected', this).text();
-       jlsNameSelector(jlschoolame);
+                                } else {
+                                    $('#data_expired_date').hide();
+                                    $('#admission_date').hide();
+                                    $('#inter_fail_date').hide();
+                                    $('#interview_date').hide();
+                                    $('#register_date').hide();
+                                    $('#tracking_code').hide();
+                                    $('#adm_complete_date').hide();
+                                    $('#coe_date').hide();
+                                    $('#coe_fail_date').hide();
+                                    $('#coe_pass_date').hide();
+                                    $('#coe_fail_times').hide();
+                                    $('#cancel_date').hide();
+                                    $('#cancel_times').hide();
+                                    $('#inter_fail_times').hide();
+                                }
+                            }
+                            $(".school_select").change(function() {
+                                const jlschoolame = $('option:selected', this).text();
+                                jlsNameSelector(jlschoolame);
 
-    });
-    const selectJLSchoolName = '<?php echo $result->appli_status; ?>';
-     if(selectJLSchoolName){
-      jlsNameSelector(selectJLSchoolName);
-     }else{
-      console.log(123);
-      $('#data_expired_date').hide();
-        $('#admission_date').hide();
-        $('#inter_fail_date').hide();
-        $('#interview_date').hide();
-        $('#register_date').hide();
-        $('#tracking_code').hide();
-        $('#adm_complete_date').hide();
-        $('#coe_date').hide();
-        $('#coe_fail_date').hide();
-        $('#coe_pass_date').hide();
-        $('#coe_fail_times').hide();
-        $('#cancel_date').hide();
-        $('#cancel_times').hide();
-        $('#inter_fail_times').hide();
-     }
-    });
-</script>
+                            });
+                            const selectJLSchoolName = '<?php echo $result->appli_status; ?>';
+                            if (selectJLSchoolName) {
+                                jlsNameSelector(selectJLSchoolName);
+                            } else {
+                                console.log(123);
+                                $('#data_expired_date').hide();
+                                $('#admission_date').hide();
+                                $('#inter_fail_date').hide();
+                                $('#interview_date').hide();
+                                $('#register_date').hide();
+                                $('#tracking_code').hide();
+                                $('#adm_complete_date').hide();
+                                $('#coe_date').hide();
+                                $('#coe_fail_date').hide();
+                                $('#coe_pass_date').hide();
+                                $('#coe_fail_times').hide();
+                                $('#cancel_date').hide();
+                                $('#cancel_times').hide();
+                                $('#inter_fail_times').hide();
+                            }
+                        });
+                        </script>
 
+                        <style>
+                        #register_date,
+                        #interview_date,
+                        #data_expired_date,
+                        #admission_date,
+                        #tracking_code,
+                        #adm_complete_date {
+                            margin-top: 9px;
+                        }
 
+<<<<<<< HEAD
 <style>
  #register_date,
  #interview_date,
@@ -728,13 +772,13 @@ input#coefail
             'id' => 'applicant_name',
             'autocomplete' => ''));
           ?>
-        <span class="text-danger"><?php echo form_error('applicant_name'); ?></span>
-      </div>
+                                        <span class="text-danger"><?php echo form_error('applicant_name'); ?></span>
+                                    </div>
 
-      <div class="form-group">
-        <?php echo form_label(' Name (漢字)', 'applicant_name_kanji', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'applicant_name_kanji')); ?>
-        <span class="badge badge-danger">Required</span>
-        <?php
+                                    <div class="form-group">
+                                        <?php echo form_label(' Name (漢字)', 'applicant_name_kanji', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'applicant_name_kanji')); ?>
+                                        <span class="badge badge-danger">Required</span>
+                                        <?php
           echo form_input(array(
             'name' => 'applicant_name_kanji',
             'type' => 'text',
@@ -744,13 +788,14 @@ input#coefail
             'id' => 'applicant_name_kanji',
             'autocomplete' => ''));
           ?>
-        <span class="text-danger"><?php echo form_error('applicant_name_kanji'); ?></span>
-      </div>
+                                        <span
+                                            class="text-danger"><?php echo form_error('applicant_name_kanji'); ?></span>
+                                    </div>
 
-      <div class="form-group">
-        <?php echo form_label('Date Of Birth', 'date_of_birthday', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'date_of_birthday')); ?>
-        <span class="badge badge-danger">Required</span>
-        <?php
+                                    <div class="form-group">
+                                        <?php echo form_label('Date Of Birth', 'date_of_birthday', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'date_of_birthday')); ?>
+                                        <span class="badge badge-danger">Required</span>
+                                        <?php
           echo form_input(array(
             'name' => 'date_of_birthday',
             'type' => 'date',
@@ -760,11 +805,11 @@ input#coefail
             'id' => 'date_of_birthday',
             'autocomplete' => ''));
           ?>
-        <span class="text-danger"><?php echo form_error('date_of_birthday'); ?></span>
-      </div>
-      <div class="form-group">
-        <?php echo form_label('Place Of Birth Province', 'province', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'province')); ?>
-        <?php
+                                        <span class="text-danger"><?php echo form_error('date_of_birthday'); ?></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <?php echo form_label('Place Of Birth Province', 'province', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'province')); ?>
+                                        <?php
           echo form_input(array(
             'name' => 'province',
             'type' => 'text',
@@ -774,11 +819,11 @@ input#coefail
             'id' => 'province',
             'autocomplete' => ''));
           ?>
-        <span class="text-danger"><?php echo form_error('place_birth'); ?></span>
-      </div>
-      <div class="form-group">
-        <?php echo form_label('Place Of Birth City', 'place_birth', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'std_name')); ?>
-        <?php
+                                        <span class="text-danger"><?php echo form_error('place_birth'); ?></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <?php echo form_label('Place Of Birth City', 'place_birth', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'std_name')); ?>
+                                        <?php
           echo form_input(array(
             'name' => 'place_birth',
             'type' => 'text',
@@ -788,12 +833,12 @@ input#coefail
             'id' => 'place_birth',
             'autocomplete' => ''));
           ?>
-        <span class="text-danger"><?php echo form_error('place_birth'); ?></span>
-      </div>
+                                        <span class="text-danger"><?php echo form_error('place_birth'); ?></span>
+                                    </div>
 
-      <div class="form-group">
-        <?php echo form_label('Age', 'info_agege', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'info_age')); ?>
-        <?php
+                                    <div class="form-group">
+                                        <?php echo form_label('Age', 'info_agege', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'info_age')); ?>
+                                        <?php
           echo form_input(array(
             'name' => 'info_age',
             'type' => 'text',
@@ -803,12 +848,12 @@ input#coefail
             'id' => 'info_age',
             'autocomplete' => ''));
           ?>
-        <span class="text-danger"><?php echo form_error('info_age'); ?></span>
-      </div>
-      <div class="form-group">
-        <?php echo form_label('Nationality', 'nationality', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'std_name')); ?>
-        <span class="badge badge-danger">Required</span>
-        <?php
+                                        <span class="text-danger"><?php echo form_error('info_age'); ?></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <?php echo form_label('Nationality', 'nationality', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'std_name')); ?>
+                                        <span class="badge badge-danger">Required</span>
+                                        <?php
           echo form_input(array(
             'name' => 'info_nationality',
             'type' => 'text',
@@ -818,31 +863,37 @@ input#coefail
             'id' => 'info_nationality',
             'autocomplete' => ''));
           ?>
-        <span class="text-danger"><?php echo form_error('nationality'); ?></span>
-      </div>
+                                        <span class="text-danger"><?php echo form_error('nationality'); ?></span>
+                                    </div>
 
-      <div class="form-group">
-       <?php echo form_label('Gender', 'gender', array( 'class' => 'form-control-label', 'id'=> '')); ?>
-       <span class="badge badge-danger">Required</span>
-       <select name="gender" id="gender" class="admission_select">
-          <option value="1" <?php if($result->gender== "1") {echo "selected";} ?>>Male</option>
-          <option value="0" <?php if($result->gender== "0") {echo "selected";} ?>>Female</option>
-        </select>
-      </div> 
+                                    <div class="form-group">
+                                        <?php echo form_label('Gender', 'gender', array( 'class' => 'form-control-label', 'id'=> '')); ?>
+                                        <span class="badge badge-danger">Required</span>
+                                        <select name="gender" id="gender" class="admission_select">
+                                            <option value="1" <?php if($result->gender== "1") {echo "selected";} ?>>Male
+                                            </option>
+                                            <option value="0" <?php if($result->gender== "0") {echo "selected";} ?>>
+                                                Female</option>
+                                        </select>
+                                    </div>
 
-      <div class="form-group">
-      <?php echo form_label('Martial Status', 'martial_status', array( 'class' => 'form-control-label', 'id'=> '')); ?>
-      <span class="badge badge-danger">Required</span>
-        <select name="martial_status" id="martial_status" class="admission_select">
-            <option value="1" <?php if($result->martial_status== "1") {echo "selected";} ?>>Single</option>
-            <option value="0" <?php if($result->martial_status== "0") {echo "selected";} ?>>Married</option>
-        </select>
-      </div> 
+                                    <div class="form-group">
+                                        <?php echo form_label('Martial Status', 'martial_status', array( 'class' => 'form-control-label', 'id'=> '')); ?>
+                                        <span class="badge badge-danger">Required</span>
+                                        <select name="martial_status" id="martial_status" class="admission_select">
+                                            <option value="1"
+                                                <?php if($result->martial_status== "1") {echo "selected";} ?>>Single
+                                            </option>
+                                            <option value="0"
+                                                <?php if($result->martial_status== "0") {echo "selected";} ?>>Married
+                                            </option>
+                                        </select>
+                                    </div>
 
-      <div class="form-group " id="partaner" style="display:none;">
-        <?php echo form_label('Name of your Partaner', 'partaner_name', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'std_name')); ?>
-        <span class="badge badge-danger">Required</span>
-        <?php
+                                    <div class="form-group " id="partaner" style="display:none;">
+                                        <?php echo form_label('Name of your Partaner', 'partaner_name', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'std_name')); ?>
+                                        <span class="badge badge-danger">Required</span>
+                                        <?php
           echo form_input(array(
             'name' => 'partaner_name',
             'type' => 'text',
@@ -852,27 +903,28 @@ input#coefail
             'id' => 'partaner_name',
             'autocomplete' => ''));
           ?>
-        <span class="text-danger"><?php echo form_error('partaner_name'); ?></span>
-      </div>
-   
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script>
-$(function() {  
-    $("#martial_status").change(function() {
-       if($('option:selected', this).text() =="Single"){
-         $('#partaner').hide();
-        }else if($('option:selected', this).text() =="Married"){
-        $('#partaner').show();
-      }else{
-        $('#partaner').hide();
-      }
-    });
-});
-</script>
-      <div class="form-group">
-        <?php echo form_label('Email', 'std_email', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'std_email')); ?>
-        <span class="badge badge-danger">Required</span>
-        <?php
+                                        <span class="text-danger"><?php echo form_error('partaner_name'); ?></span>
+                                    </div>
+
+                                    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js">
+                                    </script>
+                                    <script>
+                                    $(function() {
+                                        $("#martial_status").change(function() {
+                                            if ($('option:selected', this).text() == "Single") {
+                                                $('#partaner').hide();
+                                            } else if ($('option:selected', this).text() == "Married") {
+                                                $('#partaner').show();
+                                            } else {
+                                                $('#partaner').hide();
+                                            }
+                                        });
+                                    });
+                                    </script>
+                                    <div class="form-group">
+                                        <?php echo form_label('Email', 'std_email', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'std_email')); ?>
+                                        <span class="badge badge-danger">Required</span>
+                                        <?php
           echo form_input(array(
             'name' => 'std_email',
             'type' => 'text',
@@ -882,13 +934,13 @@ $(function() {
             'id' => 'std_email',
             'autocomplete' => ''));
         ?>
-        <span class="text-danger"><?php echo form_error('std_email'); ?></span>
-       </div>
+                                        <span class="text-danger"><?php echo form_error('std_email'); ?></span>
+                                    </div>
 
-       <div class="form-group">
-        <?php echo form_label('Phone Number', 'phone', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'phone')); ?>
-        <span class="badge badge-danger">Required</span>
-        <?php
+                                    <div class="form-group">
+                                        <?php echo form_label('Phone Number', 'phone', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'phone')); ?>
+                                        <span class="badge badge-danger">Required</span>
+                                        <?php
           echo form_input(array(
             'name' => 'info_phone',
             'type' => 'text',
@@ -898,13 +950,13 @@ $(function() {
             'id' => 'info_phone',
             'autocomplete' => ''));
         ?>
-        <span class="text-danger"><?php echo form_error('phone'); ?></span>
-       </div>
+                                        <span class="text-danger"><?php echo form_error('phone'); ?></span>
+                                    </div>
 
-       <div class="form-group">
-        <?php echo form_label('Address','address', array('class' => 'col-form-label')); ?>
-        <span class="badge badge-danger">Required</span>
-        <?php
+                                    <div class="form-group">
+                                        <?php echo form_label('Address','address', array('class' => 'col-form-label')); ?>
+                                        <span class="badge badge-danger">Required</span>
+                                        <?php
           echo form_input(array(
             'name' => 'address',
             'type' => 'text',
@@ -914,23 +966,31 @@ $(function() {
             'id' => 'address',
             'autocomplete' => ''));
         ?>
-        <span class="text-danger"><?php echo form_error('address'); ?></span>
-       </div>
-     
-  <div class="form-group">
-    <p class="addmission">Course of Admission</p>
-    <select name="course_admission" id="course_admission" class="admission_select">
-        <option value="一般" <?php if($result->course_admission == "一般") {echo "selected";} ?>>一般</option>
-        <option value="進学" <?php if($result->course_admission == "進学") {echo "selected";} ?>>進学</option>
-        <option value="ビジネス" <?php if($result->course_admission == "ビジネス") {echo "selected";} ?>>ビジネス</option>
-        <option value="SSW" <?php if($result->course_admission == "SSW") {echo "selected";} ?>>SSW</option>
-    </select>
-  </div>
+                                        <span class="text-danger"><?php echo form_error('address'); ?></span>
+                                    </div>
 
-  <div class="form-group">
-      <?php echo form_label('Length of Study', 'course_study_lengh', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'course_study_lengh')); ?>
-      <span class="badge badge-danger">Required</span>
-      <?php
+                                    <div class="form-group">
+                                        <p class="addmission">Course of Admission</p>
+                                        <select name="course_admission" id="course_admission" class="admission_select">
+                                            <option value="一般"
+                                                <?php if($result->course_admission == "一般") {echo "selected";} ?>>一般
+                                            </option>
+                                            <option value="進学"
+                                                <?php if($result->course_admission == "進学") {echo "selected";} ?>>進学
+                                            </option>
+                                            <option value="ビジネス"
+                                                <?php if($result->course_admission == "ビジネス") {echo "selected";} ?>>ビジネス
+                                            </option>
+                                            <option value="SSW"
+                                                <?php if($result->course_admission == "SSW") {echo "selected";} ?>>SSW
+                                            </option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <?php echo form_label('Length of Study', 'course_study_lengh', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'course_study_lengh')); ?>
+                                        <span class="badge badge-danger">Required</span>
+                                        <?php
         echo form_input(array(
           'name' => 'course_study_lengh',
           'type' => 'text',
@@ -940,21 +1000,26 @@ $(function() {
           'id' => 'course_study_lengh',
           'autocomplete' => ''));
         ?>
-      <span class="text-danger"><?php echo form_error('course_study_lengh'); ?></span>
-  </div>
+                                        <span class="text-danger"><?php echo form_error('course_study_lengh'); ?></span>
+                                    </div>
 
 
-  <div class="form-group">
-  <?php echo form_label('Have you visited Japan?', 'have_you_visited_jp', array( 'class' => 'form-control-label', 'id'=> '')); ?>
-    <select name="have_you_visited_jp" id="have_you_visited_jp" class="admission_select">
-        <option value="1" <?php if($result->have_you_visited_jp== "1") {echo "selected";} ?>>Yes</option>
-        <option value="0" <?php if($result->have_you_visited_jp== "0") {echo "selected";} ?>>No</option>
-    </select>
-  </div>
-  
-  <div class="form-group">
-        <?php echo form_label('Visited Status', 'visited_jp_status', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'phone')); ?>
-        <?php
+                                    <div class="form-group">
+                                        <?php echo form_label('Have you visited Japan?', 'have_you_visited_jp', array( 'class' => 'form-control-label', 'id'=> '')); ?>
+                                        <select name="have_you_visited_jp" id="have_you_visited_jp"
+                                            class="admission_select">
+                                            <option value="1"
+                                                <?php if($result->have_you_visited_jp== "1") {echo "selected";} ?>>Yes
+                                            </option>
+                                            <option value="0"
+                                                <?php if($result->have_you_visited_jp== "0") {echo "selected";} ?>>No
+                                            </option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <?php echo form_label('Visited Status', 'visited_jp_status', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'phone')); ?>
+                                        <?php
           echo form_input(array(
             'name' => 'visited_jp_status',
             'type' => 'text',
@@ -964,11 +1029,11 @@ $(function() {
             'id' => 'visited_jp_status',
             'autocomplete' => ''));
         ?>
-        <span class="text-danger"><?php echo form_error('visited_jp_status'); ?></span>
-  </div>
-  <div class="form-group">
-        <?php echo form_label('Date of Entry', 'visited_date', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'visited_date')); ?>
-        <?php
+                                        <span class="text-danger"><?php echo form_error('visited_jp_status'); ?></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <?php echo form_label('Date of Entry', 'visited_date', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'visited_date')); ?>
+                                        <?php
           echo form_input(array(
             'name' => 'visited_date',
             'type' => 'date',
@@ -978,12 +1043,12 @@ $(function() {
             'id' => 'visited_date',
             'autocomplete' => ''));
         ?>
-        <span class="text-danger"><?php echo form_error('visited_date'); ?></span>
-  </div>
- 
-  <div class="form-group">
-        <?php echo form_label('Times of Entry', 'entry_time', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'phone')); ?>
-        <?php
+                                        <span class="text-danger"><?php echo form_error('visited_date'); ?></span>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <?php echo form_label('Times of Entry', 'entry_time', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'phone')); ?>
+                                        <?php
           echo form_input(array(
             'name' => 'entry_time',
             'type' => 'text',
@@ -993,11 +1058,11 @@ $(function() {
             'id' => 'entry_time',
             'autocomplete' => ''));
         ?>
-        <span class="text-danger"><?php echo form_error('entry_time'); ?></span>
-  </div>
-  <div class="form-group">
-        <?php echo form_label('Date of Departure', 'date_of_departure', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'date_of_departure')); ?>
-        <?php
+                                        <span class="text-danger"><?php echo form_error('entry_time'); ?></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <?php echo form_label('Date of Departure', 'date_of_departure', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'date_of_departure')); ?>
+                                        <?php
           echo form_input(array(
             'name' => 'date_of_departure',
             'type' => 'date',
@@ -1007,12 +1072,12 @@ $(function() {
             'id' => 'date_of_departure',
             'autocomplete' => ''));
         ?>
-        <span class="text-danger"><?php echo form_error('date_of_departure'); ?></span>
-  </div>
+                                        <span class="text-danger"><?php echo form_error('date_of_departure'); ?></span>
+                                    </div>
 
-  <div class="form-group">
-        <?php echo form_label('Enter visa type if you visited Japan', 'visa_type', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'visa_type')); ?>
-        <?php
+                                    <div class="form-group">
+                                        <?php echo form_label('Enter visa type if you visited Japan', 'visa_type', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'visa_type')); ?>
+                                        <?php
           echo form_input(array(
             'name' => 'visa_type',
             'type' => 'text',
@@ -1022,20 +1087,25 @@ $(function() {
             'id' => 'visa_type',
             'autocomplete' => ''));
         ?>
-        <span class="text-danger"><?php echo form_error('visa_type'); ?></span>
-  </div>
+                                        <span class="text-danger"><?php echo form_error('visa_type'); ?></span>
+                                    </div>
 
-<div class="form-group">
-  <?php echo form_label('Departure by deportation / departure order or not', 'departure_deportation', array( 'class' => 'form-control-label', 'id'=> '')); ?>
-    <select name="departure_deportation" id="departure_deportation" class="admission_select">
-        <option value="1" <?php if($result->departure_deportation== "1") {echo "selected";} ?>>Yes</option>
-        <option value="0" <?php if($result->departure_deportation== "0") {echo "selected";} ?>>No</option>
-    </select>
-  </div>
+                                    <div class="form-group">
+                                        <?php echo form_label('Departure by deportation / departure order or not', 'departure_deportation', array( 'class' => 'form-control-label', 'id'=> '')); ?>
+                                        <select name="departure_deportation" id="departure_deportation"
+                                            class="admission_select">
+                                            <option value="1"
+                                                <?php if($result->departure_deportation== "1") {echo "selected";} ?>>Yes
+                                            </option>
+                                            <option value="0"
+                                                <?php if($result->departure_deportation== "0") {echo "selected";} ?>>No
+                                            </option>
+                                        </select>
+                                    </div>
 
-  <div class="form-group">
-        <?php echo form_label('Current Status', 'current_status', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'current_status')); ?>
-        <?php
+                                    <div class="form-group">
+                                        <?php echo form_label('Current Status', 'current_status', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'current_status')); ?>
+                                        <?php
           echo form_input(array(
             'name' => 'current_status',
             'type' => 'text',
@@ -1045,14 +1115,14 @@ $(function() {
             'id' => 'current_status',
             'autocomplete' => ''));
         ?>
-        <span class="text-danger"><?php echo form_error('current_status'); ?></span>
-  </div>
- 
+                                        <span class="text-danger"><?php echo form_error('current_status'); ?></span>
+                                    </div>
 
-  <div class="form-group">
-        <?php echo form_label('(Expected month and year of graduating from the school.) ', 'expected_month_year_graduating', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'expected_month_year_graduating')); ?>
-        <div class="graduating_month_year">
-        <?php
+
+                                    <div class="form-group">
+                                        <?php echo form_label('(Expected month and year of graduating from the school.) ', 'expected_month_year_graduating', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'expected_month_year_graduating')); ?>
+                                        <div class="graduating_month_year">
+                                            <?php
           echo form_input(array(
             'name' => 'expected_month',
             'type' => 'text',
@@ -1062,7 +1132,7 @@ $(function() {
             'id' => 'expected_month',
             'autocomplete' => ''));
         ?><p class="expected_txt" style="padding-left: 22px;font-size:17px">月</p>
-        <?php
+                                            <?php
           echo form_input(array(
             'name' => 'expected_year',
             'type' => 'text',
@@ -1072,14 +1142,15 @@ $(function() {
             'id' => 'expected_year',
             'autocomplete' => ''));
         ?>
-         <p class="expected_txt" style="padding-left: 22px;font-size:17px">年</p>
-          </div>
-        <span class="text-danger"><?php echo form_error('expected_month_year_graduating'); ?></span>
-  </div>
+                                            <p class="expected_txt" style="padding-left: 22px;font-size:17px">年</p>
+                                        </div>
+                                        <span
+                                            class="text-danger"><?php echo form_error('expected_month_year_graduating'); ?></span>
+                                    </div>
 
-  <div class="form-group">
-        <?php echo form_label('Name of School', 'current_status_school_name', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'current_status_school_name')); ?>
-        <?php
+                                    <div class="form-group">
+                                        <?php echo form_label('Name of School', 'current_status_school_name', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'current_status_school_name')); ?>
+                                        <?php
           echo form_input(array(
             'name' => 'current_status_school_name',
             'type' => 'text',
@@ -1089,11 +1160,12 @@ $(function() {
             'id' => 'current_status_school_name',
             'autocomplete' => ''));
         ?>
-        <span class="text-danger"><?php echo form_error('current_status_school_name'); ?></span>
-  </div>
-  <div class="form-group">
-        <?php echo form_label('Department/Major', 'current_status_school_major', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'current_status_school_major')); ?>
-        <?php
+                                        <span
+                                            class="text-danger"><?php echo form_error('current_status_school_name'); ?></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <?php echo form_label('Department/Major', 'current_status_school_major', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'current_status_school_major')); ?>
+                                        <?php
           echo form_input(array(
             'name' => 'current_status_school_major',
             'type' => 'text',
@@ -1103,11 +1175,12 @@ $(function() {
             'id' => 'current_status_school_major',
             'autocomplete' => ''));
         ?>
-        <span class="text-danger"><?php echo form_error('current_status_school_major'); ?></span>
-  </div>
-  <div class="form-group">
-        <?php echo form_label('Grade', 'current_status_school_grade', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'current_status_school_grade')); ?>
-        <?php
+                                        <span
+                                            class="text-danger"><?php echo form_error('current_status_school_major'); ?></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <?php echo form_label('Grade', 'current_status_school_grade', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'current_status_school_grade')); ?>
+                                        <?php
           echo form_input(array(
             'name' => 'current_status_school_grade',
             'type' => 'text',
@@ -1117,11 +1190,12 @@ $(function() {
             'id' => 'current_status_school_grade',
             'autocomplete' => ''));
         ?>
-        <span class="text-danger"><?php echo form_error('current_status_school_grade'); ?></span>
-  </div>
-  <div class="form-group" >
-        <?php echo form_label('What do you want to do in Japan?‌', 'what_todo_japan', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'three_month_visa')); ?>
-        <?php
+                                        <span
+                                            class="text-danger"><?php echo form_error('current_status_school_grade'); ?></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <?php echo form_label('What do you want to do in Japan?‌', 'what_todo_japan', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'three_month_visa')); ?>
+                                        <?php
           echo form_input(array(
             'name' => 'what_todo_japan',
             'type' => 'text',
@@ -1131,11 +1205,11 @@ $(function() {
             'id' => 'what_todo_japan',
             'autocomplete' => ''));
         ?>
-        <span class="text-danger"><?php echo form_error('what_todo_japan'); ?></span>
-  </div>
-  <div class="form-group" style="margin-bottom: 270px;">
-        <?php echo form_label('‌Others (If your are a student of Japanese language course, or neither a student nor a worker, explain your current situation in detail. )', 'student_work_details', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'student_work_details')); ?>
-        <?php
+                                        <span class="text-danger"><?php echo form_error('what_todo_japan'); ?></span>
+                                    </div>
+                                    <div class="form-group" style="margin-bottom: 270px;">
+                                        <?php echo form_label('‌Others (If your are a student of Japanese language course, or neither a student nor a worker, explain your current situation in detail. )', 'student_work_details', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'student_work_details')); ?>
+                                        <?php
           echo form_input(array(
             'name' => 'student_work_details',
             'type' => 'text',
@@ -1145,28 +1219,49 @@ $(function() {
             'id' => 'student_work_details',
             'autocomplete' => ''));
         ?>
-        <span class="text-danger"><?php echo form_error('current_status_school_grade'); ?></span>
-  </div>
-  
-  <div class="form-group" style="display:none;"  id="specific_plans">
-  <h6 class="spec_plan">Specific Plans after Graduating</h6>
-   <p class="addmission" style="margin-bottom:19px ;">Specific Plans after Graduating</p>
-   <select name="specific_plans_after_graduating" class="admission_select" id="specific_plans_after_graduating">
-        <option value="Advancing to higher education" <?php if($result->specific_plans_after_graduating== "Advancing to higher education") {echo "selected";} ?>>Advancing to higher education</option>
-        <option value="Planning to work" <?php if($result->specific_plans_after_graduating== "Planning to work") {echo "selected";} ?>>Planning to work</option>
-        <option value="帰国 /Return to Home Country" <?php if($result->specific_plans_after_graduating== "帰国 /Return to Home Country") {echo "selected";} ?>>帰国 /Return to Home Country</option>
-        <option value="日本での進学 /Attend School in Japan" <?php if($result->specific_plans_after_graduating== "日本での進学 /Attend School in Japan") {echo "selected";} ?>>日本での進学 /Attend School in Japan</option>
-        <option value="Postgraduate Course" <?php if($result->specific_plans_after_graduating== "Postgraduate Course") {echo "selected";} ?>>Postgraduate Course</option>
-        <option value="Junior College" <?php if($result->specific_plans_after_graduating== "Junior College") {echo "selected";} ?>>Junior College</option>
-        <option value="Undergraduate Course" <?php if($result->specific_plans_after_graduating== "Undergraduate Course") {echo "selected";} ?>>Undergraduate Course</option>
-        <option value="Professional School" <?php if($result->specific_plans_after_graduating== "Professional School") {echo "selected";} ?>>Professional School</option>
-        <option value="その他 /Other" <?php if($result->specific_plans_after_graduating== "その他 /Other") {echo "selected";} ?>>その他 /Other</option>
-    </select>
-  </div>
-  <h6 class="spec_plan">Higher Education in Japan</h6>
-  <div class="form-group">
-        <?php echo form_label('Type of Schools', 'specific_plan_type_schools', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'specific_plan_type_schools')); ?>
-        <?php
+                                        <span
+                                            class="text-danger"><?php echo form_error('current_status_school_grade'); ?></span>
+                                    </div>
+
+                                    <div class="form-group" style="display:none;" id="specific_plans">
+                                        <h6 class="spec_plan">Specific Plans after Graduating</h6>
+                                        <p class="addmission" style="margin-bottom:19px ;">Specific Plans after
+                                            Graduating</p>
+                                        <select name="specific_plans_after_graduating" class="admission_select"
+                                            id="specific_plans_after_graduating">
+                                            <option value="Advancing to higher education"
+                                                <?php if($result->specific_plans_after_graduating== "Advancing to higher education") {echo "selected";} ?>>
+                                                Advancing to higher education</option>
+                                            <option value="Planning to work"
+                                                <?php if($result->specific_plans_after_graduating== "Planning to work") {echo "selected";} ?>>
+                                                Planning to work</option>
+                                            <option value="帰国 /Return to Home Country"
+                                                <?php if($result->specific_plans_after_graduating== "帰国 /Return to Home Country") {echo "selected";} ?>>
+                                                帰国 /Return to Home Country</option>
+                                            <option value="日本での進学 /Attend School in Japan"
+                                                <?php if($result->specific_plans_after_graduating== "日本での進学 /Attend School in Japan") {echo "selected";} ?>>
+                                                日本での進学 /Attend School in Japan</option>
+                                            <option value="Postgraduate Course"
+                                                <?php if($result->specific_plans_after_graduating== "Postgraduate Course") {echo "selected";} ?>>
+                                                Postgraduate Course</option>
+                                            <option value="Junior College"
+                                                <?php if($result->specific_plans_after_graduating== "Junior College") {echo "selected";} ?>>
+                                                Junior College</option>
+                                            <option value="Undergraduate Course"
+                                                <?php if($result->specific_plans_after_graduating== "Undergraduate Course") {echo "selected";} ?>>
+                                                Undergraduate Course</option>
+                                            <option value="Professional School"
+                                                <?php if($result->specific_plans_after_graduating== "Professional School") {echo "selected";} ?>>
+                                                Professional School</option>
+                                            <option value="その他 /Other"
+                                                <?php if($result->specific_plans_after_graduating== "その他 /Other") {echo "selected";} ?>>
+                                                その他 /Other</option>
+                                        </select>
+                                    </div>
+                                    <h6 class="spec_plan">Higher Education in Japan</h6>
+                                    <div class="form-group">
+                                        <?php echo form_label('Type of Schools', 'specific_plan_type_schools', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'specific_plan_type_schools')); ?>
+                                        <?php
           echo form_input(array(
             'name' => 'specific_plan_type_schools',
             'type' => 'text',
@@ -1176,11 +1271,12 @@ $(function() {
             'id' => 'specific_plan_type_schools',
             'autocomplete' => ''));
         ?>
-        <span class="text-danger"><?php echo form_error('specific_plan_type_schools'); ?></span>
-  </div>
-  <div class="form-group">
-        <?php echo form_label('Name of School', 'specific_plan_school_name', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'specific_plan_school_name')); ?>
-        <?php
+                                        <span
+                                            class="text-danger"><?php echo form_error('specific_plan_type_schools'); ?></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <?php echo form_label('Name of School', 'specific_plan_school_name', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'specific_plan_school_name')); ?>
+                                        <?php
           echo form_input(array(
             'name' => 'specific_plan_school_name',
             'type' => 'text',
@@ -1190,11 +1286,12 @@ $(function() {
             'id' => 'specific_plan_school_name',
             'autocomplete' => ''));
         ?>
-        <span class="text-danger"><?php echo form_error('specific_plan_school_name'); ?></span>
-  </div>
-  <div class="form-group">
-        <?php echo form_label('Major', 'specific_plan_major', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'specific_plan_major')); ?>
-        <?php
+                                        <span
+                                            class="text-danger"><?php echo form_error('specific_plan_school_name'); ?></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <?php echo form_label('Major', 'specific_plan_major', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'specific_plan_major')); ?>
+                                        <?php
           echo form_input(array(
             'name' => 'specific_plan_major',
             'type' => 'text',
@@ -1204,11 +1301,12 @@ $(function() {
             'id' => 'specific_plan_major',
             'autocomplete' => ''));
         ?>
-        <span class="text-danger"><?php echo form_error('specific_plan_major'); ?></span>
-  </div>
-  <div class="form-group">
-        <?php echo form_label('What is your special ability?', 'special_ability', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'phone')); ?>
-        <?php
+                                        <span
+                                            class="text-danger"><?php echo form_error('specific_plan_major'); ?></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <?php echo form_label('What is your special ability?', 'special_ability', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'phone')); ?>
+                                        <?php
           echo form_input(array(
             'name' => 'special_ability',
             'type' => 'text',
@@ -1218,11 +1316,11 @@ $(function() {
             'id' => 'special_ability',
             'autocomplete' => ''));
         ?>
-        <span class="text-danger"><?php echo form_error('special_ability'); ?></span>
-  </div>
-  <div class="form-group">
-        <?php echo form_label(' What are your hobbies?', 'hobbies', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'phone')); ?>
-        <?php
+                                        <span class="text-danger"><?php echo form_error('special_ability'); ?></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <?php echo form_label(' What are your hobbies?', 'hobbies', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'phone')); ?>
+                                        <?php
           echo form_input(array(
             'name' => 'hobbies',
             'type' => 'text',
@@ -1232,16 +1330,16 @@ $(function() {
             'id' => 'hobbies',
             'autocomplete' => ''));
         ?>
-        <span class="text-danger"><?php echo form_error('hobbies'); ?></span>
-  </div>
-</div>
-<!-- leftside -->
+                                        <span class="text-danger"><?php echo form_error('hobbies'); ?></span>
+                                    </div>
+                                </div>
+                                <!-- leftside -->
 
-<!-- rightside -->
-<div class="col-md-6 float-left">
-  <div class="form-group">
-      <?php echo form_label('Occupation', 'occupation', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'occupation')); ?>
-      <?php
+                                <!-- rightside -->
+                                <div class="col-md-6 float-left">
+                                    <div class="form-group">
+                                        <?php echo form_label('Occupation', 'occupation', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'occupation')); ?>
+                                        <?php
         echo form_input(array(
           'name' => 'occupation',
           'type' => 'text',
@@ -1251,11 +1349,11 @@ $(function() {
           'id' => 'occupation',
           'autocomplete' => ''));
       ?>
-      <span class="text-danger"><?php echo form_error('occupation'); ?></span>
-  </div>
-  <div class="form-group">
-      <?php echo form_label('Place of Employment or School', 'place_employment_school', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'place_employment_school')); ?>
-      <?php
+                                        <span class="text-danger"><?php echo form_error('occupation'); ?></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <?php echo form_label('Place of Employment or School', 'place_employment_school', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'place_employment_school')); ?>
+                                        <?php
         echo form_input(array(
           'name' => 'place_employment_school',
           'type' => 'text',
@@ -1265,11 +1363,12 @@ $(function() {
           'id' => 'place_employment_school',
           'autocomplete' => ''));
       ?>
-      <span class="text-danger"><?php echo form_error('place_employment_school'); ?></span>
-  </div>
-  <div class="form-group">
-      <?php echo form_label('Address of Employment or School', 'addr_employment_school', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'addr_employment_school')); ?>
-      <?php
+                                        <span
+                                            class="text-danger"><?php echo form_error('place_employment_school'); ?></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <?php echo form_label('Address of Employment or School', 'addr_employment_school', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'addr_employment_school')); ?>
+                                        <?php
         echo form_input(array(
           'name' => 'addr_employment_school',
           'type' => 'text',
@@ -1279,12 +1378,13 @@ $(function() {
           'id' => 'addr_employment_school',
           'autocomplete' => ''));
       ?>
-      <span class="text-danger"><?php echo form_error('addr_employment_school'); ?></span>
-  </div>
-  
-  <div class="form-group">
-      <?php echo form_label('Tel of Employment or School', 'tel_employment_school', array( 'class' => 'employment_text', 'id'=> '', 'style' => '', 'for' => 'tel_employment_school'));?>
-      <?php
+                                        <span
+                                            class="text-danger"><?php echo form_error('addr_employment_school'); ?></span>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <?php echo form_label('Tel of Employment or School', 'tel_employment_school', array( 'class' => 'employment_text', 'id'=> '', 'style' => '', 'for' => 'tel_employment_school'));?>
+                                        <?php
         echo form_input(array(
           'name' => 'tel_employment_school',
           'type' => 'text',
@@ -1294,11 +1394,12 @@ $(function() {
           'id' => 'tel_employment_school',
           'autocomplete' => ''));
       ?>
-      <span class="text-danger"><?php echo form_error('tel_employment_school'); ?></span>
-  </div>
-  <div class="form-group">
-      <?php echo form_label('Entrance Age to Elementary School', 'entry_age_ele_school', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'entry_age_ele_school')); ?>
-      <?php
+                                        <span
+                                            class="text-danger"><?php echo form_error('tel_employment_school'); ?></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <?php echo form_label('Entrance Age to Elementary School', 'entry_age_ele_school', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'entry_age_ele_school')); ?>
+                                        <?php
         echo form_input(array(
           'name' => 'entry_age_ele_school',
           'type' => 'text',
@@ -1308,11 +1409,12 @@ $(function() {
           'id' => 'entry_age_ele_school',
           'autocomplete' => ''));
       ?>
-      <span class="text-danger"><?php echo form_error('entry_age_ele_school'); ?></span>
-  </div>
-  <div class="form-group">
-      <?php echo form_label('Lastest Educational history School name', 'educational_school_name', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'educational_school_name')); ?>
-      <?php
+                                        <span
+                                            class="text-danger"><?php echo form_error('entry_age_ele_school'); ?></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <?php echo form_label('Lastest Educational history School name', 'educational_school_name', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'educational_school_name')); ?>
+                                        <?php
         echo form_input(array(
           'name' => 'educational_school_name',
           'type' => 'text',
@@ -1322,11 +1424,12 @@ $(function() {
           'id' => 'educational_school_name',
           'autocomplete' => ''));
       ?>
-      <span class="text-danger"><?php echo form_error('educational_school_name'); ?></span>
-  </div>
-  <div class="form-group">
-      <?php echo form_label('Duration of JP Language study', 'duration_jp_language_study', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'duration_jp_language_study')); ?>
-      <?php
+                                        <span
+                                            class="text-danger"><?php echo form_error('educational_school_name'); ?></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <?php echo form_label('Duration of JP Language study', 'duration_jp_language_study', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'duration_jp_language_study')); ?>
+                                        <?php
         echo form_input(array(
           'name' => 'duration_jp_language_study',
           'type' => 'text',
@@ -1336,19 +1439,22 @@ $(function() {
           'id' => 'duration_jp_language_study',
           'autocomplete' => ''));
       ?>
-      <span class="text-danger"><?php echo form_error('duration_jp_language_study'); ?></span>
-  </div>
-  
-  <div class="form-group">
-  <?php echo form_label('Passport', 'passport', array( 'class' => 'passport_text', 'id'=> '')); ?>
-    <select name="passport" id="passport" class="admission_select">
-          <option value="1" <?php if($result->passport== "1") {echo "selected";} ?>>Yes</option>
-          <option value="0" <?php if($result->passport== "0") {echo "selected";} ?>>No</option>
-    </select>
-  </div>
-  <div class="form-group">
-      <?php echo form_label('Passport Number', 'passport_no', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'passport_no')); ?>
-      <?php
+                                        <span
+                                            class="text-danger"><?php echo form_error('duration_jp_language_study'); ?></span>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <?php echo form_label('Passport', 'passport', array( 'class' => 'passport_text', 'id'=> '')); ?>
+                                        <select name="passport" id="passport" class="admission_select">
+                                            <option value="1" <?php if($result->passport== "1") {echo "selected";} ?>>
+                                                Yes</option>
+                                            <option value="0" <?php if($result->passport== "0") {echo "selected";} ?>>No
+                                            </option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <?php echo form_label('Passport Number', 'passport_no', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'passport_no')); ?>
+                                        <?php
         echo form_input(array(
           'name' => 'passport_no',
           'type' => 'text',
@@ -1358,11 +1464,11 @@ $(function() {
           'id' => 'passport_no',
           'autocomplete' => ''));
       ?>
-      <span class="text-danger"><?php echo form_error('passport_no'); ?></span>
-  </div>
-  <div class="form-group">
-      <?php echo form_label('Date of issue', 'passport_data_issue', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'passport_data_issue')); ?>
-      <?php
+                                        <span class="text-danger"><?php echo form_error('passport_no'); ?></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <?php echo form_label('Date of issue', 'passport_data_issue', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'passport_data_issue')); ?>
+                                        <?php
         echo form_input(array(
           'name' => 'passport_data_issue',
           'type' => 'date',
@@ -1372,11 +1478,12 @@ $(function() {
           'id' => 'passport_data_issue',
           'autocomplete' => ''));
       ?>
-      <span class="text-danger"><?php echo form_error('passport_data_issue'); ?></span>
-  </div> 
-  <div class="form-group">
-      <?php echo form_label('Date of expiration', 'passport_data_exp', array( 'class' => '', 'id'=> 'passport_data_exp_ttl', 'style' => '', 'for' => 'passport_data_exp')); ?>
-      <?php
+                                        <span
+                                            class="text-danger"><?php echo form_error('passport_data_issue'); ?></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <?php echo form_label('Date of expiration', 'passport_data_exp', array( 'class' => '', 'id'=> 'passport_data_exp_ttl', 'style' => '', 'for' => 'passport_data_exp')); ?>
+                                        <?php
         echo form_input(array(
           'name' => 'passport_data_exp',
           'type' => 'date',
@@ -1386,11 +1493,11 @@ $(function() {
           'id' => 'passport_data_exp',
           'autocomplete' => ''));
       ?>
-      <span class="text-danger"><?php echo form_error('passport_data_exp'); ?></span>
-  </div>  
-  <div class="form-group">
-      <?php echo form_label('Passport Issue Authority', 'passport_issue_authority', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'phone')); ?>
-      <?php
+                                        <span class="text-danger"><?php echo form_error('passport_data_exp'); ?></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <?php echo form_label('Passport Issue Authority', 'passport_issue_authority', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'phone')); ?>
+                                        <?php
         echo form_input(array(
           'name' => 'passport_issue_authority',
           'type' => 'text',
@@ -1400,18 +1507,22 @@ $(function() {
           'id' => 'passport_issue_authority',
           'autocomplete' => ''));
       ?>
-      <span class="text-danger"><?php echo form_error('passport_no'); ?></span>
-  </div>
-  <div class="form-group">
-  <?php echo form_label('Blank period／Military service', 'military_service', array( 'class' => 'military_txt', 'id'=> '')); ?>
-    <select name="military_service" id="military_service" class="admission_select">
-          <option value="1" <?php if($result->military_service== "1") {echo "selected";} ?>>Yes</option>
-          <option value="0" <?php if($result->military_service== "0") {echo "selected";} ?>>No</option>
-    </select>
-  </div>
-  <div class="form-group">
-      <?php echo form_label('Blank period／Military service details', 'military_service_details', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'military_service_details')); ?>
-      <?php
+                                        <span class="text-danger"><?php echo form_error('passport_no'); ?></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <?php echo form_label('Blank period／Military service', 'military_service', array( 'class' => 'military_txt', 'id'=> '')); ?>
+                                        <select name="military_service" id="military_service" class="admission_select">
+                                            <option value="1"
+                                                <?php if($result->military_service== "1") {echo "selected";} ?>>Yes
+                                            </option>
+                                            <option value="0"
+                                                <?php if($result->military_service== "0") {echo "selected";} ?>>No
+                                            </option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <?php echo form_label('Blank period／Military service details', 'military_service_details', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'military_service_details')); ?>
+                                        <?php
         echo form_input(array(
           'name' => 'military_service_details',
           'type' => 'text',
@@ -1421,11 +1532,11 @@ $(function() {
           'id' => 'military_service_details',
           'autocomplete' => ''));
       ?>
-      <span class="text-danger"><?php echo form_error('place_apply_visa'); ?></span>
-  </div>
-  <div class="form-group">
-      <?php echo form_label('Place to Apply for VISA', 'place_apply_visa', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'place_apply_visa')); ?>
-      <?php
+                                        <span class="text-danger"><?php echo form_error('place_apply_visa'); ?></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <?php echo form_label('Place to Apply for VISA', 'place_apply_visa', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'place_apply_visa')); ?>
+                                        <?php
         echo form_input(array(
           'name' => 'place_apply_visa',
           'type' => 'text',
@@ -1435,18 +1546,23 @@ $(function() {
           'id' => 'place_apply_visa',
           'autocomplete' => ''));
       ?>
-      <span class="text-danger"><?php echo form_error('place_apply_visa'); ?></span>
-  </div>
-  <div class="form-group">
-  <?php echo form_label('Accompanying Persons,if Any', 'accompanying_person', array( 'class' => 'form-control-label', 'id'=> '')); ?>
-  <select name="accompanying_person" id="accompanying_person" class="admission_select">
-          <option value="1" <?php if($result->accompanying_person== "1") {echo "selected";} ?>>Yes</option>
-          <option value="0" <?php if($result->accompanying_person== "0") {echo "selected";} ?>>No</option>
-    </select>
-  </div>
-  <div class="form-group">
-      <?php echo form_label('Accompanying marital status', 'accompanying_marital_status', array( 'class' => '', 'id'=> 'accompanying_marital_status', 'style' => 'margin-bottom: 13px;', 'for' => 'accompanying_marital_status')); ?>
-      <?php
+                                        <span class="text-danger"><?php echo form_error('place_apply_visa'); ?></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <?php echo form_label('Accompanying Persons,if Any', 'accompanying_person', array( 'class' => 'form-control-label', 'id'=> '')); ?>
+                                        <select name="accompanying_person" id="accompanying_person"
+                                            class="admission_select">
+                                            <option value="1"
+                                                <?php if($result->accompanying_person== "1") {echo "selected";} ?>>Yes
+                                            </option>
+                                            <option value="0"
+                                                <?php if($result->accompanying_person== "0") {echo "selected";} ?>>No
+                                            </option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <?php echo form_label('Accompanying marital status', 'accompanying_marital_status', array( 'class' => '', 'id'=> 'accompanying_marital_status', 'style' => 'margin-bottom: 13px;', 'for' => 'accompanying_marital_status')); ?>
+                                        <?php
         echo form_input(array(
           'name' => 'accompanying_marital_status',
           'type' => 'text',
@@ -1456,18 +1572,24 @@ $(function() {
           'id' => 'accompanying_marital_status',
           'autocomplete' => ''));
       ?>
-      <span class="text-danger"><?php echo form_error('accompanying_marital_status'); ?></span>
-  </div>
-  <div class="form-group">
-  <?php echo form_label('Did you apply before in Japan?', 'school_apply_before_japan', array( 'class' => 'form-control-label', 'id'=> '')); ?>
-  <select name="school_apply_before_japan" id="school_apply_before_japan" class="admission_select">
-          <option value="1" <?php if($result->school_apply_before_japan== "1") {echo "selected";} ?>>Yes</option>
-          <option value="0" <?php if($result->school_apply_before_japan== "0") {echo "selected";} ?>>No</option>
-    </select>
-  </div>
-  <div class="form-group">
-      <?php echo form_label('when?', 'school_apply_date', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'school_apply_date')); ?>
-      <?php
+                                        <span
+                                            class="text-danger"><?php echo form_error('accompanying_marital_status'); ?></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <?php echo form_label('Did you apply before in Japan?', 'school_apply_before_japan', array( 'class' => 'form-control-label', 'id'=> '')); ?>
+                                        <select name="school_apply_before_japan" id="school_apply_before_japan"
+                                            class="admission_select">
+                                            <option value="1"
+                                                <?php if($result->school_apply_before_japan== "1") {echo "selected";} ?>>
+                                                Yes</option>
+                                            <option value="0"
+                                                <?php if($result->school_apply_before_japan== "0") {echo "selected";} ?>>
+                                                No</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <?php echo form_label('when?', 'school_apply_date', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'school_apply_date')); ?>
+                                        <?php
         echo form_input(array(
           'name' => 'school_apply_date',
           'type' => 'date',
@@ -1477,11 +1599,11 @@ $(function() {
           'id' => 'school_apply_date',
           'autocomplete' => ''));
       ?>
-      <span class="text-danger"><?php echo form_error('school_apply_date'); ?></span>
-  </div>
-  <div class="form-group">
-      <?php echo form_label('status?', 'school_apply_status', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'school_apply_status')); ?>
-      <?php
+                                        <span class="text-danger"><?php echo form_error('school_apply_date'); ?></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <?php echo form_label('status?', 'school_apply_status', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'school_apply_status')); ?>
+                                        <?php
         echo form_input(array(
           'name' => 'school_apply_status',
           'type' => 'text',
@@ -1491,11 +1613,12 @@ $(function() {
           'id' => 'school_apply_status',
           'autocomplete' => ''));
       ?>
-      <span class="text-danger"><?php echo form_error('school_apply_status'); ?></span>
-  </div>
-  <div class="form-group">
-      <?php echo form_label('Name of School?', 'school_apply_name', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'school_apply_name')); ?>
-      <?php
+                                        <span
+                                            class="text-danger"><?php echo form_error('school_apply_status'); ?></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <?php echo form_label('Name of School?', 'school_apply_name', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'school_apply_name')); ?>
+                                        <?php
         echo form_input(array(
           'name' => 'school_apply_name',
           'type' => 'text',
@@ -1505,11 +1628,11 @@ $(function() {
           'id' => 'school_apply_name',
           'autocomplete' => ''));
       ?>
-      <span class="text-danger"><?php echo form_error('school_apply_name'); ?></span>
-  </div>
-  <div class="form-group">
-      <?php echo form_label('Which immigration office?', 'immigration_office', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'phimmigration_officeone')); ?>
-      <?php
+                                        <span class="text-danger"><?php echo form_error('school_apply_name'); ?></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <?php echo form_label('Which immigration office?', 'immigration_office', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'phimmigration_officeone')); ?>
+                                        <?php
         echo form_input(array(
           'name' => 'immigration_office',
           'type' => 'text',
@@ -1519,20 +1642,28 @@ $(function() {
           'id' => 'immigration_office',
           'autocomplete' => ''));
       ?>
-      <span class="text-danger"><?php echo form_error('immigration_office'); ?></span>
-  </div>
-  <div class="form-group">
-    <p class="addmission"  style="margin-bottom: 7px;">Result?</p>
-    <select name="immigration_result" class="admission_select">
-        <option value="交付" <?php if($result->immigration_result== "交付") {echo "selected";} ?>>交付</option>
-        <option value="不交付" <?php if($result->immigration_result== "不交付") {echo "selected";} ?>>不交付</option>
-        <option value="取下げ" <?php if($result->immigration_result== "取下げ") {echo "selected";} ?>>取下げ</option>
-        <option value="交付後の未入国" <?php if($result->immigration_result== "交付後の未入国") {echo "selected";} ?>>交付後の未入国</option>
-    </select>
-  </div>
-  <div class="form-group">
-      <?php echo form_label('Reason?', 'immigration_reason', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'immigration_reason')); ?>
-      <?php
+                                        <span class="text-danger"><?php echo form_error('immigration_office'); ?></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <p class="addmission" style="margin-bottom: 7px;">Result?</p>
+                                        <select name="immigration_result" class="admission_select">
+                                            <option value="交付"
+                                                <?php if($result->immigration_result== "交付") {echo "selected";} ?>>交付
+                                            </option>
+                                            <option value="不交付"
+                                                <?php if($result->immigration_result== "不交付") {echo "selected";} ?>>不交付
+                                            </option>
+                                            <option value="取下げ"
+                                                <?php if($result->immigration_result== "取下げ") {echo "selected";} ?>>取下げ
+                                            </option>
+                                            <option value="交付後の未入国"
+                                                <?php if($result->immigration_result== "交付後の未入国") {echo "selected";} ?>>
+                                                交付後の未入国</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <?php echo form_label('Reason?', 'immigration_reason', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'immigration_reason')); ?>
+                                        <?php
         echo form_input(array(
           'name' => 'immigration_reason',
           'type' => 'text',
@@ -1542,11 +1673,11 @@ $(function() {
           'id' => 'immigration_reason',
           'autocomplete' => ''));
       ?>
-      <span class="text-danger"><?php echo form_error('immigration_reason'); ?></span>
-  </div>
-  <div class="form-group">
-  <?php echo form_label('When did (will) you graduate?', 'graduate_date', array( 'class' => 'form-control-label', 'id'=> '')); ?>
-  <?php
+                                        <span class="text-danger"><?php echo form_error('immigration_reason'); ?></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <?php echo form_label('When did (will) you graduate?', 'graduate_date', array( 'class' => 'form-control-label', 'id'=> '')); ?>
+                                        <?php
           echo form_input(array(
             'name' => 'graduate_date',
             'type' => 'date',
@@ -1556,19 +1687,21 @@ $(function() {
             'id' => 'graduate_date',
             'autocomplete' => ''));
   ?>
-  <span class="text-danger"><?php echo form_error('graduate_date'); ?></span>
-  </div>
-  <div class="form-group">
-  <?php echo form_label('Have you ever experienced COE rejection?', 'COE_reject', array( 'class' => 'form-control-label', 'id'=> '')); ?>
-  <span class="badge badge-danger">Required</span>
-    <select name="COE_reject" id="COE_reject" class="admission_select">
-        <option value="1" <?php if($result->COE_reject== "1") echo "selected"; ?>>Yes</option>
-        <option value="0" <?php if($result->COE_reject== "0") echo "selected"; ?>>No</option>
-    </select>
-  </div>
-  <div class="form-group">
-  <?php echo form_label('What language can you use?', 'language_can_you_use', array( 'class' => 'form-control-label', 'id'=> '')); ?>
-  <?php
+                                        <span class="text-danger"><?php echo form_error('graduate_date'); ?></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <?php echo form_label('Have you ever experienced COE rejection?', 'COE_reject', array( 'class' => 'form-control-label', 'id'=> '')); ?>
+                                        <span class="badge badge-danger">Required</span>
+                                        <select name="COE_reject" id="COE_reject" class="admission_select">
+                                            <option value="1" <?php if($result->COE_reject== "1") echo "selected"; ?>>
+                                                Yes</option>
+                                            <option value="0" <?php if($result->COE_reject== "0") echo "selected"; ?>>No
+                                            </option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <?php echo form_label('What language can you use?', 'language_can_you_use', array( 'class' => 'form-control-label', 'id'=> '')); ?>
+                                        <?php
           echo form_input(array(
             'name' => 'language_can_you_use',
             'type' => 'text',
@@ -1578,11 +1711,12 @@ $(function() {
             'id' => 'language_can_you_use',
             'autocomplete' => ''));
   ?>
-  <span class="text-danger"><?php echo form_error('language_can_you_use'); ?></span>
-  </div>
-  <div class="form-group">
-  <?php echo form_label('What subjects are you good at?', 'you_are_good_subject', array( 'class' => 'form-control-label', 'id'=> '')); ?>
-  <?php
+                                        <span
+                                            class="text-danger"><?php echo form_error('language_can_you_use'); ?></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <?php echo form_label('What subjects are you good at?', 'you_are_good_subject', array( 'class' => 'form-control-label', 'id'=> '')); ?>
+                                        <?php
           echo form_input(array(
             'name' => 'you_are_good_subject',
             'type' => 'text',
@@ -1592,12 +1726,13 @@ $(function() {
             'id' => 'you_are_good_subject',
             'autocomplete' => ''));
   ?>
-  <span class="text-danger"><?php echo form_error('you_are_good_subject'); ?></span>
-  </div>
-  <h6 class="spec_plan">Employment</h6>
-  <div class="form-group">
-        <?php echo form_label('Aimed occupational category', 'aimed_occupational_category', array( 'class' => 'employment', 'id'=> '', 'style' => '', 'for' => 'phone')); ?>
-        <?php
+                                        <span
+                                            class="text-danger"><?php echo form_error('you_are_good_subject'); ?></span>
+                                    </div>
+                                    <h6 class="spec_plan">Employment</h6>
+                                    <div class="form-group">
+                                        <?php echo form_label('Aimed occupational category', 'aimed_occupational_category', array( 'class' => 'employment', 'id'=> '', 'style' => '', 'for' => 'phone')); ?>
+                                        <?php
           echo form_input(array(
             'name' => 'aimed_occupational_category',
             'type' => 'text',
@@ -1607,12 +1742,13 @@ $(function() {
             'id' => 'aimed_occupational_category',
             'autocomplete' => ''));
         ?>
-        <span class="text-danger"><?php echo form_error('aimed_occupational_category'); ?></span>
-  </div>
-  <h6 class="spec_plan">Return to home country</h6>
-  <div class="form-group">
-        <?php echo form_label('When will you return', 'will_you_return', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'phone')); ?>
-        <?php
+                                        <span
+                                            class="text-danger"><?php echo form_error('aimed_occupational_category'); ?></span>
+                                    </div>
+                                    <h6 class="spec_plan">Return to home country</h6>
+                                    <div class="form-group">
+                                        <?php echo form_label('When will you return', 'will_you_return', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'phone')); ?>
+                                        <?php
           echo form_input(array(
             'name' => 'will_you_return',
             'type' => 'text',
@@ -1622,11 +1758,11 @@ $(function() {
             'id' => 'will_you_return',
             'autocomplete' => ''));
         ?>
-        <span class="text-danger"><?php echo form_error('will_you_return'); ?></span>
-  </div>
-  <div class="form-group">
-        <?php echo form_label('Return Other', 'return_other', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'phone')); ?>
-        <?php
+                                        <span class="text-danger"><?php echo form_error('will_you_return'); ?></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <?php echo form_label('Return Other', 'return_other', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'phone')); ?>
+                                        <?php
           echo form_input(array(
             'name' => 'return_other',
             'type' => 'text',
@@ -1636,27 +1772,35 @@ $(function() {
             'id' => 'return_other',
             'autocomplete' => ''));
         ?>
-        <span class="text-danger"><?php echo form_error('return_other'); ?></span>
-  </div>
-  <div class="form-group">
-  <?php echo form_label('Is it possible to provide in English? ', 'provide_english', array( 'class' => 'form-control-label', 'id'=> '')); ?>
-  <span class="badge badge-danger">Required</span>
-    <select name="provide_english" id="provide_english" class="admission_select">
-        <option value="1" <?php if($result->provide_english== "1") echo "selected"; ?>>Yes</option>
-        <option value="0" <?php if($result->provide_english== "0") echo "selected"; ?>>No</option>
-    </select>
-  </div>
-  <div class="form-group">
-  <?php echo form_label('Are you allergic to any medicine or foods?', 'allergic_medicine', array( 'class' => 'form-control-label', 'id'=> 'allergic_medicine')); ?>
-  <span class="badge badge-danger">Required</span>
-    <select name="allergic_medicine" id="allergic_medicine" class="admission_select">
-        <option value="1" <?php if($result13->allergic_medicine== "1") {echo "selected";} ?>>Yes</option>
-        <option value="0" <?php if($result13->allergic_medicine== "0") {echo "selected";} ?>>No</option>
-    </select>
-  </div>
-  <div class="form-group">
-        <?php echo form_label('If you select ”Yes”, please tell us in detal about your allegy.', 'allergic_medicine_details', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'phone')); ?>
-        <?php
+                                        <span class="text-danger"><?php echo form_error('return_other'); ?></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <?php echo form_label('Is it possible to provide in English? ', 'provide_english', array( 'class' => 'form-control-label', 'id'=> '')); ?>
+                                        <span class="badge badge-danger">Required</span>
+                                        <select name="provide_english" id="provide_english" class="admission_select">
+                                            <option value="1"
+                                                <?php if($result->provide_english== "1") echo "selected"; ?>>Yes
+                                            </option>
+                                            <option value="0"
+                                                <?php if($result->provide_english== "0") echo "selected"; ?>>No</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <?php echo form_label('Are you allergic to any medicine or foods?', 'allergic_medicine', array( 'class' => 'form-control-label', 'id'=> 'allergic_medicine')); ?>
+                                        <span class="badge badge-danger">Required</span>
+                                        <select name="allergic_medicine" id="allergic_medicine"
+                                            class="admission_select">
+                                            <option value="1"
+                                                <?php if($result13->allergic_medicine== "1") {echo "selected";} ?>>Yes
+                                            </option>
+                                            <option value="0"
+                                                <?php if($result13->allergic_medicine== "0") {echo "selected";} ?>>No
+                                            </option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <?php echo form_label('If you select ”Yes”, please tell us in detal about your allegy.', 'allergic_medicine_details', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'phone')); ?>
+                                        <?php
           echo form_input(array(
             'name' => 'allergic_medicine_details',
             'type' => 'text',
@@ -1666,21 +1810,23 @@ $(function() {
             'id' => 'allergic_medicine_details',
             'autocomplete' => ''));
         ?>
-        <span class="text-danger"><?php echo form_error('allergic_medicine_details'); ?></span>
-  </div>
-  
-</div> 
-<!-- rightside -->
+                                        <span
+                                            class="text-danger"><?php echo form_error('allergic_medicine_details'); ?></span>
+                                    </div>
 
-<!-- co_leftside -->
-<div class="float-left">
-    <h6 class="txt" style="padding: 33px 10px 12px;">Is there any your family member who understands at least one  of the languages which we understand?And, who?</h6>
-</div>
+                                </div>
+                                <!-- rightside -->
 
-<div class="col-md-6 float-left">
-  <div class="form-group">
-        <?php echo form_label('Who?', 'understand_language', array( 'class' => 'wholanguage', 'id'=> '', 'style' => '', 'for' => 'understand_language')); ?>
-        <?php
+                                <!-- co_leftside -->
+                                <div class="float-left">
+                                    <h6 class="txt" style="padding: 33px 10px 12px;">Is there any your family member who
+                                        understands at least one of the languages which we understand?And, who?</h6>
+                                </div>
+
+                                <div class="col-md-6 float-left">
+                                    <div class="form-group">
+                                        <?php echo form_label('Who?', 'understand_language', array( 'class' => 'wholanguage', 'id'=> '', 'style' => '', 'for' => 'understand_language')); ?>
+                                        <?php
           echo form_input(array(
             'name' => 'understand_language',
             'type' => 'text',
@@ -1690,34 +1836,44 @@ $(function() {
             'id' => 'understand_language',
             'autocomplete' => ''));
         ?>
-        <span class="text-danger"><?php echo form_error('understand_language'); ?></span>
-  </div>
+                                        <span
+                                            class="text-danger"><?php echo form_error('understand_language'); ?></span>
+                                    </div>
 
-  <div class="form-group">
-  <?php echo form_label('Criminal Record in Japan or Overseas', 'criminal_record', array( 'class' => 'form-control-label', 'id'=> '')); ?>
-    <span class="badge badge-danger">Required</span>
-    <select name="criminal_record" id="criminal_record" class="admission_select">
-          <option value="1" <?php if($result->criminal_record== "1") {echo "selected";} ?>>Yes</option>
-          <option value="0" <?php if($result->criminal_record== "0") {echo "selected";} ?>>No</option>
-      </select>
-    </div>
-   
-<div class="criminal form-group float-left">
-    <div class="">
-    <?php echo form_label('Have you applied for Certificate of Eligibility?', 'eligibility_have', array( 'class' => 'form-control-label', 'id'=> '')); ?>
-      <span class="badge badge-danger">Required</span>
-    </div>
-  
-    <div class="">
-        <div class="criminal_record01" style="float: left;">
-        <select name="eligibility_have" id="eligibility_have" class="admission_select">
-          <option value="1" <?php if($result->eligibility_have== "1") {echo "selected";} ?>>Yes</option>
-          <option value="0" <?php if($result->eligibility_have== "0") {echo "selected";} ?>>No</option>
-        </select>
-        </div>
-        <div
-        <label class="col-rd cri_text"><span style="padding-left:30px ;margin-top: 7px;">Times</span>
-            <?php
+                                    <div class="form-group">
+                                        <?php echo form_label('Criminal Record in Japan or Overseas', 'criminal_record', array( 'class' => 'form-control-label', 'id'=> '')); ?>
+                                        <span class="badge badge-danger">Required</span>
+                                        <select name="criminal_record" id="criminal_record" class="admission_select">
+                                            <option value="1"
+                                                <?php if($result->criminal_record== "1") {echo "selected";} ?>>Yes
+                                            </option>
+                                            <option value="0"
+                                                <?php if($result->criminal_record== "0") {echo "selected";} ?>>No
+                                            </option>
+                                        </select>
+                                    </div>
+
+                                    <div class="criminal form-group float-left">
+                                        <div class="">
+                                            <?php echo form_label('Have you applied for Certificate of Eligibility?', 'eligibility_have', array( 'class' => 'form-control-label', 'id'=> '')); ?>
+                                            <span class="badge badge-danger">Required</span>
+                                        </div>
+
+                                        <div class="">
+                                            <div class="criminal_record01" style="float: left;">
+                                                <select name="eligibility_have" id="eligibility_have"
+                                                    class="admission_select">
+                                                    <option value="1"
+                                                        <?php if($result->eligibility_have== "1") {echo "selected";} ?>>
+                                                        Yes</option>
+                                                    <option value="0"
+                                                        <?php if($result->eligibility_have== "0") {echo "selected";} ?>>
+                                                        No</option>
+                                                </select>
+                                            </div>
+                                            <div <label class="col-rd cri_text"><span
+                                                    style="padding-left:30px ;margin-top: 7px;">Times</span>
+                                                <?php
           echo form_input(array(
             'name' => 'eligibility_details',
             'type' => 'text',
@@ -1728,54 +1884,80 @@ $(function() {
             'class' => 'details form-control col-md-8',
             'autocomplete' => ''));
         ?>
-            </label> 
-          </div>
-    </div>  
-</div>
-<div class="form-group">
-  <?php echo form_label('Intended to enroll', 'intended_roll', array( 'class' => 'form-control-label', 'id'=> '')); ?>
-    <span class="badge badge-danger">Required</span>
-    <select name="intended_roll" id="intended_roll" class="admission_select">
-          <option value="1" <?php if($result13->intended_roll== "1") {echo "selected";} ?>>issued</option>
-          <option value="0" <?php if($result13->intended_roll== "0") {echo "selected";} ?>>denied</option>
-      </select>
-</div>
-<div class="form-group">
-       <?php echo form_label('ビザの種類 type of visa', 'eligibility_visa', array( 'class' => 'form-control-label', 'id'=> '')); ?>
-       <span class="badge badge-danger">Required</span>
-       <select name="eligibility_visa" id="eligibility_visa" class="admission_select">
-          <option value="Student" <?php if($result13->eligibility_visa== "Student") {echo "selected";} ?>>Student</option>
-          <option value="Trainee" <?php if($result13->eligibility_visa== "Trainee") {echo "selected";} ?>>Trainee</option>
-          <option value="Technical" <?php if($result13->eligibility_visa== "Technical") {echo "selected";} ?>>Technical</option>
-          <option value="Others" <?php if($result13->eligibility_visa== "Others") {echo "selected";} ?>>Others</option>
-        </select>
-      </div> 
-</div>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <?php echo form_label('Intended to enroll', 'intended_roll', array( 'class' => 'form-control-label', 'id'=> '')); ?>
+                                        <span class="badge badge-danger">Required</span>
+                                        <select name="intended_roll" id="intended_roll" class="admission_select">
+                                            <option value="1"
+                                                <?php if($result13->intended_roll== "1") {echo "selected";} ?>>issued
+                                            </option>
+                                            <option value="0"
+                                                <?php if($result13->intended_roll== "0") {echo "selected";} ?>>denied
+                                            </option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <?php echo form_label('ビザの種類 type of visa', 'eligibility_visa', array( 'class' => 'form-control-label', 'id'=> '')); ?>
+                                        <span class="badge badge-danger">Required</span>
+                                        <select name="eligibility_visa" id="eligibility_visa" class="admission_select">
+                                            <option value="Student"
+                                                <?php if($result13->eligibility_visa== "Student") {echo "selected";} ?>>
+                                                Student</option>
+                                            <option value="Trainee"
+                                                <?php if($result13->eligibility_visa== "Trainee") {echo "selected";} ?>>
+                                                Trainee</option>
+                                            <option value="Technical"
+                                                <?php if($result13->eligibility_visa== "Technical") {echo "selected";} ?>>
+                                                Technical</option>
+                                            <option value="Others"
+                                                <?php if($result13->eligibility_visa== "Others") {echo "selected";} ?>>
+                                                Others</option>
+                                        </select>
+                                    </div>
+                                </div>
 
 
 
-<div class="col-md-6 float-left">
- <div class="form-group">
-    <p class="addmission">Language</p>
-    
-    <select name="family_language" class="school_select">
-    <option value="" <?php if($result->family_language== "") echo "selected"; ?>>Please Select!</option>
-    <option value="English" <?php if($result->family_language== "English") echo "selected"; ?>>English</option>
-    <option value="Chinese" <?php if($result->family_language== "Chinese") echo "selected"; ?>>Chinese</option>
-    <option value="Korean" <?php if($result->family_language== "Korean") echo "selected"; ?>>Korean</option>
-    <option value="Thai" <?php if($result->family_language== "Thai") echo "selected"; ?>>Thai</option>
-    <option value="Vietnamese" <?php if($result->family_language== "Vietnamese") echo "selected"; ?>>Vietnamese</option>
-    <option value="Japanese" <?php if($result->family_language== "Japanese") echo "selected"; ?>>Japanese</option>
-</select>
-  </div>
-  <!-- <div class="criminal_record02">
+                                <div class="col-md-6 float-left">
+                                    <div class="form-group">
+                                        <p class="addmission">Language</p>
+
+                                        <select name="family_language" class="school_select">
+                                            <option value=""
+                                                <?php if($result->family_language== "") echo "selected"; ?>>Please
+                                                Select!</option>
+                                            <option value="English"
+                                                <?php if($result->family_language== "English") echo "selected"; ?>>
+                                                English</option>
+                                            <option value="Chinese"
+                                                <?php if($result->family_language== "Chinese") echo "selected"; ?>>
+                                                Chinese</option>
+                                            <option value="Korean"
+                                                <?php if($result->family_language== "Korean") echo "selected"; ?>>Korean
+                                            </option>
+                                            <option value="Thai"
+                                                <?php if($result->family_language== "Thai") echo "selected"; ?>>Thai
+                                            </option>
+                                            <option value="Vietnamese"
+                                                <?php if($result->family_language== "Vietnamese") echo "selected"; ?>>
+                                                Vietnamese</option>
+                                            <option value="Japanese"
+                                                <?php if($result->family_language== "Japanese") echo "selected"; ?>>
+                                                Japanese</option>
+                                        </select>
+                                    </div>
+                                    <!-- <div class="criminal_record02">
             <label class="col-rd cri_text"><span style="padding-left:4px ;">Details</span>
                 <input type="text" class="details form-control col-md-12" name="criminal_record_details" value="" checked="checked">
             </label> 
         </div> -->
-        <div class="form-group">
-        <?php echo form_label('Details', 'criminal_record_details', array( 'class' => 'eli_text', 'id'=> 'criminal_record_details', 'style' => '', 'for' => 'criminal_record_details')); ?>
-        <?php
+                                    <div class="form-group">
+                                        <?php echo form_label('Details', 'criminal_record_details', array( 'class' => 'eli_text', 'id'=> 'criminal_record_details', 'style' => '', 'for' => 'criminal_record_details')); ?>
+                                        <?php
           echo form_input(array(
             'name' => 'criminal_record_details',
             'type' => 'text',
@@ -1785,21 +1967,23 @@ $(function() {
             'id' => 'criminal_record_details',
             'autocomplete' => ''));
         ?>
-        <span class="text-danger"><?php echo form_error('criminal_record_details'); ?></span>
-  </div>
-  <div class="criminal form-group float-left">
-    <div class="">
-    <?php echo form_label('Have you applied for Certificate of Eligibility?', 'criminal_record', array( 'class' => 'form-control-label', 'id'=> '')); ?>
-      <span class="badge badge-danger">Required</span>
-    </div>
-  
-    <div class="radio_record">
-            <!-- <label class="col-rd cri_text"><span style="margin-top: 7px;">When:</span>
+                                        <span
+                                            class="text-danger"><?php echo form_error('criminal_record_details'); ?></span>
+                                    </div>
+                                    <div class="criminal form-group float-left">
+                                        <div class="">
+                                            <?php echo form_label('Have you applied for Certificate of Eligibility?', 'criminal_record', array( 'class' => 'form-control-label', 'id'=> '')); ?>
+                                            <span class="badge badge-danger">Required</span>
+                                        </div>
+
+                                        <div class="radio_record">
+                                            <!-- <label class="col-rd cri_text"><span style="margin-top: 7px;">When:</span>
                 <input type="text" class="details form-control col-md-8" name="criminal_record_details" value="" checked="checked" style="margin-left: 16px;margin-right: 0px;">
             </label>  -->
-        <div class="">
-        <label class="col-rd cri_text"><span style="margin-top: 7px;">When:</span>
-        <?php
+                                            <div class="">
+                                                <label class="col-rd cri_text"><span
+                                                        style="margin-top: 7px;">When:</span>
+                                                    <?php
           echo form_input(array(
             'name' => 'criminal_record_when',
             'type' => 'date',
@@ -1809,13 +1993,15 @@ $(function() {
             'id' => 'criminal_record_when',
             'autocomplete' => ''));
         ?>
-        <span class="text-danger"><?php echo form_error('criminal_record_when'); ?></span>
-        </label>
-        </div>
-      
-       <div class="" style=" padding-left: 22px;">
-        <label class="col-rd cri_text"><span style="width: 85%;">Purpose of Entry:</span>
-        <?php
+                                                    <span
+                                                        class="text-danger"><?php echo form_error('criminal_record_when'); ?></span>
+                                                </label>
+                                            </div>
+
+                                            <div class="" style=" padding-left: 22px;">
+                                                <label class="col-rd cri_text"><span style="width: 85%;">Purpose of
+                                                        Entry:</span>
+                                                    <?php
           echo form_input(array(
             'name' => 'entry_purpose1',
             'type' => 'text',
@@ -1825,13 +2011,13 @@ $(function() {
             'id' => 'entry_purpose1',
             'autocomplete' => ''));
         ?>
-        </label> 
-        </div>
-    </div>  
-</div>
-<div class="form-group">
-  <?php echo form_label('Of these applications, the number of times of non-issuance', 'eligibility_non_issuance', array( 'class' => 'form-control-label', 'id'=> '')); ?>
-  <?php
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <?php echo form_label('Of these applications, the number of times of non-issuance', 'eligibility_non_issuance', array( 'class' => 'form-control-label', 'id'=> '')); ?>
+                                        <?php
           echo form_input(array(
             'name' => 'eligibility_non_issuance',
             'type' => 'text',
@@ -1841,11 +2027,12 @@ $(function() {
             'id' => 'eligibility_non_issuance',
             'autocomplete' => ''));
   ?>
-  <span class="text-danger"><?php echo form_error('eligibility_non_issuance'); ?></span>
-  </div>
-<div class="form-group">
-  <?php echo form_label('Issued / Denied Date', 'issued_date', array( 'class' => 'form-control-label', 'id'=> '')); ?>
-  <?php
+                                        <span
+                                            class="text-danger"><?php echo form_error('eligibility_non_issuance'); ?></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <?php echo form_label('Issued / Denied Date', 'issued_date', array( 'class' => 'form-control-label', 'id'=> '')); ?>
+                                        <?php
           echo form_input(array(
             'name' => 'issued_date',
             'type' => 'date',
@@ -1855,16 +2042,16 @@ $(function() {
             'id' => 'issued_date',
             'autocomplete' => ''));
   ?>
-  <span class="text-danger"><?php echo form_error('issued_date'); ?></span>
-  </div>
-  
-</div>
-<!-- co_leftside -->
+                                        <span class="text-danger"><?php echo form_error('issued_date'); ?></span>
+                                    </div>
 
-<div class="criminal form-group float-left">
-      <label>Purpose of studying in Japanese </label>
-      <div class="col-md-12 col-sm-12 p-0">
-          <?php 
+                                </div>
+                                <!-- co_leftside -->
+
+                                <div class="criminal form-group float-left">
+                                    <label>Purpose of studying in Japanese </label>
+                                    <div class="col-md-12 col-sm-12 p-0">
+                                        <?php 
             $data = array(
             'name' => 'purpose_studying_in_japanese',
             'type' => 'text',
@@ -1875,16 +2062,17 @@ $(function() {
             'value' => set_value('purpose_studying_in_japanese',isset($result)?$result->purpose_studying_in_japanese:'')
           );
           echo form_textarea($data); ?>
-          <span class="text-danger"><?php echo form_error('purpose_studying_in_japanese'); ?></span>
-      </div>
-      
-</div>
-<div class="col-md-6 float-left">
-<h6 class="" style="padding: 33px 0px 12px;">Contact details of your family</h6>
-<div class="form-group">
-        <?php echo form_label('Email', 'family_mail', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'family_mail')); ?>
-        <span class="badge badge-danger">Required</span>
-        <?php
+                                        <span
+                                            class="text-danger"><?php echo form_error('purpose_studying_in_japanese'); ?></span>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-6 float-left">
+                                    <h6 class="" style="padding: 33px 0px 12px;">Contact details of your family</h6>
+                                    <div class="form-group">
+                                        <?php echo form_label('Email', 'family_mail', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'family_mail')); ?>
+                                        <span class="badge badge-danger">Required</span>
+                                        <?php
           echo form_input(array(
             'name' => 'family_mail',
             'type' => 'text',
@@ -1894,13 +2082,13 @@ $(function() {
             'id' => 'family_mail',
             'autocomplete' => ''));
         ?>
-        <span class="text-danger"><?php echo form_error('family_mail'); ?></span>
-       </div>
+                                        <span class="text-danger"><?php echo form_error('family_mail'); ?></span>
+                                    </div>
 
-       <div class="form-group">
-        <?php echo form_label('Phone Number', 'family_tel', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'family_tel')); ?>
-        <span class="badge badge-danger">Required</span>
-        <?php
+                                    <div class="form-group">
+                                        <?php echo form_label('Phone Number', 'family_tel', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'family_tel')); ?>
+                                        <span class="badge badge-danger">Required</span>
+                                        <?php
           echo form_input(array(
             'name' => 'family_tel',
             'type' => 'text',
@@ -1910,13 +2098,13 @@ $(function() {
             'id' => 'family_tel',
             'autocomplete' => ''));
         ?>
-        <span class="text-danger"><?php echo form_error('family_tel'); ?></span>
-       </div>
+                                        <span class="text-danger"><?php echo form_error('family_tel'); ?></span>
+                                    </div>
 
-       <div class="form-group">
-        <?php echo form_label('Address','family_address', array('class' => '')); ?>
-        <span class="badge badge-danger">Required</span>
-        <?php
+                                    <div class="form-group">
+                                        <?php echo form_label('Address','family_address', array('class' => '')); ?>
+                                        <span class="badge badge-danger">Required</span>
+                                        <?php
           echo form_input(array(
             'name' => 'family_address',
             'type' => 'text',
@@ -1926,12 +2114,12 @@ $(function() {
             'id' => 'family_address',
             'autocomplete' => ''));
         ?>
-        <span class="text-danger"><?php echo form_error('family_address'); ?></span>
-       </div>
-       <div class="form-group">
-        <?php echo form_label('Name of the place where your father is working', 'father_work_place', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'father_work_place')); ?>
-        <span class="badge badge-danger">Required</span>
-        <?php
+                                        <span class="text-danger"><?php echo form_error('family_address'); ?></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <?php echo form_label('Name of the place where your father is working', 'father_work_place', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'father_work_place')); ?>
+                                        <span class="badge badge-danger">Required</span>
+                                        <?php
           echo form_input(array(
             'name' => 'father_work_place',
             'type' => 'text',
@@ -1941,12 +2129,12 @@ $(function() {
             'id' => 'father_work_place',
             'autocomplete' => ''));
         ?>
-        <span class="text-danger"><?php echo form_error('father_work_place'); ?></span>
-       </div>
-       <div class="form-group">
-        <?php echo form_label('Type of work/post father','type_work_father', array('class' => '')); ?>
-        <span class="badge badge-danger">Required</span>
-        <?php
+                                        <span class="text-danger"><?php echo form_error('father_work_place'); ?></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <?php echo form_label('Type of work/post father','type_work_father', array('class' => '')); ?>
+                                        <span class="badge badge-danger">Required</span>
+                                        <?php
           echo form_input(array(
             'name' => 'type_work_father',
             'type' => 'text',
@@ -1956,12 +2144,12 @@ $(function() {
             'id' => 'type_work_father',
             'autocomplete' => ''));
         ?>
-        <span class="text-danger"><?php echo form_error('address'); ?></span>
-       </div>
-       <div class="form-group">
-        <?php echo form_label('Name of the place where your mother is working ','mother_work_place', array('class' => '')); ?>
-        <span class="badge badge-danger">Required</span>
-        <?php
+                                        <span class="text-danger"><?php echo form_error('address'); ?></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <?php echo form_label('Name of the place where your mother is working ','mother_work_place', array('class' => '')); ?>
+                                        <span class="badge badge-danger">Required</span>
+                                        <?php
           echo form_input(array(
             'name' => 'mother_work_place',
             'type' => 'text',
@@ -1971,12 +2159,12 @@ $(function() {
             'id' => 'mother_work_place',
             'autocomplete' => ''));
         ?>
-        <span class="text-danger"><?php echo form_error('address'); ?></span>
-       </div>
-       <div class="form-group">
-        <?php echo form_label('Type of work/post mother','type_work_mother', array('class' => '')); ?>
-        <span class="badge badge-danger">Required</span>
-        <?php
+                                        <span class="text-danger"><?php echo form_error('address'); ?></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <?php echo form_label('Type of work/post mother','type_work_mother', array('class' => '')); ?>
+                                        <span class="badge badge-danger">Required</span>
+                                        <?php
           echo form_input(array(
             'name' => 'type_work_mother',
             'type' => 'text',
@@ -1986,15 +2174,16 @@ $(function() {
             'id' => 'type_work_mother',
             'autocomplete' => ''));
         ?>
-        <span class="text-danger"><?php echo form_error('address'); ?></span>
-       </div>
-</div>
-<div class="col-md-6 float-right">
-<h6 class="" style="padding: 33px 0px 12px;">Name of person who gave the consent</h6>
-<div class="form-group">
-        <?php echo form_label('Consent Name', 'consent_name', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'consent_name')); ?>
-        <span class="badge badge-danger">Required</span>
-        <?php
+                                        <span class="text-danger"><?php echo form_error('address'); ?></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 float-right">
+                                    <h6 class="" style="padding: 33px 0px 12px;">Name of person who gave the consent
+                                    </h6>
+                                    <div class="form-group">
+                                        <?php echo form_label('Consent Name', 'consent_name', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'consent_name')); ?>
+                                        <span class="badge badge-danger">Required</span>
+                                        <?php
           echo form_input(array(
             'name' => 'consent_name',
             'type' => 'text',
@@ -2004,23 +2193,31 @@ $(function() {
             'id' => 'consent_name',
             'autocomplete' => ''));
         ?>
-        <span class="text-danger"><?php echo form_error('family_mail'); ?></span>
-       </div>
+                                        <span class="text-danger"><?php echo form_error('family_mail'); ?></span>
+                                    </div>
 
-       <div class="form-group">
-        <?php echo form_label('Relation', 'consent_relation', array( 'class' => '', 'id'=> '')); ?>
-          <select name="consent_relation" id="consent_relation" class="admission_select">
-              <option value="father" <?php if($result13->consent_relation== "father") {echo "selected";} ?>>Father</option>
-              <option value="mother" <?php if($result13->consent_relation== "mother") {echo "selected";} ?>>Mother</option>
-              <option value="brother" <?php if($result13->consent_relation== "brother") {echo "selected";} ?>>Brother/Sister</option>
-              <option value="other" <?php if($result13->consent_relation== "other") {echo "selected";} ?>>Others</option>
-          </select>
-      </div>
+                                    <div class="form-group">
+                                        <?php echo form_label('Relation', 'consent_relation', array( 'class' => '', 'id'=> '')); ?>
+                                        <select name="consent_relation" id="consent_relation" class="admission_select">
+                                            <option value="father"
+                                                <?php if($result13->consent_relation== "father") {echo "selected";} ?>>
+                                                Father</option>
+                                            <option value="mother"
+                                                <?php if($result13->consent_relation== "mother") {echo "selected";} ?>>
+                                                Mother</option>
+                                            <option value="brother"
+                                                <?php if($result13->consent_relation== "brother") {echo "selected";} ?>>
+                                                Brother/Sister</option>
+                                            <option value="other"
+                                                <?php if($result13->consent_relation== "other") {echo "selected";} ?>>
+                                                Others</option>
+                                        </select>
+                                    </div>
 
-    <div class="form-group">
-        <?php echo form_label('Address','consent_address', array('class' => '')); ?>
-        <span class="badge badge-danger">Required</span>
-        <?php
+                                    <div class="form-group">
+                                        <?php echo form_label('Address','consent_address', array('class' => '')); ?>
+                                        <span class="badge badge-danger">Required</span>
+                                        <?php
           echo form_input(array(
             'name' => 'consent_address',
             'type' => 'text',
@@ -2030,12 +2227,12 @@ $(function() {
             'id' => 'consent_address',
             'autocomplete' => ''));
         ?>
-        <span class="text-danger"><?php echo form_error('address'); ?></span>
-       </div>
-       <div class="form-group">
-        <?php echo form_label(' Email','consent_email', array('class' => '')); ?>
-        <span class="badge badge-danger">Required</span>
-        <?php
+                                        <span class="text-danger"><?php echo form_error('address'); ?></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <?php echo form_label(' Email','consent_email', array('class' => '')); ?>
+                                        <span class="badge badge-danger">Required</span>
+                                        <?php
           echo form_input(array(
             'name' => 'consent_email',
             'type' => 'text',
@@ -2045,12 +2242,12 @@ $(function() {
             'id' => 'consent_email',
             'autocomplete' => ''));
         ?>
-        <span class="text-danger"><?php echo form_error('address'); ?></span>
-       </div>
-       <div class="form-group">
-        <?php echo form_label(' Phone','consent_tel', array('class' => '')); ?>
-        <span class="badge badge-danger">Required</span>
-        <?php
+                                        <span class="text-danger"><?php echo form_error('address'); ?></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <?php echo form_label(' Phone','consent_tel', array('class' => '')); ?>
+                                        <span class="badge badge-danger">Required</span>
+                                        <?php
           echo form_input(array(
             'name' => 'consent_tel',
             'type' => 'text',
@@ -2060,18 +2257,19 @@ $(function() {
             'id' => 'consent_tel',
             'autocomplete' => ''));
         ?>
-        <span class="text-danger"><?php echo form_error('address'); ?></span>
-       </div>
-       
-       <br><br><br>
-</div>
-<!-- co_leftside -->
-<div class="col-md-6 float-right">
-<h6 class="" style="padding: 33px 0px 12px;">Written Oath for Defraying Expenses</h6>
-<div class="form-group">
-        <?php echo form_label('Tuition for 6 months', 'six_tuition_fee', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'std_email')); ?>
-        <span class="badge badge-danger">Required</span>
-        <?php
+                                        <span class="text-danger"><?php echo form_error('address'); ?></span>
+                                    </div>
+
+                                    <br><br><br>
+                                </div>
+                                <!-- co_leftside -->
+                                <div class="col-md-6 float-right">
+                                    <h6 class="" style="padding: 33px 0px 12px;">Written Oath for Defraying Expenses
+                                    </h6>
+                                    <div class="form-group">
+                                        <?php echo form_label('Tuition for 6 months', 'six_tuition_fee', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'std_email')); ?>
+                                        <span class="badge badge-danger">Required</span>
+                                        <?php
           echo form_input(array(
             'name' => 'six_tuition_fee',
             'type' => 'text',
@@ -2081,13 +2279,13 @@ $(function() {
             'id' => 'six_tuition_fee',
             'autocomplete' => ''));
         ?>
-        <span class="text-danger"><?php echo form_error('family_mail'); ?></span>
-       </div>
+                                        <span class="text-danger"><?php echo form_error('family_mail'); ?></span>
+                                    </div>
 
-       <div class="form-group">
-        <?php echo form_label('Tuition for first year', 'first_year_tuitioin_fee', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'first_year_tuitioin_fee')); ?>
-        <span class="badge badge-danger">Required</span>
-        <?php
+                                    <div class="form-group">
+                                        <?php echo form_label('Tuition for first year', 'first_year_tuitioin_fee', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'first_year_tuitioin_fee')); ?>
+                                        <span class="badge badge-danger">Required</span>
+                                        <?php
           echo form_input(array(
             'name' => 'first_year_tuitioin_fee',
             'type' => 'text',
@@ -2097,13 +2295,14 @@ $(function() {
             'id' => 'first_year_tuitioin_fee',
             'autocomplete' => ''));
         ?>
-        <span class="text-danger"><?php echo form_error('first_year_tuitioin_fee'); ?></span>
-       </div>
+                                        <span
+                                            class="text-danger"><?php echo form_error('first_year_tuitioin_fee'); ?></span>
+                                    </div>
 
-    <div class="form-group">
-        <?php echo form_label('Tuition for second year','second_year_tuitioin_fee', array('class' => '')); ?>
-        <span class="badge badge-danger">Required</span>
-        <?php
+                                    <div class="form-group">
+                                        <?php echo form_label('Tuition for second year','second_year_tuitioin_fee', array('class' => '')); ?>
+                                        <span class="badge badge-danger">Required</span>
+                                        <?php
           echo form_input(array(
             'name' => 'second_year_tuitioin_fee',
             'type' => 'text',
@@ -2113,12 +2312,13 @@ $(function() {
             'id' => 'second_year_tuitioin_fee',
             'autocomplete' => ''));
         ?>
-        <span class="text-danger"><?php echo form_error('second_year_tuitioin_fee'); ?></span>
-       </div>
-       <div class="form-group">
-        <?php echo form_label(' Period Studying','tuition_study_period', array('class' => 'col-form-labels')); ?>
-        <span class="badge badge-danger">Required</span>
-        <?php
+                                        <span
+                                            class="text-danger"><?php echo form_error('second_year_tuitioin_fee'); ?></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <?php echo form_label(' Period Studying','tuition_study_period', array('class' => 'col-form-labels')); ?>
+                                        <span class="badge badge-danger">Required</span>
+                                        <?php
           echo form_input(array(
             'name' => 'tuition_study_period',
             'type' => 'text',
@@ -2128,12 +2328,13 @@ $(function() {
             'id' => 'tuition_study_period',
             'autocomplete' => ''));
         ?>
-        <span class="text-danger"><?php echo form_error('tuition_study_period'); ?></span>
-       </div>
-       <div class="form-group">
-        <?php echo form_label('Living expense (Monthly Amount)','living_expense_amount', array('class' => '')); ?>
-        <span class="badge badge-danger">Required</span>
-        <?php
+                                        <span
+                                            class="text-danger"><?php echo form_error('tuition_study_period'); ?></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <?php echo form_label('Living expense (Monthly Amount)','living_expense_amount', array('class' => '')); ?>
+                                        <span class="badge badge-danger">Required</span>
+                                        <?php
           echo form_input(array(
             'name' => 'living_expense_amount',
             'type' => 'text',
@@ -2143,20 +2344,27 @@ $(function() {
             'id' => 'living_expense_amount',
             'autocomplete' => ''));
         ?>
-        <span class="text-danger"><?php echo form_error('living_expense_amount'); ?></span>
-       </div>
-       <div class="form-group">
-        <?php echo form_label('Method of payment', 'payment_method', array( 'class' => '', 'id'=> '')); ?>
-          <select name="payment_method" id="payment_method" class="admission_select">
-              <option value="Bank Transfer (Overseas Remittance)" <?php if($result13->payment_method== "Bank Transfer (Overseas Remittance)") {echo "selected";} ?>>Bank Transfer (Overseas Remittance)</option>
-              <option value="Credit Card" <?php if($result13->payment_method== "Credit Card") {echo "selected";} ?>>Credit Card</option>
-              <option value="Others" <?php if($result13->payment_method== "Others") {echo "selected";} ?>>Others</option>
-          </select>
-      </div>
-      <div class="form-group">
-        <?php echo form_label('Below please explain in detail the circumstances for your defraying the costs of the
+                                        <span
+                                            class="text-danger"><?php echo form_error('living_expense_amount'); ?></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <?php echo form_label('Method of payment', 'payment_method', array( 'class' => '', 'id'=> '')); ?>
+                                        <select name="payment_method" id="payment_method" class="admission_select">
+                                            <option value="Bank Transfer (Overseas Remittance)"
+                                                <?php if($result13->payment_method== "Bank Transfer (Overseas Remittance)") {echo "selected";} ?>>
+                                                Bank Transfer (Overseas Remittance)</option>
+                                            <option value="Credit Card"
+                                                <?php if($result13->payment_method== "Credit Card") {echo "selected";} ?>>
+                                                Credit Card</option>
+                                            <option value="Others"
+                                                <?php if($result13->payment_method== "Others") {echo "selected";} ?>>
+                                                Others</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <?php echo form_label('Below please explain in detail the circumstances for your defraying the costs of the
 applicant and your relationship to the applicant.','defraying_details', array('class' => '')); ?>
-        <?php
+                                        <?php
           echo form_input(array(
             'name' => 'defraying_details',
             'type' => 'text',
@@ -2166,15 +2374,15 @@ applicant and your relationship to the applicant.','defraying_details', array('c
             'id' => 'defraying_details',
             'autocomplete' => ''));
         ?>
-        <span class="text-danger"><?php echo form_error('defraying_details'); ?></span>
-       </div>
-</div>
-<div class="col-md-6 float-left">
-<h6 class="" style="padding: 33px 0px 12px;"> Name of person defraying expenses</h6>
-<div class="form-group">
-        <?php echo form_label('Name', 'defraying_name', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'defraying_name')); ?>
-        <span class="badge badge-danger">Required</span>
-        <?php
+                                        <span class="text-danger"><?php echo form_error('defraying_details'); ?></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 float-left">
+                                    <h6 class="" style="padding: 33px 0px 12px;"> Name of person defraying expenses</h6>
+                                    <div class="form-group">
+                                        <?php echo form_label('Name', 'defraying_name', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'defraying_name')); ?>
+                                        <span class="badge badge-danger">Required</span>
+                                        <?php
           echo form_input(array(
             'name' => 'defraying_name',
             'type' => 'text',
@@ -2184,23 +2392,32 @@ applicant and your relationship to the applicant.','defraying_details', array('c
             'id' => 'defraying_name',
             'autocomplete' => ''));
         ?>
-        <span class="text-danger"><?php echo form_error('defraying_name'); ?></span>
-       </div>
+                                        <span class="text-danger"><?php echo form_error('defraying_name'); ?></span>
+                                    </div>
 
-       <div class="form-group">
-        <?php echo form_label('Relation', 'defraying_relation', array( 'class' => '', 'id'=> '')); ?>
-          <select name="defraying_relation" id="defraying_relation" class="admission_select">
-              <option value="father" <?php if($result13->defraying_relation== "father") {echo "selected";} ?>>Father</option>
-              <option value="mother" <?php if($result13->defraying_relation== "mother") {echo "selected";} ?>>Mother</option>
-              <option value="brother" <?php if($result13->defraying_relation== "brother") {echo "selected";} ?>>Brother/Sister</option>
-              <option value="other" <?php if($result13->defraying_relation== "other") {echo "selected";} ?>>Others</option>
-          </select>
-      </div>
+                                    <div class="form-group">
+                                        <?php echo form_label('Relation', 'defraying_relation', array( 'class' => '', 'id'=> '')); ?>
+                                        <select name="defraying_relation" id="defraying_relation"
+                                            class="admission_select">
+                                            <option value="father"
+                                                <?php if($result13->defraying_relation== "father") {echo "selected";} ?>>
+                                                Father</option>
+                                            <option value="mother"
+                                                <?php if($result13->defraying_relation== "mother") {echo "selected";} ?>>
+                                                Mother</option>
+                                            <option value="brother"
+                                                <?php if($result13->defraying_relation== "brother") {echo "selected";} ?>>
+                                                Brother/Sister</option>
+                                            <option value="other"
+                                                <?php if($result13->defraying_relation== "other") {echo "selected";} ?>>
+                                                Others</option>
+                                        </select>
+                                    </div>
 
-    <div class="form-group">
-        <?php echo form_label('Tel','defraying_tel', array('class' => '')); ?>
-        <span class="badge badge-danger">Required</span>
-        <?php
+                                    <div class="form-group">
+                                        <?php echo form_label('Tel','defraying_tel', array('class' => '')); ?>
+                                        <span class="badge badge-danger">Required</span>
+                                        <?php
           echo form_input(array(
             'name' => 'defraying_tel',
             'type' => 'text',
@@ -2210,12 +2427,12 @@ applicant and your relationship to the applicant.','defraying_details', array('c
             'id' => 'defraying_tel',
             'autocomplete' => ''));
         ?>
-        <span class="text-danger"><?php echo form_error('defraying_tel'); ?></span>
-       </div>
-       <div class="form-group">
-        <?php echo form_label('Address','defraying_address', array('class' => '')); ?>
-        <span class="badge badge-danger">Required</span>
-        <?php
+                                        <span class="text-danger"><?php echo form_error('defraying_tel'); ?></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <?php echo form_label('Address','defraying_address', array('class' => '')); ?>
+                                        <span class="badge badge-danger">Required</span>
+                                        <?php
           echo form_input(array(
             'name' => 'defraying_address',
             'type' => 'text',
@@ -2225,12 +2442,12 @@ applicant and your relationship to the applicant.','defraying_details', array('c
             'id' => 'defraying_address',
             'autocomplete' => ''));
         ?>
-        <span class="text-danger"><?php echo form_error('defraying_address'); ?></span>
-       </div>
-       <div class="form-group">
-        <?php echo form_label('Company Name','defraying_company', array('class' => '')); ?>
-        <span class="badge badge-danger">Required</span>
-        <?php
+                                        <span class="text-danger"><?php echo form_error('defraying_address'); ?></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <?php echo form_label('Company Name','defraying_company', array('class' => '')); ?>
+                                        <span class="badge badge-danger">Required</span>
+                                        <?php
           echo form_input(array(
             'name' => 'defraying_company',
             'type' => 'text',
@@ -2240,12 +2457,12 @@ applicant and your relationship to the applicant.','defraying_details', array('c
             'id' => 'defraying_company',
             'autocomplete' => ''));
         ?>
-        <span class="text-danger"><?php echo form_error('defraying_company'); ?></span>
-       </div>
-       <div class="form-group">
-        <?php echo form_label('Tel(workplace)','defraying_work_tel', array('class' => '')); ?>
-        <span class="badge badge-danger">Required</span>
-        <?php
+                                        <span class="text-danger"><?php echo form_error('defraying_company'); ?></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <?php echo form_label('Tel(workplace)','defraying_work_tel', array('class' => '')); ?>
+                                        <span class="badge badge-danger">Required</span>
+                                        <?php
           echo form_input(array(
             'name' => 'defraying_work_tel',
             'type' => 'text',
@@ -2255,9 +2472,9 @@ applicant and your relationship to the applicant.','defraying_details', array('c
             'id' => 'defraying_work_tel',
             'autocomplete' => ''));
         ?>
-        <span class="text-danger"><?php echo form_error('defraying_work_tel'); ?></span>
-       </div>
-       <!-- <div class="form-group">
+                                        <span class="text-danger"><?php echo form_error('defraying_work_tel'); ?></span>
+                                    </div>
+                                    <!-- <div class="form-group">
         <?php echo form_label('Signature','defraying_sign', array('class' => '')); ?>
         <span class="badge badge-danger">Required</span>
         <?php
@@ -2272,10 +2489,10 @@ applicant and your relationship to the applicant.','defraying_details', array('c
         ?>
         <span class="text-danger"><?php echo form_error('defraying_sign'); ?></span>
        </div> -->
-       <div class="form-group">
-        <?php echo form_label('Date','defraying_date', array('class' => '')); ?>
-        <span class="badge badge-danger">Required</span>
-        <?php
+                                    <div class="form-group">
+                                        <?php echo form_label('Date','defraying_date', array('class' => '')); ?>
+                                        <span class="badge badge-danger">Required</span>
+                                        <?php
           echo form_input(array(
             'name' => 'defraying_date',
             'type' => 'date',
@@ -2285,375 +2502,410 @@ applicant and your relationship to the applicant.','defraying_details', array('c
             'id' => 'defraying_date',
             'autocomplete' => ''));
         ?>
-        <span class="text-danger"><?php echo form_error('defraying_date'); ?></span>
-       </div>
-</div>
-<!-- co_leftside -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script>
+                                        <span class="text-danger"><?php echo form_error('defraying_date'); ?></span>
+                                    </div>
+                                </div>
+                                <!-- co_leftside -->
+                                <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+                                <script>
+                                let educationHistory = $('#edu_history tbody tr:last-child .rowID').text();
+                                let previous_jp = $('#previousJp tbody tr:last-child .rowID').text();
+                                let achievement_jp = $('#achievementJp tbody tr:last-child .rowID').text();
+                                let jpLangGoing = $('#going_to_take tbody tr:last-child .rowID').text();
+                                let employment_history = $('#employHistory tbody tr:last-child .rowID').text();
+                                let family_member = $('#familyMember tbody tr:last-child .rowID').text();
+                                let family_inJP = $('#familyInJp tbody tr:last-child .rowID').text();
+                                let previous_stay = $('#preStayInJP tbody tr:last-child .rowID').text();
+                                //  Add  Row
+                                $(function() {
+                                    $('#addNewRow01').click(function(e) {
+                                        e.preventDefault();
+                                        console.log(true);
+                                        educationHistory++;
+                                        console.log(educationHistory);
+                                        const cloned = $('#edu_history tbody tr:last-child').clone();
+                                        cloned.find("input").val("");
+                                        cloned.find("#edu_name").val("");
+                                        $('#edu_history tbody tr:last-child').after(cloned);
+                                    });
+                                    $('#addNewRow02').click(function(e) {
+                                        e.preventDefault();
+                                        console.log(true);
+                                        previous_jp++;
+                                        console.log(previous_jp);
+                                        const cloned = $('#previousJp tbody tr:last-child').clone();
+                                        cloned.find("input").val("");
+                                        cloned.find("#jp_name").val("");
+                                        $('#previousJp tbody tr:last-child').after(cloned);
+                                    });
+                                    $('#addNewRow03').click(function(e) {
+                                        e.preventDefault();
+                                        console.log(true);
+                                        achievement_jp++;
+                                        console.log(achievement_jp);
+                                        const cloned = $('#achievementJp tbody tr:last-child').clone();
+                                        cloned.find("input").val("");
+                                        cloned.find("#achiv_name").val("");
+                                        $('#achievementJp tbody tr:last-child').after(cloned);
+                                    });
+                                    $('#addNewRow04').click(function(e) {
+                                        e.preventDefault();
+                                        console.log(true);
+                                        jpLangGoing++;
+                                        console.log(jpLangGoing);
+                                        const cloned = $('#going_to_take tbody tr:last-child').clone();
+                                        cloned.find("input").val("");
+                                        cloned.find("#going_name").val("");
+                                        $('#going_to_take tbody tr:last-child').after(cloned);
+                                    });
+                                    $('#addNewRow05').click(function(e) {
+                                        e.preventDefault();
+                                        console.log(true);
+                                        family_member++;
+                                        console.log(employHistory);
+                                        const cloned = $('#employHistory tbody tr:last-child').clone();
+                                        cloned.find("input").val("");
+                                        cloned.find("#emp_name").val("");
+                                        $('#employHistory tbody tr:last-child').after(cloned);
+                                    });
+                                    $('#addNewRow06').click(function(e) {
+                                        e.preventDefault();
+                                        console.log(true);
+                                        family_member++;
+                                        console.log(family_member);
+                                        const cloned = $('#familyMember tbody tr:last-child').clone();
+                                        cloned.find("input").val("");
+                                        cloned.find("#fam_name").val("");
+                                        $('#familyMember tbody tr:last-child').after(cloned);
+                                    });
+                                    $('#addNewRow07').click(function(e) {
+                                        e.preventDefault();
+                                        console.log(true);
+                                        family_inJP++;
+                                        console.log(family_inJP);
+                                        const cloned = $('#familyInJp tbody tr:last-child').clone();
+                                        cloned.find("input").val("");
+                                        cloned.find("#ja_fam_name").val("");
+                                        $('#familyInJp tbody tr:last-child').after(cloned);
+                                    });
+                                    $('#addNewRow08').click(function(e) {
+                                        e.preventDefault();
+                                        console.log(true);
+                                        previous_stay++;
+                                        console.log(previous_stay);
+                                        const cloned = $('#preStayInJP tbody tr:last-child').clone();
+                                        cloned.find("input").val("");
+                                        cloned.find("#entry_date").val("");
+                                        $('#preStayInJP tbody tr:last-child').after(cloned);
+                                    });
 
-let educationHistory = $('#edu_history tbody tr:last-child .rowID').text();
-let previous_jp = $('#previousJp tbody tr:last-child .rowID').text();
-let achievement_jp = $('#achievementJp tbody tr:last-child .rowID').text();
-let jpLangGoing = $('#going_to_take tbody tr:last-child .rowID').text();
-let employment_history = $('#employHistory tbody tr:last-child .rowID').text();
-let family_member = $('#familyMember tbody tr:last-child .rowID').text();
-let family_inJP = $('#familyInJp tbody tr:last-child .rowID').text();
-let previous_stay = $('#preStayInJP tbody tr:last-child .rowID').text();
-//  Add  Row
-$(function() {
-$('#addNewRow01').click(function(e) {
-            e.preventDefault();
-            console.log(true);
-            educationHistory++;
-            console.log(educationHistory);
-            const cloned = $('#edu_history tbody tr:last-child').clone();
-            cloned.find("input").val("");
-            cloned.find("#edu_name").val("");
-            $('#edu_history tbody tr:last-child').after(cloned);
-          });
-$('#addNewRow02').click(function(e) {
-            e.preventDefault();
-            console.log(true);
-            previous_jp++;
-            console.log(previous_jp);
-            const cloned = $('#previousJp tbody tr:last-child').clone();
-            cloned.find("input").val("");
-            cloned.find("#jp_name").val("");
-            $('#previousJp tbody tr:last-child').after(cloned);
-          });
-$('#addNewRow03').click(function(e) {
-            e.preventDefault();
-            console.log(true);
-            achievement_jp++;
-            console.log(achievement_jp);
-            const cloned = $('#achievementJp tbody tr:last-child').clone();
-            cloned.find("input").val("");
-            cloned.find("#achiv_name").val("");
-            $('#achievementJp tbody tr:last-child').after(cloned);
-          });    
-$('#addNewRow04').click(function(e) {
-            e.preventDefault();
-            console.log(true);
-            jpLangGoing++;
-            console.log(jpLangGoing);
-            const cloned = $('#going_to_take tbody tr:last-child').clone();
-            cloned.find("input").val("");
-            cloned.find("#going_name").val("");
-            $('#going_to_take tbody tr:last-child').after(cloned);
-          });   
-$('#addNewRow05').click(function(e) {
-            e.preventDefault();
-            console.log(true);
-            family_member++;
-            console.log(employHistory);
-            const cloned = $('#employHistory tbody tr:last-child').clone();
-            cloned.find("input").val("");
-            cloned.find("#emp_name").val("");
-            $('#employHistory tbody tr:last-child').after(cloned);
-          });
-$('#addNewRow06').click(function(e) {
-            e.preventDefault();
-            console.log(true);
-            family_member++;
-            console.log(family_member);
-            const cloned = $('#familyMember tbody tr:last-child').clone();
-            cloned.find("input").val("");
-            cloned.find("#fam_name").val("");
-            $('#familyMember tbody tr:last-child').after(cloned);
-          });
-$('#addNewRow07').click(function(e) {
-            e.preventDefault();
-            console.log(true);
-            family_inJP++;
-            console.log(family_inJP);
-            const cloned = $('#familyInJp tbody tr:last-child').clone();
-            cloned.find("input").val("");
-            cloned.find("#ja_fam_name").val("");
-            $('#familyInJp tbody tr:last-child').after(cloned);
-          });    
-$('#addNewRow08').click(function(e) {
-            e.preventDefault();
-            console.log(true);
-            previous_stay++;
-            console.log(previous_stay);
-            const cloned = $('#preStayInJP tbody tr:last-child').clone();
-            cloned.find("input").val("");
-            cloned.find("#entry_date").val("");
-            $('#preStayInJP tbody tr:last-child').after(cloned);
-          });   
- 
-});
-//  Add  Row 
-//  Remove  Row
-$(function() {
-$('#removeRow01').on('click', function(e) {
-            e.preventDefault();
-            let dataLength = $('#edu_history tbody tr').length;
-            let $itemChecked = $('.productCheck:checked');       
-            let rowID = $('.rowID');
-            let serial_no = [];
-            if (dataLength > 1 && (dataLength != $itemChecked.length)) {
-                $itemChecked.each(function() {
-                    let dataItem = $(this).data('item');
-                    let productName = $(`.productItem[data-item='${dataItem}']`).val();
-                        if (productName != '') {
-                          educationHistory--;
-                        $(this).closest('tr').remove();
-                        let dataNewLength = $('#edu_history tbody tr').length;
-                        for (var i = 0; i <= rowID.length; i++) {
-                            serial_no.push(i + 1);
-                        }
-                      }
-                      
-                      });
-                      };
-                        
-});
-$('#removeRow02').on('click', function(e) {
-            e.preventDefault();
-            let dataLength = $('#previousJp tbody tr').length;
-            let $itemChecked = $('.productCheck:checked');       
-            let rowID = $('.rowID');
-            let serial_no = [];
-            if (dataLength > 1 && (dataLength != $itemChecked.length)) {
-                $itemChecked.each(function() {
-                    let dataItem = $(this).data('item');
-                    let productName = $(`.productItem[data-item='${dataItem}']`).val();
-                        if (productName != '') {
-                          previous_jp--;
-                        $(this).closest('tr').remove();
-                        let dataNewLength = $('#previousJp tbody tr').length;
-                        for (var i = 0; i <= rowID.length; i++) {
-                            serial_no.push(i + 1);
-                        }
-                      }
-                      
-                      });
-                      };
-                        
-});
-$('#removeRow03').on('click', function(e) {
-            e.preventDefault();
-            let dataLength = $('#achievementJp tbody tr').length;
-            let $itemChecked = $('.productCheck:checked');       
-            let rowID = $('.rowID');
-            let serial_no = [];
-            if (dataLength > 1 && (dataLength != $itemChecked.length)) {
-                $itemChecked.each(function() {
-                    let dataItem = $(this).data('item');
-                    let productName = $(`.productItem[data-item='${dataItem}']`).val();
-                        if (productName != '') {
-                          achievement_jp--;
-                        $(this).closest('tr').remove();
-                        let dataNewLength = $('#achievementJp tbody tr').length;
-                        for (var i = 0; i <= rowID.length; i++) {
-                            serial_no.push(i + 1);
-                        }
-                      }
-                      
-                      });
-                      };
-                        
-});
-$('#removeRow04').on('click', function(e) {
-            e.preventDefault();
-            let dataLength = $('#going_to_take tbody tr').length;
-            let $itemChecked = $('.productCheck:checked');       
-            let rowID = $('.rowID');
-            let serial_no = [];
-            if (dataLength > 1 && (dataLength != $itemChecked.length)) {
-                $itemChecked.each(function() {
-                    let dataItem = $(this).data('item');
-                    let productName = $(`.productItem[data-item='${dataItem}']`).val();
-                        if (productName != '') {
-                          jpLangGoing--;
-                        $(this).closest('tr').remove();
-                        let dataNewLength = $('#going_to_take tbody tr').length;
-                        for (var i = 0; i <= rowID.length; i++) {
-                            serial_no.push(i + 1);
-                        }
-                      }
-                      
-                      });
-                      };
-                        
-});
-$('#removeRow05').on('click', function(e) {
-            e.preventDefault();
-            let dataLength = $('#employHistory tbody tr').length;
-            let $itemChecked = $('.productCheck:checked');       
-            let rowID = $('.rowID');
-            let serial_no = [];
-            if (dataLength > 1 && (dataLength != $itemChecked.length)) {
-                $itemChecked.each(function() {
-                    let dataItem = $(this).data('item');
-                    let productName = $(`.productItem[data-item='${dataItem}']`).val();
-                        if (productName != '') {
-                          employment_history--;
-                        $(this).closest('tr').remove();
-                        let dataNewLength = $('#employHistory tbody tr').length;
-                        for (var i = 0; i <= rowID.length; i++) {
-                            serial_no.push(i + 1);
-                        }
-                      }
-                      
-                      });
-                      };
-                        
-});
-$('#removeRow06').on('click', function(e) {
-            e.preventDefault();
-            let dataLength = $('#familyMember tbody tr').length;
-            let $itemChecked = $('.productCheck:checked');       
-            let rowID = $('.rowID');
-            let serial_no = [];
-            if (dataLength > 1 && (dataLength != $itemChecked.length)) {
-                $itemChecked.each(function() {
-                    let dataItem = $(this).data('item');
-                    let productName = $(`.productItem[data-item='${dataItem}']`).val();
-                        if (productName != '') {
-                          family_member--;
-                        $(this).closest('tr').remove();
-                        let dataNewLength = $('#familyMember tbody tr').length;
-                        for (var i = 0; i <= rowID.length; i++) {
-                            serial_no.push(i + 1);
-                        }
-                      }
-                      
-                      });
-                      };
-                        
-});
-$('#removeRow07').on('click', function(e) {
-            e.preventDefault();
-            let dataLength = $('#familyInJp tbody tr').length;
-            let $itemChecked = $('.productCheck:checked');       
-            let rowID = $('.rowID');
-            let serial_no = [];
-            if (dataLength > 1 && (dataLength != $itemChecked.length)) {
-                $itemChecked.each(function() {
-                    let dataItem = $(this).data('item');
-                    let productName = $(`.productItem[data-item='${dataItem}']`).val();
-                        if (productName != '') {
-                          family_inJP--;
-                        $(this).closest('tr').remove();
-                        let dataNewLength = $('#familyInJp tbody tr').length;
-                        for (var i = 0; i <= rowID.length; i++) {
-                            serial_no.push(i + 1);
-                        }
-                      }
-                      
-                      });
-                      };
-                        
-});
-$('#removeRow08').on('click', function(e) {
-            e.preventDefault();
-            let dataLength = $('#preStayInJP tbody tr').length;
-            let $itemChecked = $('.productCheck:checked');       
-            let rowID = $('.rowID');
-            let serial_no = [];
-            if (dataLength > 1 && (dataLength != $itemChecked.length)) {
-                $itemChecked.each(function() {
-                    let dataItem = $(this).data('item');
-                    let productName = $(`.productItem[data-item='${dataItem}']`).val();
-                        if (productName != '') {
-                          previous_stay--;
-                        $(this).closest('tr').remove();
-                        let dataNewLength = $('#preStayInJP tbody tr').length;
-                        for (var i = 0; i <= rowID.length; i++) {
-                            serial_no.push(i + 1);
-                        }
-                      }
-                      
-                      });
-                      };
-                        
-});
-});
-//  Remove  Row
- </script> 
+                                });
+                                //  Add  Row 
+                                //  Remove  Row
+                                $(function() {
+                                    $('#removeRow01').on('click', function(e) {
+                                        e.preventDefault();
+                                        let dataLength = $('#edu_history tbody tr').length;
+                                        let $itemChecked = $('.productCheck:checked');
+                                        let rowID = $('.rowID');
+                                        let serial_no = [];
+                                        if (dataLength > 1 && (dataLength != $itemChecked.length)) {
+                                            $itemChecked.each(function() {
+                                                let dataItem = $(this).data('item');
+                                                let productName = $(
+                                                        `.productItem[data-item='${dataItem}']`)
+                                                    .val();
+                                                if (productName != '') {
+                                                    educationHistory--;
+                                                    $(this).closest('tr').remove();
+                                                    let dataNewLength = $(
+                                                        '#edu_history tbody tr').length;
+                                                    for (var i = 0; i <= rowID.length; i++) {
+                                                        serial_no.push(i + 1);
+                                                    }
+                                                }
 
-<!-- Name of Course -->
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script>
-$(function() {  
-  const courseNameSelector = (course_name) =>{
-      if(course_name =="進学２年コ－ス"){
-         $('.two_yrs_crs').show();
-         $('.oneyrs_ninemths_crs').hide();
-         $('.oneyrs_fivemths_crs').hide();
-         $('.oneyrs_threemths_crs').hide();
-         $('.one_yrs_course').hide();
-        }else if(course_name =="進学1年9ヶ月コ－ス"){
-         $('.two_yrs_crs').hide();
-         $('.oneyrs_ninemths_crs').show();
-         $('.oneyrs_fivemths_crs').hide();
-         $('.oneyrs_threemths_crs').hide();
-         $('.one_yrs_course').hide();
-      }else if(course_name =="進学１.５年コ－ス"){
-         $('.two_yrs_crs').hide();
-         $('.oneyrs_ninemths_crs').hide();
-         $('.oneyrs_fivemths_crs').show();
-         $('.oneyrs_threemths_crs').hide();
-         $('.one_yrs_course').hide();
-      }else if(course_name =="進学1年3ヶ月コ－ス"){
-         $('.two_yrs_crs').hide();
-         $('.oneyrs_ninemths_crs').hide();
-         $('.oneyrs_fivemths_crs').hide();
-         $('.oneyrs_threemths_crs').show();
-         $('.one_yrs_course').hide();
-      }else if(course_name =="進学１年コ－ス"){
-         $('.two_yrs_crs').hide();
-         $('.oneyrs_ninemths_crs').hide();
-         $('.oneyrs_fivemths_crs').hide();
-         $('.oneyrs_threemths_crs').hide();
-         $('.one_yrs_course').show();
-      }else{
-         $('.two_yrs_crs').hide();
-         $('.oneyrs_ninemths_crs').hide();
-         $('.oneyrs_fivemths_crs').hide();
-         $('.oneyrs_threemths_crs').hide();
-         $('.one_yrs_course').hide();
-      }
-    }
+                                            });
+                                        };
 
-    $("#select_name_of_course").change(function() {
-       const courseName = $('option:selected', this).text();
-       courseNameSelector(courseName);
+                                    });
+                                    $('#removeRow02').on('click', function(e) {
+                                        e.preventDefault();
+                                        let dataLength = $('#previousJp tbody tr').length;
+                                        let $itemChecked = $('.productCheck:checked');
+                                        let rowID = $('.rowID');
+                                        let serial_no = [];
+                                        if (dataLength > 1 && (dataLength != $itemChecked.length)) {
+                                            $itemChecked.each(function() {
+                                                let dataItem = $(this).data('item');
+                                                let productName = $(
+                                                        `.productItem[data-item='${dataItem}']`)
+                                                    .val();
+                                                if (productName != '') {
+                                                    previous_jp--;
+                                                    $(this).closest('tr').remove();
+                                                    let dataNewLength = $(
+                                                        '#previousJp tbody tr').length;
+                                                    for (var i = 0; i <= rowID.length; i++) {
+                                                        serial_no.push(i + 1);
+                                                    }
+                                                }
 
-    });
-    const selectCourseName = '<?php echo $result13->select_name_of_course; ?>';
-     if(selectCourseName){
-      courseNameSelector(selectCourseName);
-     }else{
-         $('.two_yrs_crs').hide();
-         $('.oneyrs_ninemths_crs').hide();
-         $('.oneyrs_fivemths_crs').hide();
-         $('.oneyrs_threemths_crs').hide();
-         $('.one_yrs_course').hide();
-     }
-   
-});
+                                            });
+                                        };
 
-</script>
-<div class="col-md-12 float-left" style="padding-bottom: 15px;">
-<h6 class="" style="padding: 33px 0px 12px;">志望学科　Name of Course　* 東京日本橋校は4月期（2年,1年）と10月期（1.5年）のみ。</h6>
-<div class="form-group">
-  <select name="select_name_of_course" id="select_name_of_course" class="course_select">
-    <option value="">Please Select!</option>
-    <option value="進学２年コ－ス" <?php if($result13->select_name_of_course== "進学２年コ－ス") {echo "selected";} ?>>進学２年コ－ス</option>
-    <option value="進学1年9ヶ月コ－ス" <?php if($result13->select_name_of_course== "進学1年9ヶ月コ－ス") {echo "selected";} ?>>進学1年9ヶ月コ－ス</option>
-    <option value="進学１.５年コ－ス" <?php if($result13->select_name_of_course== "進学１.５年コ－ス") {echo "selected";} ?>>進学１.５年コ－ス</option>
-    <option value="進学1年3ヶ月コ－ス" <?php if($result13->select_name_of_course== "進学1年3ヶ月コ－ス") {echo "selected";} ?>>進学1年3ヶ月コ－ス</option>
-    <option value="進学１年コ－ス" <?php if($result13->select_name_of_course== "進学１年コ－ス") {echo "selected";} ?>>進学１年コ－ス</option>
-  </select>
-</div>
-<p style="border-bottom:none !important;border-top:none !important;" class="two_yrs_crs">
-    <span>２－Year course</span>
-    <span>２０
-    <?php
+                                    });
+                                    $('#removeRow03').on('click', function(e) {
+                                        e.preventDefault();
+                                        let dataLength = $('#achievementJp tbody tr').length;
+                                        let $itemChecked = $('.productCheck:checked');
+                                        let rowID = $('.rowID');
+                                        let serial_no = [];
+                                        if (dataLength > 1 && (dataLength != $itemChecked.length)) {
+                                            $itemChecked.each(function() {
+                                                let dataItem = $(this).data('item');
+                                                let productName = $(
+                                                        `.productItem[data-item='${dataItem}']`)
+                                                    .val();
+                                                if (productName != '') {
+                                                    achievement_jp--;
+                                                    $(this).closest('tr').remove();
+                                                    let dataNewLength = $(
+                                                        '#achievementJp tbody tr').length;
+                                                    for (var i = 0; i <= rowID.length; i++) {
+                                                        serial_no.push(i + 1);
+                                                    }
+                                                }
+
+                                            });
+                                        };
+
+                                    });
+                                    $('#removeRow04').on('click', function(e) {
+                                        e.preventDefault();
+                                        let dataLength = $('#going_to_take tbody tr').length;
+                                        let $itemChecked = $('.productCheck:checked');
+                                        let rowID = $('.rowID');
+                                        let serial_no = [];
+                                        if (dataLength > 1 && (dataLength != $itemChecked.length)) {
+                                            $itemChecked.each(function() {
+                                                let dataItem = $(this).data('item');
+                                                let productName = $(
+                                                        `.productItem[data-item='${dataItem}']`)
+                                                    .val();
+                                                if (productName != '') {
+                                                    jpLangGoing--;
+                                                    $(this).closest('tr').remove();
+                                                    let dataNewLength = $(
+                                                        '#going_to_take tbody tr').length;
+                                                    for (var i = 0; i <= rowID.length; i++) {
+                                                        serial_no.push(i + 1);
+                                                    }
+                                                }
+
+                                            });
+                                        };
+
+                                    });
+                                    $('#removeRow05').on('click', function(e) {
+                                        e.preventDefault();
+                                        let dataLength = $('#employHistory tbody tr').length;
+                                        let $itemChecked = $('.productCheck:checked');
+                                        let rowID = $('.rowID');
+                                        let serial_no = [];
+                                        if (dataLength > 1 && (dataLength != $itemChecked.length)) {
+                                            $itemChecked.each(function() {
+                                                let dataItem = $(this).data('item');
+                                                let productName = $(
+                                                        `.productItem[data-item='${dataItem}']`)
+                                                    .val();
+                                                if (productName != '') {
+                                                    employment_history--;
+                                                    $(this).closest('tr').remove();
+                                                    let dataNewLength = $(
+                                                        '#employHistory tbody tr').length;
+                                                    for (var i = 0; i <= rowID.length; i++) {
+                                                        serial_no.push(i + 1);
+                                                    }
+                                                }
+
+                                            });
+                                        };
+
+                                    });
+                                    $('#removeRow06').on('click', function(e) {
+                                        e.preventDefault();
+                                        let dataLength = $('#familyMember tbody tr').length;
+                                        let $itemChecked = $('.productCheck:checked');
+                                        let rowID = $('.rowID');
+                                        let serial_no = [];
+                                        if (dataLength > 1 && (dataLength != $itemChecked.length)) {
+                                            $itemChecked.each(function() {
+                                                let dataItem = $(this).data('item');
+                                                let productName = $(
+                                                        `.productItem[data-item='${dataItem}']`)
+                                                    .val();
+                                                if (productName != '') {
+                                                    family_member--;
+                                                    $(this).closest('tr').remove();
+                                                    let dataNewLength = $(
+                                                        '#familyMember tbody tr').length;
+                                                    for (var i = 0; i <= rowID.length; i++) {
+                                                        serial_no.push(i + 1);
+                                                    }
+                                                }
+
+                                            });
+                                        };
+
+                                    });
+                                    $('#removeRow07').on('click', function(e) {
+                                        e.preventDefault();
+                                        let dataLength = $('#familyInJp tbody tr').length;
+                                        let $itemChecked = $('.productCheck:checked');
+                                        let rowID = $('.rowID');
+                                        let serial_no = [];
+                                        if (dataLength > 1 && (dataLength != $itemChecked.length)) {
+                                            $itemChecked.each(function() {
+                                                let dataItem = $(this).data('item');
+                                                let productName = $(
+                                                        `.productItem[data-item='${dataItem}']`)
+                                                    .val();
+                                                if (productName != '') {
+                                                    family_inJP--;
+                                                    $(this).closest('tr').remove();
+                                                    let dataNewLength = $(
+                                                        '#familyInJp tbody tr').length;
+                                                    for (var i = 0; i <= rowID.length; i++) {
+                                                        serial_no.push(i + 1);
+                                                    }
+                                                }
+
+                                            });
+                                        };
+
+                                    });
+                                    $('#removeRow08').on('click', function(e) {
+                                        e.preventDefault();
+                                        let dataLength = $('#preStayInJP tbody tr').length;
+                                        let $itemChecked = $('.productCheck:checked');
+                                        let rowID = $('.rowID');
+                                        let serial_no = [];
+                                        if (dataLength > 1 && (dataLength != $itemChecked.length)) {
+                                            $itemChecked.each(function() {
+                                                let dataItem = $(this).data('item');
+                                                let productName = $(
+                                                        `.productItem[data-item='${dataItem}']`)
+                                                    .val();
+                                                if (productName != '') {
+                                                    previous_stay--;
+                                                    $(this).closest('tr').remove();
+                                                    let dataNewLength = $(
+                                                        '#preStayInJP tbody tr').length;
+                                                    for (var i = 0; i <= rowID.length; i++) {
+                                                        serial_no.push(i + 1);
+                                                    }
+                                                }
+
+                                            });
+                                        };
+
+                                    });
+                                });
+                                //  Remove  Row
+                                </script>
+
+                                <!-- Name of Course -->
+                                <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+                                <script>
+                                $(function() {
+                                    const courseNameSelector = (course_name) => {
+                                        if (course_name == "進学２年コ－ス") {
+                                            $('.two_yrs_crs').show();
+                                            $('.oneyrs_ninemths_crs').hide();
+                                            $('.oneyrs_fivemths_crs').hide();
+                                            $('.oneyrs_threemths_crs').hide();
+                                            $('.one_yrs_course').hide();
+                                        } else if (course_name == "進学1年9ヶ月コ－ス") {
+                                            $('.two_yrs_crs').hide();
+                                            $('.oneyrs_ninemths_crs').show();
+                                            $('.oneyrs_fivemths_crs').hide();
+                                            $('.oneyrs_threemths_crs').hide();
+                                            $('.one_yrs_course').hide();
+                                        } else if (course_name == "進学１.５年コ－ス") {
+                                            $('.two_yrs_crs').hide();
+                                            $('.oneyrs_ninemths_crs').hide();
+                                            $('.oneyrs_fivemths_crs').show();
+                                            $('.oneyrs_threemths_crs').hide();
+                                            $('.one_yrs_course').hide();
+                                        } else if (course_name == "進学1年3ヶ月コ－ス") {
+                                            $('.two_yrs_crs').hide();
+                                            $('.oneyrs_ninemths_crs').hide();
+                                            $('.oneyrs_fivemths_crs').hide();
+                                            $('.oneyrs_threemths_crs').show();
+                                            $('.one_yrs_course').hide();
+                                        } else if (course_name == "進学１年コ－ス") {
+                                            $('.two_yrs_crs').hide();
+                                            $('.oneyrs_ninemths_crs').hide();
+                                            $('.oneyrs_fivemths_crs').hide();
+                                            $('.oneyrs_threemths_crs').hide();
+                                            $('.one_yrs_course').show();
+                                        } else {
+                                            $('.two_yrs_crs').hide();
+                                            $('.oneyrs_ninemths_crs').hide();
+                                            $('.oneyrs_fivemths_crs').hide();
+                                            $('.oneyrs_threemths_crs').hide();
+                                            $('.one_yrs_course').hide();
+                                        }
+                                    }
+
+                                    $("#select_name_of_course").change(function() {
+                                        const courseName = $('option:selected', this).text();
+                                        courseNameSelector(courseName);
+
+                                    });
+                                    const selectCourseName = '<?php echo $result13->select_name_of_course; ?>';
+                                    if (selectCourseName) {
+                                        courseNameSelector(selectCourseName);
+                                    } else {
+                                        $('.two_yrs_crs').hide();
+                                        $('.oneyrs_ninemths_crs').hide();
+                                        $('.oneyrs_fivemths_crs').hide();
+                                        $('.oneyrs_threemths_crs').hide();
+                                        $('.one_yrs_course').hide();
+                                    }
+
+                                });
+                                </script>
+                                <div class="col-md-12 float-left" style="padding-bottom: 15px;">
+                                    <h6 class="" style="padding: 33px 0px 12px;">志望学科　Name of Course　*
+                                        東京日本橋校は4月期（2年,1年）と10月期（1.5年）のみ。</h6>
+                                    <div class="form-group">
+                                        <select name="select_name_of_course" id="select_name_of_course"
+                                            class="course_select">
+                                            <option value="">Please Select!</option>
+                                            <option value="進学２年コ－ス"
+                                                <?php if($result13->select_name_of_course== "進学２年コ－ス") {echo "selected";} ?>>
+                                                進学２年コ－ス</option>
+                                            <option value="進学1年9ヶ月コ－ス"
+                                                <?php if($result13->select_name_of_course== "進学1年9ヶ月コ－ス") {echo "selected";} ?>>
+                                                進学1年9ヶ月コ－ス</option>
+                                            <option value="進学１.５年コ－ス"
+                                                <?php if($result13->select_name_of_course== "進学１.５年コ－ス") {echo "selected";} ?>>
+                                                進学１.５年コ－ス</option>
+                                            <option value="進学1年3ヶ月コ－ス"
+                                                <?php if($result13->select_name_of_course== "進学1年3ヶ月コ－ス") {echo "selected";} ?>>
+                                                進学1年3ヶ月コ－ス</option>
+                                            <option value="進学１年コ－ス"
+                                                <?php if($result13->select_name_of_course== "進学１年コ－ス") {echo "selected";} ?>>
+                                                進学１年コ－ス</option>
+                                        </select>
+                                    </div>
+                                    <p style="border-bottom:none !important;border-top:none !important;"
+                                        class="two_yrs_crs">
+                                        <span>２－Year course</span>
+                                        <span>２０
+                                            <?php
           echo form_input(array(
             'name' => 'twyrs_crs_start_date',
             'type' => 'text',
@@ -2663,8 +2915,8 @@ $(function() {
             'style' => 'width:5%',
             'autocomplete' => ''));
         ?>
-    <span>年０４月 -- ２０ </span>
-    <?php
+                                            <span>年０４月 -- ２０ </span>
+                                            <?php
           echo form_input(array(
             'name' => 'twyrs_crs_end_date',
             'type' => 'text',
@@ -2674,10 +2926,11 @@ $(function() {
             'style' => 'width:5%',
             'autocomplete' => ''));
         ?> 年０３月</span>
-</p>
-<p style="border-bottom:none !important;border-top:none !important;" class="oneyrs_ninemths_crs">
-    <span>1 Year and 9 Months course</span>
-    <span>２０ <?php
+                                    </p>
+                                    <p style="border-bottom:none !important;border-top:none !important;"
+                                        class="oneyrs_ninemths_crs">
+                                        <span>1 Year and 9 Months course</span>
+                                        <span>２０ <?php
           echo form_input(array(
             'name' => 'onenine_crs_start_date',
             'type' => 'text',
@@ -2696,10 +2949,11 @@ $(function() {
           'style' => 'width:5%',
           'autocomplete' => ''));
       ?>年０３月</span>
-</p>
-<p style="border-bottom:none !important;border-top:none !important;" class="oneyrs_fivemths_crs">
-    <span>1.5－Year course</span>
-    <span>２０ <?php
+                                    </p>
+                                    <p style="border-bottom:none !important;border-top:none !important;"
+                                        class="oneyrs_fivemths_crs">
+                                        <span>1.5－Year course</span>
+                                        <span>２０ <?php
           echo form_input(array(
             'name' => 'onefive_crs_start_date',
             'type' => 'text',
@@ -2718,10 +2972,11 @@ $(function() {
           'style' => 'width:5%',
           'autocomplete' => ''));
       ?>年０３月</span>
-</p>
-<p style="border-bottom:none !important;border-top:none !important;" class="oneyrs_threemths_crs">
-    <span>1 Year and 3 Months course</span>
-    <span>２０  <?php
+                                    </p>
+                                    <p style="border-bottom:none !important;border-top:none !important;"
+                                        class="oneyrs_threemths_crs">
+                                        <span>1 Year and 3 Months course</span>
+                                        <span>２０ <?php
           echo form_input(array(
             'name' => 'onethree_crs_start_date',
             'type' => 'text',
@@ -2740,9 +2995,10 @@ $(function() {
           'style' => 'width:5%',
           'autocomplete' => ''));
       ?> 年０３月</span>
-</p>
-<p style="border-bottom:none !important;border-top:none !important;" class="one_yrs_course">
-    <span>１－Year course<?php
+                                    </p>
+                                    <p style="border-bottom:none !important;border-top:none !important;"
+                                        class="one_yrs_course">
+                                        <span>１－Year course<?php
           echo form_input(array(
             'name' => 'one_crs_start_date',
             'type' => 'text',
@@ -2761,103 +3017,127 @@ $(function() {
           'style' => 'width:5%',
           'autocomplete' => ''));
       ?>年０３月</span>
-</p>
-</div>
-<!-- Name of Course -->
+                                    </p>
+                                </div>
+                                <!-- Name of Course -->
 
-<style>
-.align-middle span>.btn:hover{
-    color:#ffffff;
-  }
-</style>
+                                <style>
+                                .align-middle span>.btn:hover {
+                                    color: #ffffff;
+                                }
+                                </style>
 
 
-<script>
-$(function() {      
-     const futurePlanSelector = (future_plan) =>{
-      if(future_plan =="A. 進学 Advancing to higher education"){
-        $('.drop_checkbox').show();
-        $('.specify').hide();
-      }else if(future_plan =="D. その他 < Other> (Specify)"){
-        $('.drop_checkbox').hide();
-        $('.specify').show();
-      }else{
-        $('.drop_checkbox').hide();
-        $('.specify').hide();
-      }
-     }
-     $("#future_plan_after_graduating").change(function() {
-       const futurePlanName = $('option:selected', this).text();
-       futurePlanSelector(futurePlanName);
+                                <script>
+                                $(function() {
+                                    const futurePlanSelector = (future_plan) => {
+                                        if (future_plan == "A. 進学 Advancing to higher education") {
+                                            $('.drop_checkbox').show();
+                                            $('.specify').hide();
+                                        } else if (future_plan == "D. その他 < Other> (Specify)") {
+                                            $('.drop_checkbox').hide();
+                                            $('.specify').show();
+                                        } else {
+                                            $('.drop_checkbox').hide();
+                                            $('.specify').hide();
+                                        }
+                                    }
+                                    $("#future_plan_after_graduating").change(function() {
+                                        const futurePlanName = $('option:selected', this).text();
+                                        futurePlanSelector(futurePlanName);
 
-    });
-    const selectfuturePlan = '<?php echo $result13->future_plan_after_graduating; ?>';
-     if(selectfuturePlan){
-      futurePlanSelector(selectfuturePlan);
-     }else{
-      $('.drop_checkbox').hide();
-      $('.specify').hide();
-     }
-});
-$(function() {  
-     const afterGraduating = (graduate_plan) =>{
-       if(graduate_plan =="shizuoka"){
-         $('#specific_plans').hide();
-         $('#future_plan').show();
-        }else if(graduate_plan =="ECC"){
-          $('#specific_plans').show();
-          $('#future_plan').hide();
-      }else if(graduate_plan =="JCLI"){
-          $('#specific_plans').show();
-          $('#future_plan').hide();
-      }else if(graduate_plan =="OJLS"){
-          $('#specific_plans').show();
-          $('#future_plan').hide();
-      }else if(graduate_plan =="fukuoka"){
-          $('#specific_plans').show();
-          $('#future_plan').hide();
-      }else{
-         $('#specific_plans').hide();
-         $('#future_plan').hide();
-      }
-    }
-    $("#jls_name").change(function() {
-       const specificPlanName = $('option:selected', this).text();
-       afterGraduating(specificPlanName);
+                                    });
+                                    const selectfuturePlan =
+                                        '<?php echo $result13->future_plan_after_graduating; ?>';
+                                    if (selectfuturePlan) {
+                                        futurePlanSelector(selectfuturePlan);
+                                    } else {
+                                        $('.drop_checkbox').hide();
+                                        $('.specify').hide();
+                                    }
+                                });
+                                $(function() {
+                                    const afterGraduating = (graduate_plan) => {
+                                        if (graduate_plan == "shizuoka") {
+                                            $('#specific_plans').hide();
+                                            $('#future_plan').show();
+                                        } else if (graduate_plan == "ECC") {
+                                            $('#specific_plans').show();
+                                            $('#future_plan').hide();
+                                        } else if (graduate_plan == "JCLI") {
+                                            $('#specific_plans').show();
+                                            $('#future_plan').hide();
+                                        } else if (graduate_plan == "OJLS") {
+                                            $('#specific_plans').show();
+                                            $('#future_plan').hide();
+                                        } else if (graduate_plan == "fukuoka") {
+                                            $('#specific_plans').show();
+                                            $('#future_plan').hide();
+                                        } else {
+                                            $('#specific_plans').hide();
+                                            $('#future_plan').hide();
+                                        }
+                                    }
+                                    $("#jls_name").change(function() {
+                                        const specificPlanName = $('option:selected', this).text();
+                                        afterGraduating(specificPlanName);
 
-    });
-    const selectspecificPlan = '<?php echo $result->jls_name; ?>';
-     if(selectspecificPlan){
-      afterGraduating(selectspecificPlan);
-     }else{
-      $('#specific_plans').hide();
-      $('#future_plan').hide();
-     }
-});
-</script>
-<div class="col-md-12 float-left" style="padding-bottom: 15px;display:none;" id="future_plan">
-<h6 class="" style="padding: 33px 0px 12px;"> この学校を卒業した後の予定 < Future plan after graduating from this school.></h6>
-<div class="form-group">
-  <select name="future_plan_after_graduating" id="future_plan_after_graduating" class="course_select">
-    <option value="">Please Select!</option>
-    <option value="A. 進学 Advancing to higher education" <?php if($result13->future_plan_after_graduating== "A. 進学 Advancing to higher education") {echo "selected";} ?>>A. 進学 Advancing to higher education</option>
-    <option value="B. 就職 Planning to work" <?php if($result13->future_plan_after_graduating== "B. 就職 Planning to work") {echo "selected";} ?>>B. 就職 Planning to work</option>
-    <option value="C. 帰国 Returning home" <?php if($result13->future_plan_after_graduating== "C. 帰国 Returning home") {echo "selected";} ?>>C. 帰国 Returning home</option>
-    <option value="D. その他 < Other> (Specify)" <?php if($result13->future_plan_after_graduating== "D. その他 < Other> (Specify)") {echo "selected";} ?>>D. その他 < Other> (Specify)</option>
-  </select>
-</div>
-<div class="drop_checkbox">
-<select name="future_plan_checkdata01" id="future_plan_checkdata01" class="course_select">
-    <option value="">Please Select!</option>
-    <option value="大学院( Master's degree / Doctoral course)" <?php if($result13->future_plan_checkdata01== "大学院( Master's degree / Doctoral course)") {echo "selected";} ?>>大学院( Master's degree / Doctoral course)</option>
-    <option value="短期大学( Junior College )" <?php if($result13->future_plan_checkdata01== "短期大学( Junior College )") {echo "selected";} ?>>短期大学( Junior College )</option>
-    <option value="大学( Undergraduate(Bachelor) )" <?php if($result13->future_plan_checkdata01== "大学( Undergraduate(Bachelor) )") {echo "selected";} ?>>大学( Undergraduate(Bachelor) )</option>
-    <option value="専門学校( Vocational School )" <?php if($result13->future_plan_checkdata01== "専門学校( Vocational School )") {echo "selected";} ?>>専門学校( Vocational School )</option>
-    <option value="その他 ( Other )" <?php if($result13->future_plan_checkdata01== "その他 ( Other )") {echo "selected";} ?>>その他 ( Other )</option>
-</select>
-</div>
-<div class="specify">
-  <?php
+                                    });
+                                    const selectspecificPlan = '<?php echo $result->jls_name; ?>';
+                                    if (selectspecificPlan) {
+                                        afterGraduating(selectspecificPlan);
+                                    } else {
+                                        $('#specific_plans').hide();
+                                        $('#future_plan').hide();
+                                    }
+                                });
+                                </script>
+                                <div class="col-md-12 float-left" style="padding-bottom: 15px;display:none;"
+                                    id="future_plan">
+                                    <h6 class="" style="padding: 33px 0px 12px;"> この学校を卒業した後の予定 < Future plan after
+                                            graduating from this school.>
+                                    </h6>
+                                    <div class="form-group">
+                                        <select name="future_plan_after_graduating" id="future_plan_after_graduating"
+                                            class="course_select">
+                                            <option value="">Please Select!</option>
+                                            <option value="A. 進学 Advancing to higher education"
+                                                <?php if($result13->future_plan_after_graduating== "A. 進学 Advancing to higher education") {echo "selected";} ?>>
+                                                A. 進学 Advancing to higher education</option>
+                                            <option value="B. 就職 Planning to work"
+                                                <?php if($result13->future_plan_after_graduating== "B. 就職 Planning to work") {echo "selected";} ?>>
+                                                B. 就職 Planning to work</option>
+                                            <option value="C. 帰国 Returning home"
+                                                <?php if($result13->future_plan_after_graduating== "C. 帰国 Returning home") {echo "selected";} ?>>
+                                                C. 帰国 Returning home</option>
+                                            <option value="D. その他 < Other> (Specify)"
+                                                <?php if($result13->future_plan_after_graduating== "D. その他 < Other> (Specify)") {echo "selected";} ?>>
+                                                D. その他 < Other> (Specify)</option>
+                                        </select>
+                                    </div>
+                                    <div class="drop_checkbox">
+                                        <select name="future_plan_checkdata01" id="future_plan_checkdata01"
+                                            class="course_select">
+                                            <option value="">Please Select!</option>
+                                            <option value="大学院( Master's degree / Doctoral course)"
+                                                <?php if($result13->future_plan_checkdata01== "大学院( Master's degree / Doctoral course)") {echo "selected";} ?>>
+                                                大学院( Master's degree / Doctoral course)</option>
+                                            <option value="短期大学( Junior College )"
+                                                <?php if($result13->future_plan_checkdata01== "短期大学( Junior College )") {echo "selected";} ?>>
+                                                短期大学( Junior College )</option>
+                                            <option value="大学( Undergraduate(Bachelor) )"
+                                                <?php if($result13->future_plan_checkdata01== "大学( Undergraduate(Bachelor) )") {echo "selected";} ?>>
+                                                大学( Undergraduate(Bachelor) )</option>
+                                            <option value="専門学校( Vocational School )"
+                                                <?php if($result13->future_plan_checkdata01== "専門学校( Vocational School )") {echo "selected";} ?>>
+                                                専門学校( Vocational School )</option>
+                                            <option value="その他 ( Other )"
+                                                <?php if($result13->future_plan_checkdata01== "その他 ( Other )") {echo "selected";} ?>>
+                                                その他 ( Other )</option>
+                                        </select>
+                                    </div>
+                                    <div class="specify">
+                                        <?php
       echo form_input(array(
         'name' => 'spec_other',
         'type' => 'text',
@@ -2868,8 +3148,8 @@ $(function() {
         'style' => 'width:49%;',
         'autocomplete' => ''));
     ?>
-  </div>
-</div>
+                                    </div>
+                                </div>
 
 
 
@@ -2877,34 +3157,36 @@ $(function() {
 
 
 
-<!-- Table -->
-<div class="col-md-12 float-left">
-<h6 class="" style="padding: 33px 0px 12px;">Educational History : from Elementary School to the Most Recent School</h6>
-<div class="tbl">
-<table class="table-bordered" name="applicant_id"  id="edu_history">
-  <thead class="tbl_head" >
-    <tr>
-    <th></th>
-      <th>Name of institution</th>
-      <th>Address</th>
-      <th>Starting <br>Year/Month  </th>
-      <th >Finishing <br>Year/Month </th>
-      <th>Term of Study</th>
-    </tr>
-  </thead>
-  <tbody>
-  <?php
+                                <!-- Table -->
+                                <div class="col-md-12 float-left">
+                                    <h6 class="" style="padding: 33px 0px 12px;">Educational History : from Elementary
+                                        School to the Most Recent School</h6>
+                                    <div class="tbl">
+                                        <table class="table-bordered" name="applicant_id" id="edu_history">
+                                            <thead class="tbl_head">
+                                                <tr>
+                                                    <th></th>
+                                                    <th>Name of institution</th>
+                                                    <th>Address</th>
+                                                    <th>Starting <br>Year/Month </th>
+                                                    <th>Finishing <br>Year/Month </th>
+                                                    <th>Term of Study</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <?php
         $x=1;
         $y=0;
         // var_dump($lists3['edu_name']);
           foreach($result4 as $row){
-  ?>   
-    <tr>
-    <td class="text-center">
-       <input type="checkbox" name="productCheck[]" class="productCheck" data-item="1">
-  </td>
-      <td class="rowID">
-      <?php
+  ?>
+                                                <tr>
+                                                    <td class="text-center">
+                                                        <input type="checkbox" name="productCheck[]"
+                                                            class="productCheck" data-item="1">
+                                                    </td>
+                                                    <td class="rowID">
+                                                        <?php
           echo form_input(array(
             'name' => 'edu_name[]',
             'type' => 'text',
@@ -2913,9 +3195,9 @@ $(function() {
             'id' => 'edu_name',
             'autocomplete' => ''));
         ?>
-      </td>
-      <td class="rowID">
-      <?php
+                                                    </td>
+                                                    <td class="rowID">
+                                                        <?php
           echo form_input(array(
             'name' => 'edu_address[]',
             'type' => 'text',
@@ -2924,9 +3206,9 @@ $(function() {
             'id' => 'edu_address',
             'autocomplete' => ''));
         ?>
-      </td>
-      <td class="rowID" style="text-align:center;">
-      <?php
+                                                    </td>
+                                                    <td class="rowID" style="text-align:center;">
+                                                        <?php
           echo form_input(array(
             'name' => 'edu_start_date[]',
             'type' => 'month',
@@ -2935,9 +3217,9 @@ $(function() {
             'id' => 'edu_start_date',
             'autocomplete' => ''));
         ?>
-      </td>
-      <td class="rowID" style="text-align:center;">
-      <?php
+                                                    </td>
+                                                    <td class="rowID" style="text-align:center;">
+                                                        <?php
           echo form_input(array(
             'name' => 'edu_end_date[]',
             'type' => 'month',
@@ -2946,9 +3228,9 @@ $(function() {
             'id' => 'edu_end_date',
             'autocomplete' => ''));
         ?>
-      </td>
-      <td class="rowID">
-      <?php
+                                                    </td>
+                                                    <td class="rowID">
+                                                        <?php
           echo form_input(array(
             'name' => 'edu_year[]',
             'type' => 'text',
@@ -2957,32 +3239,39 @@ $(function() {
             'id' => 'edu_year',
             'autocomplete' => ''));
         ?>
-        <span class="study_year">year</span> 
-      </td>
-    </tr>
-    <?php }
+                                                        <span class="study_year">year</span>
+                                                    </td>
+                                                </tr>
+                                                <?php }
     ?>
-  </tbody>
-  
-</table>
-<table class="table-bordered" name="applicant_id">
-<tr>
-<th scope="row" colspan="9" class="align-middle" style="padding: 3px;">
-      <span class="float-left">
-        <a class="btn btn-sm btn-outline-secondary px-2 rounded-1 overlay" id="addNewRow01" style="font-size: 0.8rem;"><strong><i class="fas fa-plus-circle"></i></strong><span class="material-icons align-top md-20 mr-1">add_circle</span>Add row</a>
-        <a class="btn btn-sm btn-outline-danger px-2 rounded-1 overlay" id="removeRow01" style="font-size: 0.8rem;"><strong><i class="fas fa-minus-circle"></i></strong><span class="material-icons align-top md-20 mr-1">delete</span>Remove</a>
-      </span>
-</th>
-</tr>
-</table>
-</div>
-       
-</div>
-<!-- Table -->
-<div class="col-md-6 float-left">
-<div class="form-group ">
-      <?php echo form_label('Registered enrollment', 'registered_enrollment', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'registered_enrollment')); ?>
-      <?php
+                                            </tbody>
+
+                                        </table>
+                                        <table class="table-bordered" name="applicant_id">
+                                            <tr>
+                                                <th scope="row" colspan="9" class="align-middle" style="padding: 3px;">
+                                                    <span class="float-left">
+                                                        <a class="btn btn-sm btn-outline-secondary px-2 rounded-1 overlay"
+                                                            id="addNewRow01" style="font-size: 0.8rem;"><strong><i
+                                                                    class="fas fa-plus-circle"></i></strong><span
+                                                                class="material-icons align-top md-20 mr-1">add_circle</span>Add
+                                                            row</a>
+                                                        <a class="btn btn-sm btn-outline-danger px-2 rounded-1 overlay"
+                                                            id="removeRow01" style="font-size: 0.8rem;"><strong><i
+                                                                    class="fas fa-minus-circle"></i></strong><span
+                                                                class="material-icons align-top md-20 mr-1">delete</span>Remove</a>
+                                                    </span>
+                                                </th>
+                                            </tr>
+                                        </table>
+                                    </div>
+
+                                </div>
+                                <!-- Table -->
+                                <div class="col-md-6 float-left">
+                                    <div class="form-group ">
+                                        <?php echo form_label('Registered enrollment', 'registered_enrollment', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'registered_enrollment')); ?>
+                                        <?php
         echo form_input(array(
           'name' => 'registered_enrollment',
           'type' => 'text',
@@ -2992,13 +3281,14 @@ $(function() {
           'id' => 'registered_enrollment',
           'autocomplete' => ''));
       ?>
-      <span class="text-danger"><?php echo form_error('registered_enrollment'); ?></span>
-  </div>
-</div>
-<div class="col-md-6 float-right">
-  <div class="form-group">
-      <?php echo form_label('Total period of education (from elementary school to the last school attended)', 'total_period_edu', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'total_period_edu')); ?>
-      <?php
+                                        <span
+                                            class="text-danger"><?php echo form_error('registered_enrollment'); ?></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 float-right">
+                                    <div class="form-group">
+                                        <?php echo form_label('Total period of education (from elementary school to the last school attended)', 'total_period_edu', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'total_period_edu')); ?>
+                                        <?php
         echo form_input(array(
           'name' => 'total_period_edu',
           'type' => 'text',
@@ -3008,45 +3298,51 @@ $(function() {
           'id' => 'total_period_edu',
           'autocomplete' => ''));
       ?>
-      <span class="text-danger"><?php echo form_error('total_period_edu'); ?></span>
-  </div>        
-</div>
-<!-- Table -->
-<div class="col-md-12 float-left">
-<h6 class="" style="padding: 33px 0px 12px;">Previous Japanese Language Study</h6>
-<select name="jplearn_experience" id="jplearn_experience" class="admission_select" style="margin-bottom: 1rem;";>
-        <option value="1" <?php if($result->jplearn_experience== "1") {echo "selected";} ?>>Yes</option>
-        <option value="0" <?php if($result->jplearn_experience== "0") {echo "selected";} ?>>No</option>
-</select>
-<div class="tbl">
-<table class="table-bordered" name="applicant_id" id="previousJp">
-  <thead class="tbl_head">
-    <tr>
-    <th></th>
-      <th>Name of institution</th>
-      <th>Level</th>
-      <th>Status(Completed/Still Studying)</th>
-      <th>Address</th>
-      <th>Starting <br>Year/Month  </th>
-      <th >Finishing <br>Year/Month </th>
-      <th>Total hour of Study</th>
-      <th>Term of year</th>
-    </tr>
-  </thead>
-  <tbody>
- 
-  <?php
+                                        <span class="text-danger"><?php echo form_error('total_period_edu'); ?></span>
+                                    </div>
+                                </div>
+                                <!-- Table -->
+                                <div class="col-md-12 float-left">
+                                    <h6 class="" style="padding: 33px 0px 12px;">Previous Japanese Language Study</h6>
+                                    <select name="jplearn_experience" id="jplearn_experience" class="admission_select"
+                                        style="margin-bottom: 1rem;" ;>
+                                        <option value="1"
+                                            <?php if($result->jplearn_experience== "1") {echo "selected";} ?>>Yes
+                                        </option>
+                                        <option value="0"
+                                            <?php if($result->jplearn_experience== "0") {echo "selected";} ?>>No
+                                        </option>
+                                    </select>
+                                    <div class="tbl">
+                                        <table class="table-bordered" name="applicant_id" id="previousJp">
+                                            <thead class="tbl_head">
+                                                <tr>
+                                                    <th></th>
+                                                    <th>Name of institution</th>
+                                                    <th>Level</th>
+                                                    <th>Status(Completed/Still Studying)</th>
+                                                    <th>Address</th>
+                                                    <th>Starting <br>Year/Month </th>
+                                                    <th>Finishing <br>Year/Month </th>
+                                                    <th>Total hour of Study</th>
+                                                    <th>Term of year</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+
+                                                <?php
         $x=1;
         $y=0;
         // var_dump($lists3['edu_name']);
           foreach($result5 as $row1){
-  ?>   
-  <tr>
-  <td class="text-center">
-       <input type="checkbox" name="productCheck[]" class="productCheck" data-item="1">
-  </td>
-      <td  class="rowID">
-      <?php
+  ?>
+                                                <tr>
+                                                    <td class="text-center">
+                                                        <input type="checkbox" name="productCheck[]"
+                                                            class="productCheck" data-item="1">
+                                                    </td>
+                                                    <td class="rowID">
+                                                        <?php
           echo form_input(array(
             'name' => 'jp_name[]',
             'type' => 'text',
@@ -3055,9 +3351,9 @@ $(function() {
             'id' => 'jp_name',
             'autocomplete' => ''));
         ?>
-      </td>
-      <td  class="rowID">
-      <?php
+                                                    </td>
+                                                    <td class="rowID">
+                                                        <?php
           echo form_input(array(
             'name' => 'jp_level[]',
             'type' => 'text',
@@ -3066,18 +3362,24 @@ $(function() {
             'id' => 'jp_level',
             'autocomplete' => ''));
         ?>
-      </td>
-      <td  class="rowID">
-        <div class="">
-         <select name="jp_status[]" class="table-control col-md-12">
-          <option value="0" <?php if($row1->jp_status== "") {echo "selected";} ?>></option>
-          <option value="1" <?php if($row1->jp_status== "1") {echo "selected";} ?>>Completed</option>
-          <option value="0" <?php if($row1->jp_status== "0") {echo "selected";} ?>>Still studying</option>
-        </select>
-        </div>
-      </td>
-      <td  class="rowID">
-      <?php
+                                                    </td>
+                                                    <td class="rowID">
+                                                        <div class="">
+                                                            <select name="jp_status[]" class="table-control col-md-12">
+                                                                <option value="0"
+                                                                    <?php if($row1->jp_status== "") {echo "selected";} ?>>
+                                                                </option>
+                                                                <option value="1"
+                                                                    <?php if($row1->jp_status== "1") {echo "selected";} ?>>
+                                                                    Completed</option>
+                                                                <option value="0"
+                                                                    <?php if($row1->jp_status== "0") {echo "selected";} ?>>
+                                                                    Still studying</option>
+                                                            </select>
+                                                        </div>
+                                                    </td>
+                                                    <td class="rowID">
+                                                        <?php
           echo form_input(array(
             'name' => 'jp_address[]',
             'type' => 'text',
@@ -3086,9 +3388,9 @@ $(function() {
             'id' => 'jp_address',
             'autocomplete' => ''));
         ?>
-      </td>
-      <td  class="rowID"  style="text-align:center;">
-      <?php
+                                                    </td>
+                                                    <td class="rowID" style="text-align:center;">
+                                                        <?php
           echo form_input(array(
             'name' => 'jp_start_date[]',
             'type' => 'month',
@@ -3097,9 +3399,9 @@ $(function() {
             'id' => 'jp_start_date',
             'autocomplete' => ''));
         ?>
-      </td>
-      <td  class="rowID"  style="text-align:center;">
-      <?php
+                                                    </td>
+                                                    <td class="rowID" style="text-align:center;">
+                                                        <?php
           echo form_input(array(
             'name' => 'jp_end_date[]',
             'type' => 'month',
@@ -3108,9 +3410,9 @@ $(function() {
             'id' => 'jp_end_date',
             'autocomplete' => ''));
         ?>
-      </td>
-      <td  class="rowID">
-      <?php
+                                                    </td>
+                                                    <td class="rowID">
+                                                        <?php
           echo form_input(array(
             'name' => 'jp_hour[]',
             'type' => 'text',
@@ -3119,10 +3421,10 @@ $(function() {
             'id' => 'jp_hour',
             'autocomplete' => ''));
         ?>
-      <span class="study_year">hour</span> 
-      </td>
-      <td  class="rowID">
-      <?php
+                                                        <span class="study_year">hour</span>
+                                                    </td>
+                                                    <td class="rowID">
+                                                        <?php
           echo form_input(array(
             'name' => 'jp_year[]',
             'type' => 'text',
@@ -3131,62 +3433,75 @@ $(function() {
             'id' => 'jp_year',
             'autocomplete' => ''));
         ?>
-      <span class="study_year">year</span> 
-      </td>
-    </tr>
-    <?php }
+                                                        <span class="study_year">year</span>
+                                                    </td>
+                                                </tr>
+                                                <?php }
     ?>
-  </tbody>
-</table>
-<table class="table-bordered" name="applicant_id">
-<tr>
-<th scope="row" colspan="9" class="align-middle" style="padding: 3px;">
-      <span class="float-left">
-        <a class="btn btn-sm btn-outline-secondary px-2 rounded-1 overlay" id="addNewRow02" style="font-size: 0.8rem;"><strong><i class="fas fa-plus-circle"></i></strong><span class="material-icons align-top md-20 mr-1">add_circle</span>Add row</a>
-        <a class="btn btn-sm btn-outline-danger px-2 rounded-1 overlay" id="removeRow02" style="font-size: 0.8rem;"><strong><i class="fas fa-minus-circle"></i></strong><span class="material-icons align-top md-20 mr-1">delete</span>Remove</a>
-      </span>
-</th>
-</tr>
-</table>
-</div>
+                                            </tbody>
+                                        </table>
+                                        <table class="table-bordered" name="applicant_id">
+                                            <tr>
+                                                <th scope="row" colspan="9" class="align-middle" style="padding: 3px;">
+                                                    <span class="float-left">
+                                                        <a class="btn btn-sm btn-outline-secondary px-2 rounded-1 overlay"
+                                                            id="addNewRow02" style="font-size: 0.8rem;"><strong><i
+                                                                    class="fas fa-plus-circle"></i></strong><span
+                                                                class="material-icons align-top md-20 mr-1">add_circle</span>Add
+                                                            row</a>
+                                                        <a class="btn btn-sm btn-outline-danger px-2 rounded-1 overlay"
+                                                            id="removeRow02" style="font-size: 0.8rem;"><strong><i
+                                                                    class="fas fa-minus-circle"></i></strong><span
+                                                                class="material-icons align-top md-20 mr-1">delete</span>Remove</a>
+                                                    </span>
+                                                </th>
+                                            </tr>
+                                        </table>
+                                    </div>
 
-</div>
-<!-- Table -->
+                                </div>
+                                <!-- Table -->
 
 
-<div class="col-md-8 float-left">
-<h6 class="" style="padding: 33px 0px 12px;">Achievement in JP language tests</h6>
-<p>Japanese Language Proficiency </p>
-<select name="jplearn_achievement" id="jplearn_achievement" class="admission_select" style="margin-bottom: 1rem;";>
-        <option value="1" <?php if($result->jplearn_achievement== "1") {echo "selected";} ?>>Yes</option>
-        <option value="0" <?php if($result->jplearn_achievement== "0") {echo "selected";} ?>>No</option>
-</select>
-<div class="tbl">
-<table class="table-bordered" name="applicant_id" id="achievementJp">
-  <thead class="tbl_head">
-    <tr>
-      <th></th>
-      <th>Name of Japanese language test</th>
-      <th>Level</th>
-      <th>Exam Years</th>
-      <th >Score</th>
-      <th>Result</th>
-      <th>Date of Qualification</th>
-    </tr>
-  </thead>
-  <tbody>
-  <?php
+                                <div class="col-md-8 float-left">
+                                    <h6 class="" style="padding: 33px 0px 12px;">Achievement in JP language tests</h6>
+                                    <p>Japanese Language Proficiency </p>
+                                    <select name="jplearn_achievement" id="jplearn_achievement" class="admission_select"
+                                        style="margin-bottom: 1rem;" ;>
+                                        <option value="1"
+                                            <?php if($result->jplearn_achievement== "1") {echo "selected";} ?>>Yes
+                                        </option>
+                                        <option value="0"
+                                            <?php if($result->jplearn_achievement== "0") {echo "selected";} ?>>No
+                                        </option>
+                                    </select>
+                                    <div class="tbl">
+                                        <table class="table-bordered" name="applicant_id" id="achievementJp">
+                                            <thead class="tbl_head">
+                                                <tr>
+                                                    <th></th>
+                                                    <th>Name of Japanese language test</th>
+                                                    <th>Level</th>
+                                                    <th>Exam Years</th>
+                                                    <th>Score</th>
+                                                    <th>Result</th>
+                                                    <th>Date of Qualification</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <?php
         $x=1;
         $y=0;
         // var_dump($lists3['edu_name']);
           foreach($result6 as $row2){
-  ?> 
-    <tr>
-    <td class="text-center">
-       <input type="checkbox" name="productCheck[]" class="productCheck" data-item="1">
-  </td>
-      <td  class="rowID">
-      <?php
+  ?>
+                                                <tr>
+                                                    <td class="text-center">
+                                                        <input type="checkbox" name="productCheck[]"
+                                                            class="productCheck" data-item="1">
+                                                    </td>
+                                                    <td class="rowID">
+                                                        <?php
           echo form_input(array(
             'name' => 'achiv_name[]',
             'type' => 'text',
@@ -3195,9 +3510,9 @@ $(function() {
             'id' => 'achiv_name',
             'autocomplete' => ''));
         ?>
-      </td>
-      <td  class="rowID">
-      <?php
+                                                    </td>
+                                                    <td class="rowID">
+                                                        <?php
           echo form_input(array(
             'name' => 'level[]',
             'type' => 'text',
@@ -3206,9 +3521,9 @@ $(function() {
             'id' => 'level',
             'autocomplete' => ''));
         ?>
-      </td>
-      <td  class="rowID">
-      <?php
+                                                    </td>
+                                                    <td class="rowID">
+                                                        <?php
           echo form_input(array(
             'name' => 'exam_year[]',
             'type' => 'text',
@@ -3217,9 +3532,9 @@ $(function() {
             'id' => 'exam_year',
             'autocomplete' => ''));
         ?>
-      </td>
-      <td  class="rowID">
-      <?php
+                                                    </td>
+                                                    <td class="rowID">
+                                                        <?php
           echo form_input(array(
             'name' => 'score[]',
             'type' => 'text',
@@ -3228,10 +3543,10 @@ $(function() {
             'id' => 'score',
             'autocomplete' => ''));
         ?>
-      </td>
-      <td  class="rowID">
-  
-      <?php
+                                                    </td>
+                                                    <td class="rowID">
+
+                                                        <?php
           echo form_input(array(
             'name' => 'result[]',
             'type' => 'text',
@@ -3240,9 +3555,9 @@ $(function() {
             'id' => 'result',
             'autocomplete' => ''));
         ?>
-      </td>
-      <td  class="rowID">
-      <?php
+                                                    </td>
+                                                    <td class="rowID">
+                                                        <?php
           echo form_input(array(
             'name' => 'date_qualification[]',
             'type' => 'date',
@@ -3251,27 +3566,34 @@ $(function() {
             'id' => 'date_qualification',
             'autocomplete' => ''));
         ?>
-      </td>
-    </tr>
-    <?php }
+                                                    </td>
+                                                </tr>
+                                                <?php }
     ?>
-  </tbody>
-</table>
-<table class="table-bordered" name="applicant_id">
-<tr>
-<th scope="row" colspan="9" class="align-middle" style="padding: 3px;">
-      <span class="float-left">
-        <a class="btn btn-sm btn-outline-secondary px-2 rounded-1 overlay" id="addNewRow03" style="font-size: 0.8rem;"><strong><i class="fas fa-plus-circle"></i></strong><span class="material-icons align-top md-20 mr-1">add_circle</span>Add row</a>
-        <a class="btn btn-sm btn-outline-danger px-2 rounded-1 overlay" id="removeRow03" style="font-size: 0.8rem;"><strong><i class="fas fa-minus-circle"></i></strong><span class="material-icons align-top md-20 mr-1">delete</span>Remove</a>
-      </span>
-</th>
-</tr>
-</table>
-<br>
-<div class="form-group">
-        <?php echo form_label('Certificate Number','jp_certificate_number', array('class' => '')); ?>
-        <span class="badge badge-danger">Required</span>
-        <?php
+                                            </tbody>
+                                        </table>
+                                        <table class="table-bordered" name="applicant_id">
+                                            <tr>
+                                                <th scope="row" colspan="9" class="align-middle" style="padding: 3px;">
+                                                    <span class="float-left">
+                                                        <a class="btn btn-sm btn-outline-secondary px-2 rounded-1 overlay"
+                                                            id="addNewRow03" style="font-size: 0.8rem;"><strong><i
+                                                                    class="fas fa-plus-circle"></i></strong><span
+                                                                class="material-icons align-top md-20 mr-1">add_circle</span>Add
+                                                            row</a>
+                                                        <a class="btn btn-sm btn-outline-danger px-2 rounded-1 overlay"
+                                                            id="removeRow03" style="font-size: 0.8rem;"><strong><i
+                                                                    class="fas fa-minus-circle"></i></strong><span
+                                                                class="material-icons align-top md-20 mr-1">delete</span>Remove</a>
+                                                    </span>
+                                                </th>
+                                            </tr>
+                                        </table>
+                                        <br>
+                                        <div class="form-group">
+                                            <?php echo form_label('Certificate Number','jp_certificate_number', array('class' => '')); ?>
+                                            <span class="badge badge-danger">Required</span>
+                                            <?php
           echo form_input(array(
             'name' => 'jp_certificate_number',
             'type' => 'text',
@@ -3281,34 +3603,36 @@ $(function() {
             'id' => 'jp_certificate_number',
             'autocomplete' => ''));
         ?>
-        <span class="text-danger"><?php echo form_error('address'); ?></span>
-       </div>
-</div>
-</div>
-<div class="col-md-4 float-left">
-<h6 class="" style="padding: 33px 0px 12px;">Name of JP language tests you are going to take</h6>
-<table class="table-bordered" name="applicant_id" id="going_to_take">
-  <thead class="tbl_head">
-    <tr>
-      <th></th>
-      <th>Name of Japanese language test</th>
-      <th>Level</th>
-      <th>Date</th>
-    </tr>
-  </thead>
-  <tbody>
-  <?php
+                                            <span class="text-danger"><?php echo form_error('address'); ?></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 float-left">
+                                    <h6 class="" style="padding: 33px 0px 12px;">Name of JP language tests you are going
+                                        to take</h6>
+                                    <table class="table-bordered" name="applicant_id" id="going_to_take">
+                                        <thead class="tbl_head">
+                                            <tr>
+                                                <th></th>
+                                                <th>Name of Japanese language test</th>
+                                                <th>Level</th>
+                                                <th>Date</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php
         $x=1;
         $y=0;
         // var_dump($lists3['edu_name']);
           foreach($result7 as $row3){
-  ?> 
-    <tr>
-    <td class="text-center">
-       <input type="checkbox" name="productCheck[]" class="productCheck" data-item="1">
-  </td>
-      <td  class="rowID">
-      <?php
+  ?>
+                                            <tr>
+                                                <td class="text-center">
+                                                    <input type="checkbox" name="productCheck[]" class="productCheck"
+                                                        data-item="1">
+                                                </td>
+                                                <td class="rowID">
+                                                    <?php
           echo form_input(array(
             'name' => 'going_name[]',
             'type' => 'text',
@@ -3317,9 +3641,9 @@ $(function() {
             'id' => 'going_name',
             'autocomplete' => ''));
         ?>
-      </td>
-      <td  class="rowID">
-      <?php
+                                                </td>
+                                                <td class="rowID">
+                                                    <?php
           echo form_input(array(
             'name' => 'going_level[]',
             'type' => 'text',
@@ -3328,9 +3652,9 @@ $(function() {
             'id' => 'going_level',
             'autocomplete' => ''));
         ?>
-      </td>
-      <td  class="rowID">
-      <?php
+                                                </td>
+                                                <td class="rowID">
+                                                    <?php
           echo form_input(array(
             'name' => 'going_date[]',
             'type' => 'date',
@@ -3339,59 +3663,73 @@ $(function() {
             'id' => 'going_date',
             'autocomplete' => ''));
         ?>
-      </td>
-    </tr>
-    <?php }
+                                                </td>
+                                            </tr>
+                                            <?php }
     ?>
-  </tbody>
-</table>
-<table class="table-bordered" name="applicant_id">
-<tr>
-<th scope="row" colspan="9" class="align-middle" style="padding: 3px;">
-      <span class="float-left">
-        <a class="btn btn-sm btn-outline-secondary px-2 rounded-1 overlay" id="addNewRow04" style="font-size: 0.8rem;"><strong><i class="fas fa-plus-circle"></i></strong><span class="material-icons align-top md-20 mr-1">add_circle</span>Add row</a>
-        <a class="btn btn-sm btn-outline-danger px-2 rounded-1 overlay" id="removeRow04" style="font-size: 0.8rem;"><strong><i class="fas fa-minus-circle"></i></strong><span class="material-icons align-top md-20 mr-1">delete</span>Remove</a>
-      </span>
-</th>
-</tr>
-</table>
-</div>
+                                        </tbody>
+                                    </table>
+                                    <table class="table-bordered" name="applicant_id">
+                                        <tr>
+                                            <th scope="row" colspan="9" class="align-middle" style="padding: 3px;">
+                                                <span class="float-left">
+                                                    <a class="btn btn-sm btn-outline-secondary px-2 rounded-1 overlay"
+                                                        id="addNewRow04" style="font-size: 0.8rem;"><strong><i
+                                                                class="fas fa-plus-circle"></i></strong><span
+                                                            class="material-icons align-top md-20 mr-1">add_circle</span>Add
+                                                        row</a>
+                                                    <a class="btn btn-sm btn-outline-danger px-2 rounded-1 overlay"
+                                                        id="removeRow04" style="font-size: 0.8rem;"><strong><i
+                                                                class="fas fa-minus-circle"></i></strong><span
+                                                            class="material-icons align-top md-20 mr-1">delete</span>Remove</a>
+                                                </span>
+                                            </th>
+                                        </tr>
+                                    </table>
+                                </div>
 
-<!-- Table -->
+                                <!-- Table -->
 
-<!-- Table -->
-<div class="col-md-12 float-left">
-<h6 class="" style="padding: 33px 0px 12px;">History of Employment (Write in order, ending with the most recent employment.)</h6>
-<select name="employment_experience" id="employment_experience" class="admission_select" style="margin-bottom: 1rem;";>
-        <option value="1" <?php if($result->employment_experience== "1") {echo "selected";} ?>>Yes</option>
-        <option value="0" <?php if($result->employment_experience== "0") {echo "selected";} ?>>No</option>
-</select>
-<div class="tbl">
-<table class="table-bordered" name="applicant_id" id="employHistory">
-  <thead class="tbl_head">
-    <tr>
-      <th></th>
-      <th>Name of Employment</th>
-      <th>Address</th>
-      <th>Years</th>
-      <th>Starting <br>Year/Month  </th>
-      <th >Finishing <br>Year/Month </th>
-      <th>Job Description</th>
-    </tr>
-  </thead>
-  <tbody>
-  <?php
+                                <!-- Table -->
+                                <div class="col-md-12 float-left">
+                                    <h6 class="" style="padding: 33px 0px 12px;">History of Employment (Write in order,
+                                        ending with the most recent employment.)</h6>
+                                    <select name="employment_experience" id="employment_experience"
+                                        class="admission_select" style="margin-bottom: 1rem;" ;>
+                                        <option value="1"
+                                            <?php if($result->employment_experience== "1") {echo "selected";} ?>>Yes
+                                        </option>
+                                        <option value="0"
+                                            <?php if($result->employment_experience== "0") {echo "selected";} ?>>No
+                                        </option>
+                                    </select>
+                                    <div class="tbl">
+                                        <table class="table-bordered" name="applicant_id" id="employHistory">
+                                            <thead class="tbl_head">
+                                                <tr>
+                                                    <th></th>
+                                                    <th>Name of Employment</th>
+                                                    <th>Address</th>
+                                                    <th>Years</th>
+                                                    <th>Starting <br>Year/Month </th>
+                                                    <th>Finishing <br>Year/Month </th>
+                                                    <th>Job Description</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <?php
         $x=1;
         $y=0;
         // var_dump($lists3['edu_name']);
           foreach($result8 as $row4){
-  ?> 
-    <tr>
-    <td class="text-center">
-       <input type="checkbox" name="productCheck[]" class="productCheck" data-item="1">
-  </td>
-      <td  class="rowID">
-      <?php
+  ?>
+                                                <tr>
+                                                    <td class="text-center">
+                                                        <input type="checkbox" name="productCheck[]"
+                                                            class="productCheck" data-item="1">
+                                                    </td>
+                                                    <td class="rowID">
+                                                        <?php
           echo form_input(array(
             'name' => 'emp_name[]',
             'type' => 'text',
@@ -3400,9 +3738,9 @@ $(function() {
             'id' => 'emp_name',
             'autocomplete' => ''));
         ?>
-      </td>
-      <td  class="rowID">
-      <?php
+                                                    </td>
+                                                    <td class="rowID">
+                                                        <?php
           echo form_input(array(
             'name' => 'emp_address[]',
             'type' => 'text',
@@ -3411,9 +3749,9 @@ $(function() {
             'id' => 'emp_address',
             'autocomplete' => ''));
         ?>
-      </td>
-      <td  class="rowID">
-      <?php
+                                                    </td>
+                                                    <td class="rowID">
+                                                        <?php
           echo form_input(array(
             'name' => 'emp_year[]',
             'type' => 'text',
@@ -3422,9 +3760,9 @@ $(function() {
             'id' => 'emp_year',
             'autocomplete' => ''));
         ?>
-      </td>
-      <td  class="rowID">
-      <?php
+                                                    </td>
+                                                    <td class="rowID">
+                                                        <?php
           echo form_input(array(
             'name' => 'emp_start_date[]',
             'type' => 'month',
@@ -3433,9 +3771,9 @@ $(function() {
             'id' => 'emp_start_date',
             'autocomplete' => ''));
         ?>
-      </td>
-      <td  class="rowID">
-      <?php
+                                                    </td>
+                                                    <td class="rowID">
+                                                        <?php
           echo form_input(array(
             'name' => 'emp_end_date[]',
             'type' => 'month',
@@ -3444,9 +3782,9 @@ $(function() {
             'id' => 'emp_end_date',
             'autocomplete' => ''));
         ?>
-      </td>
-      <td  class="rowID">
-      <?php
+                                                    </td>
+                                                    <td class="rowID">
+                                                        <?php
           echo form_input(array(
             'name' => 'emp_job_description[]',
             'type' => 'text',
@@ -3455,60 +3793,68 @@ $(function() {
             'id' => 'emp_job_description',
             'autocomplete' => ''));
         ?>
-      </td>
-    </tr>
-    <?php }
+                                                    </td>
+                                                </tr>
+                                                <?php }
     ?>
-  </tbody>
-</table>
-<table class="table-bordered" name="applicant_id">
-<tr>
-<th scope="row" colspan="9" class="align-middle" style="padding: 3px;">
-      <span class="float-left">
-        <a class="btn btn-sm btn-outline-secondary px-2 rounded-1 overlay" id="addNewRow05" style="font-size: 0.8rem;"><strong><i class="fas fa-plus-circle"></i></strong><span class="material-icons align-top md-20 mr-1">add_circle</span>Add row</a>
-        <a class="btn btn-sm btn-outline-danger px-2 rounded-1 overlay" id="removeRow05" style="font-size: 0.8rem;"><strong><i class="fas fa-minus-circle"></i></strong><span class="material-icons align-top md-20 mr-1">delete</span>Remove</a>
-      </span>
-</th>
-</tr>
-</table>
-</div>
-</div>
-<!-- Table -->
+                                            </tbody>
+                                        </table>
+                                        <table class="table-bordered" name="applicant_id">
+                                            <tr>
+                                                <th scope="row" colspan="9" class="align-middle" style="padding: 3px;">
+                                                    <span class="float-left">
+                                                        <a class="btn btn-sm btn-outline-secondary px-2 rounded-1 overlay"
+                                                            id="addNewRow05" style="font-size: 0.8rem;"><strong><i
+                                                                    class="fas fa-plus-circle"></i></strong><span
+                                                                class="material-icons align-top md-20 mr-1">add_circle</span>Add
+                                                            row</a>
+                                                        <a class="btn btn-sm btn-outline-danger px-2 rounded-1 overlay"
+                                                            id="removeRow05" style="font-size: 0.8rem;"><strong><i
+                                                                    class="fas fa-minus-circle"></i></strong><span
+                                                                class="material-icons align-top md-20 mr-1">delete</span>Remove</a>
+                                                    </span>
+                                                </th>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                                <!-- Table -->
 
-<!-- Table -->
-<div class="col-md-12 float-left">
-<h6 class="" style="padding: 33px 0px 12px;">Family Member</h6>
-<div class="tbl">
-<table class="table-bordered" name="applicant_id" id="familyMember">
-  <thead class="tbl_head">
-    <tr>
-      <th></th>
-      <th>Name</th>
-      <th>Age</th>
-      <th>Gender</th>
-      <th>Relationship	</th>
-      <th>Nationality	</th>
-      <th>Work Place	</th>
-      <th>Date Of Birth</th>
-      <th >Occupation </th>
-      <th>Annual Income</th>
-      <th>Address</th>
-      <th>Length of service</th>
-    </tr>
-  </thead>
-  <tbody>
-  <?php
+                                <!-- Table -->
+                                <div class="col-md-12 float-left">
+                                    <h6 class="" style="padding: 33px 0px 12px;">Family Member</h6>
+                                    <div class="tbl">
+                                        <table class="table-bordered" name="applicant_id" id="familyMember">
+                                            <thead class="tbl_head">
+                                                <tr>
+                                                    <th></th>
+                                                    <th>Name</th>
+                                                    <th>Age</th>
+                                                    <th>Gender</th>
+                                                    <th>Relationship </th>
+                                                    <th>Nationality </th>
+                                                    <th>Work Place </th>
+                                                    <th>Date Of Birth</th>
+                                                    <th>Occupation </th>
+                                                    <th>Annual Income</th>
+                                                    <th>Address</th>
+                                                    <th>Length of service</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <?php
         $x=1;
         $y=0;
         // var_dump($lists3['edu_name']);
           foreach($result9 as $row5){
-  ?> 
-    <tr>
-    <td class="text-center">
-       <input type="checkbox" name="productCheck[]" class="productCheck" data-item="1">
-  </td>
-      <td  class="rowID">
-      <?php
+  ?>
+                                                <tr>
+                                                    <td class="text-center">
+                                                        <input type="checkbox" name="productCheck[]"
+                                                            class="productCheck" data-item="1">
+                                                    </td>
+                                                    <td class="rowID">
+                                                        <?php
           echo form_input(array(
             'name' => 'fam_name[]',
             'type' => 'text',
@@ -3517,9 +3863,9 @@ $(function() {
             'id' => 'fam_name',
             'autocomplete' => ''));
         ?>
-      </td>
-      <td  class="rowID">
-      <?php
+                                                    </td>
+                                                    <td class="rowID">
+                                                        <?php
           echo form_input(array(
             'name' => 'fam_age[]',
             'type' => 'text',
@@ -3528,9 +3874,9 @@ $(function() {
             'id' => 'fam_age',
             'autocomplete' => ''));
         ?>
-      </td>
-      <td  class="rowID">
-      <?php
+                                                    </td>
+                                                    <td class="rowID">
+                                                        <?php
           echo form_input(array(
             'name' => 'fam_gender[]',
             'type' => 'text',
@@ -3539,9 +3885,9 @@ $(function() {
             'id' => 'fam_gender',
             'autocomplete' => ''));
         ?>
-      </td>
-      <td  class="rowID">
-      <?php
+                                                    </td>
+                                                    <td class="rowID">
+                                                        <?php
           echo form_input(array(
             'name' => 'fam_relationship[]',
             'type' => 'text',
@@ -3550,9 +3896,9 @@ $(function() {
             'id' => 'fam_relationship',
             'autocomplete' => ''));
         ?>
-      </td>
-      <td  class="rowID">
-      <?php
+                                                    </td>
+                                                    <td class="rowID">
+                                                        <?php
           echo form_input(array(
             'name' => 'fam_nationality[]',
             'type' => 'text',
@@ -3561,9 +3907,9 @@ $(function() {
             'id' => 'fam_nationality',
             'autocomplete' => ''));
         ?>
-      </td>
-      <td  class="rowID">
-      <?php
+                                                    </td>
+                                                    <td class="rowID">
+                                                        <?php
           echo form_input(array(
             'name' => 'fam_work_place[]',
             'type' => 'text',
@@ -3572,9 +3918,9 @@ $(function() {
             'id' => 'fam_work_place',
             'autocomplete' => ''));
         ?>
-      </td>
-      <td  class="rowID">
-      <?php
+                                                    </td>
+                                                    <td class="rowID">
+                                                        <?php
           echo form_input(array(
             'name' => 'fam_birthday[]',
             'type' => 'date',
@@ -3583,10 +3929,10 @@ $(function() {
             'id' => 'fam_birthday',
             'autocomplete' => ''));
         ?>
-      </td>
-      
-      <td  class="rowID">
-      <?php
+                                                    </td>
+
+                                                    <td class="rowID">
+                                                        <?php
           echo form_input(array(
             'name' => 'fam_occupation[]',
             'type' => 'text',
@@ -3595,9 +3941,9 @@ $(function() {
             'id' => 'fam_occupation',
             'autocomplete' => ''));
         ?>
-      </td>
-      <td  class="rowID">
-      <?php
+                                                    </td>
+                                                    <td class="rowID">
+                                                        <?php
           echo form_input(array(
             'name' => 'fam_annual_income[]',
             'type' => 'text',
@@ -3606,9 +3952,9 @@ $(function() {
             'id' => 'fam_annual_income',
             'autocomplete' => ''));
         ?>
-      </td>
-      <td  class="rowID">
-      <?php
+                                                    </td>
+                                                    <td class="rowID">
+                                                        <?php
           echo form_input(array(
             'name' => 'fam_address[]',
             'type' => 'text',
@@ -3617,9 +3963,9 @@ $(function() {
             'id' => 'fam_address',
             'autocomplete' => ''));
         ?>
-      </td>
-      <td  class="rowID">
-      <?php
+                                                    </td>
+                                                    <td class="rowID">
+                                                        <?php
           echo form_input(array(
             'name' => 'fam_length_sevice[]',
             'type' => 'text',
@@ -3628,39 +3974,51 @@ $(function() {
             'id' => 'fam_length_sevice',
             'autocomplete' => ''));
         ?>
-      </td>
-    </tr>
-    <?php }
+                                                    </td>
+                                                </tr>
+                                                <?php }
     ?>
-  </tbody>
-</table>
-<table class="table-bordered" name="applicant_id">
-<tr>
-<th scope="row" colspan="9" class="align-middle" style="padding: 3px;">
-      <span class="float-left">
-        <a class="btn btn-sm btn-outline-secondary px-2 rounded-1 overlay" id="addNewRow06" style="font-size: 0.8rem;"><strong><i class="fas fa-plus-circle"></i></strong><span class="material-icons align-top md-20 mr-1">add_circle</span>Add row</a>
-        <a class="btn btn-sm btn-outline-danger px-2 rounded-1 overlay" id="removeRow06" style="font-size: 0.8rem;"><strong><i class="fas fa-minus-circle"></i></strong><span class="material-icons align-top md-20 mr-1">delete</span>Remove</a>
-      </span>
-</th>
-</tr>
-</table>
-</div>
-<div class="form-group">
-  <?php echo form_label('Are you planning to stay with them in Japan? : ', 'plan_to_stay_with_them', array( 'class' => 'form-control-label', 'id'=> '')); ?><br/>
-    <select name="ja_plan_to_stay_with_them" id="ja_plan_to_stay_with_them" class="admission_select">
-        <option value="1" <?php if($result->ja_plan_to_stay_with_them== "1") {echo "selected";} ?>>Yes</option>
-        <option value="0" <?php if($result->ja_plan_to_stay_with_them== "0") {echo "selected";} ?>>No</option>
-    </select>
-  </div>
-  <div class="form-group">
-        <?php
+                                            </tbody>
+                                        </table>
+                                        <table class="table-bordered" name="applicant_id">
+                                            <tr>
+                                                <th scope="row" colspan="9" class="align-middle" style="padding: 3px;">
+                                                    <span class="float-left">
+                                                        <a class="btn btn-sm btn-outline-secondary px-2 rounded-1 overlay"
+                                                            id="addNewRow06" style="font-size: 0.8rem;"><strong><i
+                                                                    class="fas fa-plus-circle"></i></strong><span
+                                                                class="material-icons align-top md-20 mr-1">add_circle</span>Add
+                                                            row</a>
+                                                        <a class="btn btn-sm btn-outline-danger px-2 rounded-1 overlay"
+                                                            id="removeRow06" style="font-size: 0.8rem;"><strong><i
+                                                                    class="fas fa-minus-circle"></i></strong><span
+                                                                class="material-icons align-top md-20 mr-1">delete</span>Remove</a>
+                                                    </span>
+                                                </th>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <div class="form-group">
+                                        <?php echo form_label('Are you planning to stay with them in Japan? : ', 'plan_to_stay_with_them', array( 'class' => 'form-control-label', 'id'=> '')); ?><br />
+                                        <select name="ja_plan_to_stay_with_them" id="ja_plan_to_stay_with_them"
+                                            class="admission_select">
+                                            <option value="1"
+                                                <?php if($result->ja_plan_to_stay_with_them== "1") {echo "selected";} ?>>
+                                                Yes</option>
+                                            <option value="0"
+                                                <?php if($result->ja_plan_to_stay_with_them== "0") {echo "selected";} ?>>
+                                                No</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <?php
           echo form_label('you/your family have Japanese friends or acquaintances, please write his/her name, address,phone number, relationship, etc.','family_inJpfri', array('class' => ''));
         ?>
 
 
 
-        <div class="col-md-12 col-sm-12 p-0">
-          <?php 
+                                        <div class="col-md-12 col-sm-12 p-0">
+                                            <?php 
             $data = array(
             'name' => 'family_inJpfri',
             'value' => '',
@@ -3671,10 +4029,10 @@ $(function() {
             'value' => set_value('family_inJpfri',isset($result13)?$result13->family_inJpfri:'',ENT_QUOTES),
           );
           echo form_textarea($data); ?>
-          <span class="text-danger"><?php echo form_error('family_inJpfri'); ?></span>
-  </div>
-  </div>
-  <!-- <div class="col-md-6">
+                                            <span class="text-danger"><?php echo form_error('family_inJpfri'); ?></span>
+                                        </div>
+                                    </div>
+                                    <!-- <div class="col-md-6">
   <label>Please attach the picture of you and your family below this</label>
     <div class="col-md-6" style="width: 100%;padding-left:0px;padding-right: 0px;">
       <?php
@@ -3690,13 +4048,13 @@ $(function() {
     </div>
   <span class="text-danger"><?php echo form_error('familyfile'); ?></span>
   </div> -->
-  <div class="col-md-6 float-left" style="display: flex;padding-top: 12px;">
-  <!-- Student Photo -->
-  <?php
+                                    <div class="col-md-6 float-left" style="display: flex;padding-top: 12px;">
+                                        <!-- Student Photo -->
+                                        <?php
       echo form_label('Please attach the picture of you and your family below this','familyfile', array('class' => 'col-form-label')) ;    
   ?>
-   <div class="col-md-6" style="width: 100%;padding-left:0px;padding-right: 0px;">
-        <?php
+                                        <div class="col-md-6" style="width: 100%;padding-left:0px;padding-right: 0px;">
+                                            <?php
               echo form_input(array(
               'name' => 'familyfile',
               'type' => 'file',
@@ -3704,57 +4062,63 @@ $(function() {
               'id' => 'clickImg',
               'accept' => 'images/*'
               ));
-            ?>            
-            <span class="text-danger"><?php echo form_error('familyfile'); ?></span>
-            <?php if(!empty($result->image_file)) { ?>
-              <img src="<?php echo base_url('upload/assets/adm/usr/'.$result->family_file); ?>" width="100px;" class="pb-1">
-            <?php } ?>
-            <div class="form-group" id="showImg3"></div>               
-    </div>
-  <span class="text-danger"><?php echo form_error('family_file'); ?></span>
-  </div>
-</div>
-<!-- Table -->
-<!-- Table -->
-<div class="col-md-12 float-left">
-<h6 class="" style="padding: 33px 0px 12px;">Family in Japan (Father, Mother, Spouse, Child, Brother and Sisters, or Others) :</h6>
-<select name="family_in_japan" id="family_in_japan" class="admission_select" style="margin-bottom: 1rem;";>
-        <option value="1" <?php if($result->family_in_japan== "1") {echo "selected";} ?>>Yes</option>
-        <option value="0" <?php if($result->family_in_japan== "0") {echo "selected";} ?>>No</option>
-    </select>
-<p>If yes, fill in all the family members in Japan.</p>
+            ?>
+                                            <span class="text-danger"><?php echo form_error('familyfile'); ?></span>
+                                            <?php if(!empty($result->image_file)) { ?>
+                                            <img src="<?php echo base_url('upload/assets/adm/usr/'.$result->family_file); ?>"
+                                                width="100px;" class="pb-1">
+                                            <?php } ?>
+                                            <div class="form-group" id="showImg3"></div>
+                                        </div>
+                                        <span class="text-danger"><?php echo form_error('family_file'); ?></span>
+                                    </div>
+                                </div>
+                                <!-- Table -->
+                                <!-- Table -->
+                                <div class="col-md-12 float-left">
+                                    <h6 class="" style="padding: 33px 0px 12px;">Family in Japan (Father, Mother,
+                                        Spouse, Child, Brother and Sisters, or Others) :</h6>
+                                    <select name="family_in_japan" id="family_in_japan" class="admission_select"
+                                        style="margin-bottom: 1rem;" ;>
+                                        <option value="1"
+                                            <?php if($result->family_in_japan== "1") {echo "selected";} ?>>Yes</option>
+                                        <option value="0"
+                                            <?php if($result->family_in_japan== "0") {echo "selected";} ?>>No</option>
+                                    </select>
+                                    <p>If yes, fill in all the family members in Japan.</p>
 
-<div class="tbl">
-<table class="table-bordered" name="applicant_id" id="familyInJp">
-  <thead class="tbl_head">
-    <tr>
-      <th></th>
-      <th>Name</th>
-      <th>Date Of Birth	</th>
-      <th>Address</th>
-      <th>Age	</th>
-      <th>Relatonship</th>
-      <th>Residing with Applicant or Not	</th>
-      <th>Residing Card No	</th>
-      <th >Nationality </th>
-      <th>Visa status	</th>
-      <th>Work Place	</th>
-      <th>Certificate of Alien Registration No</th>
-    </tr>
-  </thead>
-  <tbody>
-  <?php
+                                    <div class="tbl">
+                                        <table class="table-bordered" name="applicant_id" id="familyInJp">
+                                            <thead class="tbl_head">
+                                                <tr>
+                                                    <th></th>
+                                                    <th>Name</th>
+                                                    <th>Date Of Birth </th>
+                                                    <th>Address</th>
+                                                    <th>Age </th>
+                                                    <th>Relatonship</th>
+                                                    <th>Residing with Applicant or Not </th>
+                                                    <th>Residing Card No </th>
+                                                    <th>Nationality </th>
+                                                    <th>Visa status </th>
+                                                    <th>Work Place </th>
+                                                    <th>Certificate of Alien Registration No</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <?php
         $x=1;
         $y=0;
         // var_dump($lists3['edu_name']);
           foreach($result10 as $result){
-  ?> 
-    <tr>
-    <td class="text-center">
-       <input type="checkbox" name="productCheck[]" class="productCheck" data-item="1">
-  </td>
-      <td  class="rowID">
-      <?php
+  ?>
+                                                <tr>
+                                                    <td class="text-center">
+                                                        <input type="checkbox" name="productCheck[]"
+                                                            class="productCheck" data-item="1">
+                                                    </td>
+                                                    <td class="rowID">
+                                                        <?php
           echo form_input(array(
             'name' => 'ja_fam_name[]',
             'type' => 'text',
@@ -3763,9 +4127,9 @@ $(function() {
             'id' => 'ja_fam_name',
             'autocomplete' => ''));
         ?>
-      </td>
-      <td  class="rowID">
-      <?php
+                                                    </td>
+                                                    <td class="rowID">
+                                                        <?php
           echo form_input(array(
             'name' => 'ja_fam_date_birth[]',
             'type' => 'date',
@@ -3774,9 +4138,9 @@ $(function() {
             'id' => 'ja_fam_date_birth',
             'autocomplete' => ''));
         ?>
-      </td>
-      <td  class="rowID">
-      <?php
+                                                    </td>
+                                                    <td class="rowID">
+                                                        <?php
           echo form_input(array(
             'name' => 'ja_fam_address[]',
             'type' => 'text',
@@ -3785,9 +4149,9 @@ $(function() {
             'id' => 'ja_fam_address',
             'autocomplete' => ''));
         ?>
-      </td>
-      <td  class="rowID">
-      <?php
+                                                    </td>
+                                                    <td class="rowID">
+                                                        <?php
           echo form_input(array(
             'name' => 'ja_fam_age[]',
             'type' => 'text',
@@ -3796,9 +4160,9 @@ $(function() {
             'id' => 'ja_fam_age',
             'autocomplete' => ''));
         ?>
-      </td>
-      <td  class="rowID">
-      <?php
+                                                    </td>
+                                                    <td class="rowID">
+                                                        <?php
           echo form_input(array(
             'name' => 'ja_fam_relationship[]',
             'type' => 'text',
@@ -3807,18 +4171,25 @@ $(function() {
             'id' => 'ja_fam_relationship',
             'autocomplete' => ''));
         ?>
-      </td>
-      <td  class="rowID">
-      <div class="">
-      <select name="ja_fam_residing_applicant[]" class="table-control col-md-12">
-        <option value="" <?php if($result->ja_fam_residing_applicant== "") {echo "selected";} ?>></option>
-        <option value="1" <?php if($result->ja_fam_residing_applicant== "1") {echo "selected";} ?>>Yes</option>
-        <option value="0" <?php if($result->ja_fam_residing_applicant== "0") {echo "selected";} ?>>No</option>
-      </select>
-     </div>
-      </td>
-      <td  class="rowID">
-      <?php
+                                                    </td>
+                                                    <td class="rowID">
+                                                        <div class="">
+                                                            <select name="ja_fam_residing_applicant[]"
+                                                                class="table-control col-md-12">
+                                                                <option value=""
+                                                                    <?php if($result->ja_fam_residing_applicant== "") {echo "selected";} ?>>
+                                                                </option>
+                                                                <option value="1"
+                                                                    <?php if($result->ja_fam_residing_applicant== "1") {echo "selected";} ?>>
+                                                                    Yes</option>
+                                                                <option value="0"
+                                                                    <?php if($result->ja_fam_residing_applicant== "0") {echo "selected";} ?>>
+                                                                    No</option>
+                                                            </select>
+                                                        </div>
+                                                    </td>
+                                                    <td class="rowID">
+                                                        <?php
           echo form_input(array(
             'name' => 'residence_card_no[]',
             'type' => 'text',
@@ -3827,9 +4198,9 @@ $(function() {
             'id' => 'residence_card_no',
             'autocomplete' => ''));
         ?>
-      </td>
-      <td  class="rowID">
-      <?php
+                                                    </td>
+                                                    <td class="rowID">
+                                                        <?php
           echo form_input(array(
             'name' => 'ja_fam_nationality[]',
             'type' => 'text',
@@ -3838,9 +4209,9 @@ $(function() {
             'id' => 'ja_fam_nationality',
             'autocomplete' => ''));
         ?>
-      </td>
-      <td  class="rowID">
-      <?php
+                                                    </td>
+                                                    <td class="rowID">
+                                                        <?php
           echo form_input(array(
             'name' => 'ja_fam_visa_status[]',
             'type' => 'text',
@@ -3849,9 +4220,9 @@ $(function() {
             'id' => 'ja_fam_visa_status',
             'autocomplete' => ''));
         ?>
-      </td>
-      <td  class="rowID">
-      <?php
+                                                    </td>
+                                                    <td class="rowID">
+                                                        <?php
           echo form_input(array(
             'name' => 'ja_fam_work_place[]',
             'type' => 'text',
@@ -3860,9 +4231,9 @@ $(function() {
             'id' => 'ja_fam_work_place',
             'autocomplete' => ''));
         ?>
-      </td>
-      <td  class="rowID">
-      <?php
+                                                    </td>
+                                                    <td class="rowID">
+                                                        <?php
           echo form_input(array(
             'name' => 'ja_certificate_alien[]',
             'type' => 'text',
@@ -3871,54 +4242,62 @@ $(function() {
             'id' => 'ja_certificate_alien',
             'autocomplete' => ''));
         ?>
-      </td>
-    </tr>
-    <?php }
+                                                    </td>
+                                                </tr>
+                                                <?php }
     ?>
-  </tbody>
-</table>
-<table class="table-bordered" name="applicant_id">
-<tr>
-<th scope="row" colspan="9" class="align-middle" style="padding: 3px;">
-      <span class="float-left">
-        <a class="btn btn-sm btn-outline-secondary px-2 rounded-1 overlay" id="addNewRow07" style="font-size: 0.8rem;"><strong><i class="fas fa-plus-circle"></i></strong><span class="material-icons align-top md-20 mr-1">add_circle</span>Add row</a>
-        <a class="btn btn-sm btn-outline-danger px-2 rounded-1 overlay" id="removeRow07" style="font-size: 0.8rem;"><strong><i class="fas fa-minus-circle"></i></strong><span class="material-icons align-top md-20 mr-1">delete</span>Remove</a>
-      </span>
-</th>
-</tr>
-</table>
-</div>
-</div>
-<!-- Table -->
-<!-- Table -->
-<div class="col-md-12 float-left" style="padding-bottom: 15px;">
-<h6 class="" style="padding: 33px 0px 12px;">Previous  stay in Japan</h6>
-<div class="tbl">
-<table class="table-bordered" name="applicant_id" id="preStayInJP">
-  <thead class="tbl_head">
-    <tr>
-      <th></th>
-      <th>Date of Entry	</th>
-      <th>Date of Arrival	</th>
-      <th>Date of Depature </th>
-      <th >Visa	 </th>
-      <th >Status	 </th>
-      <th>Purpose of Entry</th>
-    </tr>
-  </thead>
-  <tbody>
-  <?php
+                                            </tbody>
+                                        </table>
+                                        <table class="table-bordered" name="applicant_id">
+                                            <tr>
+                                                <th scope="row" colspan="9" class="align-middle" style="padding: 3px;">
+                                                    <span class="float-left">
+                                                        <a class="btn btn-sm btn-outline-secondary px-2 rounded-1 overlay"
+                                                            id="addNewRow07" style="font-size: 0.8rem;"><strong><i
+                                                                    class="fas fa-plus-circle"></i></strong><span
+                                                                class="material-icons align-top md-20 mr-1">add_circle</span>Add
+                                                            row</a>
+                                                        <a class="btn btn-sm btn-outline-danger px-2 rounded-1 overlay"
+                                                            id="removeRow07" style="font-size: 0.8rem;"><strong><i
+                                                                    class="fas fa-minus-circle"></i></strong><span
+                                                                class="material-icons align-top md-20 mr-1">delete</span>Remove</a>
+                                                    </span>
+                                                </th>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                                <!-- Table -->
+                                <!-- Table -->
+                                <div class="col-md-12 float-left" style="padding-bottom: 15px;">
+                                    <h6 class="" style="padding: 33px 0px 12px;">Previous stay in Japan</h6>
+                                    <div class="tbl">
+                                        <table class="table-bordered" name="applicant_id" id="preStayInJP">
+                                            <thead class="tbl_head">
+                                                <tr>
+                                                    <th></th>
+                                                    <th>Date of Entry </th>
+                                                    <th>Date of Arrival </th>
+                                                    <th>Date of Depature </th>
+                                                    <th>Visa </th>
+                                                    <th>Status </th>
+                                                    <th>Purpose of Entry</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <?php
         $x=1;
         $y=0;
         // var_dump($lists3['edu_name']);
           foreach($result11 as $result){
-  ?> 
-    <tr>
-    <td class="text-center">
-       <input type="checkbox" name="productCheck[]" class="productCheck" data-item="1">
-  </td>
-      <td  class="rowID">
-      <?php
+  ?>
+                                                <tr>
+                                                    <td class="text-center">
+                                                        <input type="checkbox" name="productCheck[]"
+                                                            class="productCheck" data-item="1">
+                                                    </td>
+                                                    <td class="rowID">
+                                                        <?php
           echo form_input(array(
             'name' => 'entry_date[]',
             'type' => 'date',
@@ -3927,9 +4306,9 @@ $(function() {
             'id' => 'entry_date',
             'autocomplete' => ''));
         ?>
-      </td>
-      <td  class="rowID">
-      <?php
+                                                    </td>
+                                                    <td class="rowID">
+                                                        <?php
           echo form_input(array(
             'name' => 'arrival_date[]',
             'type' => 'date',
@@ -3938,9 +4317,9 @@ $(function() {
             'id' => 'arrival_date',
             'autocomplete' => ''));
         ?>
-      </td>
-      <td  class="rowID">
-      <?php
+                                                    </td>
+                                                    <td class="rowID">
+                                                        <?php
           echo form_input(array(
             'name' => 'depature_date[]',
             'type' => 'date',
@@ -3949,9 +4328,9 @@ $(function() {
             'id' => 'depature_date',
             'autocomplete' => ''));
         ?>
-      </td>
-      <td  class="rowID">
-      <?php
+                                                    </td>
+                                                    <td class="rowID">
+                                                        <?php
           echo form_input(array(
             'name' => 'pre_stay_visa[]',
             'type' => 'text',
@@ -3960,9 +4339,9 @@ $(function() {
             'id' => 'depature_date',
             'autocomplete' => ''));
         ?>
-      </td>
-      <td  class="rowID">
-      <?php
+                                                    </td>
+                                                    <td class="rowID">
+                                                        <?php
           echo form_input(array(
             'name' => 'status[]',
             'type' => 'text',
@@ -3971,9 +4350,9 @@ $(function() {
             'id' => 'status',
             'autocomplete' => ''));
         ?>
-      </td>
-      <td  class="rowID">
-      <?php
+                                                    </td>
+                                                    <td class="rowID">
+                                                        <?php
           echo form_input(array(
             'name' => 'entry_purpose[]',
             'type' => 'text',
@@ -3982,28 +4361,35 @@ $(function() {
             'id' => 'entry_purpose',
             'autocomplete' => ''));
         ?>
-      </td>
-    </tr>
-    <?php }
+                                                    </td>
+                                                </tr>
+                                                <?php }
     ?>
-  </tbody>
-</table>
-<table class="table-bordered" name="applicant_id">
-<tr>
-<th scope="row" colspan="9" class="align-middle" style="padding: 3px;">
-      <span class="float-left">
-        <a class="btn btn-sm btn-outline-secondary px-2 rounded-1 overlay" id="addNewRow08" style="font-size: 0.8rem;"><strong><i class="fas fa-plus-circle"></i></strong><span class="material-icons align-top md-20 mr-1">add_circle</span>Add row</a>
-        <a class="btn btn-sm btn-outline-danger px-2 rounded-1 overlay" id="removeRow08" style="font-size: 0.8rem;"><strong><i class="fas fa-minus-circle"></i></strong><span class="material-icons align-top md-20 mr-1">delete</span>Remove</a>
-      </span>
-</th>
-</tr>
-</table>
-</div>
-<br>
-<div class="form-group">
-        <?php echo form_label('If you have stayed in Japan more than four times, please use the blank below.','japan_four_times', array('class' => '')); ?>
-        <span class="badge badge-danger">Required</span>
-        <?php
+                                            </tbody>
+                                        </table>
+                                        <table class="table-bordered" name="applicant_id">
+                                            <tr>
+                                                <th scope="row" colspan="9" class="align-middle" style="padding: 3px;">
+                                                    <span class="float-left">
+                                                        <a class="btn btn-sm btn-outline-secondary px-2 rounded-1 overlay"
+                                                            id="addNewRow08" style="font-size: 0.8rem;"><strong><i
+                                                                    class="fas fa-plus-circle"></i></strong><span
+                                                                class="material-icons align-top md-20 mr-1">add_circle</span>Add
+                                                            row</a>
+                                                        <a class="btn btn-sm btn-outline-danger px-2 rounded-1 overlay"
+                                                            id="removeRow08" style="font-size: 0.8rem;"><strong><i
+                                                                    class="fas fa-minus-circle"></i></strong><span
+                                                                class="material-icons align-top md-20 mr-1">delete</span>Remove</a>
+                                                    </span>
+                                                </th>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <br>
+                                    <div class="form-group">
+                                        <?php echo form_label('If you have stayed in Japan more than four times, please use the blank below.','japan_four_times', array('class' => '')); ?>
+                                        <span class="badge badge-danger">Required</span>
+                                        <?php
           echo form_input(array(
             'name' => 'japan_four_times',
             'type' => 'text',
@@ -4013,40 +4399,42 @@ $(function() {
             'id' => 'japan_four_times',
             'autocomplete' => ''));
         ?>
-        <span class="text-danger"><?php echo form_error('japan_four_times'); ?></span>
-       </div>
-</div>
-<!-- Table -->
+                                        <span class="text-danger"><?php echo form_error('japan_four_times'); ?></span>
+                                    </div>
+                                </div>
+                                <!-- Table -->
 
 
 
-<!-- Table -->
-<div class="col-md-12 float-left" style="padding-bottom: 15px;">
-<h6 class="" style="padding: 20px 0px 12px;">Have you ever been japan (Including 3 moth short visa)</h6>
-<div class="tbl">
-<table class="table-bordered" name="applicant_id">
-  <thead class="tbl_head">
-    <tr>
-      <th></th>
-      <th>Purpose	</th>
-      <th>Status	</th>
-      <th>Period of Stay </th>
-      <th >Preparation	 </th>
-    </tr>
-  </thead>
-  <tbody>
-  <?php
+                                <!-- Table -->
+                                <div class="col-md-12 float-left" style="padding-bottom: 15px;">
+                                    <h6 class="" style="padding: 20px 0px 12px;">Have you ever been japan (Including 3
+                                        moth short visa)</h6>
+                                    <div class="tbl">
+                                        <table class="table-bordered" name="applicant_id">
+                                            <thead class="tbl_head">
+                                                <tr>
+                                                    <th></th>
+                                                    <th>Purpose </th>
+                                                    <th>Status </th>
+                                                    <th>Period of Stay </th>
+                                                    <th>Preparation </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <?php
         $x=1;
         $y=0;
         // var_dump($result14);
           foreach($result14 as $result){
-  ?> 
-    <tr>
-    <td class="text-center">
-       <input type="checkbox" name="productCheck[]" class="productCheck" data-item="1">
-  </td>
-      <td class="text-center" class="rowID">
-      <?php
+  ?>
+                                                <tr>
+                                                    <td class="text-center">
+                                                        <input type="checkbox" name="productCheck[]"
+                                                            class="productCheck" data-item="1">
+                                                    </td>
+                                                    <td class="text-center" class="rowID">
+                                                        <?php
           echo form_input(array(
             'name' => 'shortVisa_purpose[]',
             'type' => 'text',
@@ -4055,10 +4443,10 @@ $(function() {
             'id' => 'shortVisa_purpose',
             'autocomplete' => ''));
       ?>
-      </td>
-      
-      <td class="rowID">
-      <?php
+                                                    </td>
+
+                                                    <td class="rowID">
+                                                        <?php
           echo form_input(array(
             'name' => 'shortVisa_status[]',
             'type' => 'text',
@@ -4067,9 +4455,9 @@ $(function() {
             'id' => 'shortVisa_status',
             'autocomplete' => ''));
       ?>
-      </td>
-      <td class="rowID">
-      <?php
+                                                    </td>
+                                                    <td class="rowID">
+                                                        <?php
           echo form_input(array(
             'name' => 'shortVisa_period[]',
             'type' => 'date',
@@ -4078,9 +4466,9 @@ $(function() {
             'id' => 'shortVisa_period',
             'autocomplete' => ''));
       ?>
-      </td>
-      <td class="rowID">
-      <?php
+                                                    </td>
+                                                    <td class="rowID">
+                                                        <?php
           echo form_input(array(
             'name' => 'shortVisa_prepare[]',
             'type' => 'text',
@@ -4089,42 +4477,49 @@ $(function() {
             'id' => 'shortVisa_prepare',
             'autocomplete' => ''));
       ?>
-      </td>
-    </tr>
-    <?php }
+                                                    </td>
+                                                </tr>
+                                                <?php }
     ?>
-  </tbody>
-</table>
-<table class="table-bordered" name="applicant_id">
-<tr>
-<th scope="row" colspan="9" class="align-middle" style="padding: 3px;">
-      <span class="float-left">
-        <a class="btn btn-sm btn-outline-secondary px-2 rounded-1 overlay" id="addNewRow08" style="font-size: 0.8rem;"><strong><i class="fas fa-plus-circle"></i></strong><span class="material-icons align-top md-20 mr-1">add_circle</span>Add row</a>
-        <a class="btn btn-sm btn-outline-danger px-2 rounded-1 overlay" id="removeRow08" style="font-size: 0.8rem;"><strong><i class="fas fa-minus-circle"></i></strong><span class="material-icons align-top md-20 mr-1">delete</span>Remove</a>
-      </span>
-</th>
-</tr>
-</table>
-</div>
-<!-- Table -->
-</div>
-<!-- Table -->
-</div>
-</div>
+                                            </tbody>
+                                        </table>
+                                        <table class="table-bordered" name="applicant_id">
+                                            <tr>
+                                                <th scope="row" colspan="9" class="align-middle" style="padding: 3px;">
+                                                    <span class="float-left">
+                                                        <a class="btn btn-sm btn-outline-secondary px-2 rounded-1 overlay"
+                                                            id="addNewRow08" style="font-size: 0.8rem;"><strong><i
+                                                                    class="fas fa-plus-circle"></i></strong><span
+                                                                class="material-icons align-top md-20 mr-1">add_circle</span>Add
+                                                            row</a>
+                                                        <a class="btn btn-sm btn-outline-danger px-2 rounded-1 overlay"
+                                                            id="removeRow08" style="font-size: 0.8rem;"><strong><i
+                                                                    class="fas fa-minus-circle"></i></strong><span
+                                                                class="material-icons align-top md-20 mr-1">delete</span>Remove</a>
+                                                    </span>
+                                                </th>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <!-- Table -->
+                                </div>
+                                <!-- Table -->
+                            </div>
+                        </div>
 
-<!-- End dropdown APPLICANT INFORMATION -->
-<!--Start dropdown FINANICIAL SPONSOR -->
-<div class="content_detail">
-  <input class="dropdown" type="checkbox" id="faq-3">
-  <p class="drop_ttl"><label for="faq-3" class="drop_label">FINANICIAL SPONSOR</label></p>
-  <div class="drop_txt">
-  <h5 class="finial_ttl">Finanicial Sponsor</h5>
-  <div class="col-md-6 float-left" name="applicant_id">
-      <div class="form-group">
-        <?php echo form_label('Name', 'fin_name', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'fin_name')); ?>
-        <span class="badge badge-danger">Required</span>
-       <!-- <?  var_dump($result); ?> -->
-        <?php
+                        <!-- End dropdown APPLICANT INFORMATION -->
+                        <!--Start dropdown FINANICIAL SPONSOR -->
+                        <div class="content_detail">
+                            <input class="dropdown" type="checkbox" id="faq-3">
+                            <p class="drop_ttl"><label for="faq-3" class="drop_label">FINANICIAL SPONSOR</label></p>
+                            <div class="drop_txt">
+                                <h5 class="finial_ttl">Finanicial Sponsor</h5>
+                                <div class="col-md-6 float-left" name="applicant_id">
+                                    <div class="form-group">
+                                        <?php echo form_label('Name', 'fin_name', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'fin_name')); ?>
+                                        <span class="badge badge-danger">Required</span>
+                                        <!-- <?  var_dump($result); ?> -->
+                                        <?php
           echo form_input(array(
             'name' => 'fin_name',
             'type' => 'text',
@@ -4134,12 +4529,12 @@ $(function() {
             'id' => 'fin_name',
             'autocomplete' => ''));
           ?>
-        <span class="text-danger"><?php echo form_error('name'); ?></span>
-      </div>
-      <div class="form-group">
-        <?php echo form_label('Age', 'fin_age', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'fin_age')); ?>
-        <span class="badge badge-danger">Required</span>
-        <?php
+                                        <span class="text-danger"><?php echo form_error('name'); ?></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <?php echo form_label('Age', 'fin_age', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'fin_age')); ?>
+                                        <span class="badge badge-danger">Required</span>
+                                        <?php
           echo form_input(array(
             'name' => 'fin_age',
             'type' => 'text',
@@ -4149,12 +4544,12 @@ $(function() {
             'id' => 'fin_age',
             'autocomplete' => ''));
           ?>
-        <span class="text-danger"><?php echo form_error('fin_age'); ?></span>
-      </div>
-      <div class="form-group">
-        <?php echo form_label('Relationship', 'fin_relationship', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'std_name')); ?>
-        <span class="badge badge-danger">Required</span>
-        <?php
+                                        <span class="text-danger"><?php echo form_error('fin_age'); ?></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <?php echo form_label('Relationship', 'fin_relationship', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'std_name')); ?>
+                                        <span class="badge badge-danger">Required</span>
+                                        <?php
           echo form_input(array(
             'name' => 'fin_relationship',
             'type' => 'text',
@@ -4164,14 +4559,14 @@ $(function() {
             'id' => 'fin_relationship',
             'autocomplete' => ''));
           ?>
-        <span class="text-danger"><?php echo form_error('fin_relationship'); ?></span>
-      </div>
-      <div class="form-group">
-        <?php
+                                        <span class="text-danger"><?php echo form_error('fin_relationship'); ?></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <?php
           echo form_label('Address','fin_address', array('class' => 'col-form-label'));
         ?>
-        <div class="col-md-12 col-sm-12 p-0">
-          <?php 
+                                        <div class="col-md-12 col-sm-12 p-0">
+                                            <?php 
             $data = array(
             'name' => 'fin_address',
             'value' => '',
@@ -4182,13 +4577,13 @@ $(function() {
             'value' => html_escape(set_value('fin_address',isset($result12)?$result12->fin_address:''), ENT_QUOTES),
           );
           echo form_textarea($data); ?>
-          <span class="text-danger"><?php echo form_error('address'); ?></span>
-        </div>
-       </div>
-       <div class="form-group">
-        <?php echo form_label('Phone Number', 'tel', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'tel')); ?>
-        <span class="badge badge-danger">Required</span>
-        <?php
+                                            <span class="text-danger"><?php echo form_error('address'); ?></span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <?php echo form_label('Phone Number', 'tel', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'tel')); ?>
+                                        <span class="badge badge-danger">Required</span>
+                                        <?php
           echo form_input(array(
             'name' => 'tel',
             'type' => 'text',
@@ -4198,12 +4593,12 @@ $(function() {
             'id' => 'tel',
             'autocomplete' => ''));
         ?>
-        <span class="text-danger"><?php echo form_error('tel'); ?></span>
-       </div>
-       <div class="form-group">
-        <?php echo form_label('Email', 'email', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'std_email')); ?>
-        <span class="badge badge-danger">Required</span>
-        <?php
+                                        <span class="text-danger"><?php echo form_error('tel'); ?></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <?php echo form_label('Email', 'email', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'std_email')); ?>
+                                        <span class="badge badge-danger">Required</span>
+                                        <?php
           echo form_input(array(
             'name' => 'email',
             'type' => 'text',
@@ -4213,11 +4608,11 @@ $(function() {
             'id' => 'email',
             'autocomplete' => ''));
         ?>
-        <span class="text-danger"><?php echo form_error('email'); ?></span>
-       </div>
-       <div class="form-group">
-      <?php echo form_label('Occupation', 'fin_occupation', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'fin_occupation')); ?>
-      <?php
+                                        <span class="text-danger"><?php echo form_error('email'); ?></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <?php echo form_label('Occupation', 'fin_occupation', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'fin_occupation')); ?>
+                                        <?php
         echo form_input(array(
           'name' => 'fin_occupation',
           'type' => 'text',
@@ -4227,11 +4622,11 @@ $(function() {
           'id' => 'fin_occupation',
           'autocomplete' => ''));
       ?>
-      <span class="text-danger"><?php echo form_error('fin_occupation'); ?></span>
-  </div>
-  <div class="form-group">
-      <?php echo form_label('Work Place', 'work_place', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'work_place')); ?>
-      <?php
+                                        <span class="text-danger"><?php echo form_error('fin_occupation'); ?></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <?php echo form_label('Work Place', 'work_place', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'work_place')); ?>
+                                        <?php
         echo form_input(array(
           'name' => 'work_place',
           'type' => 'text',
@@ -4241,11 +4636,11 @@ $(function() {
           'id' => 'work_place',
           'autocomplete' => ''));
       ?>
-      <span class="text-danger"><?php echo form_error('work_place'); ?></span>
-  </div>
-  <div class="form-group">
-      <?php echo form_label('Visa', 'fin_visa', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'fin_visa')); ?>
-      <?php
+                                        <span class="text-danger"><?php echo form_error('work_place'); ?></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <?php echo form_label('Visa', 'fin_visa', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'fin_visa')); ?>
+                                        <?php
         echo form_input(array(
           'name' => 'fin_visa',
           'type' => 'text',
@@ -4255,11 +4650,11 @@ $(function() {
           'id' => 'fin_visa',
           'autocomplete' => ''));
       ?>
-      <span class="text-danger"><?php echo form_error('fin_visa'); ?></span>
-  </div>
-  <div class="form-group">
-      <?php echo form_label('Annual Income', 'annual_income', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'annual_income')); ?>
-      <?php
+                                        <span class="text-danger"><?php echo form_error('fin_visa'); ?></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <?php echo form_label('Annual Income', 'annual_income', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'annual_income')); ?>
+                                        <?php
         echo form_input(array(
           'name' => 'annual_income',
           'type' => 'text',
@@ -4269,11 +4664,11 @@ $(function() {
           'id' => 'annual_income',
           'autocomplete' => ''));
       ?>
-      <span class="text-danger"><?php echo form_error('annual_income'); ?></span>
-  </div>
-  <div class="form-group">
-      <?php echo form_label('The amount of saving for study abroad', 'amount_saving_for_study_abroad', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'amount_saving_for_study_abroad')); ?>
-      <?php
+                                        <span class="text-danger"><?php echo form_error('annual_income'); ?></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <?php echo form_label('The amount of saving for study abroad', 'amount_saving_for_study_abroad', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'amount_saving_for_study_abroad')); ?>
+                                        <?php
         echo form_input(array(
           'name' => 'amount_saving_for_study_abroad',
           'type' => 'text',
@@ -4283,11 +4678,12 @@ $(function() {
           'id' => 'amount_saving_for_study_abroad',
           'autocomplete' => ''));
       ?>
-      <span class="text-danger"><?php echo form_error('amount_saving_for_study_abroad'); ?></span>
-  </div>
-  <div class="form-group">
-      <?php echo form_label('The amount of saving which can be proved ', 'amount_of_saving_which_proved', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'amount_of_saving_which_proved')); ?>
-      <?php
+                                        <span
+                                            class="text-danger"><?php echo form_error('amount_saving_for_study_abroad'); ?></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <?php echo form_label('The amount of saving which can be proved ', 'amount_of_saving_which_proved', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'amount_of_saving_which_proved')); ?>
+                                        <?php
         echo form_input(array(
           'name' => 'amount_of_saving_which_proved',
           'type' => 'text',
@@ -4297,11 +4693,12 @@ $(function() {
           'id' => 'amount_of_saving_which_proved',
           'autocomplete' => ''));
       ?>
-      <span class="text-danger"><?php echo form_error('amount_of_saving_which_proved'); ?></span>
-  </div>
-  <div class="form-group">
-      <?php echo form_label('Start of Work date', 'start_work_date', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'start_work_date')); ?>
-      <?php
+                                        <span
+                                            class="text-danger"><?php echo form_error('amount_of_saving_which_proved'); ?></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <?php echo form_label('Start of Work date', 'start_work_date', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'start_work_date')); ?>
+                                        <?php
         echo form_input(array(
           'name' => 'start_work_date',
           'type' => 'date',
@@ -4311,278 +4708,323 @@ $(function() {
           'id' => 'start_work_date ',
           'autocomplete' => ''));
       ?>
-      <span class="text-danger"><?php echo form_error('start_work_date'); ?></span>
-  </div>
-  </div>
-</div>
-<!--End dropdown FINANICIAL SPONSOR -->
-<div class="clearfix"></div>
-  <hr class="my-4 dashed clearfix">
-  <div class="text-right">
-            <button type="submit" class="btn btn-primary text-white btn-sm py-1 px-2">
-              <span class="material-icons align-top md-20 mr-1">update</span>Update
-            </button>
-            <button type="reset" class="btn btn-secondary text-white btn-sm py-1 px-2">
-              <span class="material-icons align-top md-20 mr-1">sync</span>Reset
-            </button>
-          </div>
-        
-</div>
-<?php echo form_close(); ?>
-</div>
-</div>
-</div>
-</div>
+                                        <span class="text-danger"><?php echo form_error('start_work_date'); ?></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--End dropdown FINANICIAL SPONSOR -->
+                            <div class="clearfix"></div>
+                            <hr class="my-4 dashed clearfix">
+                            <div class="text-right">
+                                <button type="submit" class="btn btn-primary text-white btn-sm py-1 px-2">
+                                    <span class="material-icons align-top md-20 mr-1">update</span>Update
+                                </button>
+                                <button type="reset" class="btn btn-secondary text-white btn-sm py-1 px-2">
+                                    <span class="material-icons align-top md-20 mr-1">sync</span>Reset
+                                </button>
+                            </div>
 
-<?php include(dirname(__FILE__) ."/../templates/footer.php"); ?>
-<script>
-  function filePreview(input,div){
-  if (input.files && input.files[0]) {
-      var reader = new FileReader();
-      reader.onload = function (e) {
-          $(div).empty();
-          $(div).html('<embed src="'+e.target.result+'" width="50%" >');
-      };
-      reader.readAsDataURL(input.files[0]);
-    }
-  }
+                        </div>
+                        <?php echo form_close(); ?>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-  $("#clickImg").change(function () {
-    filePreview(this,"#showImg1");
-  });
-  </script>
+        <?php include(dirname(__FILE__) ."/../templates/footer.php"); ?>
+        <script>
+        function filePreview(input, div) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    $(div).empty();
+                    $(div).html('<embed src="' + e.target.result + '" width="50%" >');
+                };
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
 
-<style>
-.table-bordered thead th, .table-bordered thead td {
-    font-weight: 400;
-    border-bottom-width: 2px;
-}
-input#clickImg {
-    /* width: 252px; */
-    padding: 3.5px;
-}
-.col-form-label {
-  width:49%;
-  padding-top: 7px;
-  padding-bottom: 10px;
-}
-#showImg1 {
-    margin: 10px 120px 0px;
-}
-div.content_detail{
-position: relative;
-margin:0 2em 1em;
-}
-.dropdown{
-position: absolute;
-left: 0;
-top: 0;
-width: 100%;
-opacity:0;
-visibility: 0;
-}
-.drop_ttl{
-background:#f1797b;
-color:white;
-padding: 0.75rem 1.25rem;
-position: relative;
-margin: 0px;
-border: 1px solid rgba(0, 0, 0, 0.125);
-border-radius: 5px;
-}
-.drop_label::before {
-content: "";
-display: inline-block;
-border: 9px solid transparent;
-border-left: 10px solid white;
-}
-.drop_label{
-  cursor: pointer;
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-input:checked ~ p .drop_label::before {
-    margin-top: 5px;
-    margin-right: 5px;
-    border: 8px solid transparent;
-    border-top: 12px solid white;
-}
+        $("#clickImg").change(function() {
+            filePreview(this, "#showImg1");
+        });
+        </script>
 
-.drop_label{
-cursor: pointer;
-position: relative;
-display: flex;
-align-items: center;
-margin-bottom: 0px;
-}
+        <style>
+        .table-bordered thead th,
+        .table-bordered thead td {
+            font-weight: 400;
+            border-bottom-width: 2px;
+        }
 
-div.drop_txt{
-max-height:0px;
-overflow: hidden;
-transition:max-height 0.9s;
-}
+        input#clickImg {
+            /* width: 252px; */
+            padding: 3.5px;
+        }
 
-/* div.drop_txt p {
+        .col-form-label {
+            width: 49%;
+            padding-top: 7px;
+            padding-bottom: 10px;
+        }
+
+        #showImg1 {
+            margin: 10px 120px 0px;
+        }
+
+        div.content_detail {
+            position: relative;
+            margin: 0 2em 1em;
+        }
+
+        .dropdown {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            opacity: 0;
+            visibility: 0;
+        }
+
+        .drop_ttl {
+            background: #f1797b;
+            color: white;
+            padding: 0.75rem 1.25rem;
+            position: relative;
+            margin: 0px;
+            border: 1px solid rgba(0, 0, 0, 0.125);
+            border-radius: 5px;
+        }
+
+        .drop_label::before {
+            content: "";
+            display: inline-block;
+            border: 9px solid transparent;
+            border-left: 10px solid white;
+        }
+
+        .drop_label {
+            cursor: pointer;
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        input:checked~p .drop_label::before {
+            margin-top: 5px;
+            margin-right: 5px;
+            border: 8px solid transparent;
+            border-top: 12px solid white;
+        }
+
+        .drop_label {
+            cursor: pointer;
+            position: relative;
+            display: flex;
+            align-items: center;
+            margin-bottom: 0px;
+        }
+
+        div.drop_txt {
+            max-height: 0px;
+            overflow: hidden;
+            transition: max-height 0.9s;
+        }
+
+        /* div.drop_txt p {
 padding:2em;
 } */
-.dropdown:checked ~ .drop_ttl ~ div.drop_txt{
-max-height:100%;
-}
-a{
-color:#48a1af;
-}
-.school_select {
-    width: 45.3%;
-    padding: 8px;
-    /* margin: 7px 1px 7px 0px; */
-    border: 1px solid #ced4db;
-    border-radius: 3px;
-}
-.school_list{
-  width: 55%;
-  padding: 17px 12px;
-  align-items: center;
-  display: flex;
-}
-.list_label{
-  width: 44%;
-  font-size: 16px;
-  margin: 0px;
-}
-.text-right {
-    padding-bottom: 27px;
-    text-align: right !important;
-}
-</style>
-<style>
-  .appl_ttl {
-    padding: 16px;
-    text-align: center;
-}
-.addmission{
-  padding: 0px;
-  /* margin: 0px; */
-}
-.admission_select{
-  width: 100%;
-  padding: 8px;
-  /* margin: 7px; */
-  border: 1px solid #ced4db;
-  border-radius: 3px;
-}
-.planning_select {
-    width: 30%;
-    margin: 12px 0px;
-    padding: 8px;
-    border: 1px solid #ced4db;
-    border-radius: 3px;
-}
-#expected_year {
-    margin-left: 17px;
-    width: 40%;
-}
-#expected_month{
-  width: 40%;
+        .dropdown:checked~.drop_ttl~div.drop_txt {
+            max-height: 100%;
+        }
 
-}
-.graduating_month_year{
-  display: flex;
-}
-.expected_txt{
-  padding-left: 22px;
-  font-size: 17px;
-  margin-bottom: 0px;
-  margin-top: 11px;
-}
+        a {
+            color: #48a1af;
+        }
 
-.details {
-    padding: 8px 10px 7px 9px;
-    border: 1px solid #ced4db;
-    border-radius: 3px;
-    margin: 0px 54px 12px 27px;
-}
-.employment{
-  padding-bottom: 12px;
-}
-.radio_record{
-  width: 100%;
-  /* margin-bottom: 20px; */
-  display: flex;
-}
-.course_select{
-  width: 49%;
-  padding: 8px;
-  /* margin: 7px; */
-  border: 1px solid #ced4db;
-  border-radius: 3px;
-}
-.criminal{
-  /* padding-left: 12px; */
-  width: 100%;
-}
-.cri_text{
-  display: flex;
-}
-.muti_txt{
-  margin-right: 0px;
-}
-.appli{
-  margin-left: 11px;
+        .school_select {
+            width: 45.3%;
+            padding: 8px;
+            /* margin: 7px 1px 7px 0px; */
+            border: 1px solid #ced4db;
+            border-radius: 3px;
+        }
 
-}
-.table-control{
-  width: 100%;
-    border: none;
-  }
-  input.table-control.term{
-  width: 74% !important;
- }
- .strEnd{
-  text-align: center;
- }
-.tbl_head{
-  text-align: center;
-}
-.table-bordered{
-  width: 100%;
-}
-.study_year{
-  margin-right: 0px;
-}
-.finial_ttl{
-  padding: 20px 12px;
-}
-.radio .col-md-2{
-  padding: 0px;
-}
-.stu_label{
-  /* margin-left: 57% */
-}
-.employment_text{
-  margin-bottom: 10px;
-}
-.passport_text{
-  margin-bottom: 10px;
-}
-/* #passport_data_exp_ttl{
+        .school_list {
+            width: 55%;
+            padding: 17px 12px;
+            align-items: center;
+            display: flex;
+        }
+
+        .list_label {
+            width: 44%;
+            font-size: 16px;
+            margin: 0px;
+        }
+
+        .text-right {
+            padding-bottom: 27px;
+            text-align: right !important;
+        }
+        </style>
+        <style>
+        .appl_ttl {
+            padding: 16px;
+            text-align: center;
+        }
+
+        .addmission {
+            padding: 0px;
+            /* margin: 0px; */
+        }
+
+        .admission_select {
+            width: 100%;
+            padding: 8px;
+            /* margin: 7px; */
+            border: 1px solid #ced4db;
+            border-radius: 3px;
+        }
+
+        .planning_select {
+            width: 30%;
+            margin: 12px 0px;
+            padding: 8px;
+            border: 1px solid #ced4db;
+            border-radius: 3px;
+        }
+
+        #expected_year {
+            margin-left: 17px;
+            width: 40%;
+        }
+
+        #expected_month {
+            width: 40%;
+
+        }
+
+        .graduating_month_year {
+            display: flex;
+        }
+
+        .expected_txt {
+            padding-left: 22px;
+            font-size: 17px;
+            margin-bottom: 0px;
+            margin-top: 11px;
+        }
+
+        .details {
+            padding: 8px 10px 7px 9px;
+            border: 1px solid #ced4db;
+            border-radius: 3px;
+            margin: 0px 54px 12px 27px;
+        }
+
+        .employment {
+            padding-bottom: 12px;
+        }
+
+        .radio_record {
+            width: 100%;
+            /* margin-bottom: 20px; */
+            display: flex;
+        }
+
+        .course_select {
+            width: 49%;
+            padding: 8px;
+            /* margin: 7px; */
+            border: 1px solid #ced4db;
+            border-radius: 3px;
+        }
+
+        .criminal {
+            /* padding-left: 12px; */
+            width: 100%;
+        }
+
+        .cri_text {
+            display: flex;
+        }
+
+        .muti_txt {
+            margin-right: 0px;
+        }
+
+        .appli {
+            margin-left: 11px;
+
+        }
+
+        .table-control {
+            width: 100%;
+            border: none;
+        }
+
+        input.table-control.term {
+            width: 74% !important;
+        }
+
+        .strEnd {
+            text-align: center;
+        }
+
+        .tbl_head {
+            text-align: center;
+        }
+
+        .table-bordered {
+            width: 100%;
+        }
+
+        .study_year {
+            margin-right: 0px;
+        }
+
+        .finial_ttl {
+            padding: 20px 12px;
+        }
+
+        .radio .col-md-2 {
+            padding: 0px;
+        }
+
+        .stu_label {
+            /* margin-left: 57% */
+        }
+
+        .employment_text {
+            margin-bottom: 10px;
+        }
+
+        .passport_text {
+            margin-bottom: 10px;
+        }
+
+        /* #passport_data_exp_ttl{
   margin-top: 7px;
 } */
-.military_txt{
-  margin-bottom: 18px;
-}
-.wholanguage{
-  margin-bottom: 19px;
-}
-.criminal_record01 {
-    width: 34%;
-}
-.criminal_record03{
-  position: relative;
-  top: 0px;
-  left: 25%;
-}
-a.btn:hover{
-  color:#ffffff;
-}
-</style> 
+        .military_txt {
+            margin-bottom: 18px;
+        }
+
+        .wholanguage {
+            margin-bottom: 19px;
+        }
+
+        .criminal_record01 {
+            width: 34%;
+        }
+
+        .criminal_record03 {
+            position: relative;
+            top: 0px;
+            left: 25%;
+        }
+
+        a.btn:hover {
+            color: #ffffff;
+        }
+        </style>

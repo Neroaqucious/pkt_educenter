@@ -343,3 +343,8 @@ ERROR - 2022-12-21 07:56:52 --> 404 Page Not Found: Asset/admin
 ERROR - 2022-12-21 07:57:07 --> 404 Page Not Found: Asset/admin
 ERROR - 2022-12-21 07:57:07 --> 404 Page Not Found: Asset/admin
 ERROR - 2022-12-21 07:57:07 --> 404 Page Not Found: Asset/admin
+ERROR - 2022-12-21 08:11:37 --> Severity: error --> Exception: syntax error, unexpected '<<' (T_SL) C:\xampp\htdocs\pkt-edu\application\controllers\dashboard\Langschoolapplicant.php 726
+ERROR - 2022-12-21 13:42:12 --> Severity: error --> Exception: syntax error, unexpected '===' (T_IS_IDENTICAL), expecting end of file C:\xampp\htdocs\pkt-edu\application\views\dashboard\langschoolstudent\edit.php 781
+ERROR - 2022-12-21 13:43:50 --> Severity: error --> Exception: syntax error, unexpected '===' (T_IS_IDENTICAL), expecting end of file C:\xampp\htdocs\pkt-edu\application\views\dashboard\langschoolstudent\edit.php 781
+ERROR - 2022-12-21 13:43:55 --> Severity: error --> Exception: syntax error, unexpected '===' (T_IS_IDENTICAL), expecting end of file C:\xampp\htdocs\pkt-edu\application\views\dashboard\langschoolstudent\edit.php 781
+ERROR - 2022-12-21 13:43:57 --> Severity: error --> Exception: syntax error, unexpected '===' (T_IS_IDENTICAL), expecting end of file C:\xampp\htdocs\pkt-edu\application\views\dashboard\langschoolstudent\edit.php 781
