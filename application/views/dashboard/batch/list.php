@@ -123,7 +123,7 @@
   <div class="card-header bg-dark text-light">Offline <span class="text-success">Batches</span></div>
     <div class="card-body">
     <div class="">
-      <table class="table table-striped bg-white text-nowrap table-responsive" id="studentDataLocal">
+      <table class="table table-striped bg-white text-nowrap table-responsive" id="">
       <thead>
         <tr class="text-center">
           <th>#</th>

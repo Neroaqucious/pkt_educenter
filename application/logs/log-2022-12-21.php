@@ -348,3 +348,25 @@ ERROR - 2022-12-21 13:42:12 --> Severity: error --> Exception: syntax error, une
 ERROR - 2022-12-21 13:43:50 --> Severity: error --> Exception: syntax error, unexpected '===' (T_IS_IDENTICAL), expecting end of file C:\xampp\htdocs\pkt-edu\application\views\dashboard\langschoolstudent\edit.php 781
 ERROR - 2022-12-21 13:43:55 --> Severity: error --> Exception: syntax error, unexpected '===' (T_IS_IDENTICAL), expecting end of file C:\xampp\htdocs\pkt-edu\application\views\dashboard\langschoolstudent\edit.php 781
 ERROR - 2022-12-21 13:43:57 --> Severity: error --> Exception: syntax error, unexpected '===' (T_IS_IDENTICAL), expecting end of file C:\xampp\htdocs\pkt-edu\application\views\dashboard\langschoolstudent\edit.php 781
+ERROR - 2022-12-21 14:27:20 --> Severity: Notice --> Undefined index: sign_file C:\xampp\htdocs\pkt-edu\application\controllers\dashboard\Langschoolapplicant.php 405
+ERROR - 2022-12-21 14:27:20 --> Severity: Notice --> Undefined index: image_file C:\xampp\htdocs\pkt-edu\application\controllers\dashboard\Langschoolapplicant.php 405
+ERROR - 2022-12-21 14:27:20 --> Severity: Notice --> Undefined index: family_file C:\xampp\htdocs\pkt-edu\application\controllers\dashboard\Langschoolapplicant.php 405
+ERROR - 2022-12-21 14:27:20 --> Severity: Notice --> Undefined index: defraying_sign C:\xampp\htdocs\pkt-edu\application\controllers\dashboard\Langschoolapplicant.php 413
+ERROR - 2022-12-21 14:27:21 --> Severity: Notice --> Undefined index: course_start_date C:\xampp\htdocs\pkt-edu\application\views\dashboard\langschoolstudent\confirm.php 833
+ERROR - 2022-12-21 14:27:21 --> Severity: Notice --> Undefined index: course_end_date C:\xampp\htdocs\pkt-edu\application\views\dashboard\langschoolstudent\confirm.php 834
+ERROR - 2022-12-21 14:31:43 --> Severity: Notice --> Undefined index: sign_file C:\xampp\htdocs\pkt-edu\application\controllers\dashboard\Langschoolapplicant.php 405
+ERROR - 2022-12-21 14:31:43 --> Severity: Notice --> Undefined index: image_file C:\xampp\htdocs\pkt-edu\application\controllers\dashboard\Langschoolapplicant.php 405
+ERROR - 2022-12-21 14:31:43 --> Severity: Notice --> Undefined index: family_file C:\xampp\htdocs\pkt-edu\application\controllers\dashboard\Langschoolapplicant.php 405
+ERROR - 2022-12-21 14:31:43 --> Severity: Notice --> Undefined index: defraying_sign C:\xampp\htdocs\pkt-edu\application\controllers\dashboard\Langschoolapplicant.php 413
+ERROR - 2022-12-21 14:31:43 --> Severity: Notice --> Undefined index: course_start_date C:\xampp\htdocs\pkt-edu\application\views\dashboard\langschoolstudent\confirm.php 833
+ERROR - 2022-12-21 14:31:43 --> Severity: Notice --> Undefined index: course_end_date C:\xampp\htdocs\pkt-edu\application\views\dashboard\langschoolstudent\confirm.php 834
+ERROR - 2022-12-21 15:01:04 --> Severity: Notice --> Undefined index: sign_file C:\xampp\htdocs\pkt-edu\application\controllers\dashboard\Langschoolapplicant.php 405
+ERROR - 2022-12-21 15:01:04 --> Severity: Notice --> Undefined index: image_file C:\xampp\htdocs\pkt-edu\application\controllers\dashboard\Langschoolapplicant.php 405
+ERROR - 2022-12-21 15:01:04 --> Severity: Notice --> Undefined index: family_file C:\xampp\htdocs\pkt-edu\application\controllers\dashboard\Langschoolapplicant.php 405
+ERROR - 2022-12-21 15:01:04 --> Severity: Notice --> Undefined index: defraying_sign C:\xampp\htdocs\pkt-edu\application\controllers\dashboard\Langschoolapplicant.php 413
+ERROR - 2022-12-21 15:01:05 --> Severity: Notice --> Undefined index: course_start_date C:\xampp\htdocs\pkt-edu\application\views\dashboard\langschoolstudent\confirm.php 833
+ERROR - 2022-12-21 15:01:05 --> Severity: Notice --> Undefined index: course_end_date C:\xampp\htdocs\pkt-edu\application\views\dashboard\langschoolstudent\confirm.php 834
+ERROR - 2022-12-21 15:01:16 --> Severity: Notice --> Undefined index: sign_file C:\xampp\htdocs\pkt-edu\application\controllers\dashboard\Langschoolapplicant.php 452
+ERROR - 2022-12-21 15:01:16 --> Severity: Notice --> Undefined index: image_file C:\xampp\htdocs\pkt-edu\application\controllers\dashboard\Langschoolapplicant.php 452
+ERROR - 2022-12-21 15:01:16 --> Severity: Notice --> Undefined index: family_file C:\xampp\htdocs\pkt-edu\application\controllers\dashboard\Langschoolapplicant.php 452
+ERROR - 2022-12-21 15:01:16 --> Severity: Notice --> Undefined index: defraying_sign C:\xampp\htdocs\pkt-edu\application\controllers\dashboard\Langschoolapplicant.php 463

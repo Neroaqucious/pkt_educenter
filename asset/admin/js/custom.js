@@ -324,12 +324,19 @@ $(window).on("load", function() {
 studentDataLocal
 		*****************************************/
     $('#studentDataOnline').DataTable();
+    $('#studentData').DataTable();
     $('#studentDataLocal').DataTable();
-    $('#studentDataLoca1l').DataTable();
+    $('#studentDataLocal1').DataTable();
     $('#studentDataLocal2').DataTable();
     $('#studentDataLocal3').DataTable();
+    $('#studentDataLocal4').DataTable();
+    $('#studentDataLocal5').DataTable();
+    $('#studentDataLocal6').DataTable();
+    $('#studentDataLocal7').DataTable();
     $('#ApplicantDataNew').DataTable();
     $('#ApplicantDataInter').DataTable();
+    $('#ApplicantCOE').DataTable();
+    $('#studentInterFailed').DataTable();
 
 
 })(jQuery);
