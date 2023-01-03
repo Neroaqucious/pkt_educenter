@@ -365,3 +365,6 @@ ERROR - 2023-01-03 05:20:45 --> 404 Page Not Found: Asset/admin
 ERROR - 2023-01-03 05:20:45 --> 404 Page Not Found: Asset/admin
 ERROR - 2023-01-03 05:20:52 --> Severity: Notice --> Undefined variable: result10 C:\xampp\htdocs\pkt-edu\application\views\dashboard\export\fukuoka_admission.php 326
 ERROR - 2023-01-03 05:20:52 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp\htdocs\pkt-edu\application\views\dashboard\export\fukuoka_admission.php 326
+ERROR - 2023-01-03 10:55:18 --> Severity: Notice --> Undefined property: stdClass::$work_place C:\xampp\htdocs\pkt-edu\application\views\dashboard\langschoolstudent\edit.php 3916
+ERROR - 2023-01-03 10:55:29 --> Severity: Notice --> Undefined property: stdClass::$work_place C:\xampp\htdocs\pkt-edu\application\views\dashboard\langschoolstudent\edit.php 3916
+ERROR - 2023-01-03 10:55:41 --> Severity: Notice --> Undefined property: stdClass::$work_place C:\xampp\htdocs\pkt-edu\application\views\dashboard\langschoolstudent\edit.php 3916
