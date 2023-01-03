@@ -270,7 +270,7 @@ class Langschoolapplicant_Model extends CI_Model
     $this->db->where('info_phone', $data_info['info_phone']);
     $this->db->where('course_admission', $data_info['address']);
     $this->db->where('course_study_lengh', $data_info['course_study_lengh']);
-    $this->db->where('occupation', $data_info['occupation']);
+    $this->db->where('std_occupation', $data_info['std_occupation']);
 		$this->db->where('jls_name', $data_info['jls_name']);
     $this->db->where('place_employment_school', $data_info['place_employment_school']);
     $this->db->where('addr_employment_school', $data_info['addr_employment_school']);

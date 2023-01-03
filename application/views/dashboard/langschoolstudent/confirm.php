@@ -387,8 +387,8 @@ abcdefg
 <!-- rightside -->
 <div class="col-md-6 float-left">
   <div class="form-group">
-      <?php echo form_label('Occupation', 'occupation', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'occupation')); ?>
-      <p class="comfirm_val" id="occupation" name="occupation"><?php echo $lists['occupation']; ?></p>
+      <?php echo form_label('Occupation', 'std_occupation', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'std_occupation')); ?>
+      <p class="comfirm_val" id="std_occupation" name="std_occupation"><?php echo $lists['std_occupation']; ?></p>
   </div>
 
   <div class="form-group">

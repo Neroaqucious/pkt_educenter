@@ -105,7 +105,7 @@ $html = '
         </tr>
         <tr>
 			<th colspan="2" style="text-align: left;">経費支弁者年間収入 <br> financial supporter salary of a year</th>
-			<td colspan="9"><?php echo $result->annual_income?></td>
+			<td colspan="9"><?php echo $result->fin_annual_income?></td>
         </tr>
         <tr>
 			<th colspan="2" style="text-align: left;">過去申請歴（取下げ歴を含む）<br> Have you already tried an application for certificate of eligibility.</th>
@@ -142,8 +142,8 @@ $html = '
                                 ?> 
                                     <tr>
                                         <td style="font-size: 11px; text-align: center;"><?php echo $row1->edu_name?></td>
-                                        <td style="font-size: 11px; text-align: center;"><?php echo $splitted = date('Y', strtotime($row1->start_date));?>年 <?php echo $splitted = date('m', strtotime($row1->start_date));?>月　～　<?php echo $splitted = date('Y', strtotime($row1->end_date));?>年<?php echo $splitted = date('m', strtotime($row1->end_date));?>月</td>
-                                        <td style="font-size: 11px; text-align: center;"><?php echo $row1->year?></td>
+                                        <td style="font-size: 11px; text-align: center;"><?php echo $splitted = date('Y', strtotime($row1->edu_start_date));?>年 <?php echo $splitted = date('m', strtotime($row1->edu_start_date));?>月　～　<?php echo $splitted = date('Y', strtotime($row1->edu_end_date));?>年<?php echo $splitted = date('m', strtotime($row1->edu_end_date));?>月</td>
+                                        <td style="font-size: 11px; text-align: center;"><?php echo $row1->edu_year?></td>
                                     </tr>
                                     <?php } ?>
                             </tbody>

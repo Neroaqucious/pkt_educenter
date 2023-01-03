@@ -103,8 +103,8 @@
     <option value="ECC" <?php if($result->jls_name== "ECC") echo "selected"; ?>>ECC</option>
     <option value="JCLI" <?php if($result->jls_name== "JCLI") echo "selected"; ?>>JCLI</option>
     <option value="OJLS" <?php if($result->jls_name== "OJLS") echo "selected"; ?>>OJLS</option>
-    <option value="fukuoka" <?php if($result->jls_name== "Fukuoka") echo "selected"; ?>>fukuoka</option>
-    <option value="shizuoka" <?php if($result->jls_name== "Shizuoka") echo "selected"; ?>>shizuoka</option>
+    <option value="Fukuoka" <?php if($result->jls_name== "Fukuoka") echo "selected"; ?>>Fukuoka</option>
+    <option value="Shizuoka" <?php if($result->jls_name== "Shizuoka") echo "selected"; ?>>Shizuoka</option>
 </select>
 </div>
 <!-- JLS Name -->
@@ -1338,18 +1338,18 @@ input#coefail
                                 <!-- rightside -->
                                 <div class="col-md-6 float-left">
                                     <div class="form-group">
-                                        <?php echo form_label('Occupation', 'occupation', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'occupation')); ?>
+                                        <?php echo form_label('Occupation', 'std_occupation', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'std_occupation')); ?>
                                         <?php
         echo form_input(array(
-          'name' => 'occupation',
+          'name' => 'std_occupation',
           'type' => 'text',
-          'value' => html_escape(set_value('occupation',isset($result)?$result->occupation:''), ENT_QUOTES),
+          'value' => html_escape(set_value('std_occupation',isset($result)?$result->std_occupation:''), ENT_QUOTES),
           'placeholder' => 'Please Enter!',
           'class' => 'form-control',
-          'id' => 'occupation',
+          'id' => 'std_occupation',
           'autocomplete' => ''));
       ?>
-                                        <span class="text-danger"><?php echo form_error('occupation'); ?></span>
+                                        <span class="text-danger"><?php echo form_error('std_occupation'); ?></span>
                                     </div>
                                     <div class="form-group">
                                         <?php echo form_label('Place of Employment or School', 'place_employment_school', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'place_employment_school')); ?>
@@ -3526,7 +3526,7 @@ applicant and your relationship to the applicant.','defraying_details', array('c
                                                         <?php
           echo form_input(array(
             'name' => 'exam_year[]',
-            'type' => 'text',
+            'type' => 'month',
             'value' => html_escape(set_value('exam_year',isset($result)?$row2->exam_year:''), ENT_QUOTES),
             'class' => 'table-control productItem',
             'id' => 'exam_year',
@@ -3936,7 +3936,7 @@ applicant and your relationship to the applicant.','defraying_details', array('c
           echo form_input(array(
             'name' => 'fam_occupation[]',
             'type' => 'text',
-            'value' => html_escape(set_value('fam_occupation',isset($result)?$row5->occupation:''), ENT_QUOTES),
+            'value' => html_escape(set_value('fam_occupation',isset($result)?$row5->fam_occupation:''), ENT_QUOTES),
             'class' => 'table-control productItem',
             'id' => 'fam_occupation',
             'autocomplete' => ''));

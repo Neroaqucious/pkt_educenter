@@ -630,18 +630,18 @@ $(function() {
 <!-- rightside -->
 <div class="col-md-6 float-left">
   <div class="form-group">
-    <?php echo form_label('Occupation', 'occupation', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'phone')); ?>
+    <?php echo form_label('Occupation', 'std_occupation', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'phone')); ?>
     <?php
       echo form_input(array(
-        'name' => 'occupation',
+        'name' => 'std_occupation',
         'type' => 'text',
-        'value' => html_escape(set_value('occupation',isset($result)?$result->phone:''), ENT_QUOTES),
+        'value' => html_escape(set_value('std_occupation',isset($result)?$result->std_occupation:''), ENT_QUOTES),
         'placeholder' => 'Please Enter!',
         'class' => 'form-control',
-        'id' => 'occupation',
+        'id' => 'std_occupation',
         'autocomplete' => ''));
     ?>
-    <span class="text-danger"><?php echo form_error('occupation'); ?></span>
+    <span class="text-danger"><?php echo form_error('std_occupation'); ?></span>
   </div>
   <div class="form-group">
     <?php echo form_label('Place of Employment or School', 'place_employment_school', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'phone')); ?>
@@ -2254,7 +2254,7 @@ $(function() {
           <input type="text" class=" table-control"  name="achiv_level[]" value="">
           </td>
           <td>
-          <input type="text" class=" table-control"  name="achiv_exam_year[]" value="">
+          <input type="month" class=" table-control"  name="achiv_exam_year[]" value="">
           </td>
           <td>
           <input type="text" class=" table-control"  name="achiv_score[]" value="">
