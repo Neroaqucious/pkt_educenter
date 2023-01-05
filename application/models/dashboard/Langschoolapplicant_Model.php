@@ -270,7 +270,7 @@ class Langschoolapplicant_Model extends CI_Model
     $this->db->where('info_phone', $data_info['info_phone']);
     $this->db->where('course_admission', $data_info['address']);
     $this->db->where('course_study_lengh', $data_info['course_study_lengh']);
-    $this->db->where('occupation', $data_info['occupation']);
+    $this->db->where('std_occupation', $data_info['std_occupation']);
 		$this->db->where('jls_name', $data_info['jls_name']);
     $this->db->where('place_employment_school', $data_info['place_employment_school']);
     $this->db->where('addr_employment_school', $data_info['addr_employment_school']);
@@ -342,8 +342,8 @@ class Langschoolapplicant_Model extends CI_Model
     $this->db->where('tel', $data_financial_sponsor['tel']);
     $this->db->where('email', $data_financial_sponsor['email']);
     $this->db->where('fin_occupation', $data_financial_sponsor['fin_occupation']);
-    $this->db->where('work_place', $data_financial_sponsor['work_place']);
-		$this->db->where('annual_income', $data_financial_sponsor['annual_income']);
+    $this->db->where('fin_work_place', $data_financial_sponsor['fin_work_place']);
+		$this->db->where('fin_annual_income', $data_financial_sponsor['fin_annual_income']);
     $this->db->where('amount_saving_for_study_abroad', $data_financial_sponsor['amount_saving_for_study_abroad']);
     $this->db->where('amount_of_saving_which_proved', $data_financial_sponsor['amount_of_saving_which_proved']);
     $this->db->where('start_work_date', $data_financial_sponsor['start_work_date']);

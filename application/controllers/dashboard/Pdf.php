@@ -64,8 +64,14 @@ class Pdf extends CI_Controller {
        // $html = $this->load->view('dashboard/export/ecc_interview', $data['member'], true);
         $html = $this->load->view('dashboard/export/ecc_interview', $data, true);
        // var_dump($html);
-        $this->mpdf = new \Mpdf\Mpdf;
-
+       require_once __DIR__ . '../../../../vendor/autoload.php';
+       $mpdf = new \Mpdf\Mpdf(['tempDir' => __DIR__ . '/tmp']);
+      //$html = $this->load->view('html_to_pdf',[],true);
+       $mpdf->WriteHTML($html);
+       $mpdf->Output(); // opens in browser
+      
+        //$this->mpdf = new \Mpdf\Mpdf;
+        
         // $mpdf = new \Mpdf\Mpdf(
         //     ['debug' => true]
             
@@ -73,10 +79,10 @@ class Pdf extends CI_Controller {
       //  $this->$mpdf->setTitle('Posts');
         // $this->mpdf->writeHTML($html);
         // $this->mpdf->output();
-        $this->mpdf->WriteHTML($html); // write the HTML into the PDF
+       // $this->mpdf->WriteHTML($html); // write the HTML into the PDF
         $this->stylesheet = file_get_contents('asset/css/style.css');
         $output = 'itemreport' . date('Y_m_d_H_i_s') . '_.pdf';
-        $this->mpdf->Output("$output", 'I'); // save to file because we can
+       // $this->mpdf->Output("$output", 'I'); // save to file because we can
         exit();
     }
     function fukuokainter($id) {
@@ -132,6 +138,7 @@ class Pdf extends CI_Controller {
          $data['result7'] = $this->Pdf_Model->getJLSDetail7($id);
          $data['resultfamjapan'] = $this->Pdf_Model->getFamJapan($id);
          $data['result8'] = $this->Pdf_Model->getJLSDetail8($id);
+         $data['result9'] = $this->Pdf_Model->getJLSDetail9($id);
         // $html = $this->load->view('dashboard/export/ecc_interview', $data['member'], true);
          $html = $this->load->view('dashboard/export/shizuoka_interview', $data, true);
         // var_dump($html);
@@ -205,6 +212,7 @@ class Pdf extends CI_Controller {
             $data['result7'] = $this->Pdf_Model->getJLSDetail7($id);
             $data['resultfamjapan'] = $this->Pdf_Model->getFamJapan($id);
             $data['result8'] = $this->Pdf_Model->getJLSDetail8($id);
+            $data['result9'] = $this->Pdf_Model->getJLSDetail9($id);
            // $html = $this->load->view('dashboard/export/ecc_interview', $data['member'], true);
             $html = $this->load->view('dashboard/export/fukuoka_admission', $data, true);
            // var_dump($html);

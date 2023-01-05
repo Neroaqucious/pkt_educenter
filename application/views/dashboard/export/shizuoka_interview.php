@@ -149,12 +149,12 @@ img{
   <table style="width: 100%;">
         <tr>
             <th rowspan="2" style="width:18%;background-color: #e6e4e3;text-align:center;font-weight:normal;">日本語学習期間<br/>Period of studying Japanese</th>
-            <td style="width:32%;border-left: none !important;font-weight:normal;">From:<?php echo $splitted = date('Y', strtotime($resultprejpstudy->start_date));?>年Y<?php echo $splitted = date('m', strtotime($resultprejpstudy->start_date));?>月M<?php echo $splitted = date('d', strtotime($resultprejpstudy->start_date));?>日D</td>
+            <td style="width:32%;border-left: none !important;font-weight:normal;">From:<?php echo $splitted = date('Y', strtotime($resultprejpstudy->jp_start_date));?>年Y<?php echo $splitted = date('m', strtotime($resultprejpstudy->jp_start_date));?>月M<?php echo $splitted = date('d', strtotime($resultprejpstudy->jp_start_date));?>日D</td>
             <th style="width:18%;background-color: #e6e4e3;text-align:center;border-left: none !important;font-weight:normal;">日本語学習時間<br/> <span style="color:red;">（今までの既習時間) <br/>Had studied until now </span></th>
-            <td style="text-align: right;border-left: none !important;"><p style="width:10%;text-align: right;font-weight:normal;"><?php echo $resultprejpstudy->hour?>時間Hours</p></td>
+            <td style="text-align: right;border-left: none !important;"><p style="width:10%;text-align: right;font-weight:normal;"><?php echo $resultprejpstudy->jp_hour?>時間Hours</p></td>
         </tr>
         <tr style="border-top: none !important;">
-            <td style="width:32%;border-left: none !important;font-weight:normal;">To:<?php echo $splitted = date('Y', strtotime($resultprejpstudy->end_date));?>年Y<?php echo $splitted = date('m', strtotime($resultprejpstudy->end_date));?>月M<?php echo $splitted = date('d', strtotime($resultprejpstudy->end_date));?>日D</td>
+            <td style="width:32%;border-left: none !important;font-weight:normal;">To:<?php echo $splitted = date('Y', strtotime($resultprejpstudy->jp_end_date));?>年Y<?php echo $splitted = date('m', strtotime($resultprejpstudy->jp_end_date));?>月M<?php echo $splitted = date('d', strtotime($resultprejpstudy->jp_end_date));?>日D</td>
             <th style="width:18%;background-color: #e6e4e3;text-align:center;border-left: none !important;font-weight:normal;">他の学校に応募したこと<br/>Have you ever applied  <br/>for another school?</th>
             <td style="border-left: none !important;font-weight:normal;"><?php if($result->school_apply_before_japan == '1'){echo 'Yes';}else{echo 'No';}?></td>
         </tr>

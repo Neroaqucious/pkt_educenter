@@ -114,7 +114,7 @@ $html = '
                     <br><label for="martial_status"> 既婚Married </label>
                 </th>
                 <th colspan="3" scope="col" class="align-middle" style="text-align:cenleftter;">8  職業 <br>Occupation 
-                    <span style="font-weight:normal;"><?php echo $result->occupation?></span>
+                    <span style="font-weight:normal;"><?php echo $result->std_occupation?></span>
                 </th>
                 <th colspan="2" scope="col" class="align-middle" style="text-align:cenleftter;">9  小学校入学年龄 <br>Entrance Age to　Elementary School<br>
                     <span>満　<?php echo $result->entry_age_ele_school?>　　歳 </span>
@@ -152,12 +152,12 @@ $html = '
                                 ?>
                                     <tr>
                                         <td style="font-size: 11px; text-align: center;"><?php echo $row1->edu_name?></td>
-                                        <td style="font-size: 12px; text-align: center;"><?php echo $row1->address?></td>
-                                        <td style="font-size: 11px; text-align: center;border-left: none;"><?php echo $row1->year?></td>
+                                        <td style="font-size: 12px; text-align: center;"><?php echo $row1->edu_address?></td>
+                                        <td style="font-size: 11px; text-align: center;border-left: none;"><?php echo $row1->edu_year?></td>
                                         <td style="font-size: 11px; text-align: left;">
                                        
-                                        自from <span><?php if($splitted == date('Y', strtotime($row1->start_date))){echo'-';}else{echo $splitted = date('Y', strtotime($row1->start_date));}?></span> 年 <span><?php if($splitted == date('m', strtotime($row1->start_date))){echo'-';}else{echo $splitted = date('m', strtotime($row1->start_date));}?></span> 月 <br>
-                                        至to   <span><?php if($splitted == date('Y', strtotime($row1->end_date))){echo'-';}else{echo $splitted = date('Y', strtotime($row1->end_date));}?></span> 年 <span><?php if($splitted == date('m', strtotime($row1->end_date))){echo'-';}else{echo $splitted = date('m', strtotime($row1->end_date));}?></span> 月 
+                                        自from <span><?php if($splitted == date('Y', strtotime($row1->edu_start_date))){echo'-';}else{echo $splitted = date('Y', strtotime($row1->edu_start_date));}?></span> 年 <span><?php if($splitted == date('m', strtotime($row1->edu_start_date))){echo'-';}else{echo $splitted = date('m', strtotime($row1->edu_start_date));}?></span> 月 <br>
+                                        至to   <span><?php if($splitted == date('Y', strtotime($row1->edu_end_date))){echo'-';}else{echo $splitted = date('Y', strtotime($row1->edu_end_date));}?></span> 年 <span><?php if($splitted == date('m', strtotime($row1->edu_end_date))){echo'-';}else{echo $splitted = date('m', strtotime($row1->edu_end_date));}?></span> 月 
                                         </td>
                                     </tr>
                                 <?php } ?>
@@ -180,11 +180,11 @@ $html = '
                                 ?>
                                     <tr>
                                         <td style="font-size: 11px; text-align: center;"><?php echo $row2->jp_name?></td>
-                                        <td style="font-size: 12px; text-align: center;"><?php echo $row2->address?></td>
-                                        <td style="font-size: 11px; text-align: center;border-left: none;"><?php echo $row2->hour?></td>
+                                        <td style="font-size: 12px; text-align: center;"><?php echo $row2->jp_address?></td>
+                                        <td style="font-size: 11px; text-align: center;border-left: none;"><?php echo $row2->jp_hour?></td>
                                         <td style="font-size: 11px; text-align: left;">
-                                        自from <span><?php echo $splitted = date('Y', strtotime($row2->start_date));?></span> 年 <span><?php echo $splitted = date('m', strtotime($row2->start_date));?></span> 月 <br>
-                                        至to   <span><?php echo $splitted = date('Y', strtotime($row2->end_date));?></span> 年 <span><?php echo $splitted = date('m', strtotime($row2->end_date));?></span> 月 
+                                        自from <span><?php echo $splitted = date('Y', strtotime($row2->jp_start_date));?></span> 年 <span><?php echo $splitted = date('m', strtotime($row2->jp_start_date));?></span> 月 <br>
+                                        至to   <span><?php echo $splitted = date('Y', strtotime($row2->jp_end_date));?></span> 年 <span><?php echo $splitted = date('m', strtotime($row2->jp_end_date));?></span> 月 
                                         </td>
                                     </tr>
                                     <?php } ?>
@@ -219,7 +219,7 @@ $html = '
 <section class="edu-background">	
                         <table style="width:100%;" class="tbl">
                                 <tr style="border-top:0px;"> 
-                                    <th colspan="5" style="width: 100%;">14職歴（兵役含む）  Occupational Career　　　　　<span style="font-weight:normal;"><?php echo $result->occupation?>  </span>     
+                                    <th colspan="5" style="width: 100%;">14職歴（兵役含む）  Occupational Career　　　　　<span style="font-weight:normal;"><?php echo $result->std_occupation?>  </span>     
                                     </th>
                                 </tr>
                                 <tr class="text-center" style="font-size: 12px;text-align:center;">
@@ -233,11 +233,11 @@ $html = '
                                 ?> 
                                     <tr>
                                         <td style="font-size: 11px; text-align: center;"><?php echo $row5->emp_name?></td>
-                                        <td style="font-size: 12px; text-align: center;"><?php echo $row5->address?></td>
-                                        <td style="font-size: 11px; text-align: center;border-left: none;"><?php echo $row5->job_description?></td>
+                                        <td style="font-size: 12px; text-align: center;"><?php echo $row5->emp_address?></td>
+                                        <td style="font-size: 11px; text-align: center;border-left: none;"><?php echo $row5->emp_job_description?></td>
                                         <td style="font-size: 11px; text-align: left;">
-                                        自from <span><?php echo $splitted = date('Y', strtotime($row5->start_date));?></span> 年 <span><?php echo $splitted = date('m', strtotime($row5->start_date));?></span> 月 <br>
-                                        至to   <span><?php echo $splitted = date('Y', strtotime($row5->end_date));?></span> 年 <span><?php echo $splitted = date('m', strtotime($row5->end_date));?></span> 月 
+                                        自from <span><?php echo $splitted = date('Y', strtotime($row5->emp_start_date));?></span> 年 <span><?php echo $splitted = date('m', strtotime($row5->emp_start_date));?></span> 月 <br>
+                                        至to   <span><?php echo $splitted = date('Y', strtotime($row5->emp_end_date));?></span> 年 <span><?php echo $splitted = date('m', strtotime($row5->emp_end_date));?></span> 月 
                                         </td>
                                     </tr>
                                     <?php } ?>
@@ -391,8 +391,8 @@ $html = '
                                     <td style="font-size: 11px; text-align: center;height:39px;font-size:14px;"><?php echo $row6->fam_relationship?></td>
                                     <td style="font-size: 12px; text-align: center;height:39px;font-size:14px;"><?php echo $row6->fam_name?></td>
                                     <td style="font-size: 11px; text-align: center;border-left: none;height:39px;font-size:14px;"><?php echo $row6->fam_age?></td>
-                                    <td style="font-size: 11px; text-align: center;height:39px;font-size:14px;"><?php echo $row6->address?></td>
-                                    <td style="font-size: 11px; text-align: center;height:39px;font-size:14px;"><?php echo $row6->occupation?></td>
+                                    <td style="font-size: 11px; text-align: center;height:39px;font-size:14px;"><?php echo $row6->fam_address?></td>
+                                    <td style="font-size: 11px; text-align: center;height:39px;font-size:14px;"><?php echo $row6->fam_occupation?></td>
                                 </tr>
                                 <?php } ?>
                         </table>  

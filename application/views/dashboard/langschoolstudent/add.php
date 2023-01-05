@@ -235,8 +235,8 @@ $(function() {
     <?php echo form_label('Gender', 'gender', array( 'class' => 'form-control-label', 'id'=> '')); ?>
     <span class="badge badge-danger">Required</span>
     <select name="gender" id="gender" class="admission_select">
-      <option value="1">Male</option>
-      <option value="0">Female</option>
+      <option value="M">M</option>
+      <option value="F">F</option>
     </select>
   </div> 
   <div class="form-group">
@@ -348,8 +348,8 @@ $(function() {
   <div class="form-group">
     <?php echo form_label('Have you visited Japan?', 'have_you_visited_jp', array( 'class' => 'form-control-label', 'id'=> '')); ?>
     <select name="have_you_visited_jp" id="have_you_visited_jp" class="admission_select">
-        <option value="1">Yes</option>
-        <option value="0">No</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
     </select>
   </div>
   <div class="form-group">
@@ -425,8 +425,8 @@ $(function() {
   <div class="form-group">
     <?php echo form_label('Departure by deportation / departure order or not', 'departure_deportation', array( 'class' => 'form-control-label', 'id'=> '')); ?>
     <select name="departure_deportation" id="departure_deportation" class="admission_select">
-        <option value="1">Yes</option>
-        <option value="0">No</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
     </select>
   </div>
   <div class="form-group">
@@ -630,18 +630,18 @@ $(function() {
 <!-- rightside -->
 <div class="col-md-6 float-left">
   <div class="form-group">
-    <?php echo form_label('Occupation', 'occupation', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'phone')); ?>
+    <?php echo form_label('Occupation', 'std_occupation', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'phone')); ?>
     <?php
       echo form_input(array(
-        'name' => 'occupation',
+        'name' => 'std_occupation',
         'type' => 'text',
-        'value' => html_escape(set_value('occupation',isset($result)?$result->phone:''), ENT_QUOTES),
+        'value' => html_escape(set_value('std_occupation',isset($result)?$result->std_occupation:''), ENT_QUOTES),
         'placeholder' => 'Please Enter!',
         'class' => 'form-control',
-        'id' => 'occupation',
+        'id' => 'std_occupation',
         'autocomplete' => ''));
     ?>
-    <span class="text-danger"><?php echo form_error('occupation'); ?></span>
+    <span class="text-danger"><?php echo form_error('std_occupation'); ?></span>
   </div>
   <div class="form-group">
     <?php echo form_label('Place of Employment or School', 'place_employment_school', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'phone')); ?>
@@ -743,8 +743,8 @@ $(function() {
   <div class="form-group">
     <?php echo form_label('Passport', 'passport', array( 'class' => 'passport_text', 'id'=> '')); ?>
     <select name="passport" id="passport" class="admission_select">
-        <option value="1">Yes</option>
-        <option value="0">No</option>
+        <option value="I have">Yes</option>
+        <option value="I do not have">No</option>
     </select>
   </div>
   <div class="form-group">
@@ -811,8 +811,8 @@ $(function() {
   <div class="form-group">
     <?php echo form_label('Blank period／Military service', 'military_service', array( 'class' => 'military_txt', 'id'=> '')); ?>
     <select name="military_service" id="military_service" class="admission_select">
-        <option value="1">Yes</option>
-        <option value="0">No</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
     </select>
   </div>
   <div class="form-group">
@@ -846,8 +846,8 @@ $(function() {
   <div class="form-group">
     <?php echo form_label('Accompanying Persons,if Any', 'accompanying_person', array( 'class' => 'form-control-label', 'id'=> '')); ?>
     <select name="accompanying_person" id="accompanying_person" class="admission_select">
-        <option value="1">Yes</option>
-        <option value="0">No</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
     </select>
   </div>
   <div class="form-group">
@@ -867,8 +867,8 @@ $(function() {
   <div class="form-group">
     <?php echo form_label('Did you apply before in Japan?', 'school_apply_before_japan', array( 'class' => 'form-control-label','style' => '', 'id'=> '')); ?>
     <select name="school_apply_before_japan" id="school_apply_before_japan" class="admission_select">
-        <option value="1">Yes</option>
-        <option value="0">No</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
     </select>
   </div>
   <div class="form-group">
@@ -955,7 +955,7 @@ $(function() {
     <?php
       echo form_input(array(
         'name' => 'graduate_date',
-        'type' => 'date',
+        'type' => 'text',
         'value' => html_escape(set_value('graduate_date',isset($result)?$result->graduate_date:''), ENT_QUOTES),
         'placeholder' => 'Please Enter!',
         'class' => 'form-control',
@@ -968,8 +968,8 @@ $(function() {
     <?php echo form_label('Have you ever experienced COE rejection?', 'COE_reject', array( 'class' => 'form-control-label','style' => 'margin-bottom: 4px;', 'id'=> '')); ?>
     <span class="badge badge-danger">Required</span>
     <select name="COE_reject" id="COE_reject" class="admission_select">
-        <option value="1">Yes</option>
-        <option value="0">No</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
     </select>
   </div>
   <div class="form-group">
@@ -1048,16 +1048,16 @@ $(function() {
     <?php echo form_label('Is it possible to provide in English? ', 'provide_english', array( 'class' => 'form-control-label', 'id'=> '')); ?>
     <span class="badge badge-danger">Required</span>
     <select name="provide_english" id="provide_english" class="admission_select">
-        <option value="1">Yes</option>
-        <option value="0">No</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
     </select>
   </div>
   <div class="form-group">
     <?php echo form_label('Are you allergic to any medicine or foods?', 'allergic_medicine', array( 'class' => 'form-control-label','style' => 'margin-bottom: 6px;', 'id'=> '')); ?>
     <span class="badge badge-danger">Required</span>
     <select name="allergic_medicine" id="allergic_medicine" class="admission_select">
-        <option value="1">Yes</option>
-        <option value="0">No</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
     </select>
   </div>
   <div class="form-group">
@@ -1105,8 +1105,8 @@ $(function() {
     <?php echo form_label('Criminal Record in Japan or Overseas', 'criminal_record', array( 'class' => 'form-control-label', 'id'=> '')); ?>
     <span class="badge badge-danger">Required</span>
       <select name="criminal_record" id="criminal_record" class="admission_select">
-          <option value="1">Yes</option>
-          <option value="0">No</option>
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
       </select>
   </div>
   <div class="criminal form-group float-left">
@@ -1117,8 +1117,8 @@ $(function() {
     <div class="radio_record">
       <div class="criminal_record01">
         <select name="eligibility_have" id="eligibility_have" class="col-md-12 admission_select">
-            <option value="1">Yes</option>
-            <option value="0">No</option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
         </select>
       </div>
       <div>
@@ -2040,12 +2040,13 @@ $(function() {
 
 </div>
 <!-- Table -->
+
 <!-- Table -->
 <div class="col-md-12 float-left">
   <h6 class="" style="padding: 33px 0px 12px;">Previous Japanese Language Study</h6>
   <select name="jplearn_experience" id="jplearn_experience" class="planning_select" style="margin-top: 0px;margin-bottom: 20px;">
-          <option value="1">Yes</option>
-          <option value="0">No</option>
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
   </select>
   <div class="tbl">
     <table class="table-bordered" name="applicant_id">
@@ -2228,6 +2229,7 @@ $(function() {
 
 </div>
 <!-- Table -->
+
 <!-- Table -->
 <div class="col-md-8 float-left">
   <h6 class="" style="padding: 33px 0px 12px;">Achievement in JP language tests</h6>
@@ -2252,7 +2254,7 @@ $(function() {
           <input type="text" class=" table-control"  name="achiv_level[]" value="">
           </td>
           <td>
-          <input type="text" class=" table-control"  name="achiv_exam_year[]" value="">
+          <input type="month" class=" table-control"  name="achiv_exam_year[]" value="">
           </td>
           <td>
           <input type="text" class=" table-control"  name="achiv_score[]" value="">
@@ -2309,8 +2311,8 @@ $(function() {
     <br>
     <p style="width: 40%;margin: 0;float: left;">Japanese Language Proficiency </p>
     <select name="jplearn_achievement" id="jplearn_achievement" class="planning_select" style="margin-top: 0px;margin-bottom: 20px;">
-            <option value="1">Yes</option>
-            <option value="0">No</option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
     </select>
     <div class="form-group">
             <?php echo form_label('Certificate Number','jp_certificate_number', array('class' => '')); ?>
@@ -2330,6 +2332,7 @@ $(function() {
   </div>
 </div>
 <!-- table -->
+
 <!-- table -->
 <div class="col-md-4 float-left">
   <h6 class="" style="padding: 33px 0px 12px;">Name of JP language tests going to take</h6>
@@ -2386,10 +2389,10 @@ $(function() {
 <div class="col-md-12 float-left">
   <h6 class="" style="padding: 33px 0px 12px;">History of Employment (Write in order, ending with the most recent employment.)</h6>
   <select name="employment_experience" id="employment_experience" class="planning_select" style="margin-top: 0px;margin-bottom: 20px;">
-          <option value="1">Yes</option>
-          <option value="0">No</option>
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
   </select>
-<div class="tbl">
+ <div class="tbl">
     <table class="table-bordered" name="applicant_id">
       <thead class="tbl_head">
         <tr>
@@ -2464,212 +2467,211 @@ $(function() {
         </tr>
       </tbody>
     </table>
-</div>
+ </div>
 </div>
 <!-- Table -->
 
 <!-- Table -->
 <div class="col-md-12 float-left">
-<h6 class="" style="padding: 33px 0px 12px;">Family Member</h6>
-<div class="tbl">
-<table class="table-bordered" name="applicant_id">
-  <thead class="tbl_head">
-    <tr>
-      <th>Name</th>
-      <th>Age</th>
-      <th>Gender</th>
-      <th>Relationship	</th>
-      <th>Nationality	</th>
-      <th>Work Place	</th>
-      <th>Date Of Birth</th>
-      <th >Occupation </th>
-      <th>Annual Income</th>
-      <th>Address</th>
-      <th>Length of service</th>
-    </tr>
-  </thead>
-  <tbody>
-    
-    <tr>
-      <td>
-      <input type="text" class=" table-control"  name="fam_name[]" value="">
-      </td>
-      <td>
-      <input type="text" class=" table-control"  name="fam_age[]" value="">
-      </td>
-      <td>
-      <input type="text" class=" table-control"  name="fam_gender[]" value="">
-      </td>
-      <td>
-      <input type="text" class=" table-control"  name="fam_relationship[]" value="">
-      </td>
-      <td>
-      <input type="text" class=" table-control"  name="fam_nationality[]" value="">
-      </td>
-      <td>
-      <input type="text" class=" table-control"  name="fam_work_place[]" value="">
-      </td>
-      <td>
-      <input type="date" class=" table-control"  name="fam_birthday[]" value="">
-      </td>
-      <td>
-      <input type="text" class=" table-control"  name="fam_occupation[]" value="">
-      </td>
-      <td>
-      <input type="text" class=" table-control"  name="fam_annual_income[]" value="">
-      </td>
-      <td>
-      <input type="text" class=" table-control " name="fam_address[]" value="">
-      </td>
-      <td>
-      <input type="text" class=" table-control" name="fam_length_sevice[]" value="">
-      </td>
-    </tr>
-    <tr>
-    <td>
-      <input type="text" class=" table-control"  name="fam_name[]" value="">
-      </td>
-      <td>
-      <input type="text" class=" table-control"  name="fam_age[]" value="">
-      </td>
-      <td>
-      <input type="text" class=" table-control"  name="fam_gender[]" value="">
-      </td>
-      <td>
-      <input type="text" class=" table-control"  name="fam_relationship[]" value="">
-      </td>
-      <td>
-      <input type="text" class=" table-control"  name="fam_nationality[]" value="">
-      </td>
-      <td>
-      <input type="text" class=" table-control"  name="fam_work_place[]" value="">
-      </td>
-      <td>
-      <input type="date" class=" table-control"  name="fam_birthday[]" value="">
-      </td>
-      <td>
-      <input type="text" class=" table-control"  name="fam_occupation[]" value="">
-      </td>
-      <td>
-      <input type="text" class=" table-control"  name="fam_annual_income[]" value="">
-      </td>
-      <td>
-      <input type="text" class=" table-control " name="fam_address[]" value=""> 
-      </td>
-      <td>
-      <input type="text" class=" table-control" name="fam_length_sevice[]" value="">
-      </td>
-    </tr>
-    <tr>
-    <td>
-      <input type="text" class=" table-control"  name="fam_name[]" value="">
-      </td>
-      <td>
-      <input type="text" class=" table-control"  name="fam_age[]" value="">
-      </td>
-      <td>
-      <input type="text" class=" table-control"  name="fam_gender[]" value="">
-      </td>
-      <td>
-      <input type="text" class=" table-control"  name="fam_relationship[]" value="">
-      </td>
-      <td>
-      <input type="text" class=" table-control"  name="fam_nationality[]" value="">
-      </td>
-      <td>
-      <input type="text" class=" table-control"  name="fam_work_place[]" value="">
-      </td>
-      <td>
-      <input type="date" class=" table-control"  name="fam_birthday[]" value="">
-      </td>
-      <td>
-      <input type="text" class=" table-control"  name="fam_occupation[]" value="">
-      </td>
-      <td>
-      <input type="text" class=" table-control"  name="fam_annual_income[]" value="">
-      </td>
-      <td>
-      <input type="text" class=" table-control " name="fam_address[]" value=""> 
-      </td>
-      <td>
-      <input type="text" class=" table-control" name="fam_length_sevice[]" value="">
-      </td>
-    </tr>
-    <tr>
-    <td>
-      <input type="text" class=" table-control"  name="fam_name[]" value="">
-      </td>
-      <td>
-      <input type="text" class=" table-control"  name="fam_age[]" value="">
-      </td>
-      <td>
-      <input type="text" class=" table-control"  name="fam_gender[]" value="">
-      </td>
-      <td>
-      <input type="text" class=" table-control"  name="fam_relationship[]" value="">
-      </td>
-      <td>
-      <input type="text" class=" table-control"  name="fam_nationality[]" value="">
-      </td>
-      <td>
-      <input type="text" class=" table-control"  name="fam_work_place[]" value="">
-      </td>
-      <td>
-      <input type="date" class=" table-control"  name="fam_birthday[]" value="">
-      </td>
-      <td>
-      <input type="text" class=" table-control"  name="fam_occupation[]" value="">
-      </td>
-      <td>
-      <input type="text" class=" table-control"  name="fam_annual_income[]" value="">
-      </td>
-      <td>
-      <input type="text" class=" table-control " name="fam_address[]" value=""> 
-      </td>
-      <td>
-      <input type="text" class=" table-control" name="fam_length_sevice[]" value="">
-      </td>
-    </tr>
-    <tr>
-    <td>
-      <input type="text" class=" table-control"  name="fam_name[]" value="">
-      </td>
-      <td>
-      <input type="text" class=" table-control"  name="fam_age[]" value="">
-      </td>
-      <td>
-      <input type="text" class=" table-control"  name="fam_gender[]" value="">
-      </td>
-      <td>
-      <input type="text" class=" table-control"  name="fam_relationship[]" value="">
-      </td>
-      <td>
-      <input type="text" class=" table-control"  name="fam_nationality[]" value="">
-      </td>
-      <td>
-      <input type="text" class=" table-control"  name="fam_work_place[]" value="">
-      </td>
-      <td>
-      <input type="date" class=" table-control"  name="fam_birthday[]" value="">
-      </td>
-      <td>
-      <input type="text" class=" table-control"  name="fam_occupation[]" value="">
-      </td>
-      <td>
-      <input type="text" class=" table-control"  name="fam_annual_income[]" value="">
-      </td>
-      <td>
-      <input type="text" class=" table-control " name="fam_address[]" value=""> 
-      </td>
-      <td>
-      <input type="text" class=" table-control" name="fam_length_sevice[]" value="">
-      </td>
-    </tr>
-  </tbody>
-</table>
-</div>
-<br>
-<div class="col-md-6">
+ <h6 class="" style="padding: 33px 0px 12px;">Family Member</h6>
+  <div class="tbl">
+    <table class="table-bordered" name="applicant_id">
+      <thead class="tbl_head">
+        <tr>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Gender</th>
+          <th>Relationship	</th>
+          <th>Nationality	</th>
+          <th>Work Place	</th>
+          <th>Date Of Birth</th>
+          <th >Occupation </th>
+          <th>Annual Income</th>
+          <th>Address</th>
+          <th>Length of service</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+          <input type="text" class=" table-control"  name="fam_name[]" value="">
+          </td>
+          <td>
+          <input type="text" class=" table-control"  name="fam_age[]" value="">
+          </td>
+          <td>
+          <input type="text" class=" table-control"  name="fam_gender[]" value="">
+          </td>
+          <td>
+          <input type="text" class=" table-control"  name="fam_relationship[]" value="">
+          </td>
+          <td>
+          <input type="text" class=" table-control"  name="fam_nationality[]" value="">
+          </td>
+          <td>
+          <input type="text" class=" table-control"  name="fam_work_place[]" value="">
+          </td>
+          <td>
+          <input type="date" class=" table-control"  name="fam_birthday[]" value="">
+          </td>
+          <td>
+          <input type="text" class=" table-control"  name="fam_occupation[]" value="">
+          </td>
+          <td>
+          <input type="text" class=" table-control"  name="fam_annual_income[]" value="">
+          </td>
+          <td>
+          <input type="text" class=" table-control " name="fam_address[]" value="">
+          </td>
+          <td>
+          <input type="text" class=" table-control" name="fam_length_sevice[]" value="">
+          </td>
+        </tr>
+        <tr>
+        <td>
+          <input type="text" class=" table-control"  name="fam_name[]" value="">
+          </td>
+          <td>
+          <input type="text" class=" table-control"  name="fam_age[]" value="">
+          </td>
+          <td>
+          <input type="text" class=" table-control"  name="fam_gender[]" value="">
+          </td>
+          <td>
+          <input type="text" class=" table-control"  name="fam_relationship[]" value="">
+          </td>
+          <td>
+          <input type="text" class=" table-control"  name="fam_nationality[]" value="">
+          </td>
+          <td>
+          <input type="text" class=" table-control"  name="fam_work_place[]" value="">
+          </td>
+          <td>
+          <input type="date" class=" table-control"  name="fam_birthday[]" value="">
+          </td>
+          <td>
+          <input type="text" class=" table-control"  name="fam_occupation[]" value="">
+          </td>
+          <td>
+          <input type="text" class=" table-control"  name="fam_annual_income[]" value="">
+          </td>
+          <td>
+          <input type="text" class=" table-control " name="fam_address[]" value=""> 
+          </td>
+          <td>
+          <input type="text" class=" table-control" name="fam_length_sevice[]" value="">
+          </td>
+        </tr>
+        <tr>
+        <td>
+          <input type="text" class=" table-control"  name="fam_name[]" value="">
+          </td>
+          <td>
+          <input type="text" class=" table-control"  name="fam_age[]" value="">
+          </td>
+          <td>
+          <input type="text" class=" table-control"  name="fam_gender[]" value="">
+          </td>
+          <td>
+          <input type="text" class=" table-control"  name="fam_relationship[]" value="">
+          </td>
+          <td>
+          <input type="text" class=" table-control"  name="fam_nationality[]" value="">
+          </td>
+          <td>
+          <input type="text" class=" table-control"  name="fam_work_place[]" value="">
+          </td>
+          <td>
+          <input type="date" class=" table-control"  name="fam_birthday[]" value="">
+          </td>
+          <td>
+          <input type="text" class=" table-control"  name="fam_occupation[]" value="">
+          </td>
+          <td>
+          <input type="text" class=" table-control"  name="fam_annual_income[]" value="">
+          </td>
+          <td>
+          <input type="text" class=" table-control " name="fam_address[]" value=""> 
+          </td>
+          <td>
+          <input type="text" class=" table-control" name="fam_length_sevice[]" value="">
+          </td>
+        </tr>
+        <tr>
+        <td>
+          <input type="text" class=" table-control"  name="fam_name[]" value="">
+          </td>
+          <td>
+          <input type="text" class=" table-control"  name="fam_age[]" value="">
+          </td>
+          <td>
+          <input type="text" class=" table-control"  name="fam_gender[]" value="">
+          </td>
+          <td>
+          <input type="text" class=" table-control"  name="fam_relationship[]" value="">
+          </td>
+          <td>
+          <input type="text" class=" table-control"  name="fam_nationality[]" value="">
+          </td>
+          <td>
+          <input type="text" class=" table-control"  name="fam_work_place[]" value="">
+          </td>
+          <td>
+          <input type="date" class=" table-control"  name="fam_birthday[]" value="">
+          </td>
+          <td>
+          <input type="text" class=" table-control"  name="fam_occupation[]" value="">
+          </td>
+          <td>
+          <input type="text" class=" table-control"  name="fam_annual_income[]" value="">
+          </td>
+          <td>
+          <input type="text" class=" table-control " name="fam_address[]" value=""> 
+          </td>
+          <td>
+          <input type="text" class=" table-control" name="fam_length_sevice[]" value="">
+          </td>
+        </tr>
+        <tr>
+        <td>
+          <input type="text" class=" table-control"  name="fam_name[]" value="">
+          </td>
+          <td>
+          <input type="text" class=" table-control"  name="fam_age[]" value="">
+          </td>
+          <td>
+          <input type="text" class=" table-control"  name="fam_gender[]" value="">
+          </td>
+          <td>
+          <input type="text" class=" table-control"  name="fam_relationship[]" value="">
+          </td>
+          <td>
+          <input type="text" class=" table-control"  name="fam_nationality[]" value="">
+          </td>
+          <td>
+          <input type="text" class=" table-control"  name="fam_work_place[]" value="">
+          </td>
+          <td>
+          <input type="date" class=" table-control"  name="fam_birthday[]" value="">
+          </td>
+          <td>
+          <input type="text" class=" table-control"  name="fam_occupation[]" value="">
+          </td>
+          <td>
+          <input type="text" class=" table-control"  name="fam_annual_income[]" value="">
+          </td>
+          <td>
+          <input type="text" class=" table-control " name="fam_address[]" value=""> 
+          </td>
+          <td>
+          <input type="text" class=" table-control" name="fam_length_sevice[]" value="">
+          </td>
+        </tr>
+      </tbody>
+    </table>
+ </div>
+  <br>
+ <div class="col-md-6">
   <label>Please attach the picture of you and your family below this</label>
     <div class="col-md-6" style="width: 100%;padding-left:0px;padding-right: 0px;">
       <?php
@@ -2686,38 +2688,35 @@ $(function() {
   <span class="text-danger"><?php echo form_error('familyfile'); ?></span>
   </div>
 </div>
-
 <!-- Table -->
 
 <!-- Table -->
 <div class="col-md-12 float-left">
-<h6 class="" style="padding: 33px 0px 12px;">Family in Japan (Father, Mother, Spouse, Child, Brother and Sisters, or Others) :</h6>
-<select name="family_in_japan" id="family_in_japan" class="planning_select" style="margin-top: 0px;margin-bottom: 20px;">
-        <option value="1">Yes</option>
-        <option value="0">No</option>
-    </select>
-<p >If yes, fill in all the family members in Japan.</p>
-<div class="tbl">
-<table class="table-bordered" name="applicant_id">
-  <thead class="tbl_head">
+ <h6 class="" style="padding: 33px 0px 12px;">Family in Japan (Father, Mother, Spouse, Child, Brother and Sisters, or Others) :</h6>
+  <select name="family_in_japan" id="family_in_japan" class="planning_select" style="margin-top: 0px;margin-bottom: 20px;">
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+  </select>
+  <p >If yes, fill in all the family members in Japan.</p>
+  <div class="tbl">
+  <table class="table-bordered" name="applicant_id">
+    <thead class="tbl_head">
+      <tr>
+        <th>Name</th>
+        <th>Date Of Birth	</th>
+        <th>Address</th>
+        <th>Age	</th>
+        <th>Relatonship</th>
+        <th>Residing with Applicant or Not	</th>
+        <th>Residing Card No	</th>
+        <th >Nationality </th>
+        <th>Visa status	</th>
+        <th>Work Place	</th>
+        <th>Certificate of Alien Registration No</th>
+      </tr>
+    </thead>
+    <tbody>
     <tr>
-      <th>Name</th>
-      <th>Date Of Birth	</th>
-      <th>Address</th>
-      <th>Age	</th>
-      <th>Relatonship</th>
-      <th>Residing with Applicant or Not	</th>
-      <th>Residing Card No	</th>
-      <th >Nationality </th>
-      <th>Visa status	</th>
-      <th>Work Place	</th>
-      <th>Certificate of Alien Registration No</th>
-    </tr>
-  </thead>
-  <tbody>
-    
-    <tr>
-      
       <td>
       <input type="text" class=" table-control"  name="ja_fam_name[]" value="">
       </td>
@@ -2737,8 +2736,90 @@ $(function() {
       <div class="">
       <select name="ja_fam_residing_applicant[]" class="table-control col-md-12">
             <option value=""></option>
-            <option value="0">Yes</option>
-            <option value="1">No</option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+     </div>
+      </td>
+      <td>
+      <input type="text" class=" table-control"  name="residence_card_no[]" value="">
+      </td>
+      <td>
+      <input type="text" class=" table-control"  name="ja_fam_nationality[]" value="">
+      </td>
+      <td>
+      <input type="text" class=" table-control " name="ja_fam_visa_status[]" value="">
+      </td>
+      <td>
+      <input type="text" class=" table-control" name="ja_fam_work_place[]" value="">
+      </td>
+      <td>
+      <input type="text" class=" table-control" name="ja_certificate_alien[]" value="">
+      </td>
+    </tr>
+    <tr>
+      <td>
+      <input type="text" class=" table-control"  name="ja_fam_name[]" value="">
+      </td>
+      <td>
+      <input type="date" class=" table-control"  name="ja_fam_date_birth[]" value="">
+      </td>
+      <td>
+      <input type="text" class=" table-control"  name="ja_fam_address[]" value="">
+      </td>
+      <td>
+      <input type="text" class=" table-control"  name="ja_fam_age[]" value="">
+      </td>
+      <td>
+      <input type="text" class=" table-control"  name="ja_fam_relationship[]" value="">
+      </td>
+      <td>
+      <div class="">
+      <select name="ja_fam_residing_applicant[]" class="table-control col-md-12">
+            <option value=""></option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+     </div>
+      </td>
+      <td>
+      <input type="text" class=" table-control"  name="residence_card_no[]" value="">
+      </td>
+      <td>
+      <input type="text" class=" table-control"  name="ja_fam_nationality[]" value="">
+      </td>
+      <td>
+      <input type="text" class=" table-control " name="ja_fam_visa_status[]" value="">
+      </td>
+      <td>
+      <input type="text" class=" table-control" name="ja_fam_work_place[]" value="">
+      </td>
+      <td>
+      <input type="text" class=" table-control" name="ja_certificate_alien[]" value="">
+      </td>
+    </tr>
+    <tr>
+      <td>
+      <input type="text" class=" table-control"  name="ja_fam_name[]" value="">
+      </td>
+      <td>
+      <input type="date" class=" table-control"  name="ja_fam_date_birth[]" value="">
+      </td>
+      <td>
+      <input type="text" class=" table-control"  name="ja_fam_address[]" value="">
+      </td>
+      <td>
+      <input type="text" class=" table-control"  name="ja_fam_age[]" value="">
+      </td>
+      <td>
+      <input type="text" class=" table-control"  name="ja_fam_relationship[]" value="">
+      </td>
+      <td>
+      <div class="">
+      <select name="ja_fam_residing_applicant[]" class="table-control col-md-12">
+            <option value=""></option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
         </select>
      </div>
       </td>
@@ -2779,92 +2860,8 @@ $(function() {
       <div class="">
       <select name="ja_fam_residing_applicant[]" class="table-control col-md-12">
             <option value=""></option>
-            <option value="0">Yes</option>
-            <option value="1">No</option>
-        </select>
-     </div>
-      </td>
-      <td>
-      <input type="text" class=" table-control"  name="residence_card_no[]" value="">
-      </td>
-      <td>
-      <input type="text" class=" table-control"  name="ja_fam_nationality[]" value="">
-      </td>
-      <td>
-      <input type="text" class=" table-control " name="ja_fam_visa_status[]" value="">
-      </td>
-      <td>
-      <input type="text" class=" table-control" name="ja_fam_work_place[]" value="">
-      </td>
-      <td>
-      <input type="text" class=" table-control" name="ja_certificate_alien[]" value="">
-      </td>
-    </tr>
-    <tr>
-      
-      <td>
-      <input type="text" class=" table-control"  name="ja_fam_name[]" value="">
-      </td>
-      <td>
-      <input type="date" class=" table-control"  name="ja_fam_date_birth[]" value="">
-      </td>
-      <td>
-      <input type="text" class=" table-control"  name="ja_fam_address[]" value="">
-      </td>
-      <td>
-      <input type="text" class=" table-control"  name="ja_fam_age[]" value="">
-      </td>
-      <td>
-      <input type="text" class=" table-control"  name="ja_fam_relationship[]" value="">
-      </td>
-      <td>
-      <div class="">
-      <select name="ja_fam_residing_applicant[]" class="table-control col-md-12">
-            <option value=""></option>
-            <option value="0">Yes</option>
-            <option value="1">No</option>
-        </select>
-     </div>
-      </td>
-      <td>
-      <input type="text" class=" table-control"  name="residence_card_no[]" value="">
-      </td>
-      <td>
-      <input type="text" class=" table-control"  name="ja_fam_nationality[]" value="">
-      </td>
-      <td>
-      <input type="text" class=" table-control " name="ja_fam_visa_status[]" value="">
-      </td>
-      <td>
-      <input type="text" class=" table-control" name="ja_fam_work_place[]" value="">
-      </td>
-      <td>
-      <input type="text" class=" table-control" name="ja_certificate_alien[]" value="">
-      </td>
-    </tr>
-    <tr>
-      
-      <td>
-      <input type="text" class=" table-control"  name="ja_fam_name[]" value="">
-      </td>
-      <td>
-      <input type="date" class=" table-control"  name="ja_fam_date_birth[]" value="">
-      </td>
-      <td>
-      <input type="text" class=" table-control"  name="ja_fam_address[]" value="">
-      </td>
-      <td>
-      <input type="text" class=" table-control"  name="ja_fam_age[]" value="">
-      </td>
-      <td>
-      <input type="text" class=" table-control"  name="ja_fam_relationship[]" value="">
-      </td>
-      <td>
-      <div class="">
-      <select name="ja_fam_residing_applicant[]" class="table-control col-md-12">
-            <option value=""></option>
-            <option value="0">Yes</option>
-            <option value="1">No</option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
         </select>
      </div>
       </td>
@@ -2886,14 +2883,14 @@ $(function() {
     </tr>
     
   </tbody>
-</table>
-</div>
-<br>
-<div class="form-group">
+ </table>
+ </div>
+ <br>
+ <div class="form-group">
   <?php echo form_label('Are you planning to stay with them in Japan? : ', 'ja_plan_to_stay_with_them', array( 'class' => 'form-control-label', 'id'=> '')); ?><br/>
     <select name="ja_plan_to_stay_with_them" id="ja_plan_to_stay_with_them" class="planning_select">
-        <option value="1">Yes</option>
-        <option value="0">No</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
     </select>
   </div>
   <div class="form-group">
@@ -2914,14 +2911,15 @@ $(function() {
           echo form_textarea($data); ?>
           <span class="text-danger"><?php echo form_error('family_inJpfri'); ?></span>
   </div>
-</div>
+ </div>
 </div>
 <!-- Table -->
+
 <!-- Table -->
 <div class="col-md-12 float-left" style="padding-bottom: 15px;">
-<h6 class="" style="padding: 33px 0px 12px;">Previous stay in Japan</h6>
-<div class="tbl">
-<table class="table-bordered" name="applicant_id">
+ <h6 class="" style="padding: 33px 0px 12px;">Previous stay in Japan</h6>
+ <div class="tbl">
+ <table class="table-bordered" name="applicant_id">
   <thead class="tbl_head">
     <tr>
       <th>Date of Entry	</th>
@@ -2974,10 +2972,10 @@ $(function() {
       </td>
     </tr>
   </tbody>
-</table>
-</div>
-<br>
-<div class="form-group">
+ </table>
+ </div>
+ <br>
+  <div class="form-group">
         <?php echo form_label('If you have stayed in Japan more than four times, please use the blank below.', 'japan_four_times', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'japan_four_times')); ?>
         <span class="badge badge-danger">Required</span>
         <?php
@@ -2991,57 +2989,55 @@ $(function() {
             'autocomplete' => ''));
         ?>
         <span class="text-danger"><?php echo form_error('japan_four_times'); ?></span>
-       </div>
+  </div>
 </div>
 <!-- Table -->
-
-
 
 <!-- Table -->
 <div class="col-md-12 float-left" style="padding-bottom: 15px;">
-<h6 class="" style="padding: 20px 0px 12px;">Have you ever been japan (Including 3 moth short visa)</h6>
-<div class="tbl">
-<table class="table-bordered" name="applicant_id">
-  <thead class="tbl_head">
-    <tr>
-      <th>Purpose	</th>
-      <th>Status	</th>
-      <th>Period of Stay </th>
-      <th >Preparation	 </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>
-      <input type="text" class=" table-control"  name="shortVisa_purpose[]" value="">
-      </td>
-      <td>
-      <input type="text" class=" table-control"  name="shortVisa_status[]" value="">
-      </td>
-      <td>
-      <input type="month" class=" table-control"  name="shortVisa_period[]" value="">
-      </td>
-      <td>
-      <input type="text" class=" table-control"  name="shortVisa_prepare[]" value="">
-      </td>
-    </tr>
-    <tr>
-      <td>
-      <input type="text" class=" table-control"  name="shortVisa_purpose[]" value="">
-      </td>
-      <td>
-      <input type="text" class=" table-control"  name="shortVisa_status[]" value="">
-      </td>
-      <td>
-      <input type="month" class=" table-control"  name="shortVisa_period[]" value="">
-      </td>
-      <td>
-      <input type="text" class=" table-control"  name="shortVisa_prepare[]" value="">
-      </td>
-    </tr>
-  </tbody>
-</table>
-</div>
+  <h6 class="" style="padding: 20px 0px 12px;">Have you ever been japan (Including 3 moth short visa)</h6>
+  <div class="tbl">
+  <table class="table-bordered" name="applicant_id">
+    <thead class="tbl_head">
+      <tr>
+        <th>Purpose	</th>
+        <th>Status	</th>
+        <th>Period of Stay </th>
+        <th >Preparation	 </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+        <input type="text" class=" table-control"  name="shortVisa_purpose[]" value="">
+        </td>
+        <td>
+        <input type="text" class=" table-control"  name="shortVisa_status[]" value="">
+        </td>
+        <td>
+        <input type="month" class=" table-control"  name="shortVisa_period[]" value="">
+        </td>
+        <td>
+        <input type="text" class=" table-control"  name="shortVisa_prepare[]" value="">
+        </td>
+      </tr>
+      <tr>
+        <td>
+        <input type="text" class=" table-control"  name="shortVisa_purpose[]" value="">
+        </td>
+        <td>
+        <input type="text" class=" table-control"  name="shortVisa_status[]" value="">
+        </td>
+        <td>
+        <input type="month" class=" table-control"  name="shortVisa_period[]" value="">
+        </td>
+        <td>
+        <input type="text" class=" table-control"  name="shortVisa_prepare[]" value="">
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
 </div>
 <!-- Table -->
 
@@ -3051,114 +3047,107 @@ $(function() {
 <!-- dropdown APPLICANT INFORMATION -->
 <style>
   .appl_ttl {
-    padding: 16px;
-    text-align: center;
-}
-.addmission{
-  padding: 0px;
-  /* margin: 0px; */
-}
-.admission_select{
-  width: 100%;
-  padding: 8px;
-  /* margin: 7px; */
-  border: 1px solid #ced4db;
-  border-radius: 3px;
-}
-.course_select{
-  width: 49%;
-  padding: 8px;
-  /* margin: 7px; */
-  border: 1px solid #ced4db;
-  border-radius: 3px;
-}
-.planning_select {
-    width: 30%;
-    margin: 12px 0px;
-    padding: 8px;
-    border: 1px solid #ced4db;
-    border-radius: 3px;
-}
-#expected_year {
-    margin-left: 17px;
-    width: 40%;
-}
-#expected_month{
-  width: 40%;
-
-}
-.graduating_month_year{
-  display: flex;
-}
-.expected_txt{
-  padding-left: 22px;
-  font-size: 17px;
-  margin-bottom: 0px;
-  margin-top: 11px;
-}
-.col-rd{
-  margin: 0px 50px 0px 0px;
-}
-.details {
-    padding: 8px 10px 7px 9px;
-    border: 1px solid #ced4db;
-    border-radius: 3px;
-    margin: 0px 54px 12px 27px;
-}
-.employment{
-  padding-bottom: 12px;
-}
-.radio_record{
-  width: 100%;
-  /* margin-bottom: 20px; */
-  display: flex;
-}
-.criminal{
-  /* padding-left: 12px; */
-  width: 100%;
-}
-.cri_text{
-  display: flex;
-}
-.muti_txt{
-  margin-right: 0px;
-}
-.appli{
-  margin-left: 11px;
-
-}
-.table-control{
-  width: 100%;
-    border: none;
+      padding: 16px;
+      text-align: center;
   }
-  input.table-control.term{
-  width: 76% !important;
- }
- .strEnd{
-  text-align: center;
- }
-/* .tbl{
-   width: 100%;
-  } */
+  .addmission{
+    padding: 0px;
+    /* margin: 0px; */
+  }
+  .admission_select{
+    width: 100%;
+    padding: 8px;
+    /* margin: 7px; */
+    border: 1px solid #ced4db;
+    border-radius: 3px;
+  }
+  .course_select{
+    width: 49%;
+    padding: 8px;
+    /* margin: 7px; */
+    border: 1px solid #ced4db;
+    border-radius: 3px;
+  }
+  .planning_select {
+      width: 30%;
+      margin: 12px 0px;
+      padding: 8px;
+      border: 1px solid #ced4db;
+      border-radius: 3px;
+  }
+  #expected_year {
+      margin-left: 17px;
+      width: 40%;
+  }
+  #expected_month{
+    width: 40%;
 
-/* .term{
-  position: relative;
-} */
-.tbl_head{
-  text-align: center;
-}
-.table-bordered{
-  width: 100%;
-}
-.study_year{
-  margin-right: 0px;
-}
-.finial_ttl{
-  padding: 20px 12px;
-}
-.radio .col-md-2{
-  padding: 0px;
-}
+  }
+  .graduating_month_year{
+    display: flex;
+  }
+  .expected_txt{
+    padding-left: 22px;
+    font-size: 17px;
+    margin-bottom: 0px;
+    margin-top: 11px;
+  }
+  .col-rd{
+    margin: 0px 50px 0px 0px;
+  }
+  .details {
+      padding: 8px 10px 7px 9px;
+      border: 1px solid #ced4db;
+      border-radius: 3px;
+      margin: 0px 54px 12px 27px;
+  }
+  .employment{
+    padding-bottom: 12px;
+  }
+  .radio_record{
+    width: 100%;
+    /* margin-bottom: 20px; */
+    display: flex;
+  }
+  .criminal{
+    /* padding-left: 12px; */
+    width: 100%;
+  }
+  .cri_text{
+    display: flex;
+  }
+  .muti_txt{
+    margin-right: 0px;
+  }
+  .appli{
+    margin-left: 11px;
+
+  }
+  .table-control{
+    width: 100%;
+      border: none;
+    }
+    input.table-control.term{
+    width: 76% !important;
+  }
+  .strEnd{
+    text-align: center;
+  }
+  .tbl_head{
+    text-align: center;
+  }
+  .table-bordered{
+    width: 100%;
+  }
+  .study_year{
+    margin-right: 0px;
+  }
+  .finial_ttl{
+    padding: 20px 12px;
+  }
+  .radio .col-md-2{
+    padding: 0px;
+  }
 
 </style>
 
@@ -3166,7 +3155,7 @@ $(function() {
 
 
 <!-- dropdown FINANICIAL SPONSOR -->
-<div class="content_detail">
+ <div class="content_detail">
   <input class="dropdown" type="checkbox" id="faq-3">
   <p class="drop_ttl"><label for="faq-3" class="drop_label">FINANICIAL SPONSOR</label></p>
   <div class="drop_txt">
@@ -3235,8 +3224,8 @@ $(function() {
           echo form_textarea($data); ?>
           <span class="text-danger"><?php echo form_error('address'); ?></span>
         </div>
-       </div>
-       <div class="form-group">
+      </div>
+      <div class="form-group">
         <?php echo form_label('Phone Number', 'tel', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'phone')); ?>
         <span class="badge badge-danger">Required</span>
         <?php
@@ -3250,8 +3239,8 @@ $(function() {
             'autocomplete' => ''));
         ?>
         <span class="text-danger"><?php echo form_error('tel'); ?></span>
-       </div>
-       <div class="form-group">
+      </div>
+      <div class="form-group">
         <?php echo form_label('Email', 'email', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'std_email')); ?>
         <span class="badge badge-danger">Required</span>
         <?php
@@ -3265,122 +3254,120 @@ $(function() {
             'autocomplete' => ''));
         ?>
         <span class="text-danger"><?php echo form_error('email'); ?></span>
-       </div>
-       <div class="form-group">
-      <?php echo form_label('Occupation', 'fin_occupation', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'fin_occupation')); ?>
-      <?php
-        echo form_input(array(
-          'name' => 'fin_occupation',
-          'type' => 'text',
-          'value' => html_escape(set_value('fin_occupation',isset($result)?$result->fin_occupation:''), ENT_QUOTES),
-          'placeholder' => 'Please Enter!',
-          'class' => 'form-control',
-          'id' => 'fin_occupation',
-          'autocomplete' => ''));
-      ?>
-      <span class="text-danger"><?php echo form_error('occupation'); ?></span>
+      </div>
+      <div class="form-group">
+        <?php echo form_label('Occupation', 'fin_occupation', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'fin_occupation')); ?>
+        <?php
+          echo form_input(array(
+            'name' => 'fin_occupation',
+            'type' => 'text',
+            'value' => html_escape(set_value('fin_occupation',isset($result)?$result->fin_occupation:''), ENT_QUOTES),
+            'placeholder' => 'Please Enter!',
+            'class' => 'form-control',
+            'id' => 'fin_occupation',
+            'autocomplete' => ''));
+        ?>
+        <span class="text-danger"><?php echo form_error('occupation'); ?></span>
+      </div>
+      <div class="form-group">
+        <?php echo form_label('Work Place', 'work_place', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'phone')); ?>
+        <?php
+          echo form_input(array(
+            'name' => 'work_place',
+            'type' => 'text',
+            'value' => html_escape(set_value('work_place',isset($result)?$result->work_place:''), ENT_QUOTES),
+            'placeholder' => 'Please Enter!',
+            'class' => 'form-control',
+            'id' => 'work_place',
+            'autocomplete' => ''));
+        ?>
+        <span class="text-danger"><?php echo form_error('fin_visa'); ?></span>
+      </div>
+      <div class="form-group">
+        <?php echo form_label('Visa', 'fin_visa', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'fin_visa')); ?>
+        <?php
+          echo form_input(array(
+            'name' => 'fin_visa',
+            'type' => 'text',
+            'value' => html_escape(set_value('work_place',isset($result)?$result->fin_visa:''), ENT_QUOTES),
+            'placeholder' => 'Please Enter!',
+            'class' => 'form-control',
+            'id' => 'fin_visa',
+            'autocomplete' => ''));
+        ?>
+        <span class="text-danger"><?php echo form_error('work_place'); ?></span>
+      </div>
+      <div class="form-group">
+        <?php echo form_label('Annual Income', 'annual_income', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'phone')); ?>
+        <?php
+          echo form_input(array(
+            'name' => 'annual_income',
+            'type' => 'text',
+            'value' => html_escape(set_value('annual_income',isset($result)?$result->annual_income:''), ENT_QUOTES),
+            'placeholder' => 'Please Enter!',
+            'class' => 'form-control',
+            'id' => 'annual_income',
+            'autocomplete' => ''));
+        ?>
+        <span class="text-danger"><?php echo form_error('annual_income'); ?></span>
+      </div>
+      <div class="form-group">
+        <?php echo form_label('The amount of saving for study abroad ', 'amount_saving_for_study_abroad', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'phone')); ?>
+        <?php
+          echo form_input(array(
+            'name' => 'amount_saving_for_study_abroad',
+            'type' => 'text',
+            'value' => html_escape(set_value('amount_saving_for_study_abroad',isset($result)?$result->amount_saving_for_study_abroad:''), ENT_QUOTES),
+            'placeholder' => 'Please Enter!',
+            'class' => 'form-control',
+            'id' => 'amount_saving_for_study_abroad',
+            'autocomplete' => ''));
+        ?>
+        <span class="text-danger"><?php echo form_error('amount_saving_for_study_abroad'); ?></span>
+      </div>
+      <div class="form-group">
+        <?php echo form_label('The amount of saving which can be proved ', 'amount_of_saving_which_proved', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'phone')); ?>
+        <?php
+          echo form_input(array(
+            'name' => 'amount_of_saving_which_proved',
+            'type' => 'text',
+            'value' => html_escape(set_value('amount_of_saving_which_proved',isset($result)?$result->amount_of_saving_which_proved:''), ENT_QUOTES),
+            'placeholder' => 'Please Enter!',
+            'class' => 'form-control',
+            'id' => 'amount_of_saving_which_proved',
+            'autocomplete' => ''));
+        ?>
+        <span class="text-danger"><?php echo form_error('amount_of_saving_which_proved'); ?></span>
+      </div>
+      <div class="form-group">
+        <?php echo form_label('Start of Work date', 'start_work_date', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'phone')); ?>
+        <?php
+          echo form_input(array(
+            'name' => 'start_work_date',
+            'type' => 'date',
+            'value' => html_escape(set_value('start_work_date',isset($result)?$result->start_work_date :''), ENT_QUOTES),
+            'placeholder' => 'Please Enter!',
+            'class' => 'form-control',
+            'id' => 'start_work_date ',
+            'autocomplete' => ''));
+        ?>
+       <span class="text-danger"><?php echo form_error('start_work_date'); ?></span>
+      </div>
   </div>
-  <div class="form-group">
-      <?php echo form_label('Work Place', 'work_place', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'phone')); ?>
-      <?php
-        echo form_input(array(
-          'name' => 'work_place',
-          'type' => 'text',
-          'value' => html_escape(set_value('work_place',isset($result)?$result->work_place:''), ENT_QUOTES),
-          'placeholder' => 'Please Enter!',
-          'class' => 'form-control',
-          'id' => 'work_place',
-          'autocomplete' => ''));
-      ?>
-      <span class="text-danger"><?php echo form_error('fin_visa'); ?></span>
-  </div>
-  <div class="form-group">
-      <?php echo form_label('Visa', 'fin_visa', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'fin_visa')); ?>
-      <?php
-        echo form_input(array(
-          'name' => 'fin_visa',
-          'type' => 'text',
-          'value' => html_escape(set_value('work_place',isset($result)?$result->fin_visa:''), ENT_QUOTES),
-          'placeholder' => 'Please Enter!',
-          'class' => 'form-control',
-          'id' => 'fin_visa',
-          'autocomplete' => ''));
-      ?>
-      <span class="text-danger"><?php echo form_error('work_place'); ?></span>
-  </div>
-  <div class="form-group">
-      <?php echo form_label('Annual Income', 'annual_income', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'phone')); ?>
-      <?php
-        echo form_input(array(
-          'name' => 'annual_income',
-          'type' => 'text',
-          'value' => html_escape(set_value('annual_income',isset($result)?$result->annual_income:''), ENT_QUOTES),
-          'placeholder' => 'Please Enter!',
-          'class' => 'form-control',
-          'id' => 'annual_income',
-          'autocomplete' => ''));
-      ?>
-      <span class="text-danger"><?php echo form_error('annual_income'); ?></span>
-  </div>
-  <div class="form-group">
-      <?php echo form_label('The amount of saving for study abroad ', 'amount_saving_for_study_abroad', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'phone')); ?>
-      <?php
-        echo form_input(array(
-          'name' => 'amount_saving_for_study_abroad',
-          'type' => 'text',
-          'value' => html_escape(set_value('amount_saving_for_study_abroad',isset($result)?$result->amount_saving_for_study_abroad:''), ENT_QUOTES),
-          'placeholder' => 'Please Enter!',
-          'class' => 'form-control',
-          'id' => 'amount_saving_for_study_abroad',
-          'autocomplete' => ''));
-      ?>
-      <span class="text-danger"><?php echo form_error('amount_saving_for_study_abroad'); ?></span>
-  </div>
-  <div class="form-group">
-      <?php echo form_label('The amount of saving which can be proved ', 'amount_of_saving_which_proved', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'phone')); ?>
-      <?php
-        echo form_input(array(
-          'name' => 'amount_of_saving_which_proved',
-          'type' => 'text',
-          'value' => html_escape(set_value('amount_of_saving_which_proved',isset($result)?$result->amount_of_saving_which_proved:''), ENT_QUOTES),
-          'placeholder' => 'Please Enter!',
-          'class' => 'form-control',
-          'id' => 'amount_of_saving_which_proved',
-          'autocomplete' => ''));
-      ?>
-      <span class="text-danger"><?php echo form_error('amount_of_saving_which_proved'); ?></span>
-  </div>
-  <div class="form-group">
-      <?php echo form_label('Start of Work date', 'start_work_date', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'phone')); ?>
-      <?php
-        echo form_input(array(
-          'name' => 'start_work_date',
-          'type' => 'date',
-          'value' => html_escape(set_value('start_work_date',isset($result)?$result->start_work_date :''), ENT_QUOTES),
-          'placeholder' => 'Please Enter!',
-          'class' => 'form-control',
-          'id' => 'start_work_date ',
-          'autocomplete' => ''));
-      ?>
-      <span class="text-danger"><?php echo form_error('start_work_date'); ?></span>
-  </div>
-  </div>
-</div>
+ </div>
 <!-- dropdown FINANICIAL SPONSOR -->
-<div class="clearfix"></div>
-          <hr class="my-4 dashed clearfix">
-
-          <div class="text-right">
-            <button type="submit" class="btn btn-primary text-white btn-sm py-1 px-2">
-              <span class="material-icons align-top md-18 mr-1">add_circle</span>Confirm
-            </button>
-            <button type="reset" class="btn btn-secondary text-white btn-sm py-1 px-2">
-              <span class="material-icons align-top md-18 mr-1">sync</span>Reset
-            </button>
-          </div>
-     
-</div>
-<?php echo form_close(); ?> 
+    <div class="clearfix"></div>
+        <hr class="my-4 dashed clearfix">
+        <div class="text-right">
+          <button type="submit" class="btn btn-primary text-white btn-sm py-1 px-2">
+            <span class="material-icons align-top md-18 mr-1">add_circle</span>Confirm
+          </button>
+          <button type="reset" class="btn btn-secondary text-white btn-sm py-1 px-2">
+            <span class="material-icons align-top md-18 mr-1">sync</span>Reset
+          </button>
+        </div>
+    </div>
+    <?php echo form_close(); ?> 
 </div>
 </div>
 </div>
@@ -3402,8 +3389,9 @@ $(function() {
   $("#clickImg").change(function () {
     filePreview(this,"#showImg1");
   });
-  </script>
-  <script>
+</script>
+
+<script>
   function filePreview(input,div){
   if (input.files && input.files[0]) {
       var reader = new FileReader();
@@ -3419,8 +3407,9 @@ $(function() {
     filePreview(this,"#showImg2");
   });
   
-  </script>
-  <script>
+</script>
+
+<script>
   function filePreview(input,div){
   if (input.files && input.files[0]) {
       var reader = new FileReader();
@@ -3435,115 +3424,115 @@ $(function() {
   $("#clickImage").change(function () {
     filePreview(this,"#showImg3");
   });
-  </script>
+</script>
 
 <style>
-label {
-    font-weight: initial;
-}   
-  .table-bordered thead th, .table-bordered thead td {
-    font-size: 15px;
-    font-weight: 400;
-    border-bottom-width: 2px;
-}
-input#clickImg {
-    /* width: 252px; */
-    padding: 3.5px;
-}
-.col-form-label {
-  width:49%;
-  padding-top: 7px;
-  padding-bottom: 10px;
-}
-.col-form-labels {
-  width:60%;
-  padding-top: 7px;
-  padding-bottom: 10px;
-}
-#showImg1 {
-    /* margin: 10px 140px 0px; */
-}
-div.content_detail{
-position: relative;
-margin:0 2em 1em;
-}
-.dropdown{
-position: absolute;
-left: 0;
-top: 0;
-/* height: 100%; */
-width: 100%;
-opacity:0;
-visibility: 0;
-}
-.drop_ttl{
-background:#f1797b;
-color:white;
-padding: 0.75rem 1.25rem;
-position: relative;
-margin: 0px;
-border: 1px solid rgba(0, 0, 0, 0.125);
-border-radius: 5px;
-}
-.drop_label::before {
-content: "";
-display: inline-block;
-border: 9px solid transparent;
-border-left: 10px solid white;
-}
-.drop_label{
+  label {
+      font-weight: initial;
+  }   
+    .table-bordered thead th, .table-bordered thead td {
+      font-size: 15px;
+      font-weight: 400;
+      border-bottom-width: 2px;
+  }
+  input#clickImg {
+      /* width: 252px; */
+      padding: 3.5px;
+  }
+  .col-form-label {
+    width:49%;
+    padding-top: 7px;
+    padding-bottom: 10px;
+  }
+  .col-form-labels {
+    width:60%;
+    padding-top: 7px;
+    padding-bottom: 10px;
+  }
+  #showImg1 {
+      /* margin: 10px 140px 0px; */
+  }
+  div.content_detail{
+  position: relative;
+  margin:0 2em 1em;
+  }
+  .dropdown{
+  position: absolute;
+  left: 0;
+  top: 0;
+  /* height: 100%; */
+  width: 100%;
+  opacity:0;
+  visibility: 0;
+  }
+  .drop_ttl{
+  background:#f1797b;
+  color:white;
+  padding: 0.75rem 1.25rem;
+  position: relative;
+  margin: 0px;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 5px;
+  }
+  .drop_label::before {
+  content: "";
+  display: inline-block;
+  border: 9px solid transparent;
+  border-left: 10px solid white;
+  }
+  .drop_label{
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  input:checked ~ p .drop_label::before {
+      margin-top: 5px;
+      margin-right: 5px;
+      border: 8px solid transparent;
+      border-top: 12px solid white;
+  }
+
+  .drop_label{
   cursor: pointer;
   position: relative;
   display: flex;
   align-items: center;
-}
-input:checked ~ p .drop_label::before {
-    margin-top: 5px;
-    margin-right: 5px;
-    border: 8px solid transparent;
-    border-top: 12px solid white;
-}
-
-.drop_label{
-cursor: pointer;
-position: relative;
-display: flex;
-align-items: center;
-margin-bottom: 0px;
-}
-div.drop_txt{
-max-height:0px;
-overflow: hidden;
-transition:max-height 0.9s;
-}
-/* div.drop_txt p {
-padding:2em;
-} */
-.dropdown:checked ~ .drop_ttl ~ div.drop_txt{
-max-height:100%;
-}
-a{
-color:#48a1af;
-}
-.school_select {
-    padding: 8px;
-    margin: 16px 5px 7px 0px;
-    border: 1px solid #ced4db;
-    border-radius: 3px;
-}
-.school_list{
-  width: 55%;
-  padding: 5px 12px;
-  align-items: center;
-  display: flex;
-}
-.list_label{
-  width: 50%;
-  font-size: 16px;
-  margin: 0px;
-}
-.text-right {
-    padding-bottom: 27px;
-    text-align: right !important;
-}
+  margin-bottom: 0px;
+  }
+  div.drop_txt{
+  max-height:0px;
+  overflow: hidden;
+  transition:max-height 0.9s;
+  }
+  /* div.drop_txt p {
+  padding:2em;
+  } */
+  .dropdown:checked ~ .drop_ttl ~ div.drop_txt{
+  max-height:100%;
+  }
+  a{
+  color:#48a1af;
+  }
+  .school_select {
+      padding: 8px;
+      margin: 16px 5px 7px 0px;
+      border: 1px solid #ced4db;
+      border-radius: 3px;
+  }
+  .school_list{
+    width: 55%;
+    padding: 5px 12px;
+    align-items: center;
+    display: flex;
+  }
+  .list_label{
+    width: 50%;
+    font-size: 16px;
+    margin: 0px;
+  }
+  .text-right {
+      padding-bottom: 27px;
+      text-align: right !important;
+  }
 </style>

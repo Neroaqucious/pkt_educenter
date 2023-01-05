@@ -412,16 +412,16 @@ input {
         ?>  
     <tr>
         <td rowspan="2" style="width: 15%;"><?php echo $row1->edu_name?></td>
-        <td rowspan="2" style="width: 25%;"><?php echo $row1->address?></td>
+        <td rowspan="2" style="width: 25%;"><?php echo $row1->edu_address?></td>
         <th style="width: 10%;"><span style="font-size: 11px;">from</span></th>
-        <td style="border-right:none !important;"><?php echo $row1->start_date?></td> 
-        <td style="border-left:none !important;">/<?php echo $row1->start_date?></td>  
-        <td rowspan="2" style="width: 15%;"><?php echo $row1->year?></td>
+        <td style="border-right:none !important;"><?php echo $row1->edu_start_date?></td> 
+        <td style="border-left:none !important;">/<?php echo $row1->edu_start_date?></td>  
+        <td rowspan="2" style="width: 15%;"><?php echo $row1->edu_year?></td>
     </tr>
     <tr>
        <th style="width: 10%;"><span style="font-size: 11px;">to</span></th>
-       <td style="border-right:none !important;"><?php echo $row1->end_date?></td> 
-       <td style="border-left:none !important;">/<?php echo $row1->end_date?></td>  
+       <td style="border-right:none !important;"><?php echo $row1->edu_end_date?></td> 
+       <td style="border-left:none !important;">/<?php echo $row1->edu_end_date?></td>  
     </tr>
     <?php } ?>
     
@@ -446,13 +446,13 @@ input {
     ?>  
     <tr>
         <td rowspan="2" style="width: 15%;"><?php echo $row2->jp_name?></td>
-        <td rowspan="2" style="width: 15%;"><?php echo $row2->address?></td>
+        <td rowspan="2" style="width: 15%;"><?php echo $row2->jp_address?></td>
         <td rowspan="2" style="width: 25%;"><?php echo $row2->jp_level?></td>
         <th style="width: 10%;font-size:11px;">from</th>
-        <td style="border-right:none !important;width: 10%;"><?php echo $row2->start_date?></td> 
-        <td style="border-left:none !important;width: 10%;">/<?php echo $row2->start_date?></td>  
-        <td rowspan="2" style="width: 15%;text-align:center;"><?php echo $row2->hour?><br/>hours</td>
-        <td rowspan="2" style="width: 15%;text-align:center;"><?php echo $row2->hour?><br/>hours</td>
+        <td style="border-right:none !important;width: 10%;"><?php echo $row2->jp_start_date?></td> 
+        <td style="border-left:none !important;width: 10%;">/<?php echo $row2->jp_start_date?></td>  
+        <td rowspan="2" style="width: 15%;text-align:center;"><?php echo $row2->jp_hour?><br/>hours</td>
+        <td rowspan="2" style="width: 15%;text-align:center;"><?php echo $row2->jp_hour?><br/>hours</td>
         <td rowspan="2" style="width: 15%;">
         <input type="checkbox" <?php if($row2->jp_status == '1'){ echo "checked='checked'"; }else{echo"-";} ?>><label for="" style="font-size: 14px;">Completed</label>
         <input type="checkbox" <?php if($row2->jp_status == '0'){ echo "checked='checked'"; }else{echo"-";} ?>><label for="" style="font-size: 14px;">Still Studying</label><br>
@@ -460,8 +460,8 @@ input {
     </tr>
     <tr>
        <th style="width: 10%;font-size:11px;">to</th>
-       <td style="border-right:none !important;width: 10%;"><?php echo $row2->end_date?></td> 
-       <td style="border-left:none !important;width: 10%;">/<?php echo $row2->end_date?></td>  
+       <td style="border-right:none !important;width: 10%;"><?php echo $row2->jp_end_date?></td> 
+       <td style="border-left:none !important;width: 10%;">/<?php echo $row2->jp_end_date?></td>  
     </tr>
     <?php } ?>
    
@@ -522,12 +522,12 @@ input {
     ?>  
     <tr>
       <td><?php echo $row5->emp_name?></td>
-      <td><?php echo $row5->job_description?></td>
-      <td><?php echo $row5->address?></td>
-      <td style="border-right: none !important;"><?php echo $row5->start_date?></td>
-      <td style="border-left: none !important;">/<?php echo $row5->start_date?></td>
-      <td style="border-right: none !important;"><?php echo $row5->end_date?></td>
-      <td style="border-left: none !important;">/<?php echo $row5->end_date?></td>
+      <td><?php echo $row5->emp_job_description?></td>
+      <td><?php echo $row5->emp_address?></td>
+      <td style="border-right: none !important;"><?php echo $row5->emp_start_date?></td>
+      <td style="border-left: none !important;">/<?php echo $row5->emp_start_date?></td>
+      <td style="border-right: none !important;"><?php echo $row5->emp_end_date?></td>
+      <td style="border-left: none !important;">/<?php echo $row5->emp_end_date?></td>
     </tr>
     <?php } ?>
     </table>
@@ -992,7 +992,7 @@ Further, when the above person applies for an extension of period of stay, I wil
     <td><?php echo $row6->fam_relationship?></td>
     <td><?php echo $row6->fam_gender?></td>
     <td><?php echo $row6->fam_age?></td>
-    <td><?php echo $row6->occupation?></td>
+    <td><?php echo $row6->fam_occupation?></td>
   </tr>
   <?php } ?>
 </table>

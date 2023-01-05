@@ -103,8 +103,8 @@
     <option value="ECC" <?php if($result->jls_name== "ECC") echo "selected"; ?>>ECC</option>
     <option value="JCLI" <?php if($result->jls_name== "JCLI") echo "selected"; ?>>JCLI</option>
     <option value="OJLS" <?php if($result->jls_name== "OJLS") echo "selected"; ?>>OJLS</option>
-    <option value="fukuoka" <?php if($result->jls_name== "Fukuoka") echo "selected"; ?>>fukuoka</option>
-    <option value="shizuoka" <?php if($result->jls_name== "Shizuoka") echo "selected"; ?>>shizuoka</option>
+    <option value="Fukuoka" <?php if($result->jls_name== "Fukuoka") echo "selected"; ?>>Fukuoka</option>
+    <option value="Shizuoka" <?php if($result->jls_name== "Shizuoka") echo "selected"; ?>>Shizuoka</option>
 </select>
 </div>
 <!-- JLS Name -->
@@ -870,10 +870,10 @@ input#coefail
                                         <?php echo form_label('Gender', 'gender', array( 'class' => 'form-control-label', 'id'=> '')); ?>
                                         <span class="badge badge-danger">Required</span>
                                         <select name="gender" id="gender" class="admission_select">
-                                            <option value="1" <?php if($result->gender== "1") {echo "selected";} ?>>Male
+                                            <option value="M" <?php if($result->gender== "M") {echo "selected";} ?>>M
                                             </option>
-                                            <option value="0" <?php if($result->gender== "0") {echo "selected";} ?>>
-                                                Female</option>
+                                            <option value="F" <?php if($result->gender== "F") {echo "selected";} ?>>
+                                                F</option>
                                         </select>
                                     </div>
 
@@ -1008,11 +1008,11 @@ input#coefail
                                         <?php echo form_label('Have you visited Japan?', 'have_you_visited_jp', array( 'class' => 'form-control-label', 'id'=> '')); ?>
                                         <select name="have_you_visited_jp" id="have_you_visited_jp"
                                             class="admission_select">
-                                            <option value="1"
-                                                <?php if($result->have_you_visited_jp== "1") {echo "selected";} ?>>Yes
+                                            <option value="Yes"
+                                                <?php if($result->have_you_visited_jp== "Yes") {echo "selected";} ?>>Yes
                                             </option>
-                                            <option value="0"
-                                                <?php if($result->have_you_visited_jp== "0") {echo "selected";} ?>>No
+                                            <option value="No"
+                                                <?php if($result->have_you_visited_jp== "No") {echo "selected";} ?>>No
                                             </option>
                                         </select>
                                     </div>
@@ -1094,11 +1094,11 @@ input#coefail
                                         <?php echo form_label('Departure by deportation / departure order or not', 'departure_deportation', array( 'class' => 'form-control-label', 'id'=> '')); ?>
                                         <select name="departure_deportation" id="departure_deportation"
                                             class="admission_select">
-                                            <option value="1"
-                                                <?php if($result->departure_deportation== "1") {echo "selected";} ?>>Yes
+                                            <option value="Yes"
+                                                <?php if($result->departure_deportation== "Yes") {echo "selected";} ?>>Yes
                                             </option>
-                                            <option value="0"
-                                                <?php if($result->departure_deportation== "0") {echo "selected";} ?>>No
+                                            <option value="No"
+                                                <?php if($result->departure_deportation== "No") {echo "selected";} ?>>No
                                             </option>
                                         </select>
                                     </div>
@@ -1338,18 +1338,18 @@ input#coefail
                                 <!-- rightside -->
                                 <div class="col-md-6 float-left">
                                     <div class="form-group">
-                                        <?php echo form_label('Occupation', 'occupation', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'occupation')); ?>
+                                        <?php echo form_label('Occupation', 'std_occupation', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'std_occupation')); ?>
                                         <?php
         echo form_input(array(
-          'name' => 'occupation',
+          'name' => 'std_occupation',
           'type' => 'text',
-          'value' => html_escape(set_value('occupation',isset($result)?$result->occupation:''), ENT_QUOTES),
+          'value' => html_escape(set_value('std_occupation',isset($result)?$result->std_occupation:''), ENT_QUOTES),
           'placeholder' => 'Please Enter!',
           'class' => 'form-control',
-          'id' => 'occupation',
+          'id' => 'std_occupation',
           'autocomplete' => ''));
       ?>
-                                        <span class="text-danger"><?php echo form_error('occupation'); ?></span>
+                                        <span class="text-danger"><?php echo form_error('std_occupation'); ?></span>
                                     </div>
                                     <div class="form-group">
                                         <?php echo form_label('Place of Employment or School', 'place_employment_school', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'place_employment_school')); ?>
@@ -1446,9 +1446,9 @@ input#coefail
                                     <div class="form-group">
                                         <?php echo form_label('Passport', 'passport', array( 'class' => 'passport_text', 'id'=> '')); ?>
                                         <select name="passport" id="passport" class="admission_select">
-                                            <option value="1" <?php if($result->passport== "1") {echo "selected";} ?>>
+                                            <option value="I have" <?php if($result->passport== "Yes") {echo "selected";} ?>>
                                                 Yes</option>
-                                            <option value="0" <?php if($result->passport== "0") {echo "selected";} ?>>No
+                                            <option value="I do not have" <?php if($result->passport== "No") {echo "selected";} ?>>No
                                             </option>
                                         </select>
                                     </div>
@@ -1512,11 +1512,11 @@ input#coefail
                                     <div class="form-group">
                                         <?php echo form_label('Blank period／Military service', 'military_service', array( 'class' => 'military_txt', 'id'=> '')); ?>
                                         <select name="military_service" id="military_service" class="admission_select">
-                                            <option value="1"
-                                                <?php if($result->military_service== "1") {echo "selected";} ?>>Yes
+                                            <option value="Yes"
+                                                <?php if($result->military_service== "Yes") {echo "selected";} ?>>Yes
                                             </option>
-                                            <option value="0"
-                                                <?php if($result->military_service== "0") {echo "selected";} ?>>No
+                                            <option value="No"
+                                                <?php if($result->military_service== "No") {echo "selected";} ?>>No
                                             </option>
                                         </select>
                                     </div>
@@ -1552,11 +1552,11 @@ input#coefail
                                         <?php echo form_label('Accompanying Persons,if Any', 'accompanying_person', array( 'class' => 'form-control-label', 'id'=> '')); ?>
                                         <select name="accompanying_person" id="accompanying_person"
                                             class="admission_select">
-                                            <option value="1"
-                                                <?php if($result->accompanying_person== "1") {echo "selected";} ?>>Yes
+                                            <option value="Yes"
+                                                <?php if($result->accompanying_person== "Yes") {echo "selected";} ?>>Yes
                                             </option>
-                                            <option value="0"
-                                                <?php if($result->accompanying_person== "0") {echo "selected";} ?>>No
+                                            <option value="No"
+                                                <?php if($result->accompanying_person== "No") {echo "selected";} ?>>No
                                             </option>
                                         </select>
                                     </div>
@@ -1579,11 +1579,11 @@ input#coefail
                                         <?php echo form_label('Did you apply before in Japan?', 'school_apply_before_japan', array( 'class' => 'form-control-label', 'id'=> '')); ?>
                                         <select name="school_apply_before_japan" id="school_apply_before_japan"
                                             class="admission_select">
-                                            <option value="1"
-                                                <?php if($result->school_apply_before_japan== "1") {echo "selected";} ?>>
+                                            <option value="Yes"
+                                                <?php if($result->school_apply_before_japan== "Yes") {echo "selected";} ?>>
                                                 Yes</option>
-                                            <option value="0"
-                                                <?php if($result->school_apply_before_japan== "0") {echo "selected";} ?>>
+                                            <option value="No"
+                                                <?php if($result->school_apply_before_japan== "No") {echo "selected";} ?>>
                                                 No</option>
                                         </select>
                                     </div>
@@ -1680,7 +1680,7 @@ input#coefail
                                         <?php
           echo form_input(array(
             'name' => 'graduate_date',
-            'type' => 'date',
+            'type' => 'text',
             'value' => html_escape(set_value('graduate_date',isset($result)?$result->graduate_date:''), ENT_QUOTES),
             'placeholder' => 'Please Enter!',
             'class' => 'form-control',
@@ -1693,9 +1693,9 @@ input#coefail
                                         <?php echo form_label('Have you ever experienced COE rejection?', 'COE_reject', array( 'class' => 'form-control-label', 'id'=> '')); ?>
                                         <span class="badge badge-danger">Required</span>
                                         <select name="COE_reject" id="COE_reject" class="admission_select">
-                                            <option value="1" <?php if($result->COE_reject== "1") echo "selected"; ?>>
+                                            <option value="Yes" <?php if($result->COE_reject== "Yes") echo "selected"; ?>>
                                                 Yes</option>
-                                            <option value="0" <?php if($result->COE_reject== "0") echo "selected"; ?>>No
+                                            <option value="No" <?php if($result->COE_reject== "No") echo "selected"; ?>>No
                                             </option>
                                         </select>
                                     </div>
@@ -1778,11 +1778,11 @@ input#coefail
                                         <?php echo form_label('Is it possible to provide in English? ', 'provide_english', array( 'class' => 'form-control-label', 'id'=> '')); ?>
                                         <span class="badge badge-danger">Required</span>
                                         <select name="provide_english" id="provide_english" class="admission_select">
-                                            <option value="1"
-                                                <?php if($result->provide_english== "1") echo "selected"; ?>>Yes
+                                            <option value="Yes"
+                                                <?php if($result->provide_english== "Yes") echo "selected"; ?>>Yes
                                             </option>
-                                            <option value="0"
-                                                <?php if($result->provide_english== "0") echo "selected"; ?>>No</option>
+                                            <option value="No"
+                                                <?php if($result->provide_english== "No") echo "selected"; ?>>No</option>
                                         </select>
                                     </div>
                                     <div class="form-group">
@@ -1790,11 +1790,11 @@ input#coefail
                                         <span class="badge badge-danger">Required</span>
                                         <select name="allergic_medicine" id="allergic_medicine"
                                             class="admission_select">
-                                            <option value="1"
-                                                <?php if($result13->allergic_medicine== "1") {echo "selected";} ?>>Yes
+                                            <option value="Yes"
+                                                <?php if($result13->allergic_medicine== "Yes") {echo "selected";} ?>>Yes
                                             </option>
-                                            <option value="0"
-                                                <?php if($result13->allergic_medicine== "0") {echo "selected";} ?>>No
+                                            <option value="No"
+                                                <?php if($result13->allergic_medicine== "No") {echo "selected";} ?>>No
                                             </option>
                                         </select>
                                     </div>
@@ -1844,11 +1844,11 @@ input#coefail
                                         <?php echo form_label('Criminal Record in Japan or Overseas', 'criminal_record', array( 'class' => 'form-control-label', 'id'=> '')); ?>
                                         <span class="badge badge-danger">Required</span>
                                         <select name="criminal_record" id="criminal_record" class="admission_select">
-                                            <option value="1"
-                                                <?php if($result->criminal_record== "1") {echo "selected";} ?>>Yes
+                                            <option value="Yes"
+                                                <?php if($result->criminal_record== "Yes") {echo "selected";} ?>>Yes
                                             </option>
-                                            <option value="0"
-                                                <?php if($result->criminal_record== "0") {echo "selected";} ?>>No
+                                            <option value="No"
+                                                <?php if($result->criminal_record== "No") {echo "selected";} ?>>No
                                             </option>
                                         </select>
                                     </div>
@@ -1863,11 +1863,11 @@ input#coefail
                                             <div class="criminal_record01" style="float: left;">
                                                 <select name="eligibility_have" id="eligibility_have"
                                                     class="admission_select">
-                                                    <option value="1"
-                                                        <?php if($result->eligibility_have== "1") {echo "selected";} ?>>
+                                                    <option value="Yes"
+                                                        <?php if($result->eligibility_have== "Yes") {echo "selected";} ?>>
                                                         Yes</option>
-                                                    <option value="0"
-                                                        <?php if($result->eligibility_have== "0") {echo "selected";} ?>>
+                                                    <option value="No"
+                                                        <?php if($result->eligibility_have== "No") {echo "selected";} ?>>
                                                         No</option>
                                                 </select>
                                             </div>
@@ -3201,7 +3201,7 @@ applicant and your relationship to the applicant.','defraying_details', array('c
           echo form_input(array(
             'name' => 'edu_address[]',
             'type' => 'text',
-            'value' => html_escape(set_value('edu_address',isset($row)?$row->address:''), ENT_QUOTES),
+            'value' => html_escape(set_value('edu_address',isset($row)?$row->edu_address:''), ENT_QUOTES),
             'class' => 'table-control productItem',
             'id' => 'edu_address',
             'autocomplete' => ''));
@@ -3212,7 +3212,7 @@ applicant and your relationship to the applicant.','defraying_details', array('c
           echo form_input(array(
             'name' => 'edu_start_date[]',
             'type' => 'month',
-            'value' => html_escape(set_value('edu_start_date',isset($row)?$row->start_date:''), ENT_QUOTES),
+            'value' => html_escape(set_value('edu_start_date',isset($row)?$row->edu_start_date:''), ENT_QUOTES),
             'class' => 'table-control productItem strEnd',
             'id' => 'edu_start_date',
             'autocomplete' => ''));
@@ -3223,7 +3223,7 @@ applicant and your relationship to the applicant.','defraying_details', array('c
           echo form_input(array(
             'name' => 'edu_end_date[]',
             'type' => 'month',
-            'value' => html_escape(set_value('edu_end_date',isset($row)?$row->end_date:''), ENT_QUOTES),
+            'value' => html_escape(set_value('edu_end_date',isset($row)?$row->edu_end_date:''), ENT_QUOTES),
             'class' => 'table-control productItem strEnd',
             'id' => 'edu_end_date',
             'autocomplete' => ''));
@@ -3234,7 +3234,7 @@ applicant and your relationship to the applicant.','defraying_details', array('c
           echo form_input(array(
             'name' => 'edu_year[]',
             'type' => 'text',
-            'value' => html_escape(set_value('edu_year',isset($row)?$row->year:''), ENT_QUOTES),
+            'value' => html_escape(set_value('edu_year',isset($row)?$row->edu_year:''), ENT_QUOTES),
             'class' => 'table-control productItem term',
             'id' => 'edu_year',
             'autocomplete' => ''));
@@ -3306,11 +3306,11 @@ applicant and your relationship to the applicant.','defraying_details', array('c
                                     <h6 class="" style="padding: 33px 0px 12px;">Previous Japanese Language Study</h6>
                                     <select name="jplearn_experience" id="jplearn_experience" class="admission_select"
                                         style="margin-bottom: 1rem;" ;>
-                                        <option value="1"
-                                            <?php if($result->jplearn_experience== "1") {echo "selected";} ?>>Yes
+                                        <option value="Yes"
+                                            <?php if($result->jplearn_experience== "Yes") {echo "selected";} ?>>Yes
                                         </option>
-                                        <option value="0"
-                                            <?php if($result->jplearn_experience== "0") {echo "selected";} ?>>No
+                                        <option value="No"
+                                            <?php if($result->jplearn_experience== "No") {echo "selected";} ?>>No
                                         </option>
                                     </select>
                                     <div class="tbl">
@@ -3383,7 +3383,7 @@ applicant and your relationship to the applicant.','defraying_details', array('c
           echo form_input(array(
             'name' => 'jp_address[]',
             'type' => 'text',
-            'value' => html_escape(set_value('jp_address',isset($result)?$row1->address:''), ENT_QUOTES),
+            'value' => html_escape(set_value('jp_address',isset($result)?$row1->jp_address:''), ENT_QUOTES),
             'class' => 'table-control productItem',
             'id' => 'jp_address',
             'autocomplete' => ''));
@@ -3394,7 +3394,7 @@ applicant and your relationship to the applicant.','defraying_details', array('c
           echo form_input(array(
             'name' => 'jp_start_date[]',
             'type' => 'month',
-            'value' => html_escape(set_value('jp_start_date',isset($result)?$row1->start_date:''), ENT_QUOTES),
+            'value' => html_escape(set_value('jp_start_date',isset($result)?$row1->jp_start_date:''), ENT_QUOTES),
             'class' => 'table-control productItem strEnd',
             'id' => 'jp_start_date',
             'autocomplete' => ''));
@@ -3405,7 +3405,7 @@ applicant and your relationship to the applicant.','defraying_details', array('c
           echo form_input(array(
             'name' => 'jp_end_date[]',
             'type' => 'month',
-            'value' => html_escape(set_value('jp_end_date',isset($result)?$row1->end_date:''), ENT_QUOTES),
+            'value' => html_escape(set_value('jp_end_date',isset($result)?$row1->jp_end_date:''), ENT_QUOTES),
             'class' => 'table-control productItem strEnd',
             'id' => 'jp_end_date',
             'autocomplete' => ''));
@@ -3416,7 +3416,7 @@ applicant and your relationship to the applicant.','defraying_details', array('c
           echo form_input(array(
             'name' => 'jp_hour[]',
             'type' => 'text',
-            'value' => html_escape(set_value('jp_hour',isset($result)?$row1->hour:''), ENT_QUOTES),
+            'value' => html_escape(set_value('jp_hour',isset($result)?$row1->jp_hour:''), ENT_QUOTES),
             'class' => 'table-control productItem term',
             'id' => 'jp_hour',
             'autocomplete' => ''));
@@ -3468,11 +3468,11 @@ applicant and your relationship to the applicant.','defraying_details', array('c
                                     <p>Japanese Language Proficiency </p>
                                     <select name="jplearn_achievement" id="jplearn_achievement" class="admission_select"
                                         style="margin-bottom: 1rem;" ;>
-                                        <option value="1"
-                                            <?php if($result->jplearn_achievement== "1") {echo "selected";} ?>>Yes
+                                        <option value="Yes"
+                                            <?php if($result->jplearn_achievement== "Yes") {echo "selected";} ?>>Yes
                                         </option>
-                                        <option value="0"
-                                            <?php if($result->jplearn_achievement== "0") {echo "selected";} ?>>No
+                                        <option value="No"
+                                            <?php if($result->jplearn_achievement== "No") {echo "selected";} ?>>No
                                         </option>
                                     </select>
                                     <div class="tbl">
@@ -3526,7 +3526,7 @@ applicant and your relationship to the applicant.','defraying_details', array('c
                                                         <?php
           echo form_input(array(
             'name' => 'exam_year[]',
-            'type' => 'text',
+            'type' => 'month',
             'value' => html_escape(set_value('exam_year',isset($result)?$row2->exam_year:''), ENT_QUOTES),
             'class' => 'table-control productItem',
             'id' => 'exam_year',
@@ -3696,11 +3696,11 @@ applicant and your relationship to the applicant.','defraying_details', array('c
                                         ending with the most recent employment.)</h6>
                                     <select name="employment_experience" id="employment_experience"
                                         class="admission_select" style="margin-bottom: 1rem;" ;>
-                                        <option value="1"
-                                            <?php if($result->employment_experience== "1") {echo "selected";} ?>>Yes
+                                        <option value="Yes"
+                                            <?php if($result->employment_experience== "Yes") {echo "selected";} ?>>Yes
                                         </option>
-                                        <option value="0"
-                                            <?php if($result->employment_experience== "0") {echo "selected";} ?>>No
+                                        <option value="No"
+                                            <?php if($result->employment_experience== "No") {echo "selected";} ?>>No
                                         </option>
                                     </select>
                                     <div class="tbl">
@@ -3744,7 +3744,7 @@ applicant and your relationship to the applicant.','defraying_details', array('c
           echo form_input(array(
             'name' => 'emp_address[]',
             'type' => 'text',
-            'value' => html_escape(set_value('emp_address',isset($result)?$row4->address:''), ENT_QUOTES),
+            'value' => html_escape(set_value('emp_address',isset($result)?$row4->emp_address:''), ENT_QUOTES),
             'class' => 'table-control productItem',
             'id' => 'emp_address',
             'autocomplete' => ''));
@@ -3755,7 +3755,7 @@ applicant and your relationship to the applicant.','defraying_details', array('c
           echo form_input(array(
             'name' => 'emp_year[]',
             'type' => 'text',
-            'value' => html_escape(set_value('emp_year',isset($result)?$row4->year:''), ENT_QUOTES),
+            'value' => html_escape(set_value('emp_year',isset($result)?$row4->emp_year:''), ENT_QUOTES),
             'class' => 'table-control productItem',
             'id' => 'emp_year',
             'autocomplete' => ''));
@@ -3766,7 +3766,7 @@ applicant and your relationship to the applicant.','defraying_details', array('c
           echo form_input(array(
             'name' => 'emp_start_date[]',
             'type' => 'month',
-            'value' => html_escape(set_value('emp_start_date',isset($result)?$row4->start_date:''), ENT_QUOTES),
+            'value' => html_escape(set_value('emp_start_date',isset($result)?$row4->emp_start_date:''), ENT_QUOTES),
             'class' => 'table-control productItem',
             'id' => 'emp_start_date',
             'autocomplete' => ''));
@@ -3777,7 +3777,7 @@ applicant and your relationship to the applicant.','defraying_details', array('c
           echo form_input(array(
             'name' => 'emp_end_date[]',
             'type' => 'month',
-            'value' => html_escape(set_value('emp_end_date',isset($result)?$row4->end_date:''), ENT_QUOTES),
+            'value' => html_escape(set_value('emp_end_date',isset($result)?$row4->emp_end_date:''), ENT_QUOTES),
             'class' => 'table-control productItem',
             'id' => 'emp_end_date',
             'autocomplete' => ''));
@@ -3788,7 +3788,7 @@ applicant and your relationship to the applicant.','defraying_details', array('c
           echo form_input(array(
             'name' => 'emp_job_description[]',
             'type' => 'text',
-            'value' => html_escape(set_value('emp_job_description',isset($result)?$row4->job_description:''), ENT_QUOTES),
+            'value' => html_escape(set_value('emp_job_description',isset($result)?$row4->emp_job_description:''), ENT_QUOTES),
             'class' => 'table-control productItem',
             'id' => 'emp_job_description',
             'autocomplete' => ''));
@@ -3936,7 +3936,7 @@ applicant and your relationship to the applicant.','defraying_details', array('c
           echo form_input(array(
             'name' => 'fam_occupation[]',
             'type' => 'text',
-            'value' => html_escape(set_value('fam_occupation',isset($result)?$row5->occupation:''), ENT_QUOTES),
+            'value' => html_escape(set_value('fam_occupation',isset($result)?$row5->fam_occupation:''), ENT_QUOTES),
             'class' => 'table-control productItem',
             'id' => 'fam_occupation',
             'autocomplete' => ''));
@@ -3958,7 +3958,7 @@ applicant and your relationship to the applicant.','defraying_details', array('c
           echo form_input(array(
             'name' => 'fam_address[]',
             'type' => 'text',
-            'value' => html_escape(set_value('fam_address',isset($result)?$row5->address:''), ENT_QUOTES),
+            'value' => html_escape(set_value('fam_address',isset($result)?$row5->fam_address:''), ENT_QUOTES),
             'class' => 'table-control productItem',
             'id' => 'fam_address',
             'autocomplete' => ''));
@@ -4002,11 +4002,11 @@ applicant and your relationship to the applicant.','defraying_details', array('c
                                         <?php echo form_label('Are you planning to stay with them in Japan? : ', 'plan_to_stay_with_them', array( 'class' => 'form-control-label', 'id'=> '')); ?><br />
                                         <select name="ja_plan_to_stay_with_them" id="ja_plan_to_stay_with_them"
                                             class="admission_select">
-                                            <option value="1"
-                                                <?php if($result->ja_plan_to_stay_with_them== "1") {echo "selected";} ?>>
+                                            <option value="Yes"
+                                                <?php if($result->ja_plan_to_stay_with_them== "Yes") {echo "selected";} ?>>
                                                 Yes</option>
-                                            <option value="0"
-                                                <?php if($result->ja_plan_to_stay_with_them== "0") {echo "selected";} ?>>
+                                            <option value="No"
+                                                <?php if($result->ja_plan_to_stay_with_them== "No") {echo "selected";} ?>>
                                                 No</option>
                                         </select>
                                     </div>
@@ -4080,10 +4080,10 @@ applicant and your relationship to the applicant.','defraying_details', array('c
                                         Spouse, Child, Brother and Sisters, or Others) :</h6>
                                     <select name="family_in_japan" id="family_in_japan" class="admission_select"
                                         style="margin-bottom: 1rem;" ;>
-                                        <option value="1"
-                                            <?php if($result->family_in_japan== "1") {echo "selected";} ?>>Yes</option>
-                                        <option value="0"
-                                            <?php if($result->family_in_japan== "0") {echo "selected";} ?>>No</option>
+                                        <option value="Yes"
+                                            <?php if($result->family_in_japan== "Yes") {echo "selected";} ?>>Yes</option>
+                                        <option value="No"
+                                            <?php if($result->family_in_japan== "No") {echo "selected";} ?>>No</option>
                                     </select>
                                     <p>If yes, fill in all the family members in Japan.</p>
 
@@ -4179,11 +4179,11 @@ applicant and your relationship to the applicant.','defraying_details', array('c
                                                                 <option value=""
                                                                     <?php if($result->ja_fam_residing_applicant== "") {echo "selected";} ?>>
                                                                 </option>
-                                                                <option value="1"
-                                                                    <?php if($result->ja_fam_residing_applicant== "1") {echo "selected";} ?>>
+                                                                <option value="Yes"
+                                                                    <?php if($result->ja_fam_residing_applicant== "Yes") {echo "selected";} ?>>
                                                                     Yes</option>
-                                                                <option value="0"
-                                                                    <?php if($result->ja_fam_residing_applicant== "0") {echo "selected";} ?>>
+                                                                <option value="No"
+                                                                    <?php if($result->ja_fam_residing_applicant== "No") {echo "selected";} ?>>
                                                                     No</option>
                                                             </select>
                                                         </div>
@@ -4628,15 +4628,15 @@ applicant and your relationship to the applicant.','defraying_details', array('c
                                         <?php echo form_label('Work Place', 'work_place', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'work_place')); ?>
                                         <?php
         echo form_input(array(
-          'name' => 'work_place',
+          'name' => 'fin_work_place',
           'type' => 'text',
-          'value' => html_escape(set_value('work_place',isset($result12)?$result12->work_place:''), ENT_QUOTES),
+          'value' => html_escape(set_value('fin_work_place',isset($result12)?$result12->fin_work_place:''), ENT_QUOTES),
           'placeholder' => 'Please Enter!',
           'class' => 'form-control',
-          'id' => 'work_place',
+          'id' => 'fin_work_place',
           'autocomplete' => ''));
       ?>
-                                        <span class="text-danger"><?php echo form_error('work_place'); ?></span>
+                                        <span class="text-danger"><?php echo form_error('fin_work_place'); ?></span>
                                     </div>
                                     <div class="form-group">
                                         <?php echo form_label('Visa', 'fin_visa', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'fin_visa')); ?>
@@ -4656,15 +4656,15 @@ applicant and your relationship to the applicant.','defraying_details', array('c
                                         <?php echo form_label('Annual Income', 'annual_income', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'annual_income')); ?>
                                         <?php
         echo form_input(array(
-          'name' => 'annual_income',
+          'name' => 'fin_annual_income',
           'type' => 'text',
-          'value' => html_escape(set_value('annual_income',isset($result12)?$result12->annual_income:''), ENT_QUOTES),
+          'value' => html_escape(set_value('fin_annual_income',isset($result12)?$result12->fin_annual_income:''), ENT_QUOTES),
           'placeholder' => 'Please Enter!',
           'class' => 'form-control',
-          'id' => 'annual_income',
+          'id' => 'fin_annual_income',
           'autocomplete' => ''));
       ?>
-                                        <span class="text-danger"><?php echo form_error('annual_income'); ?></span>
+                                        <span class="text-danger"><?php echo form_error('fin_annual_income'); ?></span>
                                     </div>
                                     <div class="form-group">
                                         <?php echo form_label('The amount of saving for study abroad', 'amount_saving_for_study_abroad', array( 'class' => '', 'id'=> '', 'style' => '', 'for' => 'amount_saving_for_study_abroad')); ?>
