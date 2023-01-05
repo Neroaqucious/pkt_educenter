@@ -228,9 +228,9 @@ $html = '
         ?>   
             <tr>
                 <td style="font-size: 11px; text-align: center;font-size:13px;"><?php echo $row1->edu_name?></td>
-                <td style="font-size: 12px; text-align: center;border-right: none;font-size:13px;"><?php echo $row1->start_date?></td> 
-                <td style="font-size: 11px; text-align: center;border-left: none;font-size:13px;"><?php echo $row1->end_date?></td>
-                <td style="font-size: 11px; text-align: center;border-left: none;font-size:13px;"><?php echo $row1->year?> year</td>
+                <td style="font-size: 12px; text-align: center;border-right: none;font-size:13px;"><?php echo $row1->edu_start_date?></td> 
+                <td style="font-size: 11px; text-align: center;border-left: none;font-size:13px;"><?php echo $row1->edu_end_date?></td>
+                <td style="font-size: 11px; text-align: center;border-left: none;font-size:13px;"><?php echo $row1->edu_year?> year</td>
             </tr>
         <?php } ?>
             <!-- <tr>
@@ -281,9 +281,9 @@ $html = '
         ?> 
             <tr>
                 <td style="font-size: 11px; text-align: center;font-size:13px;"><?php echo $row2->jp_name?></td>
-                <td style="font-size: 12px; text-align: center;border-right: none;font-size:13px;"><?php echo $row2->start_date?></td>
-                <td style="font-size: 11px; text-align: center;border-left: none;font-size:13px;"><?php echo $row2->end_date?></td>
-                <td style="font-size: 11px; text-align: center;font-size:13px;"><?php echo $row2->hour?> hours</td>
+                <td style="font-size: 12px; text-align: center;border-right: none;font-size:13px;"><?php echo $row2->jp_start_date?></td>
+                <td style="font-size: 11px; text-align: center;border-left: none;font-size:13px;"><?php echo $row2->jp_end_date?></td>
+                <td style="font-size: 11px; text-align: center;font-size:13px;"><?php echo $row2->jp_hour?> hours</td>
             </tr>
         <?php } ?>
             <!-- <tr>
@@ -377,9 +377,9 @@ $html = '
         ?> 
             <tr>
                 <td style="font-size: 11px; text-align: center;font-size:13px;height:24px;"><?php echo $row5->emp_name?></td>
-                <td style="font-size: 12px; text-align: center;border-right: none;font-size:13px;height:24px;"><?php echo $row5->start_date?></td>
-                <td style="font-size: 11px; text-align: center;border-left: none;font-size:13px;height:24px;"><?php echo $row5->end_date?></td>
-                <td style="font-size: 11px; text-align: center;font-size:13px;height:24px;"><?php echo $row5->job_description?></td>
+                <td style="font-size: 12px; text-align: center;border-right: none;font-size:13px;height:24px;"><?php echo $row5->emp_start_date?></td>
+                <td style="font-size: 11px; text-align: center;border-left: none;font-size:13px;height:24px;"><?php echo $row5->emp_end_date?></td>
+                <td style="font-size: 11px; text-align: center;font-size:13px;height:24px;"><?php echo $row5->emp_job_description?></td>
         <?php } ?>   
             </tr>          
             
@@ -445,8 +445,8 @@ $html = '
            <tr>
                 <td style="font-size: 11px; text-align: center;height:24px;"><?php echo $row6->fam_name?></td>
                 <td style="font-size: 12px; text-align: center;height:24px;"><?php echo $row6->fam_relationship?></td>
-                <td style="font-size: 11px; text-align: center;height:24px;"><?php echo $row6->work_place?></td>
-                <td style="font-size: 11px; text-align: center;height:24px;"><?php echo $row6->occupation?></td>
+                <td style="font-size: 11px; text-align: center;height:24px;"><?php echo $row6->fam_work_place?></td>
+                <td style="font-size: 11px; text-align: center;height:24px;"><?php echo $row6->fam_occupation?></td>
                 <td style="font-size: 11px; text-align: center;height:24px;"><?php echo $row6->length_sevice?></td>
                 <td style="font-size: 11px; text-align: center;height:24px;"><?php echo $row6->annual_income?></td>
             </tr>
@@ -537,13 +537,13 @@ $html = '
 			  <th style="width: 15%;border-right:none !important;border-top:none !important;border-bottom:none !important;font-size:13px;">Occupation:</th>
 			  <td colspan="3" style="width: 30%;border-left:none !important;border-top:none !important;border-bottom:none !important;font-size:13px;"><?php echo $result->fin_occupation?></td>
               <th style="width: 15%;border-right:none !important;border-top:none !important;border-bottom:none !important;font-size:13px;">Work Place:</th>
-			  <td colspan="3" style="width: 30%;border-left:none !important;border-top:none !important;border-bottom:none !important;font-size:13px;"><?php echo $result->work_place?></td>
+			  <td colspan="3" style="width: 30%;border-left:none !important;border-top:none !important;border-bottom:none !important;font-size:13px;"><?php echo $result->fin_work_place?></td>
             </tr>
         </table>
             <table style="width: 100%;">
             <tr>
                 <th  rowspan="2" class="ecc_stu_name" style="width: 15%;border-right:none !important;font-size:13px;">Annual Income:</th>
-                <td  rowspan="2" style="text-align:left;border-left:none !important;font-size:13px;"><?php echo $result->annual_income?></td>
+                <td  rowspan="2" style="text-align:left;border-left:none !important;font-size:13px;"><?php echo $result->fin_annual_income?></td>
                 <th style="width:40%;border-right:none !important;font-size:13px;border-bottom: none !important;">The amount of saving  which can be proved:</th>
                 <td colspan="1" style="border-left:none !important;font-size:13px;"><?php echo $result->amount_of_saving_which_proved?></td>
                 <th rowspan="2" style="width:20%;border-right:none !important;font-size:13px;">Start of work date:</th>
