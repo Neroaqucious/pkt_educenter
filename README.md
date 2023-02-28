@@ -7,6 +7,11 @@ HTML, CSS, Javascript, Bootstrap, PHP
 ### Using Framework
 Codeigniter Framework
 
+### Installation Guide
+Firstly,‌ Apache and PHP installation in serve.
+And then git clone the current repo.
+And run.
+
 ## Estimate Functions
 Authorize Management
 * User Management
