@@ -8,3 +8,5 @@ node_modules
 ./upload/assets/adm/mov/*
 ./upload/assets/adm/new/*
 ./upload/assets/adm/usr/*
+./upload/assets/*
+*/.DS_Store
